@@ -1,16 +1,16 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.11.13)  13 NOV 2025 14:45
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.11.14)  14 NOV 2025 18:59
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
  %&-line parsing enabled.
-**c:/Users/I750554/Desktop/BME/Szakdolgozat/Thesis/src/thesis.tex
-(c:/Users/I750554/Desktop/BME/Szakdolgozat/Thesis/src/thesis.tex
+**c:/Users/csabudan/Desktop/Szakdolgozat/bsc_thesis_work/Szakdolgozat/Thesis/src/thesis.tex
+(c:/Users/csabudan/Desktop/Szakdolgozat/bsc_thesis_work/Szakdolgozat/Thesis/src/thesis.tex
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
-(C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
+(C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
 Document Class: report 2023/05/17 v1.4n Standard LaTeX document class
-(C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/base\size11.clo
-File: size11.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
+(C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/base\size12.clo
+File: size12.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 )
 \c@part=\count187
 \c@chapter=\count188
@@ -24,19 +24,19 @@ File: size11.clo 2023/05/17 v1.4n Standard LaTeX file (size option)
 \abovecaptionskip=\skip48
 \belowcaptionskip=\skip49
 \bibindent=\dimen140
-) (include/packages.tex (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifxetex.sty
+) (include/packages.tex (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifxetex.sty
 Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty
 Package: iftex 2022/02/03 v1.0f TeX engine tests
-)) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifluatex.sty
+)) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifluatex.sty
 Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty
 Package: fontenc 2021/04/29 v2.0v Standard LaTeX package
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/base\inputenc.sty
 Package: inputenc 2021/02/14 v1.3d Input encoding file
 \inpenc@prehook=\toks17
 \inpenc@posthook=\toks18
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/lm\lmodern.sty
 Package: lmodern 2015/05/01 v1.6.1 Latin Modern Fonts
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
 (Font)                  OT1/cmr/m/n --> OT1/lmr/m/n on input line 22.
@@ -72,23 +72,23 @@ LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
 (Font)                  OT1/cmtt/m/n --> OT1/lmtt/m/n on input line 38.
 )
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 15.
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/generic/babel\babel.sty
 Package: babel 2024/01/07 v24.1 The Babel package
 \babel@savecnt=\count196
 \U@D=\dimen141
 \l@unhyphenated=\language79
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/generic/babel\txtbabel.def)
 \bbl@readstream=\read2
 \bbl@dirlevel=\count197
 
 *************************************
 * Local config file bblopts.cfg used
 *
-(C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
+(C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/arabi\bblopts.cfg
 File: bblopts.cfg 2005/09/08 v0.1 add Arabic and Farsi to "declared" options of babel
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/babel-english\english.ldf
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/babel-english\english.ldf
 Language: english 2017/06/06 v3.3r English support from the babel system
 Package babel Info: Hyphen rules for 'canadian' set to \l@english
 (babel)             (\language0). Reported on input line 102.
@@ -101,15 +101,15 @@ Language: magyar 2019/01/14 v1.5c Magyar (Hungarian) support for babel
 Package babel Info: Making ` an active character on input line 2819.
 \c@footnote@add=\count198
 \c@footnote@ch=\count199
-)) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/hu\babel-magyar.tex
+)) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/hu\babel-magyar.tex
 Package babel Info: Importing font and identification data for magyar
 (babel)             from babel-hu.ini. Reported on input line 11.
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/en\babel-english.tex
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/generic/babel/locale/en\babel-english.tex
 Package babel Info: Importing font and identification data for english
 (babel)             from babel-en.ini. Reported on input line 11.
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/emptypage\emptypage.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/emptypage\emptypage.sty
 Package: emptypage 2010/05/30 v1.2 Suppress page numbers and headings on empty pages
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty
 Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 \@emptytoks=\toks19
 \symAMSa=\mathgroup4
@@ -117,21 +117,21 @@ Package: amsfonts 2013/01/14 v3.01 Basic AMSFonts support
 LaTeX Font Info:    Redeclaring math symbol \hbar on input line 98.
 LaTeX Font Info:    Overwriting math alphabet `\mathfrak' in version `bold'
 (Font)                  U/euf/m/n --> U/euf/b/n on input line 106.
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
 Package: amsmath 2023/05/13 v2.17o AMS math features
 \@mathmargin=\skip50
 
 For additional information on amsmath, use the `?' option.
-(C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+(C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
 Package: amstext 2021/08/26 v2.01 AMS text
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty
 File: amsgen.sty 1999/11/30 v2.0 generic functions
 \@emptytoks=\toks20
 \ex@=\dimen142
-)) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
+)) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty
 Package: amsbsy 1999/11/29 v1.2d Bold Symbols
 \pmbraise@=\dimen143
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty
 Package: amsopn 2022/04/08 v2.04 operator names
 )
 \inf@bad=\count266
@@ -181,9 +181,9 @@ LaTeX Info: Redefining \Relbar on input line 971.
 \mathdisplay@stack=\toks24
 LaTeX Info: Redefining \[ on input line 2953.
 LaTeX Info: Redefining \] on input line 2954.
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
 Package: amssymb 2013/01/14 v3.01 AMS font symbols
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen151
 \lightrulewidth=\dimen152
@@ -202,27 +202,27 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \@thisruleclass=\count280
 \@lastruleclass=\count281
 \@thisrulewidth=\dimen163
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
 Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty
 Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
 \KV@toks@=\toks25
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
 Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty
 Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
 File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
 )
 Package graphics Info: Driver file: pdftex.def on input line 107.
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2022/09/22 v1.2b Graphics/color driver for pdftex
 ))
 \Gin@req@height=\dimen164
 \Gin@req@width=\dimen165
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
 Package: geometry 2020/01/02 v5.9 Page Geometry
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
 Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 )
 \Gm@cnth=\count282
@@ -237,57 +237,57 @@ Package: ifvtex 2019/10/25 v1.7 ifvtex legacy package. Use iftex instead.
 \Gm@layouthoffset=\dimen172
 \Gm@layoutvoffset=\dimen173
 \Gm@dimlist=\toks26
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg)) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/setspace\setspace.sty
 Package: setspace 2022/12/04 v6.7b set line spacing
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hyperref.sty
 Package: hyperref 2023-11-26 v7.01g Hypertext links for LaTeX
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/generic/infwarerr\infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/kvsetkeys\kvsetkeys.sty
 Package: kvsetkeys 2022-10-05 v1.19 Key value parser (HO)
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/generic/pdfescape\pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2023-12-04 v1.26 LaTeX kernel commands for general use (HO)
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/generic/pdftexcmds\pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO)
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
-)) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
+)) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/hycolor\hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxmacro.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/letltxmacro\letltxmacro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/auxhook\auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\nameref.sty
 Package: nameref 2023-11-26 v2.56 Cross-referencing by name of section
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/refcount\refcount.sty
 Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/generic/gettitlestring\gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
 ))
 \c@section@level=\count285
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/etoolbox\etoolbox.sty
 Package: etoolbox 2020/10/05 v2.5k e-TeX tools for LaTeX (JAW)
 \etb@tempcnta=\count286
 )
 \@linkdim=\dimen174
 \Hy@linkcounter=\count287
 \Hy@pagecounter=\count288
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\pd1enc.def
 File: pd1enc.def 2023-11-26 v7.01g Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
 \Hy@SavedSpaceFactor=\count289
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\puenc.def
 File: puenc.def 2023-11-26 v7.01g Hyperref: PDF Unicode definition (HO)
 Now handling font encoding PU ...
 ... no UTF-8 mapping file for font encoding PU
@@ -301,15 +301,15 @@ Package hyperref Info: Backreferencing OFF on input line 4201.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
 Package hyperref Info: Bookmarks ON on input line 4448.
 \c@Hy@tempcnt=\count290
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/url\url.sty
 \Urlmuskip=\muskip17
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
 LaTeX Info: Redefining \url on input line 4786.
 \XeTeXLinkMargin=\dimen175
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO)
 ))
 \Fld@menulength=\count291
@@ -322,7 +322,7 @@ Package hyperref Info: backreferencing OFF on input line 6080.
 Package hyperref Info: Link coloring OFF on input line 6085.
 Package hyperref Info: Link coloring with OCG OFF on input line 6090.
 Package hyperref Info: PDF/A mode OFF on input line 6095.
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/base\atbegshi-ltx.sty
 Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
 package with kernel methods
 )
@@ -331,29 +331,29 @@ package with kernel methods
 \c@Hfootnote=\count294
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/hyperref\hpdftex.def
 File: hpdftex.def 2023-11-26 v7.01g Hyperref driver for pdfTeX
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/base\atveryend-ltx.sty
 Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend package
 with kernel methods
 )
 \Fld@listcount=\count295
 \c@bookmark@seq@number=\count296
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.sty
 Package: rerunfilecheck 2025-06-21 v1.11 Rerun checks for auxiliary files (HO)
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/generic/uniquecounter\uniquecounter.sty
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 284.
 )
 \Hy@SectionHShift=\skip53
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/xcolor\xcolor.sty
 Package: xcolor 2023/11/15 v3.01 LaTeX color extensions (UK)
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
 Package xcolor Info: Driver file: pdftex.def on input line 274.
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/graphics\mathcolor.ltx)
 Package xcolor Info: Model `cmy' substituted by `cmy0' on input line 1350.
 Package xcolor Info: Model `hsb' substituted by `rgb' on input line 1354.
 Package xcolor Info: Model `RGB' extended on input line 1366.
@@ -363,7 +363,7 @@ Package xcolor Info: Model `tHsb' substituted by `hsb' on input line 1370.
 Package xcolor Info: Model `HSB' substituted by `hsb' on input line 1371.
 Package xcolor Info: Model `Gray' substituted by `gray' on input line 1372.
 Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.sty
 \lst@mode=\count297
 \lst@gtempboxa=\box53
 \lst@token=\toks27
@@ -376,19 +376,19 @@ Package xcolor Info: Model `wave' substituted by `hsb' on input line 1373.
 \lst@newlines=\count301
 \lst@lineno=\count302
 \lst@maxwidth=\dimen181
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
 File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
 \c@lstnumber=\count303
 \lst@skipnumbers=\count304
 \lst@framebox=\box54
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/listings\listings.cfg
 File: listings.cfg 2023/02/27 1.9 listings configuration
 ))
 Package: listings 2023/02/27 1.9 (Carsten Heinz)
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/ntheorem\ntheorem.sty
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/ntheorem\ntheorem.sty
 Style `ntheorem', Version 1.33 <2011/08/15>
 Package: ntheorem 2011/08/15 1.33
-(C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
+(C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/base\ifthen.sty
 Package: ifthen 2022/04/13 v1.1d Standard LaTeX ifthen package (DPC)
 )
 \theorem@style=\toks28
@@ -428,9 +428,9 @@ Package ntheorem Info: Option `thmmarks' loaded on input line 1175.
 Package ntheorem Info: option `amsmath' handling for `thmmarks' loaded on input line 1175.
 \thm@amstmpdepth=\dimen186
 \tagwidth=\dimen187
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption.sty
 Package: caption 2023/08/05 v3.6o Customizing captions (AR)
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/caption\caption3.sty
 Package: caption3 2023/07/31 v2.4d caption3 kernel (AR)
 \caption@tempdima=\dimen188
 \captionmargin=\dimen189
@@ -448,15 +448,15 @@ Package caption Info: hungarian babel package is loaded.
 Package caption Info: hungarian babel package is loaded.
 Package caption Info: hyperref package is loaded.
 Package caption Info: listings package is loaded.
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/natbib\natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip63
 \bibsep=\skip64
 LaTeX Info: Redefining \cite on input line 694.
 \c@NAT@ctr=\count309
-)) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/tools\xspace.sty
+)) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/tools\xspace.sty
 Package: xspace 2014/10/28 v1.13 Space after command names (DPC,MH)
-) (include/tdk-variables.tex) (include/thesis-hu.tex) (include/preamble.tex
+) (include/thesis-hu.tex) (include/preamble.tex
 Package hyperref Info: Option `unicode' set `true' on input line 39.
 Package hyperref Info: Option `pdfnewwindow' set `true' on input line 39.
 Package hyperref Info: Option `colorlinks' set `true' on input line 39.
@@ -470,35 +470,35 @@ Package hyperref Info: Option `colorlinks' set `true' on input line 39.
 \c@endtheoremctr=\count317
 \c@theorem=\count318
 )
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 42.
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 28.
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 \l__color_backend_stack_int=\count319
 \l__pdf_internal_box=\box55
-) (thesis.aux (include/guideline.aux) (include/project.aux) (include/titlepage.aux) (include/declaration.aux) (content/abstract.aux) (content/introduction.aux) (content/latex-tools.aux) (content/thesis-format.aux) (content/template-usage.aux) (content/acknowledgement.aux) (content/appendices.aux))
+) (thesis.aux (include/titlepage.aux) (include/declaration.aux) (content/abstract.aux) (content/introduction.aux) (content/theoretical-background.aux) (content/acknowledgement.aux) (content/appendices.aux))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 42.
-LaTeX Font Info:    ... okay on input line 42.
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 28.
+LaTeX Font Info:    ... okay on input line 28.
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count320
 \scratchdimen=\dimen196
@@ -511,10 +511,10 @@ LaTeX Font Info:    ... okay on input line 42.
 \MPnumerator=\count324
 \makeMPintoPDFobject=\count325
 \everyMPtoPDFconversion=\toks47
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
+) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/00miktex\epstopdf-sys.cfg
 File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 ))
 *geometry* driver: auto-detecting
@@ -536,12 +536,12 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * \topmargin=-29.60228pt
 * \headheight=12.0pt
 * \headsep=25.0pt
-* \topskip=11.0pt
+* \topskip=12.0pt
 * \footskip=30.0pt
-* \marginparwidth=50.0pt
+* \marginparwidth=35.0pt
 * \marginparsep=10.0pt
 * \columnsep=10.0pt
-* \skip\footins=10.0pt plus 4.0pt minus 2.0pt
+* \skip\footins=10.8pt plus 4.0pt minus 2.0pt
 * \hoffset=0.0pt
 * \voffset=0.0pt
 * \mag=1000
@@ -551,7 +551,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 42.
+Package hyperref Info: Link coloring ON on input line 28.
 (thesis.out) (thesis.out)
 \@outlinefile=\write3
 \openout3 = `thesis.out'.
@@ -559,83 +559,54 @@ Package hyperref Info: Link coloring ON on input line 42.
 \c@lstlisting=\count326
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: End \AtBeginDocument code.
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
 LaTeX Info: Redefining \cal on input line 577.
 LaTeX Info: Redefining \mit on input line 578.
 )
-\openout2 = `include/guideline.aux'.
-
- (include/guideline.tex
-LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 29.
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
-File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OML+lmm on input line 29.
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
-File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 29.
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
-File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 29.
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
-File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <9> on input line 29.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 29.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <5> on input line 29.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 29.
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
-File: umsa.fd 2013/01/14 v3.01 AMS symbols A
-)
-LaTeX Font Info:    Trying to load font information for U+msb on input line 29.
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
-File: umsb.fd 2013/01/14 v3.01 AMS symbols B
-)
-LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 44.
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
-File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)) [1
-
-
-
-{C:/Users/I750554/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc}{C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}]
-\openout2 = `include/project.aux'.
-
- (include/project.tex)
-pdfTeX warning (ext4): destination with the same identifier (name{page.}) has been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.49 \include{include/project}
-                               [2
-
-
-
-
-]
 \openout2 = `include/titlepage.aux'.
 
  (include/titlepage.tex
 Package hyperref Info: Option `pageanchor' set `false' on input line 1.
-<figures/bme_logo.pdf, id=133, 705.63625pt x 188.705pt>
+<figures/bme_logo.pdf, id=118, 705.63625pt x 188.705pt>
 File: figures/bme_logo.pdf Graphic file (type pdf)
 <use figures/bme_logo.pdf>
 Package pdftex.def Info: figures/bme_logo.pdf  used on input line 7.
 (pdftex.def)             Requested size: 170.71652pt x 45.65292pt.
+LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 20.
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/lm\ot1lmr.fd
+File: ot1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OML+lmm on input line 20.
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/lm\omllmm.fd
+File: omllmm.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 20.
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/lm\omslmsy.fd
+File: omslmsy.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 20.
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/lm\omxlmex.fd
+File: omxlmex.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10.95> on input line 20.
+(Font)              <12> on input line 20.
 LaTeX Font Info:    External font `lmex10' loaded for size
 (Font)              <8> on input line 20.
- [1
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <6> on input line 20.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 20.
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd
+File: umsa.fd 2013/01/14 v3.01 AMS symbols A
+)
+LaTeX Font Info:    Trying to load font information for U+msb on input line 20.
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd
+File: umsb.fd 2013/01/14 v3.01 AMS symbols B
+) [1
 
 
 
- <./figures/bme_logo.pdf>]
-Package hyperref Info: Option `pageanchor' set `false' on input line 32.
+{C:/Users/csabudan/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}{C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ec.enc} <./figures/bme_logo.pdf>]
+Package hyperref Info: Option `pageanchor' set `false' on input line 30.
 ) (thesis.toc)
 \tf@toc=\write4
 \openout4 = `thesis.toc'.
@@ -668,158 +639,150 @@ Package hyperref Info: Option `pageanchor' set `false' on input line 32.
 
  (content/introduction.tex
 1. fejezet.
-) [1
+[1
 
 
 
 
 
-]
-\openout2 = `content/latex-tools.aux'.
+] [2] [3]
+LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 82.
+ (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/lm\ts1lmr.fd
+File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+) [4] [5{C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-ts1.enc}] [6]) [7]
+\openout2 = `content/theoretical-background.aux'.
 
- (content/latex-tools.tex
+ (content/theoretical-background.tex
 2. fejezet.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <24.88> on input line 2.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <20.74> on input line 2.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 2.
-<figures/TeXstudio.png, id=190, 1002.74625pt x 799.98875pt>
-File: figures/TeXstudio.png Graphic file (type png)
-<use figures/TeXstudio.png>
-Package pdftex.def Info: figures/TeXstudio.png  used on input line 11.
-(pdftex.def)             Requested size: 426.79134pt x 340.4973pt.
 
-Underfull \hbox (badness 10000) in paragraph at lines 16--17
-[]\T1/lmr/m/n/10.95 A TeX-s-tu-dio te-le-pí-té-se után ér-de-mes még le-töl-te-ni a ma-gyar nyel-v¶
- []
+Package natbib Warning: Citation `Gartner' on page 8 undefined on input line 16.
 
 
-Underfull \hbox (badness 4132) in paragraph at lines 16--17
-\T1/lmr/m/n/10.95 helyesírásellen®rz®-szótárakat hoz-zá. A TeX-s-tu-dio az OpenOffice-hoz hasz-ná-la-tos
- []
+Package natbib Warning: Citation `IBM2024' on page 8 undefined on input line 18.
 
-[2
-
-
-
-
- <./figures/TeXstudio.png (PNG copy)>] (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-)
-Underfull \hbox (badness 3271) in paragraph at lines 35--36
-[]\T1/lmr/m/n/10.95 A PDF-L[]T[]X hasz-ná-la-ta ese-tén a ge-ne-rált do-ku-men-tum köz-vet-le-nül PDF-
- []
-
-[3]
-LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <8> not available
-(Font)              Font shape `T1/lmtt/b/n' tried instead on input line 43.
-) [4]
-\openout2 = `content/thesis-format.aux'.
-
- (content/thesis-format.tex
-3. fejezet.
-) [5
+[8
 
 
 
 
 ]
-\openout2 = `content/template-usage.aux'.
 
- (content/template-usage.tex
-4. fejezet.
-[6
+Package natbib Warning: Citation `IBM2021' on page 9 undefined on input line 31.
 
 
+Package natbib Warning: Citation `SAPWhat' on page 9 undefined on input line 31.
 
 
-]
-File: figures/TeXstudio.png Graphic file (type png)
-<use figures/TeXstudio.png>
-Package pdftex.def Info: figures/TeXstudio.png  used on input line 49.
-(pdftex.def)             Requested size: 190.63345pt x 152.08488pt.
-File: figures/TeXstudio.png Graphic file (type png)
-<use figures/TeXstudio.png>
-Package pdftex.def Info: figures/TeXstudio.png  used on input line 50.
-(pdftex.def)             Requested size: 190.63345pt x 152.08488pt.
-File: figures/TeXstudio.png Graphic file (type png)
-<use figures/TeXstudio.png>
-Package pdftex.def Info: figures/TeXstudio.png  used on input line 51.
-(pdftex.def)             Requested size: 190.63345pt x 152.08488pt.
-File: figures/TeXstudio.png Graphic file (type png)
-<use figures/TeXstudio.png>
-Package pdftex.def Info: figures/TeXstudio.png  used on input line 52.
-(pdftex.def)             Requested size: 190.63345pt x 152.08488pt.
- [7] [8] (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
-File: lstlang1.sty 2023/02/27 1.9 listings language file
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang2.sty
-File: lstlang2.sty 2023/02/27 1.9 listings language file
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang3.sty
-File: lstlang3.sty 2023/02/27 1.9 listings language file
-) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstmisc.sty
-File: lstmisc.sty 2023/02/27 1.9 (Carsten Heinz)
-)
-Underfull \hbox (badness 1917) in paragraph at lines 97--98
-[]\T1/lmr/m/n/10.95 Listákban a dol-go-zat szö-ve-gé-t®l el-kü-lö-ní-ten-d® kód-rész-le-te-ket, prog-ram-so-ro-kat,
- []
-
-Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on input line 98.
-[9{C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}]
-Underfull \hbox (badness 10000) in paragraph at lines 139--146
-[][][]$\T1/lmtt/m/n/10.95 http : / / www . ctan . org / tex-[]archive / info / symbols / comprehensive / symbols-[]a4 .
- []
-
-[10] [11]
-Underfull \hbox (badness 2111) in paragraph at lines 238--240
-[][]\T1/lmtt/m/n/10.95 \cite{Lee87}[]\T1/lmr/m/n/10.95 , [][]\T1/lmtt/m/n/10.95 \cite{KissPhD}[]\T1/lmr/m/n/10.95 , [][]\T1/lmtt/m/n/10.95 \cite{Schreirer00}[]\T1/lmr/m/n/10.95 , [][]\T1/lmtt/m/n/10.95 \cite{Mkrtychev:1997} []\T1/lmr/m/n/10.95 és
- []
+Package natbib Warning: Citation `Williams2021' on page 9 undefined on input line 33.
 
 
-Underfull \hbox (badness 1681) in paragraph at lines 247--248
-[]\T1/lmr/m/n/10.95 Megjegyzend®, hogy az éke-ze-tes ma-gyar be-t¶-ket is tar-tal-ma-zó [][]\T1/lmtt/m/n/10.95 .bib []\T1/lmr/m/n/10.95 fájl az
- []
+Package natbib Warning: Citation `Gartner2024' on page 9 undefined on input line 33.
 
 
-Underfull \hbox (badness 3977) in paragraph at lines 247--248
-[][]\T1/lmtt/m/n/10.95 inputenc []\T1/lmr/m/n/10.95 cso-mag-gal be-töl-tött [][]\T1/lmtt/m/n/10.95 latin2 []\T1/lmr/m/n/10.95 be-t¶-kész-let mi-att for-dít-ha-tó. Ugyan-ez a
- []
+Package natbib Warning: Citation `Anywhere' on page 9 undefined on input line 35.
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 258--259
-[]\T1/lmr/m/n/10.95 1 ol-da-las \T1/lmr/m/it/10.95 tá-jé-koz-ta-tó \T1/lmr/m/n/10.95 a szak-dol-go-zat/-dip-lo-ma-terv szer-ke-ze-té-r®l
- []
+Package natbib Warning: Citation `Microsoft' on page 9 undefined on input line 35.
 
-[12] [13]
-Package hyperref Info: bookmark level for unknown definition defaults to 0 on input line 306.
-LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 308.
-Package hyperref Info: bookmark level for unknown example defaults to 0 on input line 311.
-Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input line 314.
-) [14]
+[9]
+
+Package natbib Warning: Citation `Lawton2023' on page 10 undefined on input line 41.
+
+
+Package natbib Warning: Citation `Kissflow2025' on page 10 undefined on input line 41.
+
+
+Package natbib Warning: Citation `Gartner1' on page 10 undefined on input line 48.
+
+
+Package natbib Warning: Citation `Kissflow20251' on page 10 undefined on input line 48.
+
+
+Package natbib Warning: Citation `Kissflow20251' on page 10 undefined on input line 50.
+
+
+Package natbib Warning: Citation `Gartner1' on page 10 undefined on input line 56.
+
+[10]
+
+Package natbib Warning: Citation `Kissflow20251' on page 11 undefined on input line 62.
+
+
+Package natbib Warning: Citation `Team2021' on page 11 undefined on input line 65.
+
+
+Package natbib Warning: Citation `Kissflow20251' on page 11 undefined on input line 65.
+
+
+Package natbib Warning: Citation `SAPSAP' on page 11 undefined on input line 70.
+
+
+Package natbib Warning: Citation `Gupta2023' on page 11 undefined on input line 70.
+
+
+Package natbib Warning: Citation `SAPWhat1' on page 11 undefined on input line 70.
+
+
+Package natbib Warning: Citation `Consulting' on page 11 undefined on input line 72.
+
+
+Package natbib Warning: Citation `Gupta20231' on page 11 undefined on input line 72.
+
+
+Package natbib Warning: Citation `SAPFeature' on page 11 undefined on input line 72.
+
+
+Package natbib Warning: Citation `Gupta20231' on page 11 undefined on input line 74.
+
+[11]
+
+Package natbib Warning: Citation `Gupta20232' on page 12 undefined on input line 90.
+
+
+Package natbib Warning: Citation `Gupta20232' on page 12 undefined on input line 90.
+
+
+Package natbib Warning: Citation `SAP2022' on page 12 undefined on input line 97.
+
+[12]
+
+Package natbib Warning: Citation `SAPWhat3' on page 13 undefined on input line 102.
+
+
+Package natbib Warning: Citation `SAPWhat3' on page 13 undefined on input line 105.
+
+
+Package natbib Warning: Citation `SAPWhat3' on page 13 undefined on input line 108.
+
+
+Package natbib Warning: Citation `SAPWhat3' on page 13 undefined on input line 111.
+
+[13]
+
+Package natbib Warning: Citation `SAPWhat3' on page 14 undefined on input line 114.
+
+
+Package natbib Warning: Citation `SAPCreate' on page 14 undefined on input line 119.
+
+
+Package natbib Warning: Citation `SAPWhat4' on page 14 undefined on input line 124.
+
+
+Package natbib Warning: Citation `SAPWhat4' on page 14 undefined on input line 127.
+
+[14]
+
+Package natbib Warning: Citation `SAPCreate' on page 15 undefined on input line 129.
+
+) [15]
 \openout2 = `content/acknowledgement.aux'.
 
- (content/acknowledgement.tex) [15
+ (content/acknowledgement.tex) [16
 
 
 
 
-] (thesis.bbl) [16
+] (thesis.bbl) [17
 
 
 
@@ -827,39 +790,44 @@ Package hyperref Info: bookmark level for unknown theorem defaults to 0 on input
 \openout2 = `content/appendices.aux'.
 
  (content/appendices.tex
+<figures/TeXstudio.png, id=250, 1002.74625pt x 799.98875pt>
 File: figures/TeXstudio.png Graphic file (type png)
 <use figures/TeXstudio.png>
 Package pdftex.def Info: figures/TeXstudio.png  used on input line 17.
 (pdftex.def)             Requested size: 426.79134pt x 340.4973pt.
- [17
+ [18
 
 
-]) [18
+ <./figures/TeXstudio.png (PNG copy)>]) [19
 
-]
+{C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc}{C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc}{C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathex.enc}]
 \tf@thm=\write5
 \openout5 = `thesis.thm'.
 
- (thesis.aux (include/guideline.aux) (include/project.aux) (include/titlepage.aux) (include/declaration.aux) (content/abstract.aux) (content/introduction.aux) (content/latex-tools.aux) (content/thesis-format.aux) (content/template-usage.aux) (content/acknowledgement.aux) (content/appendices.aux))
+
+
+Package natbib Warning: There were undefined citations.
+
+(thesis.aux (include/titlepage.aux) (include/declaration.aux) (content/abstract.aux) (content/introduction.aux) (content/theoretical-background.aux) (content/acknowledgement.aux) (content/appendices.aux))
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-04>
  ***********
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: F23D72DC03C4AB085BEFEF9092B0CA8A;4473.
+(rerunfilecheck)             Checksum: AC2EEF8121C7CDF3781C2DFC2242A770;8433.
  ) 
 Here is how much of TeX's memory you used:
- 19118 strings out of 474486
- 309469 string characters out of 5742810
- 2443542 words of memory out of 5000000
- 40804 multiletter control sequences out of 15000+600000
- 671275 words of font info for 114 fonts, out of 8000000 for 9000
+ 17016 strings out of 474486
+ 281053 string characters out of 5742338
+ 1937542 words of memory out of 5000000
+ 38931 multiletter control sequences out of 15000+600000
+ 622048 words of font info for 72 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
- 80i,16n,82p,1621b,2053s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi10.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr9.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri8.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy8.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtl10.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/amsfonts/symbols/msam10.pfb>
-Output written on thesis.pdf (25 pages, 702977 bytes).
+ 80i,12n,82p,1234b,521s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtl10.pfb>
+Output written on thesis.pdf (24 pages, 503366 bytes).
 PDF statistics:
- 606 PDF objects out of 1000 (max. 8388607)
- 202 named destinations out of 1000 (max. 500000)
- 219 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 346 PDF objects out of 1000 (max. 8388607)
+ 52 named destinations out of 1000 (max. 500000)
+ 243 words of extra memory for PDF output out of 10000 (max. 10000000)
 

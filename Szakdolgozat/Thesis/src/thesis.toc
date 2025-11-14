@@ -1,26 +1,46 @@
 \select@language {magyar} \contentsline {chapter}{Kivonat}{i}{chapter*.2}%
 \select@language {english} \contentsline {chapter}{Abstract}{ii}{chapter*.3}%
 \select@language {magyar} \contentsline {chapter}{\numberline {1}Bevezetés}{1}{chapter.1}%
-\select@language {magyar} \contentsline {chapter}{\numberline {2}\LaTeX -eszközök}{2}{chapter.2}%
-\select@language {magyar} \contentsline {section}{\numberline {2.1}A szerkesztéshez használatos eszközök}{2}{section.2.1}%
-\select@language {magyar} \contentsline {section}{\numberline {2.2}A dokumentum lefordítása Windows alatt}{3}{section.2.2}%
-\select@language {magyar} \contentsline {section}{\numberline {2.3}Eszközök Linuxhoz}{4}{section.2.3}%
-\select@language {magyar} \contentsline {chapter}{\numberline {3}A dolgozat formai kivitele}{5}{chapter.3}%
-\select@language {magyar} \contentsline {section}{\numberline {3.1}A dolgozat kimérete}{5}{section.3.1}%
-\select@language {magyar} \contentsline {section}{\numberline {3.2}A dolgozat nyelve}{5}{section.3.2}%
-\select@language {magyar} \contentsline {section}{\numberline {3.3}A dokumentum nyomdatechnikai kivitele}{5}{section.3.3}%
-\select@language {magyar} \contentsline {chapter}{\numberline {4}A \LaTeX -sablon használata}{6}{chapter.4}%
-\select@language {magyar} \contentsline {section}{\numberline {4.1}Címkék és hivatkozások}{6}{section.4.1}%
-\select@language {magyar} \contentsline {section}{\numberline {4.2}Ábrák és táblázatok}{6}{section.4.2}%
-\select@language {magyar} \contentsline {section}{\numberline {4.3}Felsorolások és listák}{8}{section.4.3}%
-\select@language {magyar} \contentsline {section}{\numberline {4.4}Képletek}{9}{section.4.4}%
-\select@language {magyar} \contentsline {section}{\numberline {4.5}Irodalmi hivatkozások}{10}{section.4.5}%
-\select@language {magyar} \contentsline {section}{\numberline {4.6}A dolgozat szerkezete és a forrásfájlok}{12}{section.4.6}%
-\select@language {magyar} \contentsline {section}{\numberline {4.7}Alapadatok megadása}{14}{section.4.7}%
-\select@language {magyar} \contentsline {section}{\numberline {4.8}Új fejezet írása}{14}{section.4.8}%
-\select@language {magyar} \contentsline {section}{\numberline {4.9}Definíciók, tételek, példák}{14}{section.4.9}%
-\select@language {magyar} \contentsline {chapter}{Köszönetnyilvánítás}{15}{chapter*.8}%
-\select@language {magyar} \contentsline {chapter}{Irodalomjegyz\'ek}{16}{chapter*.8}%
-\select@language {magyar} \contentsline {chapter}{Függelék}{17}{appendix*.10}%
-\select@language {magyar} \contentsline {section}{\numberline {F.1}A TeXstudio felülete}{17}{section.F.1}%
-\select@language {magyar} \contentsline {section}{\numberline {F.2}Válasz az ,,Élet, a világmindenség, meg minden'' kérdésére}{18}{section.F.2}%
+\select@language {magyar} \contentsline {section}{\numberline {1.1}Témafelvezetés: A Pénzügyi Funkció Stratégiai Átalakulása}{1}{section.1.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {1.1.1}A Szerepkör Forradalma: A Tranzakcióktól a Stratégiáig}{1}{subsection.1.1.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {1.1.2}A Változás Gátja: A Manuális Munka Fogságában}{1}{subsection.1.1.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {1.1.3}A Technológia Mint Motor: Automatizáció, AI és Adatok}{2}{subsection.1.1.3}%
+\select@language {magyar} \contentsline {paragraph}{A ,,Finance Factory'' és az Automatizáció:}{2}{section*.4}%
+\select@language {magyar} \contentsline {paragraph}{A Példa: Számlafeldolgozás (AP):}{2}{section*.5}%
+\select@language {magyar} \contentsline {paragraph}{Mesterséges Intelligencia (AI) és Analitika:}{2}{section*.6}%
+\select@language {magyar} \contentsline {paragraph}{Az Adat Mint Alapfeltétel:}{2}{section*.7}%
+\select@language {magyar} \contentsline {subsection}{\numberline {1.1.4}Új Fókuszterületek: Tőkeáramlás és Szabályozói Megfelelés}{2}{subsection.1.1.4}%
+\select@language {magyar} \contentsline {paragraph}{Tőke és Cash Flow (\textit {Capital and Cash Flow}):}{2}{section*.8}%
+\select@language {magyar} \contentsline {paragraph}{Szabályozói Jelentések (\textit {Regulatory Reporting}):}{3}{section*.9}%
+\select@language {magyar} \contentsline {subsection}{\numberline {1.1.5}Az Átalakuló Működési Modell és a ,,Tehetség-Válság''}{3}{subsection.1.1.5}%
+\select@language {magyar} \contentsline {paragraph}{A Tehetség Kérdése:}{3}{section*.10}%
+\select@language {magyar} \contentsline {paragraph}{Új Működési Modellek:}{3}{section*.11}%
+\select@language {magyar} \contentsline {section}{\numberline {1.2}Problémafelvetés: A Manuális Számlafeldolgozás Költségei}{3}{section.1.2}%
+\select@language {magyar} \contentsline {paragraph}{Pénzügyi veszteség:}{4}{section*.12}%
+\select@language {magyar} \contentsline {paragraph}{Határidők mulasztása:}{4}{section*.13}%
+\select@language {magyar} \contentsline {section}{\numberline {1.3}A Megoldás Iránya: Hyperautomation és az SAP Build Platform}{4}{section.1.3}%
+\select@language {magyar} \contentsline {section}{\numberline {1.4}A Szakdolgozat Célkitűzései és Kutatási Kérdései}{5}{section.1.4}%
+\select@language {magyar} \contentsline {section}{\numberline {1.5}A Vizsgálat Fókusza és Korlátai}{6}{section.1.5}%
+\select@language {magyar} \contentsline {section}{\numberline {1.6}A Dolgozat Felépítése}{6}{section.1.6}%
+\select@language {magyar} \contentsline {chapter}{\numberline {2}ELMÉLETI HÁTTÉR ÉS TECHNOLÓGIAI ALAPOK}{8}{chapter.2}%
+\select@language {magyar} \contentsline {section}{\numberline {2.1}Üzleti Folyamatmenedzsment (BPM) és Automatizálási Trendek}{8}{section.2.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.1.1}Üzleti Folyamatmenedzsment (BPM) – A Stratégiai Alap}{8}{subsection.2.1.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.1.2}Robotikus Folyamatautomatizálás (RPA) – A Taktikai Eszköz}{9}{subsection.2.1.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.1.3}A Hiperautomatizálás (Hyperautomation) – A Trendek Szintézise}{10}{subsection.2.1.3}%
+\select@language {magyar} \contentsline {section}{\numberline {2.2}Az SAP Stratégiai Válasza: A Business Technology Platform (BTP)}{11}{section.2.2}%
+\select@language {magyar} \contentsline {section}{\numberline {2.3}Az SAP Build Platform: A BTP Hiperautomatizálási Eszköztára}{12}{section.2.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.3.1}A ,,Motor'': SAP Build Process Automation (BPA) Eszköztára}{13}{subsection.2.3.1}%
+\select@language {magyar} \contentsline {paragraph}{Process Builder (Folyamattervező): A ,,Karmester''}{13}{section*.14}%
+\select@language {magyar} \contentsline {paragraph}{Automations (Automatizálások – RPA Botok): A ,,Digitális Munkás''}{13}{section*.15}%
+\select@language {magyar} \contentsline {paragraph}{Forms (Űrlapok): Az Emberi Beavatkozás Felülete}{13}{section*.16}%
+\select@language {magyar} \contentsline {paragraph}{Decisions (Döntések / Üzleti Szabályok): A ,,Logikai Központ''}{13}{section*.17}%
+\select@language {magyar} \contentsline {paragraph}{AI Képességek (Document Information Extraction - DOX): A ,,Prototípus Agya''}{14}{section*.18}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.3.2}A ,,Műszerfal'': SAP Build Work Zone}{14}{subsection.2.3.2}%
+\select@language {magyar} \contentsline {paragraph}{Task Center / ,,My Inbox'':}{14}{section*.19}%
+\select@language {magyar} \contentsline {paragraph}{UI Integráció és Átláthatóság (Űrlapok és KPI Csempék):}{14}{section*.20}%
+\select@language {magyar} \contentsline {section}{\numberline {2.4}Fejezet Összegzése: A Platform Komponenseinek Szintézise}{15}{section.2.4}%
+\select@language {magyar} \contentsline {chapter}{Köszönetnyilvánítás}{16}{chapter*.21}%
+\select@language {magyar} \contentsline {chapter}{Irodalomjegyz\'ek}{17}{chapter*.21}%
+\select@language {magyar} \contentsline {chapter}{Függelék}{18}{appendix*.23}%
+\select@language {magyar} \contentsline {section}{\numberline {F.1}A TeXstudio felülete}{18}{section.F.1}%
+\select@language {magyar} \contentsline {section}{\numberline {F.2}Válasz az ,,Élet, a világmindenség, meg minden'' kérdésére}{19}{section.F.2}%
