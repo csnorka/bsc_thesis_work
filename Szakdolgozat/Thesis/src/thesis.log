@@ -772,127 +772,12 @@ File: ts1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 
  (content/theoretical-background.tex
 2. fejezet.
-
-Package natbib Warning: Citation `Gartner' on page 8 undefined on input line 16.
-
-
-Package natbib Warning: Citation `IBM2024' on page 8 undefined on input line 18.
-
 [8
 
 
 
 
-]
-
-Package natbib Warning: Citation `IBM2021' on page 9 undefined on input line 31.
-
-
-Package natbib Warning: Citation `SAPWhat' on page 9 undefined on input line 31.
-
-
-Package natbib Warning: Citation `Williams2021' on page 9 undefined on input line 33.
-
-
-Package natbib Warning: Citation `Gartner2024' on page 9 undefined on input line 33.
-
-
-Package natbib Warning: Citation `Anywhere' on page 9 undefined on input line 35.
-
-
-Package natbib Warning: Citation `Microsoft' on page 9 undefined on input line 35.
-
-[9]
-
-Package natbib Warning: Citation `Lawton2023' on page 10 undefined on input line 41.
-
-
-Package natbib Warning: Citation `Kissflow2025' on page 10 undefined on input line 41.
-
-
-Package natbib Warning: Citation `Gartner1' on page 10 undefined on input line 48.
-
-
-Package natbib Warning: Citation `Kissflow20251' on page 10 undefined on input line 48.
-
-
-Package natbib Warning: Citation `Kissflow20251' on page 10 undefined on input line 50.
-
-
-Package natbib Warning: Citation `Gartner1' on page 10 undefined on input line 56.
-
-[10]
-
-Package natbib Warning: Citation `Kissflow20251' on page 11 undefined on input line 62.
-
-
-Package natbib Warning: Citation `Team2021' on page 11 undefined on input line 65.
-
-
-Package natbib Warning: Citation `Kissflow20251' on page 11 undefined on input line 65.
-
-
-Package natbib Warning: Citation `SAPSAP' on page 11 undefined on input line 70.
-
-
-Package natbib Warning: Citation `Gupta2023' on page 11 undefined on input line 70.
-
-
-Package natbib Warning: Citation `SAPWhat1' on page 11 undefined on input line 70.
-
-
-Package natbib Warning: Citation `Consulting' on page 11 undefined on input line 72.
-
-
-Package natbib Warning: Citation `Gupta20231' on page 11 undefined on input line 72.
-
-
-Package natbib Warning: Citation `SAPFeature' on page 11 undefined on input line 72.
-
-
-Package natbib Warning: Citation `Gupta20231' on page 11 undefined on input line 74.
-
-[11]
-
-Package natbib Warning: Citation `Gupta20232' on page 12 undefined on input line 90.
-
-
-Package natbib Warning: Citation `Gupta20232' on page 12 undefined on input line 90.
-
-
-Package natbib Warning: Citation `SAP2022' on page 12 undefined on input line 97.
-
-[12]
-
-Package natbib Warning: Citation `SAPWhat3' on page 13 undefined on input line 102.
-
-
-Package natbib Warning: Citation `SAPWhat3' on page 13 undefined on input line 105.
-
-
-Package natbib Warning: Citation `SAPWhat3' on page 13 undefined on input line 108.
-
-
-Package natbib Warning: Citation `SAPWhat3' on page 13 undefined on input line 111.
-
-[13]
-
-Package natbib Warning: Citation `SAPWhat3' on page 14 undefined on input line 114.
-
-
-Package natbib Warning: Citation `SAPCreate' on page 14 undefined on input line 119.
-
-
-Package natbib Warning: Citation `SAPWhat4' on page 14 undefined on input line 124.
-
-
-Package natbib Warning: Citation `SAPWhat4' on page 14 undefined on input line 127.
-
-[14]
-
-Package natbib Warning: Citation `SAPCreate' on page 15 undefined on input line 129.
-
-) [15]
+] [9] [10] [11] [12] [13] [14]) [15]
 \openout2 = `content/acknowledgement.aux'.
 
  (content/acknowledgement.tex) [16
@@ -998,7 +883,7 @@ Underfull \hbox (badness 3428) in paragraph at lines 273--281
 \openout2 = `content/appendices.aux'.
 
  (content/appendices.tex
-<figures/TeXstudio.png, id=324, 1002.74625pt x 799.98875pt>
+<figures/TeXstudio.png, id=360, 1002.74625pt x 799.98875pt>
 File: figures/TeXstudio.png Graphic file (type png)
 <use figures/TeXstudio.png>
 Package pdftex.def Info: figures/TeXstudio.png  used on input line 17.
@@ -1012,45 +897,26 @@ Package pdftex.def Info: figures/TeXstudio.png  used on input line 17.
 \tf@thm=\write5
 \openout5 = `thesis.thm'.
 
-
-
-Package natbib Warning: There were undefined citations.
-
-(thesis.aux (include/titlepage.aux) (include/declaration.aux) (content/abstract.aux) (content/introduction.aux) (content/theoretical-background.aux) (content/acknowledgement.aux)
-
-Package natbib Warning: Citation(s) may have changed.
-(natbib)                Rerun to get citations correct.
-
-(content/appendices.aux))
+ (thesis.aux (include/titlepage.aux) (include/declaration.aux) (content/abstract.aux) (content/introduction.aux) (content/theoretical-background.aux) (content/acknowledgement.aux) (content/appendices.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-10-24>
  ***********
-
-
-LaTeX Warning: Label(s) may have changed. Rerun to get cross-references right.
-
-
-Package rerunfilecheck Warning: File `thesis.out' has changed.
-(rerunfilecheck)                Rerun to get outlines right
-(rerunfilecheck)                or use package `bookmark'.
-
-Package rerunfilecheck Info: Checksums for `thesis.out':
-(rerunfilecheck)             Before: E935817D7A6C9FCE676BE0E4F6D7F99B;8462
-(rerunfilecheck)             After:  E71BC8B4E401DA63D7BFCFEF084A61BF;8487.
+Package rerunfilecheck Info: File `thesis.out' has not changed.
+(rerunfilecheck)             Checksum: E71BC8B4E401DA63D7BFCFEF084A61BF;8487.
  ) 
 Here is how much of TeX's memory you used:
- 17187 strings out of 467871
- 282058 string characters out of 5417407
- 715133 words of memory out of 5000000
- 45678 multiletter control sequences out of 15000+600000
+ 17186 strings out of 467871
+ 282051 string characters out of 5417407
+ 716505 words of memory out of 5000000
+ 45677 multiletter control sequences out of 15000+600000
  691700 words of font info for 76 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
- 80i,12n,82p,1220b,618s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 80i,12n,82p,1220b,662s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtl10.pfb>
-Output written on thesis.pdf (26 pages, 526456 bytes).
+Output written on thesis.pdf (26 pages, 533156 bytes).
 PDF statistics:
- 426 PDF objects out of 1000 (max. 8388607)
+ 462 PDF objects out of 1000 (max. 8388607)
  75 named destinations out of 1000 (max. 500000)
  243 words of extra memory for PDF output out of 10000 (max. 10000000)
 
