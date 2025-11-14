@@ -26,7 +26,7 @@
   \bibEarlyBegin
 \else \let\bibEarlyEnd\relax \fi
 
-\begin{thebibliography}{1}
+\begin{thebibliography}{10}
 \frenchspacing
 \makeatletter
 \global\def\bibIE@lowc{%
@@ -93,10 +93,206 @@
 \def\bibInSelf#1{In u\H{o}: }
 \csname bibOverride\endcsname
 
-\bibitem{Jeney}
-Gábor Jeney:
-\bibNewBlock Hogyan néz ki egy igényes dokumentum? {N}éhány szóban az
-  alapvető tipográfiai szabályokról, 2014.
-\bibNewBlock \url{http://www.mcl.hu/~jeneyg/kinezet.pdf}.
+\bibitem{Anywhere}
+Automation Anywhere:
+\bibNewBlock { What is Attended vs Unattended Robotic Process Automation (RPA)?
+  }.
+\bibNewBlock
+\bibUrll{URL}
+  >https://www.automationanywhere.com/rpa/attended-vs-unattended-rpa>.
+\bibNewBlock Accessed: 2025-10-08.
+
+\bibitem{Consulting}
+NAV~IT Consulting:
+\bibNewBlock { Transform Business with SAP Business Technology Platform (SAP
+  BTP) }.
+\bibNewBlock
+\bibUrll{URL}
+  >https://nav-it.com/transform-business-with-sap-business-technology-
+  platform-sap-btp>.
+\bibNewBlock Accessed: 2025-10-20.
+
+\bibitem{Gartner}
+Gartner:
+\bibNewBlock { Business Process Management (BPM) }.
+\bibNewBlock
+\bibUrll{URL}
+  >https://www.gartner.com/en/information-technology/glossary/business-
+  process-management-bpm>.
+
+\bibitem{Gartner1}
+Gartner:
+\bibNewBlock { Hyperautomation }.
+\bibNewBlock
+\bibUrll{URL} >https://www.gartner.com/en/information-technology/glossary/
+  hyperautomation>.
+\bibNewBlock Accessed: 2025-10-08.
+
+\bibitem{Gartner2024}
+Gartner:
+\bibNewBlock { 3 Tactics to Demonstrate RPA’s Impact in Finance }, 2024.
+\bibNewBlock
+\bibUrll{URL} >https://www.gartner.com/en/finance/trends/finance-rpa>.
+\bibNewBlock Accessed: 2025-10-09.
+
+\bibitem{Gupta20232}
+Raja Gupta:
+\bibNewBlock { Demystifying SAP Build for Beginners }, 2023.
+\bibNewBlock
+\bibUrll{URL}
+  >https://community.sap.com/t5/technology-blog-posts-by-sap/demystifying-
+  sap-build-for-beginners/ba-p/13553828>.
+\bibNewBlock Accessed: 2025-10-20.
+
+\bibitem{Gupta20231}
+Raja Gupta:
+\bibNewBlock { Explaining SAP Business Technology Platform (SAP BTP) to a
+  Beginner }, 2023.
+\bibNewBlock
+\bibUrll{URL}
+  >https://community.sap.com/t5/technology-blog-posts-by-sap/explaining-
+  sap-business-technology-platform-sap-btp-to-a-beginner-2025/ba-p/ 13557182>.
+\bibNewBlock Accessed: 2025-10-20.
+
+\bibitem{Gupta2023}
+Raja Gupta:
+\bibNewBlock { Important Cloud Terminologies for Beginners }, 2023.
+\bibNewBlock
+\bibUrll{URL}
+  >https://medium.com/@raja.gupta20/important-cloud-terminologies-for-
+  beginners-50e474bbaf22>.
+\bibNewBlock Accessed: 2025-10-20.
+
+\bibitem{IBM2021}
+IBM:
+\bibNewBlock { What is Robotic Process Automation (RPA)? }, 2021.
+\bibNewBlock
+\bibUrll{URL} >https://www.ibm.com/think/topics/rpa>.
+\bibNewBlock Accessed: 2025-10-08.
+
+\bibitem{IBM2024}
+IBM:
+\bibNewBlock { What is business process management (BPM)? }, 2024.
+\bibNewBlock
+\bibUrll{URL} >https://www.ibm.com/think/topics/business-process-management>.
+\bibNewBlock Accessed: 2025-10-08.
+
+\bibitem{Kissflow20251}
+Kissflow:
+\bibNewBlock { Hyperautomation: 101 Ultimate Guide for 2025-26 }, 2025.
+\bibNewBlock
+\bibUrll{URL} >https://kissflow.com/workflow/hyperautomation-complete-guide>.
+\bibNewBlock Accessed: 2025-10-08.
+
+\bibitem{Kissflow2025}
+Kissflow:
+\bibNewBlock { RPA vs. BPM: What's the Difference? }, 2025.
+\bibNewBlock
+\bibUrll{URL}
+  >https://kissflow.com/workflow/bpm/rpa-vs-bpm-whats-the-difference>.
+\bibNewBlock Accessed: 2025-10-08.
+
+\bibitem{Lawton2023}
+George Lawton:
+\bibNewBlock { RPA vs. BPM: How are they different? }, 2023.
+\bibNewBlock
+\bibUrll{URL}
+  >https://www.techtarget.com/searchcio/tip/RPA-vs-BPM-How-are-they-
+  different>.
+\bibNewBlock Accessed: 2025-10-08.
+
+\bibitem{Microsoft}
+Microsoft:
+\bibNewBlock { Attended and unattended scenarios }.
+\bibNewBlock
+\bibUrll{URL}
+  >https://learn.microsoft.com/en-us/power-automate/guidance/planning/
+  attended-unattended>.
+\bibNewBlock Accessed: 2025-10-08.
+
+\bibitem{SAPCreate}
+SAP:
+\bibNewBlock { Create low-code digital workspaces }.
+\bibNewBlock
+\bibUrll{URL} >https://www.sap.com/products/technology-platform/workzone.html>.
+\bibNewBlock Accessed: 2025-10-20.
+
+\bibitem{SAPFeature}
+SAP:
+\bibNewBlock { Feature Scope Description for SAP BTP, Cloud Foundry, ABAP, and
+  Kyma Environments }.
+\bibNewBlock
+\bibUrll{URL}
+  >https://help.sap.com/doc/5e8107bf49684962b897217040398007/Cloud/en-US/
+  SAP_BTP_FSD.pdf>.
+\bibNewBlock Accessed: 2025-10-20.
+
+\bibitem{SAPSAP}
+SAP:
+\bibNewBlock { SAP Business Technology Platform }.
+\bibNewBlock
+\bibUrll{URL} >https://www.sap.com/products/technology-platform.html>.
+\bibNewBlock Accessed: 2025-10-20.
+
+\bibitem{SAPWhat}
+SAP:
+\bibNewBlock { What is robotic process automation (RPA)? }.
+\bibNewBlock
+\bibUrll{URL}
+  >https://www.sap.com/products/technology-platform/process-automation/
+  what-is-rpa.html>.
+\bibNewBlock Accessed: 2025-10-08.
+
+\bibitem{SAPWhat3}
+SAP:
+\bibNewBlock { What is SAP Build? }.
+\bibNewBlock
+\bibUrll{URL} >https://help.sap.com/docs/build/sap-build-core/what-is-sap-
+  build#loio7e50fa5e724c49d1a4352848275fd3cc__section_build_code>.
+\bibNewBlock Accessed: 2025-10-20.
+
+\bibitem{SAPWhat4}
+SAP:
+\bibNewBlock { What Is SAP Build Work Zone, standard edition? }.
+\bibNewBlock
+\bibUrll{URL}
+  >https://help.sap.com/docs/build-work-zone-standard-edition/sap-build-
+  work-zone-standard-edition/what-is-sap-build-work-zone-standard- edition>.
+\bibNewBlock Accessed: 2025-10-20.
+
+\bibitem{SAPWhat1}
+SAP:
+\bibNewBlock { What is SAP Business Technology Platform? }.
+\bibNewBlock
+\bibUrll{URL}
+  >https://www.sap.com/sea/products/technology-platform/what-is-sap-
+  business-technology-platform.html>.
+\bibNewBlock Accessed: 2025-10-20.
+
+\bibitem{SAP2022}
+SAP:
+\bibNewBlock { Feature Scope Description for SAP Build Process Automation },
+  2022.
+\bibNewBlock
+\bibUrll{URL}
+  >https://help.sap.com/doc/b3c2de746b0645aeb627deda35b896a0/Cloud/en-US/
+  11df00c55daf425bb7a447d63dbd5484.pdf>.
+\bibNewBlock Accessed: 2025-10-20.
+
+\bibitem{Team2021}
+IBM Cloud~Education Team:
+\bibNewBlock { Differentiating Between Intelligent Automation and
+  Hyperautomation }, 2021.
+\bibNewBlock
+\bibUrll{URL} >https://www.ibm.com/think/topics/intelligent-automation-vs-
+  hyperautomation>.
+\bibNewBlock Accessed: 2025-10-08.
+
+\bibitem{Williams2021}
+Paula Williams:
+\bibNewBlock { Five Ways to Use RPA in Finance }, 2021.
+\bibNewBlock
+\bibUrll{URL} >https://www.ibm.com/think/topics/rpa-for-finance>.
+\bibNewBlock Accessed: 2025-10-08.
 
 \end{thebibliography}

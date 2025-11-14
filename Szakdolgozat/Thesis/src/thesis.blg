@@ -1,0 +1,122 @@
+This is BibTeX, Version 0.99d
+Capacity: max_strings=200000, hash_size=200000, hash_prime=170003
+The top-level auxiliary file: thesis.aux
+Reallocating 'name_of_file' (item size: 1) to 8 items.
+The style file: huplain.bst
+Reallocating 'name_of_file' (item size: 1) to 22 items.
+A level-1 auxiliary file: include/titlepage.aux
+Reallocating 'name_of_file' (item size: 1) to 24 items.
+A level-1 auxiliary file: include/declaration.aux
+Reallocating 'name_of_file' (item size: 1) to 21 items.
+A level-1 auxiliary file: content/abstract.aux
+Reallocating 'name_of_file' (item size: 1) to 25 items.
+A level-1 auxiliary file: content/introduction.aux
+Reallocating 'name_of_file' (item size: 1) to 35 items.
+A level-1 auxiliary file: content/theoretical-background.aux
+Reallocating 'name_of_file' (item size: 1) to 28 items.
+A level-1 auxiliary file: content/acknowledgement.aux
+Reallocating 'name_of_file' (item size: 1) to 10 items.
+Reallocating 'name_of_file' (item size: 1) to 23 items.
+A level-1 auxiliary file: content/appendices.aux
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'glb_str_end' (item size: 4) to 20 items.
+Reallocating 'glb_str_ptr' (item size: 4) to 20 items.
+Reallocating 'global_strs' (item size: 1) to 4000000 items.
+Reallocating 'wiz_functions' (item size: 4) to 6000 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Database file #1: bib/mybib.bib
+Warning--entry type for "IBM2024" isn't style-file defined
+--line 113 of file bib/mybib.bib
+Warning--entry type for "Gartner" isn't style-file defined
+--line 129 of file bib/mybib.bib
+Warning--entry type for "Lawton2023" isn't style-file defined
+--line 171 of file bib/mybib.bib
+Warning--entry type for "Kissflow2025" isn't style-file defined
+--line 187 of file bib/mybib.bib
+Warning--entry type for "IBM2021" isn't style-file defined
+--line 203 of file bib/mybib.bib
+Warning--entry type for "SAPWhat" isn't style-file defined
+--line 219 of file bib/mybib.bib
+Warning--entry type for "Williams2021" isn't style-file defined
+--line 233 of file bib/mybib.bib
+Warning--entry type for "Gartner2024" isn't style-file defined
+--line 249 of file bib/mybib.bib
+Warning--entry type for "Anywhere" isn't style-file defined
+--line 265 of file bib/mybib.bib
+Warning--entry type for "Microsoft" isn't style-file defined
+--line 279 of file bib/mybib.bib
+Warning--entry type for "Gartner1" isn't style-file defined
+--line 293 of file bib/mybib.bib
+Warning--entry type for "Team2021" isn't style-file defined
+--line 323 of file bib/mybib.bib
+Warning--entry type for "Kissflow20251" isn't style-file defined
+--line 339 of file bib/mybib.bib
+Warning--entry type for "SAPSAP" isn't style-file defined
+--line 355 of file bib/mybib.bib
+Warning--entry type for "SAPWhat1" isn't style-file defined
+--line 369 of file bib/mybib.bib
+Warning--entry type for "Consulting" isn't style-file defined
+--line 397 of file bib/mybib.bib
+Warning--entry type for "SAPFeature" isn't style-file defined
+--line 411 of file bib/mybib.bib
+Warning--entry type for "Gupta2023" isn't style-file defined
+--line 425 of file bib/mybib.bib
+Warning--entry type for "Gupta20231" isn't style-file defined
+--line 441 of file bib/mybib.bib
+Warning--entry type for "Gupta20232" isn't style-file defined
+--line 457 of file bib/mybib.bib
+Warning--entry type for "SAPWhat3" isn't style-file defined
+--line 473 of file bib/mybib.bib
+Warning--entry type for "SAP2022" isn't style-file defined
+--line 487 of file bib/mybib.bib
+Warning--entry type for "SAPCreate" isn't style-file defined
+--line 503 of file bib/mybib.bib
+Warning--entry type for "SAPWhat4" isn't style-file defined
+--line 517 of file bib/mybib.bib
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+Reallocating 'singl_function' (item size: 4) to 100 items.
+You've used 24 entries,
+            4991 wiz_defined-function locations,
+            1237 strings with 15291 characters,
+and the built_in function-call counts, 117859 in all, are:
+= -- 21520
+> -- 2124
+< -- 0
++ -- 6974
+- -- 3772
+* -- 678
+:= -- 2460
+add.period$ -- 71
+call.type$ -- 24
+change.case$ -- 96
+chr.to.int$ -- 0
+cite$ -- 24
+duplicate$ -- 24089
+empty$ -- 1057
+format.name$ -- 48
+if$ -- 22990
+int.to.chr$ -- 0
+int.to.str$ -- 24
+missing$ -- 0
+newline$ -- 263
+num.names$ -- 48
+pop$ -- 3602
+preamble$ -- 1
+purify$ -- 72
+quote$ -- 22
+skip$ -- 2062
+stack$ -- 0
+substring$ -- 10756
+swap$ -- 14242
+text.length$ -- 0
+text.prefix$ -- 0
+top$ -- 0
+type$ -- 120
+warning$ -- 0
+while$ -- 303
+width$ -- 26
+write$ -- 391
+(There were 24 warnings)
