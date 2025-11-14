@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.14)  14 NOV 2025 19:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.14)  14 NOV 2025 19:07
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -883,7 +883,7 @@ Underfull \hbox (badness 3428) in paragraph at lines 273--281
 \openout2 = `content/appendices.aux'.
 
  (content/appendices.tex
-<figures/TeXstudio.png, id=360, 1002.74625pt x 799.98875pt>
+<figures/TeXstudio.png, id=361, 1002.74625pt x 799.98875pt>
 File: figures/TeXstudio.png Graphic file (type png)
 <use figures/TeXstudio.png>
 Package pdftex.def Info: figures/TeXstudio.png  used on input line 17.
@@ -903,20 +903,20 @@ LaTeX2e <2025-11-01>
 L3 programming layer <2025-10-24>
  ***********
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: E71BC8B4E401DA63D7BFCFEF084A61BF;8487.
+(rerunfilecheck)             Checksum: E2B108F238D3992BD04961B4DF6988A1;8525.
  ) 
 Here is how much of TeX's memory you used:
  17186 strings out of 467871
  282051 string characters out of 5417407
- 716505 words of memory out of 5000000
+ 716512 words of memory out of 5000000
  45677 multiletter control sequences out of 15000+600000
  691700 words of font info for 76 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  80i,12n,82p,1220b,662s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx8.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmex10.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi8.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtl10.pfb>
-Output written on thesis.pdf (26 pages, 533156 bytes).
+Output written on thesis.pdf (26 pages, 533400 bytes).
 PDF statistics:
- 462 PDF objects out of 1000 (max. 8388607)
+ 463 PDF objects out of 1000 (max. 8388607)
  75 named destinations out of 1000 (max. 500000)
  243 words of extra memory for PDF output out of 10000 (max. 10000000)
 
