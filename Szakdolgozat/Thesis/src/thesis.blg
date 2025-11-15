@@ -13,6 +13,12 @@ Reallocating 'name_of_file' (item size: 1) to 25 items.
 A level-1 auxiliary file: content/introduction.aux
 Reallocating 'name_of_file' (item size: 1) to 35 items.
 A level-1 auxiliary file: content/theoretical-background.aux
+Reallocating 'name_of_file' (item size: 1) to 48 items.
+A level-1 auxiliary file: content/invoice-processing-process-analysis.aux
+Reallocating 'name_of_file' (item size: 1) to 41 items.
+A level-1 auxiliary file: content/automated-invoice-processing.aux
+Reallocating 'name_of_file' (item size: 1) to 35 items.
+A level-1 auxiliary file: content/results-and-evaluation.aux
 Reallocating 'name_of_file' (item size: 1) to 28 items.
 A level-1 auxiliary file: content/acknowledgement.aux
 Reallocating 'name_of_file' (item size: 1) to 10 items.
@@ -27,60 +33,60 @@ Reallocating 'wiz_functions' (item size: 4) to 6000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: bib/mybib.bib
 Warning--entry type for "IBM2024" isn't style-file defined
---line 113 of file bib/mybib.bib
+--line 57 of file bib/mybib.bib
 Warning--entry type for "Gartner" isn't style-file defined
---line 129 of file bib/mybib.bib
+--line 65 of file bib/mybib.bib
 Warning--entry type for "Lawton2023" isn't style-file defined
---line 171 of file bib/mybib.bib
+--line 86 of file bib/mybib.bib
 Warning--entry type for "Kissflow2025" isn't style-file defined
---line 187 of file bib/mybib.bib
+--line 94 of file bib/mybib.bib
 Warning--entry type for "IBM2021" isn't style-file defined
---line 203 of file bib/mybib.bib
+--line 102 of file bib/mybib.bib
 Warning--entry type for "SAPWhat" isn't style-file defined
---line 219 of file bib/mybib.bib
+--line 110 of file bib/mybib.bib
 Warning--entry type for "Williams2021" isn't style-file defined
---line 233 of file bib/mybib.bib
+--line 117 of file bib/mybib.bib
 Warning--entry type for "Gartner2024" isn't style-file defined
---line 249 of file bib/mybib.bib
+--line 125 of file bib/mybib.bib
 Warning--entry type for "Anywhere" isn't style-file defined
---line 265 of file bib/mybib.bib
+--line 133 of file bib/mybib.bib
 Warning--entry type for "Microsoft" isn't style-file defined
---line 279 of file bib/mybib.bib
+--line 140 of file bib/mybib.bib
 Warning--entry type for "Gartner1" isn't style-file defined
---line 293 of file bib/mybib.bib
+--line 147 of file bib/mybib.bib
 Warning--entry type for "Team2021" isn't style-file defined
---line 323 of file bib/mybib.bib
+--line 162 of file bib/mybib.bib
 Warning--entry type for "Kissflow20251" isn't style-file defined
---line 339 of file bib/mybib.bib
+--line 170 of file bib/mybib.bib
 Warning--entry type for "SAPSAP" isn't style-file defined
---line 355 of file bib/mybib.bib
+--line 178 of file bib/mybib.bib
 Warning--entry type for "SAPWhat1" isn't style-file defined
---line 369 of file bib/mybib.bib
+--line 185 of file bib/mybib.bib
 Warning--entry type for "Consulting" isn't style-file defined
---line 397 of file bib/mybib.bib
+--line 199 of file bib/mybib.bib
 Warning--entry type for "SAPFeature" isn't style-file defined
---line 411 of file bib/mybib.bib
+--line 206 of file bib/mybib.bib
 Warning--entry type for "Gupta2023" isn't style-file defined
---line 425 of file bib/mybib.bib
+--line 213 of file bib/mybib.bib
 Warning--entry type for "Gupta20231" isn't style-file defined
---line 441 of file bib/mybib.bib
+--line 221 of file bib/mybib.bib
 Warning--entry type for "Gupta20232" isn't style-file defined
---line 457 of file bib/mybib.bib
+--line 229 of file bib/mybib.bib
 Warning--entry type for "SAPWhat3" isn't style-file defined
---line 473 of file bib/mybib.bib
+--line 237 of file bib/mybib.bib
 Warning--entry type for "SAP2022" isn't style-file defined
---line 487 of file bib/mybib.bib
+--line 244 of file bib/mybib.bib
 Warning--entry type for "SAPCreate" isn't style-file defined
---line 503 of file bib/mybib.bib
+--line 252 of file bib/mybib.bib
 Warning--entry type for "SAPWhat4" isn't style-file defined
---line 517 of file bib/mybib.bib
+--line 259 of file bib/mybib.bib
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 You've used 24 entries,
             4991 wiz_defined-function locations,
-            1237 strings with 15291 characters,
+            1240 strings with 15412 characters,
 and the built_in function-call counts, 117859 in all, are:
 = -- 21520
 > -- 2124

@@ -1,0 +1,50 @@
+\chapter{A Prototípus Tesztelése és Eredmények Értékelése}
+\label{chap:ertekeles}
+
+\section{Bevezetés: A Tesztelés Módszertana}
+\label{sec:eval_intro}
+% A tesztelés célja és módszerei.
+% Milyen környezetben történt a tesztelés (pl. BTP Trial).
+
+\section{Tesztelési Esetek (Test Cases) Bemutatása}
+\label{sec:eval_test_cases}
+% Különböző teszt forgatókönyvek (pl. sikeres, sikertelen, emberi beavatkozást igénylő).
+
+\subsection{1. Teszteset: Sikeres "Touchless" Feldolgozás}
+\label{ssec:eval_test_touchless}
+% Egy tökéletes számla feldolgozása magas konfidencia pontszámmal, automatikus jóváhagyással és parkolással.
+
+\subsection{2. Teszteset: Emberi Beavatkozás (Alacsony Konfidencia)}
+\label{ssec:eval_test_low_confidence}
+% Egy rosszul szkennelt számla, ahol a DOX alacsony megbízhatósági pontszámot ad.
+% A folyamat megáll, és a "My Inbox"-ba küld egy javító feladatot.
+
+\subsection{3. Teszteset: Elutasítási Folyamat}
+\label{ssec:eval_test_rejection}
+% A jóváhagyó menedzser az űrlapon "Elutasítva" gombra kattint.
+% A folyamat kezelése, értesítés küldése.
+
+\section{Eredmények Összehasonlítása az "As-Is" Folyamattal}
+\label{sec:eval_comparison}
+% A manuális (\ref{ssec:valos_vilag}) vs. automatizált folyamat (\ref{chap:megvalositas}) összevetése.
+
+\subsection{Feldolgozási Idő (Átfutási Idő) Csökkenése}
+\label{ssec:eval_time_reduction}
+% Pl. Manuális: 14 nap -> Automatikus: 1 nap.
+
+\subsection{Hibakockázatok Csökkenése}
+\label{ssec:eval_error_reduction}
+% Az adatrögzítési hibák, duplikált számlák kiküszöbölése.
+
+\subsection{Átláthatóság Növekedése}
+\label{ssec:eval_transparency}
+% Az e-mailes "fekete lyuk" felszámolása.
+% A Work Zone és a BPA Monitor felületének előnyei.
+
+\section{Továbbfejlesztési Lehetőségek}
+\label{sec:eval_future_work}
+% Jövőbeli fejlesztési irányok (pl. Process Mining integráció, teljes könyvelés automatizálása).
+
+\section{Fejezet Összegzése}
+\label{sec:eval_summary}
+% A fejezet összefoglalása, átvezetés a Konklúzió fejezetre (\ref{chap:osszefoglalas}).

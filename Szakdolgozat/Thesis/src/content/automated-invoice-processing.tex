@@ -1,0 +1,39 @@
+\chapter{Automatizált Számlafeldolgozási Prototípus Tervezése és Megvalósítása}
+\label{chap:megvalositas}
+
+\section{Bevezetés: A Prototípus Céljai és Keretrendszere}
+\label{sec:prototype_intro}
+% Ebben a fejezetben kerül bemutatásra a ...
+% Hivatkozás a korábbi fejezetekben (pl. \ref{sec:problemfeltaras_hibai_koltsegei}) azonosított problémákra.
+
+\section{A Prototípus Architektúrája és Komponensei}
+\label{sec:prototype_architecture}
+% Az architektúra felépítése, hogyan kapcsolódik a BPA, a DOX, a Work Zone és az SAP.
+
+\subsection{Adatkinyerés Konfigurálása (Document Information Extraction)}
+\label{ssec:prototype_dox}
+% A DOX szolgáltatás beállítása, a séma (schema) és a sablon (template) létrehozása.
+
+\subsection{A Jóváhagyási Folyamat Tervezése (Process Builder)}
+\label{ssec:prototype_process_builder}
+% A BPMN 2.0 folyamatábra felépítése a Process Builderben.
+% Lépések: Trigger, DOX hívás, Döntési tábla hívás, Emberi feladat (Forms), Bot hívás.
+
+\subsection{Üzleti Szabályok Definiálása (Decisions)}
+\label{ssec:prototype_decisions}
+% A jóváhagyási mátrix (döntési tábla) létrehozása.
+% Pl. Összeghatár alapján ki a jóváhagyó.
+
+\subsection{Felhasználói Felületek Létrehozása (Forms és Work Zone)}
+\label{ssec:prototype_ui}
+% A jóváhagyási űrlap (Form) megtervezése.
+% Az űrlap integrálása az SAP Build Work Zone "My Inbox" (Task Center) felületébe.
+
+\subsection{Integráció az SAP Rendszerrel (RPA Bot)}
+\label{ssec:prototype_rpa}
+% Az "unattended" (felügyelet nélküli) bot felépítése.
+% A bot lépései: Bejelentkezés SAP-ba, FB60/FV60 tranzakció futtatása, adatok átadása, számla parkolása.
+
+\section{Fejezet Összegzése}
+\label{sec:prototype_summary}
+% A fejezet összefoglalása, átvezetés az eredmények értékelésére.s
