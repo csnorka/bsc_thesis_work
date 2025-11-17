@@ -93,206 +93,333 @@
 \def\bibInSelf#1{In u\H{o}: }
 \csname bibOverride\endcsname
 
-\bibitem{Anywhere}
-Automation Anywhere:
-\bibNewBlock { What is Attended vs Unattended Robotic Process Automation (RPA)?
-  }.
+\bibitem{Resolvepay-17-Statistics-Showing}
+17 statistics showing the hidden cost of invoice errors and rework, 2025.
 \bibNewBlock
 \bibUrll{URL}
-  >https://www.automationanywhere.com/rpa/attended-vs-unattended-rpa>.
-\bibNewBlock Accessed: 2025-10-08.
+  >https://resolvepay.com/blog/17-statistics-showing-the-hidden-cost-of-
+  invoice-errors-and-rework>.
 
-\bibitem{Consulting}
-NAV~IT Consulting:
-\bibNewBlock { Transform Business with SAP Business Technology Platform (SAP
-  BTP) }.
+\bibitem{Gartner-RPA-in-Finance}
+3 tactics to demonstrate rpa’s impact in finance, 2024.
+\bibNewBlock
+\bibUrll{URL} >https://www.gartner.com/en/finance/trends/finance-rpa>.
+
+\bibitem{Parseur-AI-Invoice-Processing}
+Ai invoice processing benchmarks 2025 - accuracy, speed, and cost comparison,
+  2025.
+\bibNewBlock
+\bibUrll{URL} >https://parseur.com/blog/ai-invoice-processing-benchmarks>.
+
+\bibitem{Kolleno-PDFs-to-EInvoices}
+Irina Anichshuk:
+\bibNewBlock How to move from pdfs to true e-invoices, 2025.
 \bibNewBlock
 \bibUrll{URL}
-  >https://nav-it.com/transform-business-with-sap-business-technology-
-  platform-sap-btp>.
-\bibNewBlock Accessed: 2025-10-20.
+  >https://www.kolleno.com/how-to-move-from-pdfs-to-true-e-invoices>.
 
-\bibitem{Gartner}
-Gartner:
-\bibNewBlock { Business Process Management (BPM) }.
+\bibitem{Microsoft-Attended-vs-Unattended}
+Attended and unattended scenarios.
+\bibNewBlock
+\bibUrll{URL}
+  >https://learn.microsoft.com/en-us/power-automate/guidance/planning/
+  attended-unattended>.
+
+\bibitem{Ascendsoftware-Cost-of-Manual}
+Alison Baran:
+\bibNewBlock The hidden cost of manual: What five extra minutes per invoice is
+  really costing your ap team, 2025.
+\bibNewBlock
+\bibUrll{URL}
+  >https://www.ascendsoftware.com/blog/the-hidden-cost-of-manual-what-
+  five-extra-minutes-per-invoice-is-really-costing-your-ap-team>.
+
+\bibitem{Garner-BPM}
+Business process management (bpm).
 \bibNewBlock
 \bibUrll{URL}
   >https://www.gartner.com/en/information-technology/glossary/business-
   process-management-bpm>.
 
-\bibitem{Gartner1}
-Gartner:
-\bibNewBlock { Hyperautomation }.
-\bibNewBlock
-\bibUrll{URL} >https://www.gartner.com/en/information-technology/glossary/
-  hyperautomation>.
-\bibNewBlock Accessed: 2025-10-08.
-
-\bibitem{Gartner2024}
-Gartner:
-\bibNewBlock { 3 Tactics to Demonstrate RPA’s Impact in Finance }, 2024.
-\bibNewBlock
-\bibUrll{URL} >https://www.gartner.com/en/finance/trends/finance-rpa>.
-\bibNewBlock Accessed: 2025-10-09.
-
-\bibitem{Gupta20232}
-Raja Gupta:
-\bibNewBlock { Demystifying SAP Build for Beginners }, 2023.
-\bibNewBlock
-\bibUrll{URL}
-  >https://community.sap.com/t5/technology-blog-posts-by-sap/demystifying-
-  sap-build-for-beginners/ba-p/13553828>.
-\bibNewBlock Accessed: 2025-10-20.
-
-\bibitem{Gupta20231}
-Raja Gupta:
-\bibNewBlock { Explaining SAP Business Technology Platform (SAP BTP) to a
-  Beginner }, 2023.
-\bibNewBlock
-\bibUrll{URL}
-  >https://community.sap.com/t5/technology-blog-posts-by-sap/explaining-
-  sap-business-technology-platform-sap-btp-to-a-beginner-2025/ba-p/ 13557182>.
-\bibNewBlock Accessed: 2025-10-20.
-
-\bibitem{Gupta2023}
-Raja Gupta:
-\bibNewBlock { Important Cloud Terminologies for Beginners }, 2023.
-\bibNewBlock
-\bibUrll{URL}
-  >https://medium.com/@raja.gupta20/important-cloud-terminologies-for-
-  beginners-50e474bbaf22>.
-\bibNewBlock Accessed: 2025-10-20.
-
-\bibitem{IBM2021}
-IBM:
-\bibNewBlock { What is Robotic Process Automation (RPA)? }, 2021.
-\bibNewBlock
-\bibUrll{URL} >https://www.ibm.com/think/topics/rpa>.
-\bibNewBlock Accessed: 2025-10-08.
-
-\bibitem{IBM2024}
-IBM:
-\bibNewBlock { What is business process management (BPM)? }, 2024.
-\bibNewBlock
-\bibUrll{URL} >https://www.ibm.com/think/topics/business-process-management>.
-\bibNewBlock Accessed: 2025-10-08.
-
-\bibitem{Kissflow20251}
-Kissflow:
-\bibNewBlock { Hyperautomation: 101 Ultimate Guide for 2025-26 }, 2025.
-\bibNewBlock
-\bibUrll{URL} >https://kissflow.com/workflow/hyperautomation-complete-guide>.
-\bibNewBlock Accessed: 2025-10-08.
-
-\bibitem{Kissflow2025}
-Kissflow:
-\bibNewBlock { RPA vs. BPM: What's the Difference? }, 2025.
-\bibNewBlock
-\bibUrll{URL}
-  >https://kissflow.com/workflow/bpm/rpa-vs-bpm-whats-the-difference>.
-\bibNewBlock Accessed: 2025-10-08.
-
-\bibitem{Lawton2023}
-George Lawton:
-\bibNewBlock { RPA vs. BPM: How are they different? }, 2023.
-\bibNewBlock
-\bibUrll{URL}
-  >https://www.techtarget.com/searchcio/tip/RPA-vs-BPM-How-are-they-
-  different>.
-\bibNewBlock Accessed: 2025-10-08.
-
-\bibitem{Microsoft}
-Microsoft:
-\bibNewBlock { Attended and unattended scenarios }.
-\bibNewBlock
-\bibUrll{URL}
-  >https://learn.microsoft.com/en-us/power-automate/guidance/planning/
-  attended-unattended>.
-\bibNewBlock Accessed: 2025-10-08.
-
-\bibitem{SAPCreate}
-SAP:
-\bibNewBlock { Create low-code digital workspaces }.
+\bibitem{SAP-Work-Zone}
+Create low-code digital workspaces.
 \bibNewBlock
 \bibUrll{URL} >https://www.sap.com/products/technology-platform/workzone.html>.
-\bibNewBlock Accessed: 2025-10-20.
 
-\bibitem{SAPFeature}
-SAP:
-\bibNewBlock { Feature Scope Description for SAP BTP, Cloud Foundry, ABAP, and
-  Kyma Environments }.
+\bibitem{SAP-Non-PO-Invoices}
+Creating non-po invoices.
+\bibNewBlock
+\bibUrll{URL}
+  >https://learning.sap.com/learning-journeys/introducing-sap-ariba-
+  procurement-functionality/creating-non-po-invoices>.
+
+\bibitem{Deloitte-Finance-2025}
+Crunch time series for cfos: Finance 2025 revisited, 2025.
+\bibNewBlock
+\bibUrll{URL} >https://www.deloitte.com/us/en/what-we-do/capabilities/finance-
+  transformation/articles/future-finance-trends-2025.html>.
+
+\bibitem{SAP-ERS}
+Evaluated receipt settlement (ers), 2025.
+\bibNewBlock
+\bibUrll{URL} >https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/
+  f340785101c548c9beeda9284efd18a0/67eec353b677b44ce10000000a174cb4.html>.
+
+\bibitem{SAP-BTP-Features}
+Feature scope description for sap btp, cloud foundry, abap, and kyma
+  environments, 2025.
 \bibNewBlock
 \bibUrll{URL}
   >https://help.sap.com/doc/5e8107bf49684962b897217040398007/Cloud/en-US/
   SAP_BTP_FSD.pdf>.
-\bibNewBlock Accessed: 2025-10-20.
 
-\bibitem{SAPSAP}
-SAP:
-\bibNewBlock { SAP Business Technology Platform }.
-\bibNewBlock
-\bibUrll{URL} >https://www.sap.com/products/technology-platform.html>.
-\bibNewBlock Accessed: 2025-10-20.
-
-\bibitem{SAPWhat}
-SAP:
-\bibNewBlock { What is robotic process automation (RPA)? }.
-\bibNewBlock
-\bibUrll{URL}
-  >https://www.sap.com/products/technology-platform/process-automation/
-  what-is-rpa.html>.
-\bibNewBlock Accessed: 2025-10-08.
-
-\bibitem{SAPWhat3}
-SAP:
-\bibNewBlock { What is SAP Build? }.
-\bibNewBlock
-\bibUrll{URL} >https://help.sap.com/docs/build/sap-build-core/what-is-sap-
-  build#loio7e50fa5e724c49d1a4352848275fd3cc__section_build_code>.
-\bibNewBlock Accessed: 2025-10-20.
-
-\bibitem{SAPWhat4}
-SAP:
-\bibNewBlock { What Is SAP Build Work Zone, standard edition? }.
-\bibNewBlock
-\bibUrll{URL}
-  >https://help.sap.com/docs/build-work-zone-standard-edition/sap-build-
-  work-zone-standard-edition/what-is-sap-build-work-zone-standard- edition>.
-\bibNewBlock Accessed: 2025-10-20.
-
-\bibitem{SAPWhat1}
-SAP:
-\bibNewBlock { What is SAP Business Technology Platform? }.
-\bibNewBlock
-\bibUrll{URL}
-  >https://www.sap.com/sea/products/technology-platform/what-is-sap-
-  business-technology-platform.html>.
-\bibNewBlock Accessed: 2025-10-20.
-
-\bibitem{SAP2022}
-SAP:
-\bibNewBlock { Feature Scope Description for SAP Build Process Automation },
-  2022.
+\bibitem{SAP-BPA-Features}
+Feature scope description for sap build process automation, 2022.
 \bibNewBlock
 \bibUrll{URL}
   >https://help.sap.com/doc/b3c2de746b0645aeb627deda35b896a0/Cloud/en-US/
   11df00c55daf425bb7a447d63dbd5484.pdf>.
-\bibNewBlock Accessed: 2025-10-20.
 
-\bibitem{Team2021}
-IBM Cloud~Education Team:
-\bibNewBlock { Differentiating Between Intelligent Automation and
-  Hyperautomation }, 2021.
+\bibitem{Edenredpay-5-Problems}
+Cathy Ferro:
+\bibNewBlock 5 problems with approving invoices via e-mail, 2020.
+\bibNewBlock
+\bibUrll{URL}
+  >https://edenredpay.com/5-problems-approving-invoices-via-e-mail>.
+
+\bibitem{Gartner-Finance-2030}
+Finance 2030: 8 forces shaping the future of finance, 2025.
+\bibNewBlock
+\bibUrll{URL}
+  >https://www.gartner.com/en/finance/insights/future-of-finance-2030>.
+
+\bibitem{SAP-Tolerance-Keys-Part1}
+{Former Member}:
+\bibNewBlock Invoice tolerance keys - an insight - part 1, 2014.
+\bibNewBlock
+\bibUrll{URL}
+  >https://community.sap.com/t5/enterprise-resource-planning-blog-posts-
+  by-members/invoice-tolerance-keys-an-insight-part-1/bc-p/13085899>.
+
+\bibitem{SAP-Tolerance-Keys-Part2}
+{Former Member}:
+\bibNewBlock Invoice tolerance keys - an insight - part 2, 2015.
+\bibNewBlock
+\bibUrll{URL}
+  >https://community.sap.com/t5/enterprise-resource-planning-blog-posts-
+  by-members/invoice-tolerance-keys-an-insight-part-2/ba-p/13195017>.
+
+\bibitem{PwC-Future-of-Finance}
+Future of finance: How you can lead with insight, not just oversight, 2025.
+\bibNewBlock
+\bibUrll{URL}
+  >https://www.pwc.com/us/en/services/consulting/business-transformation/
+  library/future-of-finance.html>.
+
+\bibitem{SAP-Demystifying-SAP-Build}
+Raja Gupta:
+\bibNewBlock Demystifying sap build for beginners, 2023.
+\bibNewBlock
+\bibUrll{URL}
+  >https://community.sap.com/t5/technology-blog-posts-by-sap/demystifying-
+  sap-build-for-beginners/ba-p/13553828>.
+
+\bibitem{SAP-BTP-for-Beginner}
+Raja Gupta:
+\bibNewBlock Explaining sap business technology platform (sap btp) to a
+  beginner, 2023.
+\bibNewBlock
+\bibUrll{URL}
+  >https://community.sap.com/t5/technology-blog-posts-by-sap/explaining-
+  sap-business-technology-platform-sap-btp-to-a-beginner-2025/ba-p/ 13557182>.
+
+\bibitem{Medium-Cloud-Terminologies}
+Raja Gupta:
+\bibNewBlock Important cloud terminologies for beginners, 2023.
+\bibNewBlock
+\bibUrll{URL}
+  >https://medium.com/@raja.gupta20/important-cloud-terminologies-for-
+  beginners-50e474bbaf22>.
+
+\bibitem{Gartner-Hyperautomation}
+Hyperautomation.
+\bibNewBlock
+\bibUrll{URL} >httpsNext: //www.gartner.com/en/information-technology/glossary/
+  hyperautomation>.
+
+\bibitem{Kissflow-Hyperautomation}
+Hyperautomation: 101 ultimate guide for 2025-26, 2025.
+\bibNewBlock
+\bibUrll{URL} >https://kissflow.com/workflow/hyperautomation-complete-guide>.
+
+\bibitem{IBM-IRPA-vs-Hyperautomation}
+{IBM Cloud Education Team}:
+\bibNewBlock Differentiating between intelligent automation and
+  hyperautomation, 2021.
 \bibNewBlock
 \bibUrll{URL} >https://www.ibm.com/think/topics/intelligent-automation-vs-
   hyperautomation>.
-\bibNewBlock Accessed: 2025-10-08.
 
-\bibitem{Williams2021}
+\bibitem{SAP-LIV}
+Lingeswar Karrennagari:
+\bibNewBlock Logistics invoice verification, 2024.
+\bibNewBlock
+\bibUrll{URL}
+  >https://community.sap.com/t5/supply-chain-management-blog-posts-by-
+  members/logistics-invoice-verification/ba-p/13740502>.
+
+\bibitem{TechTarget-RPAvsBPM}
+George Lawton:
+\bibNewBlock Rpa vs. bpm: How are they different?, 2023.
+\bibNewBlock
+\bibUrll{URL}
+  >https://www.techtarget.com/searchcio/tip/RPA-vs-BPM-How-are-they-
+  different>.
+
+\bibitem{SAP-Holding-and-Parking}
+Managing invoice holding and parking.
+\bibNewBlock
+\bibUrll{URL}
+  >https://learning.sap.com/learning-journeys/describing-the-payables-
+  management-process-in-sap-s-4hana/managing-invoice-holding-and-
+  parking_a6556206-6ef1-48bb-bcb8-bdb5d742f88e>.
+
+\bibitem{SAP-Managing-Invoices}
+Managing invoices.
+\bibNewBlock
+\bibUrll{URL} >https://learning.sap.com/courses/exploring-end-to-end-business-
+  processes-in-sap-business-suite/managing-invoices_fe0e5798-20aa-4b6e-
+  aa82-fe7279f48265>.
+
+\bibitem{JKE-Supply-Chain-Business-Process}
+Sanjib~Kumar Mishra\bibAnd 0Sasmita Mishra\bibAnd 2Rojalina Priyadarshini:
+\bibNewBlock Supply chain business process re-engineering: Automate “logistic
+  invoice verification” payment block process—a case study on sap r-payment
+  block, 2024.
+\bibNewBlock
+\bibUrll{URL} >file:///C:/Users/csabudan/Downloads/s13132-024-02583-8.pdf>.
+
+\bibitem{Deloitte-Controlling-Change}
+Justin Morel~de Westgaver\bibAnd 0Michael Cravatte\bibAnd 2Fethi Sadouki:
+\bibNewBlock From controlling to strategic planning: How to maximize your
+  finance function, 2025.
+\bibNewBlock
+\bibUrll{URL}
+  >https://www.deloitte.com/lu/en/our-thinking/future-of-advice/from-
+  controlling-to-strategic-planning-how-to-maximize-your-finance-
+  function.html>.
+
+\bibitem{RAMP-Invoice-Verification}
+Ashley Nguyen:
+\bibNewBlock What is invoice verification? types, process, and checklist, 2025.
+\bibNewBlock
+\bibUrll{URL} >https://ramp.com/blog/invoice-verification>.
+
+\bibitem{SAP-Parking}
+Parking: Complete invoices for posting (mm-iv-liv), 2025.
+\bibNewBlock
+\bibUrll{URL} >https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/
+  b54d76b535b74e4aaa852fe31a7974ee/94c6b65334e6b54ce10000000a174cb4.html>.
+
+\bibitem{McKinsey-Future-of-Finance}
+Frank Plaschke\bibAnd 0Ishaan Seth\bibAnd 2Rob Whiteman:
+\bibNewBlock Bots, algorithms, and the future of the finance function, 2018.
+\bibNewBlock
+\bibUrll{URL}
+  >https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/
+  our-insights/bots-algorithms-and-the-future-of-the-finance-function>.
+
+\bibitem{SAP-EDI}
+Processing edi invoices, 2025.
+\bibNewBlock
+\bibUrll{URL} >https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/
+  af9ef57f504840d2b81be8667206d485/366fb6531de6b64ce10000000a174cb4.html>.
+
+\bibitem{Kissflow-RPAvsBPM}
+Rpa vs. bpm: What's the difference?, 2025.
+\bibNewBlock
+\bibUrll{URL}
+  >https://kissflow.com/workflow/bpm/rpa-vs-bpm-whats-the-difference>.
+
+\bibitem{SAP-BTP-Portfolio}
+Sap business technology platform.
+\bibNewBlock
+\bibUrll{URL} >https://www.sap.com/products/technology-platform.html>.
+
+\bibitem{XSUITE-Parking-in-SAP}
+Jan Schulze:
+\bibNewBlock Invoice processing in sap: What does parking actually do?, 2019.
+\bibNewBlock
+\bibUrll{URL} >https://www.xsuite.com/en/blog/invoice-parking-in-sap>.
+
+\bibitem{Ardent-ePayables-Report}
+The state of epayables 2025 report, 2025.
+\bibNewBlock
+\bibUrll{URL} >https://tradeshift.com/state-of-epayables-2025-report/>.
+
+\bibitem{Caso-Hidden-Costs-of-Manual}
+Richard Tamaro:
+\bibNewBlock The hidden costs of manual accounts payable and how automation
+  solves them, 2025.
+\bibNewBlock
+\bibUrll{URL}
+  >https://caso.com/2025/03/the-hidden-costs-of-manual-accounts-payable-
+  and-how-automation-solves-them>.
+
+\bibitem{NAVIT-BTP}
+Transform business with sap business technology platform (sap btp), 2024.
+\bibNewBlock
+\bibUrll{URL}
+  >https://nav-it.com/transform-business-with-sap-business-technology-
+  platform-sap-btp>.
+
+\bibitem{Automation-Attended-vs-Unattended}
+What is attended vs unattended robotic process automation (rpa)?
+\bibNewBlock
+\bibUrll{URL}
+  >https://www.automationanywhere.com/rpa/attended-vs-unattended-rpa>.
+
+\bibitem{IBM-BPM}
+What is business process management (bpm)?, 2024.
+\bibNewBlock
+\bibUrll{URL} >https://www.ibm.com/think/topics/business-process-management>.
+
+\bibitem{IBM-RPA}
+What is robotic process automation (rpa)?, 2021.
+\bibNewBlock
+\bibUrll{URL} >https://www.ibm.com/think/topics/rpa>.
+
+\bibitem{SAP-RPA}
+What is robotic process automation (rpa)?
+\bibNewBlock
+\bibUrll{URL}
+  >https://www.sap.com/products/technology-platform/process-automation/
+  what-is-rpa.html>.
+
+\bibitem{SAP-Build}
+What is sap build?
+\bibNewBlock
+\bibUrll{URL} >https://help.sap.com/docs/build/sap-build-core/what-is-sap-
+  build#loio7e50fa5e724c49d1a4352848275fd3cc__section_build_code>.
+
+\bibitem{SAP-WZ-Standard}
+What is sap build work zone, standard edition?
+\bibNewBlock
+\bibUrll{URL}
+  >https://help.sap.com/docs/build-work-zone-standard-edition/sap-build-
+  work-zone-standard-edition/what-is-sap-build-work-zone-standard- edition>.
+
+\bibitem{SAP-BTP-Definition}
+What is sap business technology platform?
+\bibNewBlock
+\bibUrll{URL}
+  >https://www.sap.com/sea/products/technology-platform/what-is-sap-
+  business-technology-platform.html>.
+
+\bibitem{IBM-RPA-in-Finance}
 Paula Williams:
-\bibNewBlock { Five Ways to Use RPA in Finance }, 2021.
+\bibNewBlock Five ways to use rpa in finance, 2021.
 \bibNewBlock
 \bibUrll{URL} >https://www.ibm.com/think/topics/rpa-for-finance>.
-\bibNewBlock Accessed: 2025-10-08.
 
 \end{thebibliography}

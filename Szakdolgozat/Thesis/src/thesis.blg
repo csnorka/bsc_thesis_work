@@ -32,97 +32,175 @@ Reallocating 'global_strs' (item size: 1) to 4000000 items.
 Reallocating 'wiz_functions' (item size: 4) to 6000 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Database file #1: bib/mybib.bib
-Warning--entry type for "IBM2024" isn't style-file defined
---line 57 of file bib/mybib.bib
-Warning--entry type for "Gartner" isn't style-file defined
---line 65 of file bib/mybib.bib
-Warning--entry type for "Lawton2023" isn't style-file defined
---line 86 of file bib/mybib.bib
-Warning--entry type for "Kissflow2025" isn't style-file defined
---line 94 of file bib/mybib.bib
-Warning--entry type for "IBM2021" isn't style-file defined
---line 102 of file bib/mybib.bib
-Warning--entry type for "SAPWhat" isn't style-file defined
---line 110 of file bib/mybib.bib
-Warning--entry type for "Williams2021" isn't style-file defined
---line 117 of file bib/mybib.bib
-Warning--entry type for "Gartner2024" isn't style-file defined
---line 125 of file bib/mybib.bib
-Warning--entry type for "Anywhere" isn't style-file defined
---line 133 of file bib/mybib.bib
-Warning--entry type for "Microsoft" isn't style-file defined
---line 140 of file bib/mybib.bib
-Warning--entry type for "Gartner1" isn't style-file defined
+Warning--entry type for "Deloitte-Finance-2025" isn't style-file defined
+--line 1 of file bib/mybib.bib
+Warning--entry type for "Deloitte-Controlling-Change" isn't style-file defined
+--line 11 of file bib/mybib.bib
+Warning--entry type for "PwC-Future-of-Finance" isn't style-file defined
+--line 31 of file bib/mybib.bib
+Warning--entry type for "Gartner-Finance-2030" isn't style-file defined
+--line 41 of file bib/mybib.bib
+Warning--entry type for "McKinsey-Future-of-Finance" isn't style-file defined
+--line 51 of file bib/mybib.bib
+Warning--entry type for "Ardent-ePayables-Report" isn't style-file defined
+--line 61 of file bib/mybib.bib
+Warning--entry type for "IBM-BPM" isn't style-file defined
+--line 71 of file bib/mybib.bib
+Warning--entry type for "Garner-BPM" isn't style-file defined
+--line 81 of file bib/mybib.bib
+Warning--entry type for "TechTarget-RPAvsBPM" isn't style-file defined
+--line 108 of file bib/mybib.bib
+Warning--entry type for "Kissflow-RPAvsBPM" isn't style-file defined
+--line 118 of file bib/mybib.bib
+Warning--entry type for "IBM-RPA" isn't style-file defined
+--line 128 of file bib/mybib.bib
+Warning--entry type for "SAP-RPA" isn't style-file defined
+--line 138 of file bib/mybib.bib
+Warning--entry type for "IBM-RPA-in-Finance" isn't style-file defined
 --line 147 of file bib/mybib.bib
-Warning--entry type for "Team2021" isn't style-file defined
---line 162 of file bib/mybib.bib
-Warning--entry type for "Kissflow20251" isn't style-file defined
---line 170 of file bib/mybib.bib
-Warning--entry type for "SAPSAP" isn't style-file defined
---line 178 of file bib/mybib.bib
-Warning--entry type for "SAPWhat1" isn't style-file defined
+Warning--entry type for "Gartner-RPA-in-Finance" isn't style-file defined
+--line 157 of file bib/mybib.bib
+Warning--entry type for "Automation-Attended-vs-Unattended" isn't style-file defined
+--line 167 of file bib/mybib.bib
+Warning--entry type for "Microsoft-Attended-vs-Unattended" isn't style-file defined
+--line 176 of file bib/mybib.bib
+Warning--entry type for "Gartner-Hyperautomation" isn't style-file defined
 --line 185 of file bib/mybib.bib
-Warning--entry type for "Consulting" isn't style-file defined
---line 199 of file bib/mybib.bib
-Warning--entry type for "SAPFeature" isn't style-file defined
---line 206 of file bib/mybib.bib
-Warning--entry type for "Gupta2023" isn't style-file defined
---line 213 of file bib/mybib.bib
-Warning--entry type for "Gupta20231" isn't style-file defined
---line 221 of file bib/mybib.bib
-Warning--entry type for "Gupta20232" isn't style-file defined
---line 229 of file bib/mybib.bib
-Warning--entry type for "SAPWhat3" isn't style-file defined
---line 237 of file bib/mybib.bib
-Warning--entry type for "SAP2022" isn't style-file defined
---line 244 of file bib/mybib.bib
-Warning--entry type for "SAPCreate" isn't style-file defined
---line 252 of file bib/mybib.bib
-Warning--entry type for "SAPWhat4" isn't style-file defined
---line 259 of file bib/mybib.bib
+Warning--entry type for "IBM-IRPA-vs-Hyperautomation" isn't style-file defined
+--line 204 of file bib/mybib.bib
+Warning--entry type for "Kissflow-Hyperautomation" isn't style-file defined
+--line 214 of file bib/mybib.bib
+Warning--entry type for "SAP-BTP-Portfolio" isn't style-file defined
+--line 224 of file bib/mybib.bib
+Warning--entry type for "SAP-BTP-Definition" isn't style-file defined
+--line 233 of file bib/mybib.bib
+Warning--entry type for "NAVIT-BTP" isn't style-file defined
+--line 251 of file bib/mybib.bib
+Warning--entry type for "SAP-BTP-Features" isn't style-file defined
+--line 261 of file bib/mybib.bib
+Warning--entry type for "Medium-Cloud-Terminologies" isn't style-file defined
+--line 271 of file bib/mybib.bib
+Warning--entry type for "SAP-BTP-for-Beginner" isn't style-file defined
+--line 281 of file bib/mybib.bib
+Warning--entry type for "SAP-Demystifying-SAP-Build" isn't style-file defined
+--line 291 of file bib/mybib.bib
+Warning--entry type for "SAP-Build" isn't style-file defined
+--line 301 of file bib/mybib.bib
+Warning--entry type for "SAP-BPA-Features" isn't style-file defined
+--line 310 of file bib/mybib.bib
+Warning--entry type for "SAP-Work-Zone" isn't style-file defined
+--line 320 of file bib/mybib.bib
+Warning--entry type for "SAP-WZ-Standard" isn't style-file defined
+--line 329 of file bib/mybib.bib
+Warning--entry type for "SAP-LIV" isn't style-file defined
+--line 338 of file bib/mybib.bib
+Warning--entry type for "SAP-Managing-Invoices" isn't style-file defined
+--line 348 of file bib/mybib.bib
+Warning--entry type for "SAP-Non-PO-Invoices" isn't style-file defined
+--line 357 of file bib/mybib.bib
+Warning--entry type for "SAP-Tolerance-Keys-Part1" isn't style-file defined
+--line 366 of file bib/mybib.bib
+Warning--entry type for "SAP-Tolerance-Keys-Part2" isn't style-file defined
+--line 376 of file bib/mybib.bib
+Warning--entry type for "SAP-ERS" isn't style-file defined
+--line 386 of file bib/mybib.bib
+Warning--entry type for "SAP-EDI" isn't style-file defined
+--line 396 of file bib/mybib.bib
+Warning--entry type for "SAP-Parking" isn't style-file defined
+--line 406 of file bib/mybib.bib
+Warning--entry type for "SAP-Holding-and-Parking" isn't style-file defined
+--line 416 of file bib/mybib.bib
+Warning--entry type for "XSUITE-Parking-in-SAP" isn't style-file defined
+--line 425 of file bib/mybib.bib
+Warning--entry type for "JKE-Supply-Chain-Business-Process" isn't style-file defined
+--line 435 of file bib/mybib.bib
+Warning--entry type for "RAMP-Invoice-Verification" isn't style-file defined
+--line 445 of file bib/mybib.bib
+Warning--entry type for "Parseur-AI-Invoice-Processing" isn't style-file defined
+--line 455 of file bib/mybib.bib
+Warning--entry type for "Kolleno-PDFs-to-EInvoices" isn't style-file defined
+--line 465 of file bib/mybib.bib
+Warning--entry type for "Ascendsoftware-Cost-of-Manual" isn't style-file defined
+--line 475 of file bib/mybib.bib
+Warning--entry type for "Resolvepay-17-Statistics-Showing" isn't style-file defined
+--line 495 of file bib/mybib.bib
+Warning--entry type for "Edenredpay-5-Problems" isn't style-file defined
+--line 505 of file bib/mybib.bib
+Warning--entry type for "Caso-Hidden-Costs-of-Manual" isn't style-file defined
+--line 515 of file bib/mybib.bib
+Warning--to sort, need author/key/name in PwC-Future-of-Finance
+Warning--to sort, need author/key/name in Deloitte-Finance-2025
+Warning--to sort, need author/key/name in Gartner-Finance-2030
+Warning--to sort, need author/key/name in Ardent-ePayables-Report
+Warning--to sort, need author/key/name in Garner-BPM
+Warning--to sort, need author/key/name in IBM-BPM
+Warning--to sort, need author/key/name in IBM-RPA
+Warning--to sort, need author/key/name in SAP-RPA
+Warning--to sort, need author/key/name in Gartner-RPA-in-Finance
+Warning--to sort, need author/key/name in Automation-Attended-vs-Unattended
+Warning--to sort, need author/key/name in Microsoft-Attended-vs-Unattended
+Warning--to sort, need author/key/name in Kissflow-RPAvsBPM
+Warning--to sort, need author/key/name in Gartner-Hyperautomation
+Warning--to sort, need author/key/name in Kissflow-Hyperautomation
+Warning--to sort, need author/key/name in SAP-BTP-Portfolio
+Warning--to sort, need author/key/name in SAP-BTP-Definition
+Warning--to sort, need author/key/name in NAVIT-BTP
+Warning--to sort, need author/key/name in SAP-BTP-Features
+Warning--to sort, need author/key/name in SAP-BPA-Features
+Warning--to sort, need author/key/name in SAP-Build
+Warning--to sort, need author/key/name in SAP-Work-Zone
+Warning--to sort, need author/key/name in SAP-WZ-Standard
+Warning--to sort, need author/key/name in SAP-Managing-Invoices
+Warning--to sort, need author/key/name in SAP-Non-PO-Invoices
+Warning--to sort, need author/key/name in SAP-ERS
+Warning--to sort, need author/key/name in SAP-EDI
+Warning--to sort, need author/key/name in SAP-Parking
+Warning--to sort, need author/key/name in SAP-Holding-and-Parking
+Warning--to sort, need author/key/name in Parseur-AI-Invoice-Processing
+Warning--to sort, need author/key/name in Resolvepay-17-Statistics-Showing
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
-You've used 24 entries,
+You've used 48 entries,
             4991 wiz_defined-function locations,
-            1240 strings with 15412 characters,
-and the built_in function-call counts, 117859 in all, are:
-= -- 21520
-> -- 2124
+            1377 strings with 21147 characters,
+and the built_in function-call counts, 260122 in all, are:
+= -- 47857
+> -- 4603
 < -- 0
-+ -- 6974
-- -- 3772
-* -- 678
-:= -- 2460
-add.period$ -- 71
-call.type$ -- 24
-change.case$ -- 96
++ -- 15109
+- -- 8561
+* -- 1185
+:= -- 4632
+add.period$ -- 96
+call.type$ -- 48
+change.case$ -- 198
 chr.to.int$ -- 0
-cite$ -- 24
-duplicate$ -- 24089
-empty$ -- 1057
+cite$ -- 78
+duplicate$ -- 52701
+empty$ -- 2155
 format.name$ -- 48
-if$ -- 22990
+if$ -- 50627
 int.to.chr$ -- 0
-int.to.str$ -- 24
+int.to.str$ -- 48
 missing$ -- 0
-newline$ -- 263
-num.names$ -- 48
-pop$ -- 3602
+newline$ -- 354
+num.names$ -- 36
+pop$ -- 8823
 preamble$ -- 1
-purify$ -- 72
+purify$ -- 150
 quote$ -- 22
-skip$ -- 2062
+skip$ -- 4728
 stack$ -- 0
-substring$ -- 10756
-swap$ -- 14242
+substring$ -- 24590
+swap$ -- 32190
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 120
-warning$ -- 0
-while$ -- 303
-width$ -- 26
-write$ -- 391
-(There were 24 warnings)
+type$ -- 240
+warning$ -- 30
+while$ -- 414
+width$ -- 50
+write$ -- 548
+(There were 78 warnings)

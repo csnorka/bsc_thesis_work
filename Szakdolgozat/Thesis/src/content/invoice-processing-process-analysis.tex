@@ -1,4 +1,3 @@
-
 \chapter{Standard és Vállalati Számlafeldolgozási Folyamat Elemzése}
 \label{ch:process-analysis}
 
@@ -9,7 +8,8 @@ Ennek a fejezetnek a célja, hogy részletesen elemezze a szállítói számlafe
 A probléma mélyebb megértése érdekében az elemzést két, egymásra épülő szintre bontjuk.
 Elsőként bemutatjuk a standard SAP folyamatot, vagyis azt a ,,tankönyvi modellt'', ahogyan a számlakezelés egy ideálisan konfigurált vállalatirányítási rendszerben működik.
 Ezt követően összevetjük az ideális állapotot a tipikus vállalati gyakorlattal: azzal a valósággal, ahogyan a folyamat a legtöbb szervezetnél zajlik, ahol a rendszer beépített képességeit gyakran manuális, e-mail alapú ,,foltokkal'' és ad hoc megoldásokkal egészítik ki.
-A két modell – az elméleti és a valós – közötti eltérés, azaz a ,,rés'' fogja pontosan kijelölni azokat a nehézségeket, költséges szűk keresztmetszeteket és hibaforrásokat, amelyekre a \textbf{\ref{chap:megvalositas}}. fejezetben tervezett és megvalósított SAP Build Process Automation prototípus célzott megoldást kínál.
+A két modell – az elméleti és a valós – közötti eltérés, azaz a ,,rés'' fogja pontosan kijelölni azokat a nehézségeket, költséges szűk keresztmetszeteket és hibaforrásokat, amelyekre a \textbf{\ref{chap:megvalositas}}.
+fejezetben tervezett és megvalósított SAP Build Process Automation prototípus célzott megoldást kínál.
 \subsection{A Standard SAP Számlafeldolgozási Folyamat (,,A Tankönyvi Modell'')}
 
 A szállítói számlák kezelésének megértéséhez és értékeléséhez elengedhetetlen annak az ideális, elméleti modellnek a bemutatása, amelyet az SAP rendszer a maga teljes körűen konfigurált és integrált állapotában kínál.
@@ -18,7 +18,7 @@ Ezen elméleti keret megalkotása mögött az SAP FI (Pénzügy) és MM (Anyagga
 Ez az alfejezet ennek az integrált, standard folyamatnak a főbb elveit, dokumentumait és tranzakcióit mutatja be, kiemelve azokat a beépített automatizálási és ellenőrzési pontokat, amelyek a rendszer hatékonyságának és megbízhatóságának alapját képezik.
 \subsubsection{Az Alapelv: A Háromoldalú Egyeztetés (Three-Way Match)}
 
-A logisztikai számlaellenőrzés (LIV) és a teljes Procurement-to-Pay (P2P) folyamat központi alapelve a háromoldalú egyeztetés (Three-Way Match).
+A logisztikai számlaellenőrzés (LIV) és a teljes Procurement-to-Pay (P2P) folyamat központi alapelve a háromoldalú egyeztetés (Three-Way Match) \cite{SAP-LIV, RAMP-Invoice-Verification}.
 Ez a könyvelési ellenőrzési mechanizmus nem csupán technikai funkció, hanem alapvető pénzügyi biztonsági háló, melynek egyetlen célja van: biztosítani, hogy a vállalat kizárólag azért fizessen, amit előzetesen megrendelt és amit ténylegesen meg is kapott.
 A folyamat az alábbi három alapvető dokumentum egyidejű, automatikus összevetésén alapul, melyek együttesen lefedik a beszerzés ezen üzleti életciklusát:
 
@@ -34,16 +34,16 @@ A GR nemcsak a készletnövekedést okozza, hanem egyben a szállítói kötelez
 A háromoldalú egyeztetés folyamatának logikája a MIRO tranzakcióban materializálódik. Amikor a pénzügyi ügyintéző egy PO-hoz hivatkozó számlát rögzít, az SAP rendszer automatikusan és szorongatottan összeveti a számla minden egyes tételének mennyiségét és árát a hivatkozott Beszerzési Rendelés (PO) és az arra történt Anyagbevételezés (GR) adataival.
 Ez a ,,három szintű'' egyeztetés (Three Levels) gyakorlatilag a GR/IR folyamat magja.
 Az egyezés hiánya esetén a rendszer a konfigurált toleranciahatárok alapján akár automatikusan blokkolhatja a számlát fizetésre, amelyet csak a felelős beszerző (Buyer) oldhat fel (például az MRBR jelentés segítségével), ezzel biztosítva a problémák azonosítását és megoldását.
-A folyamat stratégiai jelentőségét az adja, hogy hatékonyan megakadályozza a gyakori operatív kockázatokat, mint például a duplikált vagy hibás számlák, a nem rendelés alapján történt szállítások, vagy a nem átvett áruk kifizetése.
+A folyamat stratégiai jelentőségét az adja, hogy hatékonyan megakadályozza a gyakori operatív kockázatokat, mint például a duplikált vagy hibás számlák, a nem rendelés alapján történt szállítások, vagy a nem átvett áruk kifizetése \cite{SAP-LIV}.
 A háromoldalú egyeztetés tehát nem csupán egy technikai lépés, hanem a vállalat pénzügyi integritásának és a beszerzési folyamatok épségének záloga.
 \subsubsection{A Folyamat Két Fő Típusa az SAP-ban}
 
-Az SAP rendszerében a szállítói számlák feldolgozásának módját alapvetően az határozza meg, hogy a számla kapcsolódik-e egy létező beszerzési rendeléshez (Purchase Order - PO).
+Az SAP rendszerében a szállítói számlák feldolgozásának módját alapvetően az határozza meg, hogy a számla kapcsolódik-e egy létező beszerzési rendeléshez (Purchase Order - PO) \cite{SAP-Managing-Invoices, SAP-Non-PO-Invoices}.
 Ez a megkülönböztetés meghatározza a használandó tranzakciót, az ellenőrzési folyamatot és a feldolgozás automatizáltsági fokát.
 A két alapvető típus a PO-alapú (logisztikai) és a nem PO-alapú (pénzügyi) számlarögzítés.
 
 \paragraph{1.
-PO-alapú (Logisztikai) Számlarögzítés (MIRO tranzakció)}
+PO-alapú (Logisztikai) Számlarögzítés (MIRO tranzakció) \cite{SAP-Managing-Invoices}}
 
 Ez a folyamat a Logisztikai Számlaellenőrzés (LIV) magja, és az anyagok, szolgáltatások szabályozott beszerzésére jellemző.
 \textbf{Alkalmazási kör:} Akkor használatos, amikor a számla egy létező és érvényes beszerzési rendeléshez (PO) kapcsolódik.
@@ -63,7 +63,7 @@ Ha az eltérés túl nagy, a rendszer fizetési blokkot állít be, amelyet csak
 Ez a folyamat biztosítja, hogy a vállalat kizárólag a megrendelt és átvett árukért vagy szolgáltatásokért fizet.
 
 \paragraph{2.
-Nem PO-alapú (Pénzügyi) Számlarögzítés (FB60 tranzakció)}
+Nem PO-alapú (Pénzügyi) Számlarögzítés (FB60 tranzakció) \cite{SAP-Non-PO-Invoices}}
 
 Ezt a folyamatot olyan kiadásokra használják, amelyeket nem előzték meg formális beszerzési eljárással és PO-kiállítással.
 \textbf{Alkalmazási kör:} Akkor kerül sor erre, amikor a számla nem köthető egyetlen beszerzési rendeléshez sem.
@@ -113,7 +113,7 @@ Az automatizmusok a rutin feladatok gyors és hibatmentes elvégzését szolgál
 
 Az SAP rendszer a számlafeldolgozás hatékonyságának és biztonságának növelése érdekében számos beépített automatizálási mechanizmust kínál, amelyek lehetővé teszik a manuális ellenőrzések mértékének csökkentését, miközben megtartják a pénzügyi kontrollok szilárd keretét.
 Ezek az automatizmusok a folyamatok gyorsításán túl a humán hibák kiküszöbölésére és a költségek csökkentésére is összpontosítanak.
-\paragraph{Toleranciahatárok (Tolerances)}
+\paragraph{Toleranciahatárok (Tolerances) \cite{SAP-Tolerance-Keys-Part1, SAP-Tolerance-Keys-Part2}}
 
 A toleranciahatárok az SAP egyik legkifinomultabb kontrollmechanizmusa, amely kétjegyű kódok (toleranciakulcsok) formájában valósul meg, és amelyek a rendszer által tárolt előre meghatározott korlátok alapján automatikusan blokkolják a számlákat fizetésre, amennyiben azok ára, mennyisége vagy egyéb paraméterei túllépik a megengedett határértékeket.
 A mechanizmus nem csupán védelmet nyújt a túlfizetések ellen, hanem jelentős mértékben lecsökkenti a pénzügyi munkatársak terhelését is azáltal, hogy kiküszöböli a minden egyes számla egyedi manuális ellenőrzésének szükségességét.
@@ -121,7 +121,7 @@ A konfiguráció a T169G táblában történik, és a különböző üzleti hely
 A legfontosabb toleranciakulcsok közé tartozik a PP (Price Variance), amely a beszerzési rendelésen megállapított és a számlán szereplő egységár közötti eltérést ellenőrzi, vagy a DQ (Quantity Variance), amely a ténylegesen átvett és a számlázott mennyiség közötti különbséget monitorozza.
 Azonban a rendszer ennél jóval részletesebb kontrollokat is biztosít: a BD (Small Differences) kulcs például automatikusan elszámolja a minimális összegű eltéréseket egy előre meghatározott ,,kis különbözetek'' főkönyvi számlára, miközben a KW (Variance from Condition Value) specifikusan a szállítási és egyéb mellék költségek egyeztetésére specializálódott.
 A folyamat teljességét az MRBR tranzakció biztosítja, amely egy központosított felületet kínál az automatikusan blokkolt számlák áttekintéséhez, okának feltárásához és – adott esetben – manuális feloldásához.
-\paragraph{ERS (Evaluated Receipt Settlement)}
+\paragraph{ERS (Evaluated Receipt Settlement) \cite{SAP-ERS}}
 
 Az Evaluated Receipt Settlement (ERS) a számlafeldolgozási automatizáció csúcspontját jelentő, radikálisan innovatív megközelítés, amely alapvetően újradefiniálja a hagyományos számlázási folyamatot.
 Az ERS lényege, hogy a szállító és a vevő közötti előzetes megállapodás alapján a szállító egyáltalán nem küld fizikai vagy elektronikus számlát.
@@ -130,7 +130,7 @@ Ennek a módszernek az alkalmazása számos stratégiai előnnyel jár: a beszer
 Emellett a rendszer kiküszöböli a kézi adatrögzítésből adódó emberi hibákat, és megelőzi a mennyiségi vagy értékbeli eltérések kialakulását, mivel a számla mindig a PO és a GR pontos adatai alapján készül.
 Az ERS különösen hatékonyan alkalmazható olyan szabványosított termékek és rutinszerű szolgáltatások esetében, ahol a szállítóival megbízható partneri kapcsolatot ápol, és a díjszabás stabil.
 Fontos megjegyezni, hogy az ERS nem alkalmazható olyan esetekben, ahol a rendszeresítés tervezett vagy nem tervezett szállítási költségeket tartalmaz.
-\paragraph{EDI/IDoc (Electronic Data Interchange / Intermediate Document)}
+\paragraph{EDI/IDoc (Electronic Data Interchange / Intermediate Document) \cite{SAP-EDI}}
 
 Az elektronikus adatcsere (EDI) az üzleti kommunikáció modern standardja, amely strukturált formátumban történő, rendszer és rendszer közötti adatcserét tesz lehetővé, ezzel teljes mértékben kiküszöbölve a papír alapú vagy emberi beavatkozással járó adatátvitelt.
 Az SAP rendszerben ezt a folyamatot az úgynevezett Intermediate Document (IDoc) technológia valósítja meg, amely speciális üzenetformátumként szolgál a számlaadatok továbbítására.
@@ -149,7 +149,7 @@ Ebben az esetben az ügyintézőnek teljes mértékben manuálisan kell átvinni
 Ez a folyamat, amelyet gyakran ,,forgószék-adaptációként'' (,,swivel-chair integration'') ismernek, nem csupán időigényes és költséges, hanem kiemelten ki van téve az emberi hibáknak is.
 Az elgépelések, számtranszpozíciók vagy hiányzó adatok komoly pénzügyi következményekkel járhatnak, beleértve a duplikált fizetéseket, a helytelen költségelszámolást vagy a meg nem érdemelt kötbérek kifizetését.
 Jóllehet, ez a manuális lépés jelenleg még mindig elkerülhetetlen a legtöbb szervezetnél, és egyben a legfontosabb indoklást szolgáltatja a hiperautomatizálási megoldások, mint például az intelligens adatkinyerés (Document Information Extraction) bevezetésére.
-\paragraph{Számlaparkolás: A Kontrollált ,,Félkész'' Állapot Művészete}
+\paragraph{Számlaparkolás: A Kontrollált ,,Félkész'' Állapot Művészete \cite{SAP-Parking, SAP-Holding-and-Parking, XSUITE-Parking-in-SAP}}
 
 A számlaparkolás (MIR7 vagy FV60 tranzakciók) egy kifinomult köztes állapot, amely lehetővé teszi a számla adatainak biztonságos elmentését anélkül, hogy az végleges főkönyvi könyvelést generálna.
 Ezt a funkcionalitást leginkább egy ,,fizetésre előkészített'' vagy ,,függőben lévő'' státuszként lehet leírni, ahol a dokumentum minden adata rendelkezésre áll, de a tényleges könyvelés és fizetés még nem történt meg.
@@ -157,7 +157,7 @@ A parkolás stratégiai jelentősége abban rejlik, hogy rugalmasságot biztosí
 Egy számlát parkolni szokás, amikor az adatai bizonytalanok vagy hiányosak, további információkra van szükség a költséghelyes elosztáshoz, belső jóváhagyási körök függenek a véglegesítéstől, vagy egyszerűen csak a fizetési időzítést szeretnék optimalizálni.
 A parkolt számla később bármikor elővehető, akár egy másik, magasabb szintű felhasználó (például egy költséghely-vezető vagy pénzügyi kontroller) által, aki átnézheti, kiegészítheti, korrigálhatja, és végül ,,élesre'' könyvelheti azt.
 Ez a folyamat biztosítja, hogy csak a teljes körűen ellenőrzött és hivatalosan jóváhagyott számlák kerüljenek a vállalat főkönyvébe, ezzel erősítve a belső kontrollrendszer megbízhatóságát.
-\paragraph{Blokkolt Számlák Feloldása: Az Eltérések Menedzsmentje}
+\paragraph{Blokkolt Számlák Feloldása: Az Eltérések Menedzsmentje \cite{JKE-Supply-Chain-Business-Process}}
 
 Az SAP rendszer intelligens kontrollmechanizmusa, különösen a toleranciahatárok, gyakran automatikus fizetési blokkot alkalmaz azokon a számlákon, amelyek ára, mennyisége vagy egyéb paraméterei túllépik az előre meghatározott korlátokat.
 Amikor egy ilyen blokk létrejön a MIRO tranzakció során, a rendszer ugyan létrehozza a számlabizonylatot, de azt egy speciális ,,fizetésre blokkolt'' státuszba helyezi, megakadályozva ezzel a pénztári futtatás (payment run) során történő kifizetését.
@@ -173,40 +173,36 @@ Ebben a fejezetben egy fiktív, de a gyakorlatban jól megfigyelhető tipikus v�
 Ez a diszkrepancia a technológia és a valós üzleti gyakorlat közötti szakadékot testesíti meg, amely számos operatív és stratégiai kihívást generál.
 A vizsgált modell alapvető jellemzője a digitális és analóg folyamatok hibrid együttélése.
 Míg a végső könyvelési lépések az SAP rendszerében történnek, addig a számlafeldolgozás előkészítő, ellenőrzési és jóváhagyási fázisai túlnyomórészt az SAP-on kívüli, manuális csatornákon keresztül zajlanak.
-Ennek a hibrid modellnek a működését egy jól körülhatárolható, ismétlődő ciklus jellemzi, amely a következő kritikus lépésekből áll:
+Ennek a hibrid modellnek a működését egy jól körülhatárolt, ismétlődő ciklus jellemzi, amely a következő kritikus lépésekből áll:
 
 \begin{enumerate}
 \item \textbf{Beérkezés: A Digitális Postafiók Kaotikus Világa} A folyamat kezdete egy dedikált, de gyakran túlterhelt e-mail címre történik (pl. szamlak@vallalat.hu), ahová a számlák mintegy 90\%-a PDF formátumban érkezik.
 Ez a központi gyűjtőpont azonban gyakran átláthatatlan ,,digitális fekete lyukká'' válik, ahol a dokumentumok könnyen elveszhetnek a nagy mennyiségű beérkező levél között.
 A probléma mélyebb gyökere a PDF formátum használatában rejlik - bár digitális, ez a formátum alapvetően strukturálatlan, és nem tartalmaz géppel olvasható adatokat, ami lehetetlenné teszi a közvetlen rendszerintegrációt.
-Ahogyan Anichshuk (2025) is rámutat, ,,a PDF egy statikus dokumentum, nem pedig strukturált adatokat tartalmazó fájl, amelyet a rendszerek képesek lennének olvasni'', ami elkerülhetetlenül manuális adatátvitelhez vezet.
-
+Ahogyan Anichshuk (2025) is rámutat \cite{Kolleno-PDFs-to-EInvoices}, ,,a PDF egy statikus dokumentum, nem pedig strukturált adatokat tartalmazó fájl, amelyet a rendszerek képesek lennének olvasni'', ami elkerülhetetlenül manuális adatátvitelhez vezet.
 \item \textbf{Manuális Szelektálás és Mentés: Az Adminisztratív Teher Első Szintje} Egy pénzügyi adminisztrátornak (AP ügyintéző) folyamatosan monitoroznia kell a postafiókot, manuálisan ki kell válogatnia a számlákat, letöltenie a PDF fájlokat, és azokat egy megosztott hálózati mappa előre meghatározott, de gyakran bonyolult mappaszerkezetében elhelyeznie.
 Ez a látszólag egyszerű lépés rendkívül időigényes, és jelentős kockázati pontot jelent: az elveszett vagy rossz helyre mentett számlák hetekig, akár hónapokig is ,,eltűnhetnek'' a rendszerből, ami késedelmi kamatokhoz és megszakadt ellátási lánchoz vezethet.
-A Parseur (2025) által közölt benchmark adatok szerint a manuális feldolgozás költsége 12-20 dollár számlánként terjed, ami ezen lépések összetettségét is jelzi.
-
+A Parseur (2025) által közölt benchmark adatok szerint a manuális feldolgozás költsége 12-20 dollár számlánként terjed, ami ezen lépések összetettségét is jelzi \cite{Parseur-AI-Invoice-Processing}.
 \item \textbf{,,Swivel-Chair'' Adatrögzítés: A Hibák Fő Forrása} A valódi operatív teher ekkor jelentkezik, amikor a pénzügyi ügyintéző párhuzamosan kell, hogy működjön az SAP felülete és a számla PDF-je között.
 Az ügyintéző egyik monitoron megnyitja a letöltött számlát, a másikon pedig az MIRO (beszerzési rendeléshez kapcsolódó) vagy FB60 (közvetlen könyvelésű) tranzakciót, majd kézzel, manuálisan átviszi az összes szükséges adatot.
 Ez a ,,forgószék-integráció'' (,,swivel-chair integration'') nemcsak rendkívül lassú (átlagosan 10-30 perc számlánként), de kiemelten ki van téve az emberi hibáknak is.
 Az elgépelt számok, a rosszul másolt dátumok vagy a téves költséghely kijelölések komoly pénzügyi következményekkel járhatnak, beleértve a duplikált fizetéseket és a helytelen költségelszámolást.
-
 \item \textbf{Jóváhagyási Kör: A Kommunikációs ,,Fekete Lyuk''} Amikor egy számla belső jóváhagyást igényel - legyen szó nem PO-alapú kiadásról (FB60) vagy a toleranciahatárok túllépéséről (MIRO) - a rendszer nem egy integrált workflow-ot indít el.
 Ehelyett a felelős ügyintézőnek manuálisan kell parkolnia a számlát (FV60), majd e-mailben megkeresnie a megfelelő jóváhagyót (osztályvezetőt vagy beszerzőt), csatolva a parkolt bizonylat számát és a PDF számlát.
 Ez a folyamat azonban gyakran összeomlik a valóságban: a vezetők, akik naponta több tucat hasonló kérést kapnak, nem tudják prioritizálni a számlajóváhagyásokat.
-Ahogyan Kumar Mishra és munkatársai (2024) megállapították, a manuális intervenció igénybevétele jelentős időráfordítással jár, és a folyamat átláthatatlansága tovább rontja a helyzetet.
-
+Ahogyan Kumar Mishra és munkatársai (2024) megállapították, a manuális intervenció igénybevétele jelentős időráfordítással jár, és a folyamat átláthatatlansága tovább rontja a helyzetet \cite{JKE-Supply-Chain-Business-Process}.
 \item \textbf{Követés és Várakozás: Az ,,E-mail Üldözés'' Költői Köre} A vezetők elfoglaltsága és az e-mailek eltévedése miatt az AP ügyintézőnek napokkal, hetekkel később telefonon vagy újabb e-mailben kell ,,üldöznie'' (,,chasing'') a jóváhagyást.
 Ez az úgynevezett ,,e-mail üldözéses'' folyamat nemcsak további adminisztratív terhet jelent, hanem komoly üzleti kockázatokhoz is vezethet.
 A lassú átfutási idő miatt a vállalat gyakran nem tud élni a korai fizetési kedvezményekkel (skontó), ami jelentős pénzügyi veszteséget okoz, valamint késedelmi kamatok kifizetésére kényszerülhet.
 A folyamat átláthatatlansága miatt a menedzsment nem rendelkezik valós idejű betekintéssel sem a folyamatban lévő számlák állapotába, sem a vállalat aktuális kötelezettségállományába.
-
 \item \textbf{Manuális Véglegesítés: A Bizonytalan Lezárás} A folyamat végén a vezető laza válasza (,,OK'', ,,Rendben'') alapján - amely önmagában is audit kockázatot jelent - az AP ügyintéző megkeresi és megnyitja a parkolt bizonylatot, majd azt ,,élesre'' könyveli.
 Ez a végső manuális lépés azonban további hibalehetőségeket hordoz: a rossz bizonylatszám megadása, a téves összeg beírása vagy egyszerűen csak az elavult információkon alapuló döntések további problémákhoz vezethetnek.
 \end{enumerate}
 
 \subsection{Problémafeltárás: A Manuális Gyakorlat Hibái és Költségei} \label{sec:problemfeltaras_hibai_koltsegei}
 
-Ez a fejezet a szakdolgozat egyik legfontosabb elemzése, amely közvetlenül megindokolja a \textbf{\ref{chap:megvalositas}}. fejezetben bemutatásra kerülő automatizált prototípus szükségességét. A manuális számlafeldolgozás nem csupán hatékonysági problémákat okoz, hanem jelentős pénzügyi kockázatokat és stratégiai akadályokat is jelent a vállalatok számára.
+Ez a fejezet a szakdolgozat egyik legfontosabb elemzése, amely közvetlenül megindokolja a \textbf{\ref{chap:megvalositas}}.
+fejezetben bemutatásra kerülő automatizált prototípus szükségességét. A manuális számlafeldolgozás nem csupán hatékonysági problémákat okoz, hanem jelentős pénzügyi kockázatokat és stratégiai akadályokat is jelent a vállalatok számára.
 Az alábbiakban részletesen feltárjuk a hagyományos megközelítés minőségi és mennyiségi korlátait.
 \subsubsection{Tipikus Manuális Hibák (Minőségi Kockázatok)}
 
@@ -215,18 +211,18 @@ A manuális folyamatok elkerülhetetlenül vezetnek olyan minőségi problémák
 
 A ,,forgószék'' feladat, ahol az ügyintéző párhuzamosan dolgozik a PDF számla és az SAP felület között, kiemelten ki van téve az emberi hibáknak.
 Az elgépelések - mint például 100.000 helyett 1.000.000 forint beírása, vagy dátumok felcserélése - nem csupán adminisztratív problémát jelentenek.
-A Parseur (2025) kutatása szerint a manuálisan feldolgozott számláknál 1-2\%-os hibaaránya teljesen általános, ami nagy volumenű feldolgozás esetén komoly pénzügyi következményekkel jár.
-A ResolvePay (2025) által közölt adatok még aggasztóbb képet festenek: a számlák 39\%-a tartalmaz hibákat, és az AP szakemberek ezeknek csupán 39\%-át képesek észlelni az ellenőrzés során.
+A Parseur (2025) kutatása szerint a manuálisan feldolgozott számláknál 1-2\%-os hibaaránya teljesen általános, ami nagy volumenű feldolgozás esetén komoly pénzügyi következményekkel jár \cite{Parseur-AI-Invoice-Processing}.
+A ResolvePay (2025) által közölt adatok még aggasztóbb képet festenek: a számlák 39\%-a tartalmaz hibákat, és az AP szakemberek ezeknek csupán 39\%-át képesek észlelni az ellenőrzés során \cite{Resolvepay-17-Statistics-Showing}.
 \paragraph{Duplikált Számlafeldolgozás}
 
 A gyakorlatban előfordul, hogy a szállító ugyanazt a számlát több csatornán (e-mail, posta) is elküldi, vagy különböző ügyintézők dolgozzák fel ugyanazt a dokumentumot.
 Amikor a számlaszámot kissé eltérően rögzítik (pl. ,,SZ-100'' helyett ,,SZ100''), a standard SAP szűrési mechanizmus nem képes felismerni a duplikációt.
 Ennek eredményeképpen a vállalat ugyanazt a számlát kétszer fizeti ki, ami jelentős pénzügyi veszteséget okoz.
-Tamaro (2025) szerint a vállalatok mintegy egyharmada küzd duplikált fizetések problémájával, ami a manuális folyamatok alacsony megbízhatóságára utal.
+Tamaro (2025) szerint a vállalatok mintegy egyharmada küzd duplikált fizetések problémájával, ami a manuális folyamatok alacsony megbízhatóságára utal \cite{Caso-Hidden-Costs-of-Manual}.
 \paragraph{Elveszett Számlák}
 
 Az e-mail alapú feldolgozás során a számlák könnyen elveszhetnek: a spam mappába kerülhetnek, a hálózati meghajtó rossz mappájába menthetik őket, vagy egyszerűen ,,eltűnhetnek'' a túlterhelt e-mail fiókokban.
-Ferro (2020) rámutat, hogy az e-mailes jóváhagyási rendszerben ,,az AP részleg soha nem lehet biztos abban, hogy egy számla hol tart a folyamatban''.
+Ferro (2020) rámutat, hogy az e-mailes jóváhagyási rendszerben ,,az AP részleg soha nem lehet biztos abban, hogy egy számla hol tart a folyamatban'' \cite{Edenredpay-5-Problems}.
 Az elveszett számlák nemcsak késedelmi kamatokhoz vezetnek, hanem megingatják a szállítói kapcsolatokat is, hiszen a szállítók idővel elégedetlenné válnak az állandó fizetési késések miatt.
 \subsubsection{Időigényes Lépések és Szűk Keresztmetszetek (Költség- és Időproblémák)}
 
@@ -234,24 +230,21 @@ A minőségi problémák mellett a manuális folyamatok jelentős mennyiségi é
 \begin{enumerate}
 \item \textbf{Manuális Adatrögzítés (FTE Költség)} A manuális adatrögzítés jelentése az egyik legnagyobb költségtényező.
 Bár számlánként csupán 3-5 percnyi gépelésről van szó, ez nagy volumenű feldolgozás esetén teljes munkaidős pozíciók (FTE) megtartását igényli.
-Baran (2025) számítása szerint egy évente 40.000 számlát feldolgozó vállalatnál a számlánkénti 5 perc több mint 3.300 óra munkaidőt jelent évente.
+Baran (2025) számítása szerint egy évente 40.000 számlát feldolgozó vállalatnál a számlánkénti 5 perc több mint 3.300 óra munkaidőt jelent évente \cite{Ascendsoftware-Cost-of-Manual}.
 Összehasonlításképp: egy AI-alapú megoldás (mint az SAP Document Information Extraction) ugyanezt a feladatot másodpercek alatt elvégezheti.
-Parseur (2025) adatai szerint a manuális feldolgozás költsége 10-15 dollár számlánként terjed, míg az automatizált megoldások ezt 2-3 dollárra csökkenthetik.
-
+Parseur (2025) adatai szerint a manuális feldolgozás költsége 10-15 dollár számlánként terjed, míg az automatizált megoldások ezt 2-3 dollárra csökkenthetik \cite{Parseur-AI-Invoice-Processing}.
 \item \textbf{Jóváhagyóra Várakozás (Átfutási Idő)} Az e-mail alapú jóváhagyási folyamat a leggyakrabban előforduló szűk keresztmetszet.
-Ferro (2020) kiemeli, hogy a vezetők naponta átlagosan 100 e-mailt kapnak, amelyek között az aprobálási kérések könnyen elvesznek.
+Ferro (2020) kiemeli, hogy a vezetők naponta átlagosan 100 e-mailt kapnak, amelyek között az aprobálási kérések könnyen elvesznek \cite{Edenredpay-5-Problems}.
 Az e-mailes folyamat ,,fekete lyukként'' működik: nincs átláthatóság arról, hogy ki látta a számlát, mikor vette át, és mennyi időre van szüksége a döntéshez.
 A várakozási idő tovább növekszik, amikor többszörös jóváhagyási körök szükségesek, és a felelősök nem ismerik a vállalati szabályokat.
-Tamaro (2025) szerint a manuális feldolgozás átlagos átfutási ideje 14.6 nap, ami kritikusan lassú a modern üzleti környezetben.
-
+Tamaro (2025) szerint a manuális feldolgozás átlagos átfutási ideje 14.6 nap, ami kritikusan lassú a modern üzleti környezetben \cite{Caso-Hidden-Costs-of-Manual}.
 \item \textbf{Elvesztett Skontó (Pénzügyi Veszteség)} A lassú átfutási idő közvetlen pénzügyi következménye az elvesztett korai fizetési kedvezmények (skontók).
 Amikor egy számla hetekig várakozik a jóváhagyásra, a vállalat nem tud élni a 2-5\%-os árengedményekkel, amelyek jelentős összegeket jelentenek éves szinten.
-Parseur (2025) egy esettanulmányában egy kiskereskedelmi vállalat évi 50.000 dollárt fizetett késedelmi bírságokként, részben az elvesztett skontók miatt.
-Baran (2025) is hangsúlyozza, hogy a manuális folyamatok csökkentik a korai fizetési kedvezmények igénybevételének lehetőségét, ami közvetlen veszteséget jelent a vállalat számára.
-
+Parseur (2025) egy esettanulmányában egy kiskereskedelmi vállalat évi 50.000 dollárt fizetett késedelmi bírságokként, részben az elvesztett skontók miatt \cite{Parseur-AI-Invoice-Processing}.
+Baran (2025) is hangsúlyozza, hogy a manuális folyamatok csökkentik a korai fizetési kedvezmények igénybevételének lehetőségét, ami közvetlen veszteséget jelent a vállalat számára \cite{Ascendsoftware-Cost-of-Manual}.
 \item \textbf{Átláthatóság Hiánya (Stratégiai Gát)} A manuális folyamatok talán legsúlyosabb stratégiai hátránya az átláthatóság teljes hiánya.
 A menedzsment nem látja valós időben, hogy mennyi a vállalat aktuális kötelezettségállománya (liability), mivel a számlák tucatjai ,,keringenek'' az e-mail postafiókokban és a megosztott mappákban.
-Ferro (2020) pontosan fogalmaz: ,,Az AP részleg soha nem lehet biztos abban, hogy egy számla hol tart a folyamatban.'' Ez az átláthatatlanság lehetetlenné teszi a pontos pénzügyi tervezést, megnehezíti a cash flow menedzsmentet, és akadályozza a pénzügyi osztályt abban, hogy stratégiai partnerként funkcionáljon az üzleti döntéshozatalban.
+Ferro (2020) pontosan fogalmaz: ,,Az AP részleg soha nem lehet biztos abban, hogy egy számla hol tart a folyamatban'' \cite{Edenredpay-5-Problems}. Ez az átláthatatlanság lehetetlenné teszi a pontos pénzügyi tervezést, megnehezíti a cash flow menedzsmentet, és akadályozza a pénzügyi osztályt abban, hogy stratégiai partnerként funkcionáljon az üzleti döntéshozatalban.
 \end{enumerate}
 
 Összefoglalóan, a manuális számlafeldolgozás nem csupán hatékonysági problémát jelent, hanem komoly pénzügyi kockázatokat és stratégiai akadályokat is.
@@ -264,7 +257,8 @@ Ez a modell elméletileg képes a humán hibák minimalizálására és a folyam
 Másrészt, a valóságot vizsgálva – a tipikus vállalati gyakorlatot (,,As-Is'') – egy lényegesen kevésbé hatékony és kockázatosabb kép rajzolódott ki.
 Itt a technológiai keretrendszer és a tényleges működés között óriási rés tátong.
 A folyamat kritikus szakaszai – a számlák \textbf{beérkeztetése (intake)}, a manuális \textbf{adatrögzítés} (,,swivel-chair integration''), valamint a belső \textbf{jóváhagyási körök} – túlnyomórészt az SAP-on kívül, e-mail alapú, strukturálatlan és erőforrás-igényes manuális tevékenységekbe torkollnak.
-Ez a hibrid modell számos súlyos problémát generál, melyeket a \textbf{\ref{sec:problemfeltaras_hibai_koltsegei}}. pont részletesen feltárt:
+Ez a hibrid modell számos súlyos problémát generál, melyeket a \textbf{\ref{sec:problemfeltaras_hibai_koltsegei}}.
+pont részletesen feltárt:
 
 \begin{itemize}
 \item \textbf{Minőségi kockázatok:} Megbízhatatlan adatátvitel, \textbf{adathibák}, \textbf{duplikált fizetések} és \textbf{elveszett számlák}, melyek közvetlen pénzügyi veszteségekhez vezetnek.
@@ -274,6 +268,6 @@ Ez a hibrid modell számos súlyos problémát generál, melyeket a \textbf{\ref
 
 Összefoglalóan, míg az SAP rendszer technikai képességei adottak a hatékony feldolgozáshoz, a valós vállalati gyakorlatot jellemző, az SAP-ra épülő, de attól független manuális ,,párhuzamos univerzum'' ellehetetleníti ezek kihasználását.
 Ez a szakadék, illetve a fent felsorolt konkrét problémák adják a szakdolgozat szilárd \textbf{üzleti indoklását (Business Case)}.
-
 \textbf{Ez az indoklás vezet át közvetlenül a \textbf{\ref{chap:megvalositas}. fejezetbe}}, ahol a problémafelvetésből kiindulva egy konkrét, célzott megoldást mutatunk be.
-A \textbf{\ref{chap:megvalositas}. fejezetben} egy olyan prototípus tervezését és megvalósítását fogjuk részletezni az \textbf{SAP Build Process Automation (SBPA)} eszközeivel, amely pontosan a \textbf{\ref{sec:problemfeltaras_hibai_koltsegei}}. pontban azonosított gyengeségekre fókuszál. A prototípus célja, hogy intelligens automatizálással – beleértve a robotizált folyamatautomizálást (RPA) és a dokumentumfeldolgozó AI (Document Information Extraction) szolgáltatásait – megszüntesse a manuális adatrögzítés szűk keresztmetszetét, integrált workflow-val pótolja az e-mailes jóváhagyási ,,fekete lyukat'', és ezáltal radikálisan csökkentse a feldolgozási időt, a költségeket és a hibák arányát, miközben visszanyeri a folyamat teljes átláthatóságát.
+A \textbf{\ref{chap:megvalositas}. fejezetben} egy olyan prototípus tervezését és megvalósítását fogjuk részletezni az \textbf{SAP Build Process Automation (SBPA)} eszközeivel, amely pontosan a \textbf{\ref{sec:problemfeltaras_hibai_koltsegei}}.
+pontban azonosított gyengeségekre fókuszál. A prototípus célja, hogy intelligens automatizálással – beleértve a robotizált folyamatautomizálást (RPA) és a dokumentumfeldolgozó AI (Document Information Extraction) szolgáltatásait – megszüntesse a manuális adatrögzítés szűk keresztmetszetét, integrált workflow-val pótolja az e-mailes jóváhagyási ,,fekete lyukat'', és ezáltal radikálisan csökkentse a feldolgozási időt, a költségeket és a hibák arányát, miközben visszanyeri a folyamat teljes átláthatóságát.
