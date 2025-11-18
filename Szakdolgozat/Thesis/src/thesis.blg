@@ -35,99 +35,99 @@ Database file #1: bib/mybib.bib
 Warning--entry type for "Deloitte-Finance-2025" isn't style-file defined
 --line 1 of file bib/mybib.bib
 Warning--entry type for "Deloitte-Controlling-Change" isn't style-file defined
---line 11 of file bib/mybib.bib
+--line 21 of file bib/mybib.bib
 Warning--entry type for "PwC-Future-of-Finance" isn't style-file defined
---line 31 of file bib/mybib.bib
-Warning--entry type for "Gartner-Finance-2030" isn't style-file defined
---line 41 of file bib/mybib.bib
-Warning--entry type for "McKinsey-Future-of-Finance" isn't style-file defined
---line 51 of file bib/mybib.bib
-Warning--entry type for "Ardent-ePayables-Report" isn't style-file defined
 --line 61 of file bib/mybib.bib
-Warning--entry type for "IBM-BPM" isn't style-file defined
---line 71 of file bib/mybib.bib
-Warning--entry type for "Garner-BPM" isn't style-file defined
+Warning--entry type for "Gartner-Finance-2030" isn't style-file defined
 --line 81 of file bib/mybib.bib
+Warning--entry type for "McKinsey-Future-of-Finance" isn't style-file defined
+--line 101 of file bib/mybib.bib
+Warning--entry type for "Ardent-ePayables-Report" isn't style-file defined
+--line 121 of file bib/mybib.bib
+Warning--entry type for "IBM-BPM" isn't style-file defined
+--line 141 of file bib/mybib.bib
+Warning--entry type for "Garner-BPM" isn't style-file defined
+--line 161 of file bib/mybib.bib
 Warning--entry type for "TechTarget-RPAvsBPM" isn't style-file defined
---line 108 of file bib/mybib.bib
+--line 215 of file bib/mybib.bib
 Warning--entry type for "Kissflow-RPAvsBPM" isn't style-file defined
---line 118 of file bib/mybib.bib
+--line 235 of file bib/mybib.bib
 Warning--entry type for "IBM-RPA" isn't style-file defined
---line 128 of file bib/mybib.bib
+--line 255 of file bib/mybib.bib
 Warning--entry type for "SAP-RPA" isn't style-file defined
---line 138 of file bib/mybib.bib
+--line 275 of file bib/mybib.bib
 Warning--entry type for "IBM-RPA-in-Finance" isn't style-file defined
---line 147 of file bib/mybib.bib
+--line 293 of file bib/mybib.bib
 Warning--entry type for "Gartner-RPA-in-Finance" isn't style-file defined
---line 157 of file bib/mybib.bib
+--line 313 of file bib/mybib.bib
 Warning--entry type for "Automation-Attended-vs-Unattended" isn't style-file defined
---line 167 of file bib/mybib.bib
+--line 333 of file bib/mybib.bib
 Warning--entry type for "Microsoft-Attended-vs-Unattended" isn't style-file defined
---line 176 of file bib/mybib.bib
+--line 351 of file bib/mybib.bib
 Warning--entry type for "Gartner-Hyperautomation" isn't style-file defined
---line 185 of file bib/mybib.bib
+--line 369 of file bib/mybib.bib
 Warning--entry type for "IBM-IRPA-vs-Hyperautomation" isn't style-file defined
---line 204 of file bib/mybib.bib
+--line 407 of file bib/mybib.bib
 Warning--entry type for "Kissflow-Hyperautomation" isn't style-file defined
---line 214 of file bib/mybib.bib
+--line 427 of file bib/mybib.bib
 Warning--entry type for "SAP-BTP-Portfolio" isn't style-file defined
---line 224 of file bib/mybib.bib
+--line 447 of file bib/mybib.bib
 Warning--entry type for "SAP-BTP-Definition" isn't style-file defined
---line 233 of file bib/mybib.bib
-Warning--entry type for "NAVIT-BTP" isn't style-file defined
---line 251 of file bib/mybib.bib
-Warning--entry type for "SAP-BTP-Features" isn't style-file defined
---line 261 of file bib/mybib.bib
-Warning--entry type for "Medium-Cloud-Terminologies" isn't style-file defined
---line 271 of file bib/mybib.bib
-Warning--entry type for "SAP-BTP-for-Beginner" isn't style-file defined
---line 281 of file bib/mybib.bib
-Warning--entry type for "SAP-Demystifying-SAP-Build" isn't style-file defined
---line 291 of file bib/mybib.bib
-Warning--entry type for "SAP-Build" isn't style-file defined
---line 301 of file bib/mybib.bib
-Warning--entry type for "SAP-BPA-Features" isn't style-file defined
---line 310 of file bib/mybib.bib
-Warning--entry type for "SAP-Work-Zone" isn't style-file defined
---line 320 of file bib/mybib.bib
-Warning--entry type for "SAP-WZ-Standard" isn't style-file defined
---line 329 of file bib/mybib.bib
-Warning--entry type for "SAP-LIV" isn't style-file defined
---line 338 of file bib/mybib.bib
-Warning--entry type for "SAP-Managing-Invoices" isn't style-file defined
---line 348 of file bib/mybib.bib
-Warning--entry type for "SAP-Non-PO-Invoices" isn't style-file defined
---line 357 of file bib/mybib.bib
-Warning--entry type for "SAP-Tolerance-Keys-Part1" isn't style-file defined
---line 366 of file bib/mybib.bib
-Warning--entry type for "SAP-Tolerance-Keys-Part2" isn't style-file defined
---line 376 of file bib/mybib.bib
-Warning--entry type for "SAP-ERS" isn't style-file defined
---line 386 of file bib/mybib.bib
-Warning--entry type for "SAP-EDI" isn't style-file defined
---line 396 of file bib/mybib.bib
-Warning--entry type for "SAP-Parking" isn't style-file defined
---line 406 of file bib/mybib.bib
-Warning--entry type for "SAP-Holding-and-Parking" isn't style-file defined
---line 416 of file bib/mybib.bib
-Warning--entry type for "XSUITE-Parking-in-SAP" isn't style-file defined
---line 425 of file bib/mybib.bib
-Warning--entry type for "JKE-Supply-Chain-Business-Process" isn't style-file defined
---line 435 of file bib/mybib.bib
-Warning--entry type for "RAMP-Invoice-Verification" isn't style-file defined
---line 445 of file bib/mybib.bib
-Warning--entry type for "Parseur-AI-Invoice-Processing" isn't style-file defined
---line 455 of file bib/mybib.bib
-Warning--entry type for "Kolleno-PDFs-to-EInvoices" isn't style-file defined
 --line 465 of file bib/mybib.bib
+Warning--entry type for "NAVIT-BTP" isn't style-file defined
+--line 501 of file bib/mybib.bib
+Warning--entry type for "SAP-BTP-Features" isn't style-file defined
+--line 521 of file bib/mybib.bib
+Warning--entry type for "Medium-Cloud-Terminologies" isn't style-file defined
+--line 541 of file bib/mybib.bib
+Warning--entry type for "SAP-BTP-for-Beginner" isn't style-file defined
+--line 561 of file bib/mybib.bib
+Warning--entry type for "SAP-Demystifying-SAP-Build" isn't style-file defined
+--line 581 of file bib/mybib.bib
+Warning--entry type for "SAP-Build" isn't style-file defined
+--line 601 of file bib/mybib.bib
+Warning--entry type for "SAP-BPA-Features" isn't style-file defined
+--line 619 of file bib/mybib.bib
+Warning--entry type for "SAP-Work-Zone" isn't style-file defined
+--line 639 of file bib/mybib.bib
+Warning--entry type for "SAP-WZ-Standard" isn't style-file defined
+--line 657 of file bib/mybib.bib
+Warning--entry type for "SAP-LIV" isn't style-file defined
+--line 675 of file bib/mybib.bib
+Warning--entry type for "SAP-Managing-Invoices" isn't style-file defined
+--line 695 of file bib/mybib.bib
+Warning--entry type for "SAP-Non-PO-Invoices" isn't style-file defined
+--line 713 of file bib/mybib.bib
+Warning--entry type for "SAP-Tolerance-Keys-Part1" isn't style-file defined
+--line 731 of file bib/mybib.bib
+Warning--entry type for "SAP-Tolerance-Keys-Part2" isn't style-file defined
+--line 751 of file bib/mybib.bib
+Warning--entry type for "SAP-ERS" isn't style-file defined
+--line 771 of file bib/mybib.bib
+Warning--entry type for "SAP-EDI" isn't style-file defined
+--line 791 of file bib/mybib.bib
+Warning--entry type for "SAP-Parking" isn't style-file defined
+--line 811 of file bib/mybib.bib
+Warning--entry type for "SAP-Holding-and-Parking" isn't style-file defined
+--line 831 of file bib/mybib.bib
+Warning--entry type for "XSUITE-Parking-in-SAP" isn't style-file defined
+--line 849 of file bib/mybib.bib
+Warning--entry type for "JKE-Supply-Chain-Business-Process" isn't style-file defined
+--line 869 of file bib/mybib.bib
+Warning--entry type for "RAMP-Invoice-Verification" isn't style-file defined
+--line 889 of file bib/mybib.bib
+Warning--entry type for "Parseur-AI-Invoice-Processing" isn't style-file defined
+--line 909 of file bib/mybib.bib
+Warning--entry type for "Kolleno-PDFs-to-EInvoices" isn't style-file defined
+--line 929 of file bib/mybib.bib
 Warning--entry type for "Ascendsoftware-Cost-of-Manual" isn't style-file defined
---line 475 of file bib/mybib.bib
+--line 949 of file bib/mybib.bib
 Warning--entry type for "Resolvepay-17-Statistics-Showing" isn't style-file defined
---line 495 of file bib/mybib.bib
+--line 989 of file bib/mybib.bib
 Warning--entry type for "Edenredpay-5-Problems" isn't style-file defined
---line 505 of file bib/mybib.bib
+--line 1009 of file bib/mybib.bib
 Warning--entry type for "Caso-Hidden-Costs-of-Manual" isn't style-file defined
---line 515 of file bib/mybib.bib
+--line 1029 of file bib/mybib.bib
 Warning--to sort, need author/key/name in PwC-Future-of-Finance
 Warning--to sort, need author/key/name in Deloitte-Finance-2025
 Warning--to sort, need author/key/name in Gartner-Finance-2030
