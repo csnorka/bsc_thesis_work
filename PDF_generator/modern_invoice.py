@@ -52,6 +52,10 @@ def create_modern_invoice(filename, data):
     inv_id = data.get("invoice_id", "#000000")
     pdf.cell(90, 6, f"Invoice ID: {inv_id}", align="R", ln=True)
 
+    # Dátum hozzáadása
+    pdf.set_x(110) # Fontos: visszaugrunk a jobb oldali hasáb kezdetéhez
+    pdf.cell(90, 6, f"Date: {data.get('date', '2023-01-01')}", align="R", ln=True)
+
     # Bal oldal: INVOICE TO adatok
     # Visszaugrunk a bal oldalra fentre
     pdf.set_xy(10, 20)

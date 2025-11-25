@@ -1,0 +1,19 @@
+clientInfo
+c2ItNTc5N2MwYmQtM2FiZi00ZmMyLTg3ZWUtMDUzMmZiMzM1YTE3IWI1NDg2MzF8bmEtZjIwNTQ4YzAtMTU3ZC00MTdiLThiYmItMWM5ZjM1ZWNmYjJkIWIyMDgyMTo3ZDczYjQzYy03M2ViLTQyNmUtYjcwYS05NzE2MmJlM2VmNWMkb0tQY0VrU0M5UmxhaTJ3SGczM0gwM0wwSFZ1ekxUSjZGeGVRME5BbmNTYz0=
+
+uaaUrl
+https://ai-sandbox-consulting.authentication.eu10.hana.ondemand.com
+
+clientSecret
+7d73b43c-73eb-426e-b70a-97162be3ef5c$oKPcEkSC9Rlai2wHg33H03L0HVuzLTJ6FxeQ0NAncSc=
+
+ClientID
+sb-5797c0bd-3abf-4fc2-87ee-0532fb335a17!b548631|na-f20548c0-157d-417b-8bbb-1c9f35ecfb2d!b20821
+
+
+Doc AI
+https://aiservices-dox.cfapps.eu10.hana.ondemand.com
+
+ID + Secret
+sb-5797c0bd-3abf-4fc2-87ee-0532fb335a17!b548631|na-f20548c0-157d-417b-8bbb-1c9f35ecfb2d!b20821:7d73b43c-73eb-426e-b70a-97162be3ef5c$oKPcEkSC9Rlai2wHg33H03L0HVuzLTJ6FxeQ0NAncSc=
+https://www.base64encode.org/ 
