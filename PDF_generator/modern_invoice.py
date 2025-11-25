@@ -174,6 +174,7 @@ def create_modern_invoice(filename, data):
 
 modern_data = {
     "invoice_id": "#1234567890",
+    "date": "2025. 11. 25.",
     "customer_name": "Marceline Anderson",
     "customer_phone": "+123-456-7890",
     "customer_email": "hello@reallygreatsite.com",
