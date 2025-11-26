@@ -2,7 +2,7 @@ from fpdf import FPDF
 import os
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-OUTPUT_DIR = os.path.join(SCRIPT_DIR, "Test_Invoices")
+OUTPUT_DIR = os.path.join(SCRIPT_DIR, "test_invoices")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 class ComplexInvoice(FPDF):
@@ -246,7 +246,7 @@ sample_data = {
     "notes": "There should be no calls coming in on these lines.\nThank you for your business!",
     "total_net": "$ 220.00",
     "tax": "$ 0.00",
-    "total_gross": "$ 220.00"
+    "total_gross": "$ 1220.00"
 }
 
 # 1. Generáljunk egy tökéletes másolatot

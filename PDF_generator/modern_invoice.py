@@ -2,7 +2,7 @@ from fpdf import FPDF
 import os
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(__file__))
-OUTPUT_DIR = os.path.join(SCRIPT_DIR, "Test_Invoices")
+OUTPUT_DIR = os.path.join(SCRIPT_DIR, "test_invoices")
 os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 # Létrehozzuk, ha nem létezik
