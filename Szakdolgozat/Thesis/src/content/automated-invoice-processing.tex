@@ -20,6 +20,14 @@ A környezet inicializálása során a következő jogosultságokat (\textit{Ent
         \item \texttt{sbwz\_instance}: Az SAP Build Work Zone (\textit{standard edition}), amely a felhasználói interakciókat biztosító központi felületet (\textit{Central Entry Point}) adja.
     \end{itemize}
 
+    % [H] paraméter a fix pozícióhoz!
+    \begin{figure}[H]
+        \centering
+        \includegraphics[width=1.0\textwidth]{figures/BTP_Instances_and_Subscriptions.png}
+        \caption{A konfigurált BTP szolgáltatáspéldányok és feliratkozások áttekintése}
+        \label{fig:btp_instances}
+    \end{figure}
+
     \item[Biztonság és Hozzáférés (Service Keys):] A szolgáltatások külső eléréséhez és az egyedi fejlesztésű szkriptek API kommunikációjához minden példány esetében \textit{Service Key}-eket generáltam. Ezek a kulcsok tartalmazzák a hitelesítéshez elengedhetetlen OAuth 2.0 kredenciákat (\textit{Client ID}, \textit{Client Secret}, \textit{Token URL}), amelyek lehetővé teszik a biztonságos, tokenszintű azonosítást.
 
     \item[Kapcsolatok (Connectivity):] A rendszerkomponensek közötti kommunikációt a \textit{Destinations} szolgáltatás konfigurálásával valósítottam meg. Létrehoztam egy biztonságos csatornát az S/4HANA backend rendszer felé (ún. ,,to hana'' destination), valamint dedikált kapcsolatokat építettem ki a Process Automation és a Work Zone szolgáltatások közötti belső adatcsere biztosítására.
@@ -27,10 +35,21 @@ A környezet inicializálása során a következő jogosultságokat (\textit{Ent
 
 A prototípus teszteléséhez és a robusztusság bizonyításához elengedhetetlen volt a megfelelő minőségű és mennyiségű tesztadat. Mivel a valós vállalati számlák gyakran szenzitív adatokat tartalmaznak, egy egyedi \textbf{Python alapú tesztadat-generátor szkriptet} fejlesztettem. Ellentétben a véletlenszerű generátorokkal, ez a megoldás determinisztikus adatbevitelt tesz lehetővé: a fejlesztő által előre definiált paraméterek (JSON/CSV bemenet) alapján állít elő PDF dokumentumokat. Ez a megközelítés lehetővé tette a ,,szabályozott tesztelést'' (\textit{Controlled Testing}): célzottan hoztam létre ,,tökéletes'' (\textit{Happy Path}), valamint hiányos vagy formailag hibás (\textit{Exception Path}) számlákat három eltérő sablon (\textit{layout}) alapján, így a rendszer hibatűrése minden lehetséges kimenetelre tesztelhetővé vált.
 
+
 \section{A Prototípus Architektúrája és Komponensei}
 \label{sec:prototype_architecture}
 
-A rendszer architektúráját úgy terveztem meg, hogy elválasszam egymástól az adatgyűjtésért felelős technikai robotot (\textit{Unattended Bot}) és az üzleti döntéseket kezelő folyamatot (\textit{Process}). Ahogyan az infrastruktúra áttekintő ábrán is látható, a megoldás három fő pillérre épül:
+A rendszer architektúráját úgy terveztem meg, hogy elválasszam egymástól az adatgyűjtésért felelős technikai robotot (\textit{Unattended Bot}) és az üzleti döntéseket kezelő folyamatot (\textit{Process}).
+
+% [H] paraméter a fix pozícióhoz!
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{figures/Architecture.png} 
+    \caption{A prototípus architektúrájának és komponenseinek áttekintése}
+    \label{fig:architecture_overview}
+\end{figure}
+
+Ahogyan az infrastruktúra áttekintő ábrán (\ref{fig:architecture_overview}. ábra) is látható, a megoldás három fő pillérre épül:
 
 \begin{itemize}
     \item \textbf{SAP Build Process Automation (SBPA):} A folyamatvezérlés és az RPA botok futtatásáért felelős szolgáltatás.
@@ -44,56 +63,215 @@ A rendszerkomponensek közötti integrációt \textit{RESTful} architektúra ala
 
 Az architektúra kulcsfontosságú eleme a transzformációs réteg: a bemeneti oldalon keletkező strukturálatlan adatokat (nyers PDF bájtfolyam) és a DOX szolgáltatás által visszaadott technikai JSON válaszokat a rendszer egy köztes, normalizált adatmodellre (\textit{Canonical Data Model}) képezi le. Ez biztosítja, hogy az üzleti folyamat (\textit{Process}) már független legyen a bemeneti forrás technikai sajátosságaitól, megvalósítva ezzel a laza csatolás (\textit{Loose Coupling}) elvét.
 
-\subsection{Adatkinyerés Konfigurálása (Document Information Extraction)}
-\label{ssec:prototype_dox}
+\subsection{Adatkinyerés Konfigurálása és API Kommunikáció}
+\label{ssec:data_extraction_config}
 
-A folyamat belépési pontja egy időzített trigger, amely elindítja a számlafeldolgozó robotot. A robot első feladata az Outlook példány megnyitása és a releváns e-mailek szűrése.
+A folyamat belépési pontja egy eseményvezérelt (\textit{Event-driven}) vagy időzített trigger, amely inicializálja a ,,Desktop Agent'' környezetet. A robot első lépésben csatlakozik a helyi Outlook példányhoz, és egy előre definiált szűrőfeltétel alapján (pl. Tárgy mező, Feladó) iterál a beérkezett leveleken.
 
-A standard RPA aktivitások helyett a dokumentumfeldolgozásnál egyedi JavaScript kódokat alkalmaztam a nagyobb kontroll és a hibatűrés érdekében. A feltöltés során a \texttt{Prepare\_Upload\_code} szkript állítja össze a \texttt{multipart/form-data} kérést. Itt látható, hogy nem fix sablont, hanem a dinamikus \texttt{SAP\_invoice\_schema} sémát definiáltam, amely lehetővé teszi a különböző formátumú számlák rugalmas kezelését.
+A dokumentumok feldolgozása során a standard, alacsony szintű RPA aktivitások helyett a robusztusabb, kódalapú megközelítést (\textit{Code-based approach}) választottam egyedi JavaScript függvények implementálásával. Ennek oka, hogy a natív dobozos megoldások korlátozottan kezelik a dinamikus API válaszokat és a kivételeket.
 
-A hitelesítés OAuth 2.0 protokollon keresztül történik. A \texttt{Prepare\_Token\_Request} szkript dinamikusan kéri le a \textit{Bearer tokent} az XSUAA szolgáltatástól, biztosítva a biztonságos kommunikációt. Mivel az adatkinyerés aszinkron folyamat, a robot egy ciklusban kérdezi le a feldolgozás státuszát a \texttt{Prepare\_Status\_Check} kóddal, amíg a DOX szolgáltatás \texttt{DONE} státuszt nem jelez.
+\subsubsection{Dokumentum Feltöltés (API Request)}
 
-A nyers JSON válasz feldolgozását az \texttt{Extract\_Data} szkript végzi. Ez a kód felelős az adatleképezésért (\textit{Mapping}) és a normalizálásért: a különböző mezőelnevezéseket (pl. \texttt{senderName} vagy \texttt{vendorName}) egy egységes belső objektumstruktúrára (\texttt{extracted.VendorName}) fordítja le, minimalizálva a későbbi hibalehetőségeket.
+A PDF állományok feltöltése az \textbf{SAP Document Information Extraction (DOX)} szolgáltatás \texttt{/document/jobs} végpontjára történik \texttt{POST} metódussal. A \texttt{Prepare\_Upload\_code} szkript felelős a \texttt{multipart/form-data} típusú kérés összeállításáért. 
 
-\subsection{A Jóváhagyási Folyamat Tervezése (Process Builder)}
-\label{ssec:prototype_process_builder}
+Ahogyan a \ref{code:prepare_upload}. kódblokkban látható, a \texttt{documentType: "custom"} és a \texttt{schemaName: "SAP\_invoice\_schema"} paraméterek definiálásával a rendszer nem a merev koordináta-alapú sablonokat (\textit{Templates}), hanem a generatív AI alapú, rugalmas sémafelismerést alkalmazza.
 
-A robot a kinyert adatokat átadja a fő folyamatnak. A folyamat első lépése a \texttt{Form Notifications Handling}, amely a folyamatvezérlés gerincét alkotja. A rendszer itt hajtja végre az elsődleges adatvalidációt: a \texttt{Data Validation} ág megvizsgálja, hogy minden kötelező mező (pl. Számlaszám, Dátum) rendelkezésre áll-e. Ha hiányosságot észlel, a folyamat automatikusan a \texttt{Rejection Notification} ágra fut, és értesíti a felhasználót a hibáról.
+% Ez a kódblokk ott marad, ahova írtad
+\begin{lstlisting}[language=JavaScript, caption={A multipart/form-data kérést összeállító JavaScript kódrészlet}, label={code:prepare_upload}]
+// Input valtozok: filePath, accessToken
 
-\subsection{Üzleti Szabályok Definiálása (Decisions)}
-\label{ssec:prototype_decisions}
+var myToken = "Bearer " + accessToken;
 
-Sikeres validáció esetén a folyamat az üzleti szabályok kiértékelésével folytatódik. Az \texttt{Amount Check} lépés vizsgálja a számla végösszegét egy előre definiált Döntési Tábla (\textit{Decision Table}) alapján. A prototípusban implementált szabályrendszer szerint:
+var optionsPayload = {
+    documentType: "custom",
+    schemaName: "SAP_invoice_schema",
+    clientId: "default"
+};
+
+return {
+    method: "POST",
+    url: "https://aiservices-dox.cfapps.eu10.hana.ondemand.com/document-information-extraction/v1/document/jobs",
+    responseType: "json",
+    resolveBodyOnly: true,
+    metadataType: irpa_core.enums.request.metadataType.formData, 
+    headers: {
+        Authorization: myToken
+    },
+    metadata: [
+        {
+            name: "file",
+            file: filePath 
+        },
+        {
+            name: "options",
+            value: JSON.stringify(optionsPayload)
+        }
+    ]
+};
+\end{lstlisting}
+
+\subsubsection{Hitelesítés és Biztonság}
+
+A kommunikáció biztonságát az \textbf{OAuth 2.0} iparági szabvány garantálja. A \texttt{Prepare\_Token\_Request} szkript a \textit{client\_credentials} engedélyezési folyamatot (\textit{Grant Type}) valósítja meg: a robot a \textit{Client ID} és \textit{Client Secret} birtokában dinamikusan kérvényez hozzáférési tokent (\textit{Bearer Token}) az SAP XSUAA (\textit{Extended Services for User Account and Authentication}) szolgáltatástól. Ez a token kerül beszúrásra minden későbbi HTTP kérés fejlécébe (\texttt{Authorization header}).
+
+\subsubsection{Aszinkron Feldolgozás (Polling Pattern)}
+
+Mivel a gépi látás és az adatkinyerés számításigényes, aszinkron folyamat, a DOX szolgáltatás a feltöltéskor azonnal visszatér egy \textit{Job ID}-val, miközben a feldolgozás a háttérben zajlik. Ennek kezelésére a robotban egy Polling (lekérdezési) ciklust implementáltam.
+
+A ciklus belsejében a \texttt{Prepare\_Status\_Check} szkript periodikusan \texttt{GET} kérést küld a szervernek. A ciklus feltétele a státuszváltozó vizsgálata: a robot mindaddig várakozó állapotban marad (\textit{Wait activity}), amíg a szolgáltatás \texttt{DONE} (kész) vagy \texttt{FAILED} (sikertelen) státusszal nem tér vissza.
+
+% [H] paraméter a fix pozícióhoz!
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{figures/Bot_Automation_part3.png}
+    \caption{Az aszinkron feldolgozás státuszát figyelő ciklus (Polling Loop) implementációja}
+    \label{fig:polling_loop}
+\end{figure}
+
+\subsubsection{Adatnormalizálás és Leképezés}
+
+A sikeres feldolgozást követően a rendszer egy összetett JSON objektumot ad vissza, amely tartalmazza a felismert mezőket és azok konfidencia-értékeit. Ezen nyers adatok transzformációját az \texttt{Extract\_Data} szkript végzi (lásd \ref{code:extract_data}. kódblokk).
+
+A script feladata a kanonikus adatmodell előállítása: a szolgáltatótól függő, változatos mezőelnevezéseket (pl. a JSON-ben érkező \texttt{senderName}, \texttt{vendorName} vagy \texttt{supplier}) egy egységes, belső objektumstruktúrára (\texttt{extracted.VendorName}) képezi le.
+
+% Ez a kódblokk ott marad, ahova írtad
+\begin{lstlisting}[language=JavaScript, caption={A JSON válasz feldolgozását és az adatok normalizálását végző algoritmus}, label={code:extract_data}]
+// Input valtozok: apiResult, currentFilePath
+
+var extracted = {
+    VendorName: "Unknown Vendor",
+    InvoiceNumber: "",
+    InvoiceDate: "",
+    GrossAmount: 0,
+    Currency: "EUR", 
+    PDFLink: currentFilePath
+};
+
+if (apiResult && apiResult.extraction && apiResult.extraction.headerFields) {
+    
+    var fields = apiResult.extraction.headerFields;
+
+    for (var i = 0; i < fields.length; i++) {
+        var fieldName = fields[i].name;
+        var fieldValue = fields[i].value;
+
+        // Mezonevek normalizalasa
+        if (fieldName === "senderName" || fieldName === "vendorName") {
+            extracted.VendorName = fieldValue;
+        }
+
+        if (fieldName === "documentNumber" || fieldName === "invoiceNumber") {
+            extracted.InvoiceNumber = fieldValue;
+        }
+
+        if (fieldName === "totalAmount" || fieldName === "grossAmount") {
+            extracted.GrossAmount = fieldValue;
+        }
+
+        if (fieldName === "currencyCode") {
+            extracted.Currency = fieldValue;
+        }
+
+        if (fieldName === "documentDate" || fieldName === "invoiceDate") {
+            if (fieldValue) { 
+                extracted.InvoiceDate = fieldValue; 
+            }
+        }
+    }
+}
+
+return extracted;
+\end{lstlisting}
+
+Ez a réteg (\textit{Data Abstraction Layer}) biztosítja, hogy a folyamat további lépései függetlenek legyenek a bemeneti dokumentum technikai sajátosságaitól, jelentősen növelve ezzel a rendszer hibatűrését.
+
+\subsection{A Jóváhagyási Folyamat és Döntési Logika Tervezése}
+\label{ssec:approval_logic_design}
+
+A robot által kinyert és normalizált adatokat a rendszer egy API híváson keresztül adja át a fő üzleti folyamatnak (\textit{Business Process}). A folyamat bemeneti változói (\textit{Process Inputs}) fogadják a strukturált JSON objektumot, amely innentől kezdve a folyamatkontextus (\textit{Process Context}) részét képezi, és elérhetővé válik minden későbbi lépés számára.
+
+A folyamatvezérlés logikai felépítése a \textbf{BPMN 2.0} szabványt követi. A központi vezérlő elem a \texttt{Form Notifications Handling} alfolyamat, amely exkluzív logikai kapuk (\textit{Exclusive Gateways}) sorozatával valósítja meg a döntési fát.
+
+\subsubsection{Elsődleges Adatvalidáció (Gatekeeper Pattern)}
+
+A folyamat első védvonala a \texttt{Data Validation} döntési pont. A rendszer itt vizsgálja meg programozott feltételekkel, hogy a kritikus mezők (pl. Számlaszám, Dátum, Szállító) rendelkeznek-e érvényes értékkel.
+
+\begin{description}
+    \item[Hibaág (\textit{Exception Path}):] Amennyiben a rendszer hiányosságot észlel (pl. \texttt{invoiceNumber == null}), a folyamat a \texttt{Rejection Notification} ágra fut. Itt a rendszer automatikusan generál egy értesítést a felhasználónak a hiba pontos megjelölésével, megakadályozva, hogy hibás adat kerüljön a könyvelésbe.
+    \item[Sikeres ág (\textit{Happy Path}):] Valid adat esetén a vezérlés tovább lép a második szintű ellenőrzésre.
+\end{description}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{figures/Form_Notifications_Handling_Data_Validation.png}
+    \caption{Az adatvalidációs logikai kapu és a hibakezelési ág a folyamattervezőben}
+    \label{fig:data_validation_flow}
+\end{figure}
+
+\subsubsection{Üzleti Szabályok és Jóváhagyási Stratégia}
+
+A validált számlák a prototípus legfontosabb döntési pontjához, az \texttt{Amount Check} (Összegellenőrzés) lépéshez érkeznek. Itt valósul meg a vállalat automatizálási stratégiája: a rendszer a számla bruttó végösszege alapján dönti el a szükséges beavatkozás mértékét.
+
+A prototípusban implementált szabályrendszer a következő:
+
+\begin{description}
+    \item[Nagy értékű számlák (\textit{Amount Greater}):] Ha az összeg meghaladja a konfigurált küszöbértéket, a folyamat az \texttt{Invoice Approval} ágra lép. Ekkor a rendszer egy ,,User Task'' (Felhasználói feladat) típust generál, amely megállítja a folyamat futását mindaddig, amíg egy jogosult jóváhagyó (\textit{Approver}) a Work Zone felületén döntést nem hoz.
+    \item[Kis értékű számlák (\textit{Default/Auto-approve}):] Küszöbérték alatti összeg esetén a folyamat a \texttt{Default Approval} ágra fut. Ez demonstrálja a ,,Touchless Processing'' (érintésmentes feldolgozás) koncepcióját, ahol az alacsony kockázatú tételek emberi interakció nélkül kerülhetnek továbbításra a backend rendszer felé.
+\end{description}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{figures/Form_Notifications_Handling_Amount_Check.png}
+    \caption{Az összeghatár alapú döntési logika (Business Rule) implementációja}
+    \label{fig:amount_check_logic}
+\end{figure}
+
+Ez a többszintű, feltételes elágazásokra épülő struktúra biztosítja, hogy az emberi erőforrásokat csak a valóban döntést igénylő esetekhez rendeljük hozzá, maximalizálva ezzel a folyamat hatékonyságát.
+
+\subsection{Üzleti Szabályok Implementációja (Technical Decisions)}
+\label{ssec:business_rules_impl}
+
+Az üzleti döntések technikai megvalósításához a \textbf{Döntési Tábla} (\textit{Decision Table}) artefaktumot alkalmaztam. Ez az architekturális megoldás megvalósítja az üzleti logika és a folyamatvezérlés szétválasztását (\textit{Separation of Concerns}).
+
+A komponens bemenetként (\textit{Input}) fogadja a normalizált számlaadatokat – kiemelten a \texttt{GrossAmount} és \texttt{Currency} változókat –, kimenetként (\textit{Output}) pedig egy vezérlési döntést ad vissza a folyamat számára. A megoldás nagy előnye a karbantarthatóság: az összeghatárok és szabályok egy konfigurációs felületen módosíthatók anélkül, hogy a folyamatdiagramot újra kellene tervezni vagy a forráskódot módosítani kellene.
+
+\subsection{Felhasználói Felületek és Adatkötés (Forms \& UI)}
+\label{ssec:ui_forms}
+
+A felhasználói interakciók központja az \textbf{SAP Build Work Zone} ,,My Inbox'' alkalmazása. A jóváhagyási űrlapokat a \textit{No-Code Form Editor} segítségével terveztem meg, ahol a mezők értékeit közvetlenül a folyamat kontextusából (\textit{Context Binding}) nyertem ki.
+
+Ahogy a jóváhagyási képernyőn látható, a jóváhagyó nemcsak a robot által kinyert strukturált adatokat (Szállító, Összeg, Dátum) látja, hanem egy közvetlen linket is kap az eredeti PDF dokumentum megnyitásához (\texttt{Open Original Invoice PDF}). Ez a funkció kiküszöböli a ,,swivel-chair'' problémát, mivel az ellenőrzés és a döntés egyetlen felületen, kontextusváltás nélkül elvégezhető.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{figures/Work_Zone_My_Inbox.png}
+    \caption{A jóváhagyói felület a Work Zone ,,My Inbox'' alkalmazásában}
+    \label{fig:work_zone_inbox}
+\end{figure}
+
+\subsection{Backend Integráció és Folyamatlezárás}
+\label{ssec:backend_integration}
+
+A folyamat utolsó szakasza a jóváhagyott tételek tényleges könyvelése és a folyamat adminisztratív lezárása. Ezt a \texttt{Send Task Automation} alfolyamat vezérli, amely egy \texttt{For Each} ciklus segítségével iterál végig a jóváhagyott elemeken.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{figures/Send_Task_Automation.png}
+    \caption{A folyamatlezáró és könyvelő automatizáció logikai felépítése}
+    \label{fig:send_task_automation}
+\end{figure}
+
+A rendszer az alábbi lépéseket hajtja végre:
 
 \begin{itemize}
-    \item \textbf{Nagy összegű számlák:} Emberi jóváhagyást igényelnek (\texttt{Invoice Approval}).
-    \item \textbf{Kis összegű tételek:} Automatikusan, emberi beavatkozás nélkül jóváhagyásra kerülhetnek (\texttt{Default Approval}).
+    \item \textbf{S/4HANA Integráció:} A rendszer meghívja az S/4HANA Invoice Parking komponenst. A robot bejelentkezik a rendszerbe, és az \texttt{FB60/FV60} tranzakciók segítségével parkolópályára helyezi a számlát a strukturált adatok alapján.
+    \item \textbf{Értesítés:} A könyvelés sikerességéről a robot automatikus e-mail értesítést küld az érintett felelősnek az Outlook integráción keresztül.
+    \item \textbf{Erőforrás felszabadítás:} A folyamat végén a robot bezárja az Outlook példányt (\texttt{Close Outlook Instance}), biztosítva a rendszer erőforrásainak hatékony kezelését.
 \end{itemize}
 
-Ez a lépés biztosítja a ,,kivételalapú kezelés'' (\textit{Management by Exception}) elvét, ahol a humán erőforrás csak a kritikus esetekkel foglalkozik.
-
-\subsection{Felhasználói Felületek Létrehozása (Forms és Work Zone)}
-\label{ssec:prototype_ui}
-
-A felhasználói interakciók központja az SAP Build Work Zone ,,My Inbox'' alkalmazása. A jóváhagyási űrlapokat úgy terveztem meg, hogy azok minden döntéstámogató információt tartalmazzanak.
-
-Ahogy az \texttt{Invoice Approval Request} képernyőn látható, a jóváhagyó nemcsak a robot által kinyert strukturált adatokat (Szállító, Összeg, Dátum) látja, hanem egy közvetlen linket is kap az eredeti PDF dokumentum megnyitásához (\texttt{Open Original Invoice PDF}). Ez a funkció kiküszöböli a ,,swivel-chair'' problémát, mivel az ellenőrzés egyetlen felületen elvégezhető.
-
-\subsection{Integráció az SAP Rendszerrel (RPA Bot)}
-\label{ssec:prototype_rpa}
-
-A folyamat utolsó lépése a jóváhagyott számlák továbbítása az ERP rendszer felé. A \texttt{Send Task Automation} ág felel a folyamat lezárásáért. A jóváhagyást követően a rendszer egy \textit{Unattended Bot}-ot indít el, amely:
-
-\begin{enumerate}
-    \item Bejelentkezik az S/4HANA rendszerbe a GUI felületen keresztül.
-    \item Meghívja a megfelelő tranzakciót (FB60/FV60).
-    \item Beilleszti a jóváhagyott, strukturált adatokat.
-    \item Végrehajtja a számla parkolását (\textit{Invoice Parking}).
-\end{enumerate}
-
-Végül a rendszer e-mail értesítést küld az érintetteknek a sikeres feldolgozásról, lezárva az automatizált folyamatot.
-
-\section{Fejezet Összegzése}
-\label{sec:prototype_summary}
-
-Ebben a fejezetben bemutattuk az automatizált számlafeldolgozási prototípus technikai megvalósítását az SAP Build Process Automation környezetben. Részleteztük a felhőalapú infrastruktúra beállítását, az architektúra rétegeit, valamint a kulcskomponensek – a DOX adatkinyerés, a folyamatvezérlés, az üzleti szabályok, a felhasználói felület és az SAP integráció – implementációs lépéseit. A következő fejezetben a megépített prototípus működését teszteljük, és értékeljük az elért eredményeket a manuális folyamattal összevetve.
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{figures/Email_Notification.png}
+    \caption{A rendszer által generált automatikus értesítés a sikeres feldolgozásról}
+    \label{fig:email_notification}
+\end{figure}
