@@ -1,0 +1,11 @@
+// Input variables: uaaUrl, clientInfo
+
+return {
+    method: 'GET',
+    url: uaaUrl + '/oauth/token?grant_type=client_credentials',
+    responseType: 'json', 
+    resolveBodyOnly: true,
+    headers: {
+        Authorization: 'Basic ' + clientInfo
+    }
+};

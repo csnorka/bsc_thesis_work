@@ -1,0 +1,44 @@
+// Input változók: apiResult, currentFilePath
+
+var extracted = {
+    VendorName: "Unknown Vendor",
+    InvoiceNumber: "",
+    InvoiceDate: "",
+    GrossAmount: 0,
+    Currency: "EUR", 
+    PDFLink: currentFilePath
+};
+
+if (apiResult && apiResult.extraction && apiResult.extraction.headerFields) {
+    
+    var fields = apiResult.extraction.headerFields;
+
+    for (var i = 0; i < fields.length; i++) {
+        var fieldName = fields[i].name;
+        var fieldValue = fields[i].value;
+
+        if (fieldName === "senderName" || fieldName === "vendorName") {
+            extracted.VendorName = fieldValue;
+        }
+
+        if (fieldName === "documentNumber" || fieldName === "invoiceNumber") {
+            extracted.InvoiceNumber = fieldValue;
+        }
+
+        if (fieldName === "totalAmount" || fieldName === "grossAmount") {
+            extracted.GrossAmount = fieldValue;
+        }
+
+        if (fieldName === "currencyCode") {
+            extracted.Currency = fieldValue;
+        }
+
+        if (fieldName === "documentDate" || fieldName === "invoiceDate") {
+            if (fieldValue) { 
+                extracted.InvoiceDate = fieldValue; 
+            }
+        }
+    }
+}
+
+return extracted;

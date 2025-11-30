@@ -1,0 +1,31 @@
+// Input változók: filePath, accessToken
+
+var myToken = "Bearer " + accessToken;
+
+var optionsPayload = {
+    documentType: "custom",
+    schemaName: "SAP_invoice_schema",
+    clientId: "default"
+};
+
+return {
+    method: "POST",
+    url: "https://aiservices-dox.cfapps.eu10.hana.ondemand.com/document-information-extraction/v1/document/jobs",
+    responseType: "json",
+    resolveBodyOnly: true,
+    metadataType: irpa_core.enums.request.metadataType.formData, 
+    headers: {
+        Authorization: myToken
+    },
+    metadata: [
+        {
+            name: "file",
+            file: filePath 
+        },
+        {
+            name: "options",
+            value: JSON.stringify(optionsPayload)
+        }
+    ],
+    //timeout: 30000
+};

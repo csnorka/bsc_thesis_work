@@ -1,0 +1,12 @@
+// Input változók: jobId, accessToken
+
+return {
+    method: "GET",
+    url: "https://aiservices-dox.cfapps.eu10.hana.ondemand.com/document-information-extraction/v1/document/jobs/" + jobId,
+    responseType: "json",
+    resolveBodyOnly: true,
+    headers: {
+        Authorization: "Bearer " + accessToken,
+        'Cache-Control': 'no-cache' 
+    }
+};
