@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.14)  30 NOV 2025 23:08
+This is pdfTeX, Version 3.141592653-2.6-1.40.27 (MiKTeX 25.4) (preloaded format=pdflatex 2025.11.14)  1 DEC 2025 00:00
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -593,47 +593,268 @@ Package: float 2001/11/08 v1.3d Float enhancements (AL)
 \float@box=\box57
 \@float@everytoks=\toks47
 \@floatcapt=\box58
+) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/pgfplots\pgfplots.sty (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.revision.tex)
+Package: pgfplots 2021/05/15 v1.18.1 Data Visualization (1.18.1)
+ (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/pgf/frontendlayer\tikz.sty (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgf.sty (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfrcs.sty (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-common.tex
+\pgfutil@everybye=\toks48
+\pgfutil@tempdima=\dimen260
+\pgfutil@tempdimb=\dimen261
+) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfutil-latex.def
+\pgfutil@abb=\box59
+) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfrcs.code.tex (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf\pgf.revision.tex)
+Package: pgfrcs 2025-08-29 v3.1.11a (3.1.11a)
+))
+Package: pgf 2025-08-29 v3.1.11a (3.1.11a)
+ (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/pgf/basiclayer\pgfcore.sty (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/pgf/systemlayer\pgfsys.sty (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys.code.tex
+Package: pgfsys 2025-08-29 v3.1.11a (3.1.11a)
+ (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex
+\pgfkeys@pathtoks=\toks49
+\pgfkeys@temptoks=\toks50
+ (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeyslibraryfiltered.code.tex
+\pgfkeys@tmptoks=\toks51
+))
+\pgf@x=\dimen262
+\pgf@y=\dimen263
+\pgf@xa=\dimen264
+\pgf@ya=\dimen265
+\pgf@xb=\dimen266
+\pgf@yb=\dimen267
+\pgf@xc=\dimen268
+\pgf@yc=\dimen269
+\pgf@xd=\dimen270
+\pgf@yd=\dimen271
+\w@pgf@writea=\write3
+\r@pgf@reada=\read3
+\c@pgf@counta=\count342
+\c@pgf@countb=\count343
+\c@pgf@countc=\count344
+\c@pgf@countd=\count345
+\t@pgf@toka=\toks52
+\t@pgf@tokb=\toks53
+\t@pgf@tokc=\toks54
+\pgf@sys@id@count=\count346
+ (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgf.cfg
+File: pgf.cfg 2025-08-29 v3.1.11a (3.1.11a)
 )
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 87.
+Driver file for pgf: pgfsys-pdftex.def
+ (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-pdftex.def
+File: pgfsys-pdftex.def 2025-08-29 v3.1.11a (3.1.11a)
+ (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsys-common-pdf.def
+File: pgfsys-common-pdf.def 2025-08-29 v3.1.11a (3.1.11a)
+))) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsyssoftpath.code.tex
+File: pgfsyssoftpath.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfsyssoftpath@smallbuffer@items=\count347
+\pgfsyssoftpath@bigbuffer@items=\count348
+) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/systemlayer\pgfsysprotocol.code.tex
+File: pgfsysprotocol.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcore.code.tex
+Package: pgfcore 2025-08-29 v3.1.11a (3.1.11a)
+ (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathutil.code.tex) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathparser.code.tex
+\pgfmath@dimen=\dimen272
+\pgfmath@count=\count349
+\pgfmath@box=\box60
+\pgfmath@toks=\toks55
+\pgfmath@stack@operand=\toks56
+\pgfmath@stack@operation=\toks57
+) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.code.tex) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.basic.code.tex) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.trigonometric.code.tex) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.random.code.tex) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.comparison.code.tex) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.base.code.tex) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.round.code.tex) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.misc.code.tex) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfunctions.integerarithmetics.code.tex) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathcalc.code.tex) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmathfloat.code.tex
+\c@pgfmathroundto@lastzeros=\count350
+)) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfint.code.tex) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepoints.code.tex
+File: pgfcorepoints.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@picminx=\dimen273
+\pgf@picmaxx=\dimen274
+\pgf@picminy=\dimen275
+\pgf@picmaxy=\dimen276
+\pgf@pathminx=\dimen277
+\pgf@pathmaxx=\dimen278
+\pgf@pathminy=\dimen279
+\pgf@pathmaxy=\dimen280
+\pgf@xx=\dimen281
+\pgf@xy=\dimen282
+\pgf@yx=\dimen283
+\pgf@yy=\dimen284
+\pgf@zx=\dimen285
+\pgf@zy=\dimen286
+) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathconstruct.code.tex
+File: pgfcorepathconstruct.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@path@lastx=\dimen287
+\pgf@path@lasty=\dimen288
+) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathusage.code.tex
+File: pgfcorepathusage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@shorten@end@additional=\dimen289
+\pgf@shorten@start@additional=\dimen290
+) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorescopes.code.tex
+File: pgfcorescopes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfpic=\box61
+\pgf@hbox=\box62
+\pgf@layerbox@main=\box63
+\pgf@picture@serial@count=\count351
+) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoregraphicstate.code.tex
+File: pgfcoregraphicstate.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgflinewidth=\dimen291
+) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransformations.code.tex
+File: pgfcoretransformations.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@pt@x=\dimen292
+\pgf@pt@y=\dimen293
+\pgf@pt@temp=\dimen294
+) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorequick.code.tex
+File: pgfcorequick.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreobjects.code.tex
+File: pgfcoreobjects.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepathprocessing.code.tex
+File: pgfcorepathprocessing.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorearrows.code.tex
+File: pgfcorearrows.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfarrowsep=\dimen295
+) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreshade.code.tex
+File: pgfcoreshade.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@max=\dimen296
+\pgf@sys@shading@range@num=\count352
+\pgf@shadingcount=\count353
+) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreimage.code.tex
+File: pgfcoreimage.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoreexternal.code.tex
+File: pgfcoreexternal.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfexternal@startupbox=\box64
+) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorelayers.code.tex
+File: pgfcorelayers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcoretransparency.code.tex
+File: pgfcoretransparency.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorepatterns.code.tex
+File: pgfcorepatterns.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/basiclayer\pgfcorerdf.code.tex
+File: pgfcorerdf.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduleshapes.code.tex
+File: pgfmoduleshapes.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfnodeparttextbox=\box65
+) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduleplot.code.tex
+File: pgfmoduleplot.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-0-65.sty
+Package: pgfcomp-version-0-65 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@nodesepstart=\dimen297
+\pgf@nodesepend=\dimen298
+) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/pgf/compatibility\pgfcomp-version-1-18.sty
+Package: pgfcomp-version-1-18 2025-08-29 v3.1.11a (3.1.11a)
+)) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgffor.sty (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/pgf/utilities\pgfkeys.sty (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgfkeys.code.tex)) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/pgf/math\pgfmath.sty (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/math\pgfmath.code.tex)) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/utilities\pgffor.code.tex
+Package: pgffor 2025-08-29 v3.1.11a (3.1.11a)
+\pgffor@iter=\dimen299
+\pgffor@skip=\dimen300
+\pgffor@stack=\toks58
+\pgffor@toks=\toks59
+)) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz\tikz.code.tex
+Package: tikz 2025-08-29 v3.1.11a (3.1.11a)
+ (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplothandlers.code.tex
+File: pgflibraryplothandlers.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgf@plot@mark@count=\count354
+\pgfplotmarksize=\dimen301
+)
+\tikz@lastx=\dimen302
+\tikz@lasty=\dimen303
+\tikz@lastxsaved=\dimen304
+\tikz@lastysaved=\dimen305
+\tikz@lastmovetox=\dimen306
+\tikz@lastmovetoy=\dimen307
+\tikzleveldistance=\dimen308
+\tikzsiblingdistance=\dimen309
+\tikz@figbox=\box66
+\tikz@figbox@bg=\box67
+\tikz@tempbox=\box68
+\tikz@tempbox@bg=\box69
+\tikztreelevel=\count355
+\tikznumberofchildren=\count356
+\tikznumberofcurrentchild=\count357
+\tikz@fig@count=\count358
+ (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmodulematrix.code.tex
+File: pgfmodulematrix.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+\pgfmatrixcurrentrow=\count359
+\pgfmatrixcurrentcolumn=\count360
+\pgf@matrix@numberofcolumns=\count361
+)
+\tikz@expandcount=\count362
+ (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarytopaths.code.tex
+File: tikzlibrarytopaths.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+))) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.code.tex (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscore.code.tex
+\t@pgfplots@toka=\toks60
+\t@pgfplots@tokb=\toks61
+\t@pgfplots@tokc=\toks62
+\pgfplots@tmpa=\dimen310
+\c@pgfplots@coordindex=\count363
+\c@pgfplots@scanlineindex=\count364
+ (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgfplotssysgeneric.code.tex)) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgfplotslibrary.code.tex) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldpgfcompatib\pgfplotsoldpgfsupp_loader.code.tex (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryfpu.code.tex)
+Package pgfplots: loading complementary utilities for your pgf version...
+\t@pgf@toka=\toks63
+\t@pgf@tokb=\toks64
+\t@pgf@tokc=\toks65
+(C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/oldpgfcompatib\pgfplotsoldpgfsupp_pgfutil-common-lists.tex)) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsutil.code.tex (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsliststructure.code.tex) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsliststructureext.code.tex) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsarray.code.tex
+\c@pgfplotsarray@tmp=\count365
+) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsmatrix.code.tex) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/numtable\pgfplotstableshared.code.tex
+\c@pgfplotstable@counta=\count366
+\t@pgfplotstable@a=\toks66
+) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/liststructure\pgfplotsdeque.code.tex) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsbinary.code.tex (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsbinary.data.code.tex)) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotsutil.verb.code.tex) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\pgflibrarypgfplots.surfshading.code.tex
+\c@pgfplotslibrarysurf@no=\count367
+ (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/sys\pgflibrarypgfplots.surfshading.pgfsys-pdftex.def))) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotscolormap.code.tex (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/util\pgfplotscolor.code.tex)) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsstackedplots.code.tex) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsplothandlers.code.tex (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsmeshplothandler.code.tex (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsmeshplotimage.code.tex))) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.scaling.code.tex) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotscoordprocessing.code.tex) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.errorbars.code.tex) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.markers.code.tex) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplotsticks.code.tex) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots\pgfplots.paths.code.tex) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.code.tex (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/modules\pgfmoduledecorations.code.tex
+\pgfdecoratedcompleteddistance=\dimen311
+\pgfdecoratedremainingdistance=\dimen312
+\pgfdecoratedinputsegmentcompleteddistance=\dimen313
+\pgfdecoratedinputsegmentremainingdistance=\dimen314
+\pgf@decorate@distancetomove=\dimen315
+\pgf@decorate@repeatstate=\count368
+\pgfdecorationsegmentamplitude=\dimen316
+\pgfdecorationsegmentlength=\dimen317
+)
+\tikz@lib@dec@box=\box70
+) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.pathmorphing.code.tex (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.pathmorphing.code.tex)) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibrarydecorations.pathreplacing.code.tex (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries/decorations\pgflibrarydecorations.pathreplacing.code.tex)) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgfplots/libs\tikzlibrarypgfplots.contourlua.code.tex)
+\pgfplots@numplots=\count369
+\pgfplots@xmin@reg=\dimen318
+\pgfplots@xmax@reg=\dimen319
+\pgfplots@ymin@reg=\dimen320
+\pgfplots@ymax@reg=\dimen321
+\pgfplots@zmin@reg=\dimen322
+\pgfplots@zmax@reg=\dimen323
+) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/frontendlayer/tikz/libraries\tikzlibraryplotmarks.code.tex
+File: tikzlibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+ (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplotmarks.code.tex
+File: pgflibraryplotmarks.code.tex 2025-08-29 v3.1.11a (3.1.11a)
+)))
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 103.
  (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
 File: l3backend-pdftex.def 2025-10-09 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count342
-) (thesis.aux (include/titlepage.aux) (include/declaration.aux) (content/abstract.aux) (content/introduction.aux) (content/theoretical-background.aux) (content/invoice-processing-process-analysis.aux) (content/automated-invoice-processing.aux) (content/results-and-evaluation.aux) (content/acknowledgement.aux) (content/appendices.aux))
+\l__color_backend_stack_int=\count370
+) (thesis.aux (include/titlepage.aux) (include/declaration.aux) (content/abstract.aux) (content/introduction.aux) (content/theoretical-background.aux) (content/invoice-processing-process-analysis.aux) (content/automated-invoice-processing.aux) (content/results-and-evaluation.aux) (content/conclusion.aux) (content/acknowledgement.aux) (content/appendices.aux))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 87.
-LaTeX Font Info:    ... okay on input line 87.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 103.
+LaTeX Font Info:    ... okay on input line 103.
  (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count343
-\scratchdimen=\dimen260
-\scratchbox=\box59
-\nofMPsegments=\count344
-\nofMParguments=\count345
-\everyMPshowfont=\toks48
-\MPscratchCnt=\count346
-\MPscratchDim=\dimen261
-\MPnumerator=\count347
-\makeMPintoPDFobject=\count348
-\everyMPtoPDFconversion=\toks49
+\scratchcounter=\count371
+\scratchdimen=\dimen324
+\scratchbox=\box71
+\nofMPsegments=\count372
+\nofMParguments=\count373
+\everyMPshowfont=\toks67
+\MPscratchCnt=\count374
+\MPscratchDim=\dimen325
+\MPnumerator=\count375
+\makeMPintoPDFobject=\count376
+\everyMPtoPDFconversion=\toks68
 ) (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/epstopdf-pkg\epstopdf-base.sty
 Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
 Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 485.
@@ -674,26 +895,31 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 87.
+Package hyperref Info: Link coloring ON on input line 103.
 (thesis.out) (thesis.out)
-\@outlinefile=\write3
-\openout3 = `thesis.out'.
+\@outlinefile=\write4
+\openout4 = `thesis.out'.
 
-\c@lstlisting=\count349
+\c@lstlisting=\count377
 Package caption Info: Begin \AtBeginDocument code.
 Package caption Info: float package is loaded.
 Package caption Info: End \AtBeginDocument code.
- (C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
+
+
+Package pgfplots Warning: running in backwards compatibility mode (unsuitable tick labels; missing features). Consider writing \pgfplotsset{compat=1.18} into your preamble.
+ on input line 103.
+
+(C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/base\report.cls
 LaTeX Info: Redefining \cal on input line 577.
 LaTeX Info: Redefining \mit on input line 578.
 )
 Package babel Info: 'magyar' activates 'magyar' shorthands.
-(babel)             Reported on input line 87.
+(babel)             Reported on input line 103.
 \openout2 = `include/titlepage.aux'.
 
  (include/titlepage.tex
 Package hyperref Info: Option `pageanchor' set `false' on input line 1.
-<figures/bme_logo.pdf, id=266, 705.63625pt x 188.705pt>
+<figures/bme_logo.pdf, id=313, 705.63625pt x 188.705pt>
 File: figures/bme_logo.pdf Graphic file (type pdf)
 <use figures/bme_logo.pdf>
 Package pdftex.def Info: figures/bme_logo.pdf  used on input line 7.
@@ -742,11 +968,11 @@ Underfull \hbox (badness 7832) in paragraph at lines 64--64
  [][] [][][]\T1/lmr/m/n/12 Id®igényes Lé-pé-sek és Sz¶k Ke-reszt-met-sze-tek 
  []
 
-)
-\tf@toc=\write4
-\openout4 = `thesis.toc'.
+[2])
+\tf@toc=\write5
+\openout5 = `thesis.toc'.
 
- [2]
+ [3]
 \openout2 = `include/declaration.aux'.
 
  (include/declaration.tex [1
@@ -764,7 +990,7 @@ Underfull \hbox (badness 7832) in paragraph at lines 64--64
 ] [2
 
 ]
-\c@romanPage=\count350
+\c@romanPage=\count378
 )
 \openout2 = `content/introduction.aux'.
 
@@ -826,12 +1052,12 @@ Underfull \hbox (badness 2903) in paragraph at lines 16--17
 
 
 ]
-<figures/BTP_Instances_and_Subscriptions.png, id=667, 940.7145pt x 380.622pt>
+<figures/BTP_Instances_and_Subscriptions.png, id=728, 940.7145pt x 380.622pt>
 File: figures/BTP_Instances_and_Subscriptions.png Graphic file (type png)
 <use figures/BTP_Instances_and_Subscriptions.png>
 Package pdftex.def Info: figures/BTP_Instances_and_Subscriptions.png  used on input line 26.
 (pdftex.def)             Requested size: 426.79135pt x 172.68379pt.
-<figures/Architecture.png, id=669, 884.30376pt x 423.5825pt>
+<figures/Architecture.png, id=730, 884.30376pt x 423.5825pt>
 File: figures/Architecture.png Graphic file (type png)
 <use figures/Architecture.png>
 Package pdftex.def Info: figures/Architecture.png  used on input line 47.
@@ -845,7 +1071,7 @@ Package hyperref Info: bookmark level for unknown lstlisting defaults to 0 on in
 LaTeX Font Info:    Font shape `T1/lmtt/bx/n' in size <10> not available
 (Font)              Font shape `T1/lmtt/b/n' tried instead on input line 83.
 [30]
-<figures/Bot_Automation_part3.png, id=710, 659.46375pt x 378.213pt>
+<figures/Bot_Automation_part3.png, id=772, 659.46375pt x 378.213pt>
 File: figures/Bot_Automation_part3.png Graphic file (type png)
 <use figures/Bot_Automation_part3.png>
 Package pdftex.def Info: figures/Bot_Automation_part3.png  used on input line 126.
@@ -856,30 +1082,30 @@ Underfull \hbox (badness 1796) in paragraph at lines 200--201
  []
 
 [33]
-<figures/Form_Notifications_Handling_Data_Validation.png, id=778, 446.8695pt x 371.58826pt>
+<figures/Form_Notifications_Handling_Data_Validation.png, id=839, 446.8695pt x 371.58826pt>
 File: figures/Form_Notifications_Handling_Data_Validation.png Graphic file (type png)
 <use figures/Form_Notifications_Handling_Data_Validation.png>
 Package pdftex.def Info: figures/Form_Notifications_Handling_Data_Validation.png  used on input line 206.
 (pdftex.def)             Requested size: 426.79135pt x 354.91194pt.
-<figures/Form_Notifications_Handling_Amount_Check.png, id=779, 834.11626pt x 433.62pt>
+<figures/Form_Notifications_Handling_Amount_Check.png, id=840, 834.11626pt x 433.62pt>
 File: figures/Form_Notifications_Handling_Amount_Check.png Graphic file (type png)
 <use figures/Form_Notifications_Handling_Amount_Check.png>
 Package pdftex.def Info: figures/Form_Notifications_Handling_Amount_Check.png  used on input line 224.
 (pdftex.def)             Requested size: 426.79135pt x 221.87108pt.
  [34 <./figures/Form_Notifications_Handling_Data_Validation.png>]
-<figures/Work_Zone_My_Inbox.png, id=785, 1151.502pt x 608.2725pt>
+<figures/Work_Zone_My_Inbox.png, id=846, 1151.502pt x 608.2725pt>
 File: figures/Work_Zone_My_Inbox.png Graphic file (type png)
 <use figures/Work_Zone_My_Inbox.png>
 Package pdftex.def Info: figures/Work_Zone_My_Inbox.png  used on input line 247.
 (pdftex.def)             Requested size: 426.79135pt x 225.44713pt.
  [35 <./figures/Form_Notifications_Handling_Amount_Check.png>]
-<figures/Send_Task_Automation.png, id=791, 416.757pt x 358.941pt>
+<figures/Send_Task_Automation.png, id=852, 416.757pt x 358.941pt>
 File: figures/Send_Task_Automation.png Graphic file (type png)
 <use figures/Send_Task_Automation.png>
 Package pdftex.def Info: figures/Send_Task_Automation.png  used on input line 259.
 (pdftex.def)             Requested size: 426.79135pt x 367.58827pt.
  [36 <./figures/Work_Zone_My_Inbox.png>]
-<figures/Email_Notification.png, id=797, 668.4975pt x 236.68425pt>
+<figures/Email_Notification.png, id=859, 668.4975pt x 236.68425pt>
 File: figures/Email_Notification.png Graphic file (type png)
 <use figures/Email_Notification.png>
 Package pdftex.def Info: figures/Email_Notification.png  used on input line 274.
@@ -889,15 +1115,198 @@ Package pdftex.def Info: figures/Email_Notification.png  used on input line 274.
 
  (content/results-and-evaluation.tex
 5. fejezet.
-[39
+(C:\Users\I750554\AppData\Local\Programs\MiKTeX\tex/latex/listings\lstlang1.sty
+File: lstlang1.sty 2025/10/06 1.11 listings language file
+)
+pdfTeX warning (ext4): destination with the same identifier (name{lstlisting.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.25 ...Ã¡lÃ¡ssal}, label={code:python_generator}]
+                                                  
+pdfTeX warning (ext4): destination with the same identifier (name{lstnumber.1.1}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.26 #
+       1. BASE CASE (Valid Data Definition)
+pdfTeX warning (ext4): destination with the same identifier (name{lstnumber.1.2}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.27 base_data 
+               = {
+pdfTeX warning (ext4): destination with the same identifier (name{lstnumber.1.3}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.28  
+         "inv_number": "174221",
+pdfTeX warning (ext4): destination with the same identifier (name{lstnumber.1.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.29  
+         "inv_date": "2/18/2019",
+pdfTeX warning (ext4): destination with the same identifier (name{lstnumber.1.5}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.30  
+         "total_gross": "$ 220.00",
+pdfTeX warning (ext4): destination with the same identifier (name{lstnumber.1.6}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.31  
+         "items": [
+pdfTeX warning (ext4): destination with the same identifier (name{lstnumber.1.7}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.32  
+             ["2001", "Labor Service", "2.00", "HR", "$ 55.00", "$ 110.00"]
+pdfTeX warning (ext4): destination with the same identifier (name{lstnumber.1.8}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.33  
+         ]
+pdfTeX warning (ext4): destination with the same identifier (name{lstnumber.1.9}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.34  
+         # ... tovabbi adatok ...
+pdfTeX warning (ext4): destination with the same identifier (name{lstnumber.1.10}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.35 }
+      
+pdfTeX warning (ext4): destination with the same identifier (name{lstnumber.1.11}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.37 #
+       Generalas: Valid szamla
+pdfTeX warning (ext4): destination with the same identifier (name{lstnumber.1.12}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.37 #
+       Generalas: Valid szamla
+pdfTeX warning (ext4): destination with the same identifier (name{lstnumber.1.13}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.38 create_complex_invoice("
+                             general_invoice_01_valid.pdf", base_data)
+pdfTeX warning (ext4): destination with the same identifier (name{lstnumber.1.14}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.40 #
+       2. TEST CASE: MISSING DATA (Controlled Mutation)
+pdfTeX warning (ext4): destination with the same identifier (name{lstnumber.1.15}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.40 #
+       2. TEST CASE: MISSING DATA (Controlled Mutation)
+pdfTeX warning (ext4): destination with the same identifier (name{lstnumber.1.16}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.41 #
+       A bazisadatok masolasa es a kotelezo mezo torlese
+pdfTeX warning (ext4): destination with the same identifier (name{lstnumber.1.17}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.42 missing_id_data 
+                     = base_data.copy()
+pdfTeX warning (ext4): destination with the same identifier (name{lstnumber.1.18}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.43 missing_id_data[
+                     "inv_number"] = ""  # Ures sztring injektalasa
+pdfTeX warning (ext4): destination with the same identifier (name{lstnumber.1.19}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.44 missing_id_data[
+                     "po_number"] = ""
+pdfTeX warning (ext4): destination with the same identifier (name{lstnumber.1.20}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.46 #
+       Generalas: Hibas szamla a validacio tesztelesehez
+pdfTeX warning (ext4): destination with the same identifier (name{lstnumber.1.21}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.46 #
+       Generalas: Hibas szamla a validacio tesztelesehez
+pdfTeX warning (ext4): destination with the same identifier (name{lstnumber.1.22}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.47 create_complex_invoice("
+                             general_invoice_02_missing_id.pdf", missing_id_...
+pdfTeX warning (ext4): destination with the same identifier (name{lstnumber.1.23}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.48  
+         \end{lstlisting} [39
 
 
 
 
-] [40]) [41]
+]
+Overfull \hbox (43.46736pt too wide) in paragraph at lines 62--63
+[]\T1/lmr/m/n/12 A \T1/lmtt/m/n/12 general_invoice_02_missing_id.pdf
+ []
+
+
+Underfull \hbox (badness 2269) in paragraph at lines 62--63
+\T1/lmr/m/n/12 fájl ge-ne-rá-lá-sa-kor a kód-ban prog-ra-mo-zot-tan tö-röl-tem a szám-la-szá-mot
+ []
+
+
+Overfull \hbox (25.92331pt too wide) in paragraph at lines 67--68
+[]\T1/lmr/m/n/12 A \T1/lmtt/m/n/12 general_invoice_03_high_value.pdf
+ []
+
+[40]
+<figures/Build_Monitoring_Automation_Jobs.png, id=878, 696.80325pt x 326.4195pt>
+File: figures/Build_Monitoring_Automation_Jobs.png Graphic file (type png)
+<use figures/Build_Monitoring_Automation_Jobs.png>
+Package pdftex.def Info: figures/Build_Monitoring_Automation_Jobs.png  used on input line 87.
+(pdftex.def)             Requested size: 426.79135pt x 199.93741pt.
+<figures/Default_Rejection_Form.png, id=879, 894.34125pt x 558.28575pt>
+File: figures/Default_Rejection_Form.png Graphic file (type png)
+<use figures/Default_Rejection_Form.png>
+Package pdftex.def Info: figures/Default_Rejection_Form.png  used on input line 103.
+(pdftex.def)             Requested size: 426.79135pt x 266.42369pt.
+ [41{C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathsy.enc} <./figures/Build_Monitoring_Automation_Jobs.png>]
+Underfull \hbox (badness 10000) in paragraph at lines 108--108
+[]\T1/lmr/bx/n/14.4 Eredmény: Em-be-ri Be-avat-ko-zás és Jó-vá-ha-gyás
+ []
+
+<figures/Invoice_Approval_Request_TechSolutionsZrt.png, id=886, 903.375pt x 569.12625pt>
+File: figures/Invoice_Approval_Request_TechSolutionsZrt.png Graphic file (type png)
+<use figures/Invoice_Approval_Request_TechSolutionsZrt.png>
+Package pdftex.def Info: figures/Invoice_Approval_Request_TechSolutionsZrt.png  used on input line 117.
+(pdftex.def)             Requested size: 426.79135pt x 268.87883pt.
+[42{C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-rm.enc}{C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc} <./figures/Default_Rejection_Form.png>]
+Overfull \hbox (69.67189pt too wide) in paragraph at lines 131--138
+ [][] 
+ []
+
+[43 <./figures/Invoice_Approval_Request_TechSolutionsZrt.png>]
+Underfull \hbox (badness 1248) in paragraph at lines 176--177
+[]\T1/lmr/m/n/12 Fontos meg-je-gyez-ni, hogy még az em-be-ri jó-vá-ha-gyást igény-l® ese-tek-ben
+ []
+
+
+Underfull \hbox (badness 7012) in paragraph at lines 188--188
+[]\T1/lmr/bx/n/12 Kiküszöbölve \T1/lmr/m/n/12 (OCR +
+ []
+
+[44] [45]) [46]
+\openout2 = `content/conclusion.aux'.
+
+ (content/conclusion.tex
+6. fejezet.
+[47
+
+
+
+
+]) [48]
 \openout2 = `content/acknowledgement.aux'.
 
- (content/acknowledgement.tex) [42
+ (content/acknowledgement.tex) [49
 
 
 
@@ -957,7 +1366,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 163--167
 \T1/lmtt/m/n/12 docs / SAP _ S4HANA _ ON-[]PREMISE / f340785101c548c9beeda9284efd18a0 /
  []
 
-[43
+[50
 
 
 
@@ -1036,7 +1445,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 264--270
 \T1/lmtt/m/n/12 supply-[]chain-[]management-[]blog-[]posts-[]by-[]members /
  []
 
-[44]
+[51]
 Underfull \hbox (badness 10000) in paragraph at lines 272--278
 []\T1/lmr/m/n/12 George Law-ton: Rpa vs. bpm: How are they dif-fe-rent?,
  []
@@ -1116,7 +1525,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 333--337
 \T1/lmtt/m/n/12 SAP _ S4HANA _ ON-[]PREMISE / af9ef57f504840d2b81be8667206d485 /
  []
 
-[45]
+[52]
 Underfull \hbox (badness 3138) in paragraph at lines 361--368
 []\T1/lmr/m/n/12 Richard Ta-ma-ro: The hid-den costs of ma-nu-al ac-counts payab-le and
  []
@@ -1191,36 +1600,36 @@ Underfull \hbox (badness 10000) in paragraph at lines 413--418
 \T1/lmr/m/n/12 URL  [][]$\T1/lmtt/m/n/12 https : / / www . sap . com / sea / products / technology-[]platform /
  []
 
-) [46]
+) [53]
 \openout2 = `content/appendices.aux'.
 
- (content/appendices.tex) [47
+ (content/appendices.tex) [54
 
 
 ]
-\tf@thm=\write5
-\openout5 = `thesis.thm'.
+\tf@thm=\write6
+\openout6 = `thesis.thm'.
 
- (thesis.aux (include/titlepage.aux) (include/declaration.aux) (content/abstract.aux) (content/introduction.aux) (content/theoretical-background.aux) (content/invoice-processing-process-analysis.aux) (content/automated-invoice-processing.aux) (content/results-and-evaluation.aux) (content/acknowledgement.aux) (content/appendices.aux))
+ (thesis.aux (include/titlepage.aux) (include/declaration.aux) (content/abstract.aux) (content/introduction.aux) (content/theoretical-background.aux) (content/invoice-processing-process-analysis.aux) (content/automated-invoice-processing.aux) (content/results-and-evaluation.aux) (content/conclusion.aux) (content/acknowledgement.aux) (content/appendices.aux))
  ***********
 LaTeX2e <2025-11-01>
 L3 programming layer <2025-10-24>
  ***********
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 8BE29637981E50C29829E72CA3A83797;20033.
+(rerunfilecheck)             Checksum: E0446FFC98C03BACE4E60DE307C798BA;23178.
  ) 
 Here is how much of TeX's memory you used:
- 18058 strings out of 467871
- 300279 string characters out of 5417407
- 899432 words of memory out of 5000000
- 46358 multiletter control sequences out of 15000+600000
+ 38681 strings out of 467871
+ 879037 string characters out of 5417407
+ 1692469 words of memory out of 5000000
+ 66607 multiletter control sequences out of 15000+600000
  686495 words of font info for 76 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
- 80i,11n,82p,1132b,2149s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtl10.pfb>
-Output written on thesis.pdf (53 pages, 869756 bytes).
+ 99i,11n,108p,1132b,2301s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/I750554/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtl10.pfb>
+Output written on thesis.pdf (61 pages, 1060391 bytes).
 PDF statistics:
- 1033 PDF objects out of 1200 (max. 8388607)
- 246 named destinations out of 1000 (max. 500000)
- 574 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1158 PDF objects out of 1200 (max. 8388607)
+ 268 named destinations out of 1000 (max. 500000)
+ 689 words of extra memory for PDF output out of 10000 (max. 10000000)
 

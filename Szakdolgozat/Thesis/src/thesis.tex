@@ -35,6 +35,7 @@
 % 2. Kódblokkok formázása
 \usepackage{listings}
 \usepackage{xcolor}
+\usepackage{pgfplots}
 
 % Színek definiálása a kódkiemeléshez
 \definecolor{codegreen}{rgb}{0,0.6,0}
@@ -52,6 +53,21 @@
   sensitive=false,
   comment=[l]{//},
   morecomment=[s]{/*}{*/},
+  commentstyle=\color{codegreen}\ttfamily,
+  stringstyle=\color{red}\ttfamily,
+  morestring=[b]',
+  morestring=[b]"
+}
+
+\lstdefinelanguage{Python}{
+  keywords={and, as, assert, break, class, continue, def, del, elif, else, except, exec, finally, for, from, global, if, import, in, is, lambda, not, or, pass, print, raise, return, try, while, with, yield, True, False, None},
+  keywordstyle=\color{blue}\bfseries,
+  ndkeywords={self},
+  ndkeywordstyle=\color{darkgray}\bfseries,
+  identifierstyle=\color{black},
+  sensitive=true,
+  comment=[l]{\#},
+  morecomment=[s]{"""}{"""},
   commentstyle=\color{codegreen}\ttfamily,
   stringstyle=\color{red}\ttfamily,
   morestring=[b]',
@@ -115,6 +131,7 @@
 \include{content/invoice-processing-process-analysis}
 \include{content/automated-invoice-processing} % 4. Fejezet (Itt vannak a kódok és ábrák)
 \include{content/results-and-evaluation}     % 5. Fejezet
+\include{content/conclusion}
 
 % Opcionális fejezetek (ha nem kellenek, maradhatnak kommentezve)
 %\include{content/latex-tools}

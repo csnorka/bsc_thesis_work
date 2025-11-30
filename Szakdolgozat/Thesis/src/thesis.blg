@@ -19,6 +19,8 @@ Reallocating 'name_of_file' (item size: 1) to 41 items.
 A level-1 auxiliary file: content/automated-invoice-processing.aux
 Reallocating 'name_of_file' (item size: 1) to 35 items.
 A level-1 auxiliary file: content/results-and-evaluation.aux
+Reallocating 'name_of_file' (item size: 1) to 23 items.
+A level-1 auxiliary file: content/conclusion.aux
 Reallocating 'name_of_file' (item size: 1) to 28 items.
 A level-1 auxiliary file: content/acknowledgement.aux
 Reallocating 'name_of_file' (item size: 1) to 10 items.
@@ -164,7 +166,7 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 You've used 48 entries,
             4991 wiz_defined-function locations,
-            1377 strings with 21147 characters,
+            1378 strings with 21169 characters,
 and the built_in function-call counts, 260122 in all, are:
 = -- 47857
 > -- 4603

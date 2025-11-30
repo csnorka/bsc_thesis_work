@@ -1,0 +1,35 @@
+\chapter{Összefoglalás és Következtetések}
+\label{chap:summary}
+
+Szakdolgozatomban a pénzügyi folyamatok modernizációjának egyik legkritikusabb területét, a szállítói számlafeldolgozás automatizálását vizsgáltam. A kutatás és a gyakorlati fejlesztés célja annak bizonyítása volt, hogy a hiperautomatizálás eszköztára – különösen az SAP Business Technology Platform (BTP) és az SAP Build Process Automation (BPA) – képes hatékony és vállalati szintű választ adni a manuális adminisztráció okozta üzleti kihívásokra.
+
+\section{A Kutatási Eredmények Összegzése}
+A dolgozat elméleti részében feltártam a manuális (,,As-Is'') folyamatok rejtett költségeit és kockázatait, rámutatva a ,,swivel-chair'' integráció és az átláthatatlan jóváhagyási láncok tarthatatlanságára. A gyakorlati megvalósítás során egy működőképes, \textit{End-to-End} prototípust hoztam létre, amely sikeresen integrálta a mesterséges intelligencia alapú adatkinyerést (DOX), a robotikus folyamatautomatizálást (RPA) és az emberi döntéshozatalt támogató munkafolyamatokat (Work Zone).
+
+A tesztelési eredmények (5. fejezet) egyértelműen igazolták a koncepció életképességét: a rendszer képes volt a számlák teljesen automatikus (,,touchless'') feldolgozására, ugyanakkor robusztus módon kezelte a kivételes eseteket és a hibás adatokat is.
+
+\section{A Kutatási Kérdések Megválaszolása}
+A dolgozat elején (1.4. fejezet) megfogalmazott kutatási kérdésekre az elvégzett munka alapján az alábbi válaszok adhatók:
+
+\begin{enumerate}
+    \item \textbf{Milyen komponensekből áll az SAP BPA, és hogyan kapcsolódnak ezek a hiperautomatizálás trendjeihez?}
+    
+    A 2. fejezetben bemutattam, hogy az SAP BPA nem egyetlen eszköz, hanem a hiperautomatizálás három pillérének (AI, BPM, RPA) szintézise. A prototípus architektúrája (4.2. fejezet) a gyakorlatban is igazolta ezt az integrációt: a \textit{Document Information Extraction} (AI) biztosította a ,,látást'', a \textit{Process Builder} (BPM) a ,,vezérlést'', míg az \textit{Automation} (RPA) a ,,cselekvést''. Ezen komponensek egységes platformon történő kezelése teszi lehetővé a komplex üzleti folyamatok teljes körű lefedését.
+
+    \item \textbf{Hol keletkeznek a legnagyobb költségek és hibák a manuális folyamatban?}
+    
+    A 3. fejezet elemzése (,,As-Is'' vs. ,,To-Be'') rámutatott, hogy a legnagyobb veszteségforrás a manuális adatrögzítés és a jóváhagyási folyamat átláthatatlansága. A mérések szerint a manuális adatbevitel számlánként átlagosan 3-5 percet vesz igénybe, és magas a hibakockázata (elütések).
+
+    \item \textbf{Megvalósítható-e SAP BPA-val egy integrált prototípus?}
+    
+    Igen. A 4. fejezetben részletezett implementáció sikeresen bizonyította, hogy a platform alkalmas a teljes életciklus lefedésére: a számla e-mailben történő beérkezésétől a validáción és jóváhagyáson keresztül egészen az SAP rendszerben történő parkolásig. A megoldás képes volt heterogén (különböző formátumú) bemenetek kezelésére és a \textit{Human-in-the-Loop} interakciók biztosítására.
+
+    \item \textbf{Mennyivel csökkenti a prototípus a feldolgozási időt és a hibákat?}
+    
+    Az 5. fejezet mérései alapján az automatizált megoldás drasztikus, közel \textbf{80\%-os időmegtakarítást} eredményezett (az átlagos feldolgozási idő 45-60 másodpercre csökkent). Minőségi szempontból a determinisztikus működés és a beépített validációs kapuk teljesen \textbf{kiküszöbölték az adatrögzítési hibákat}, míg a Work Zone bevezetése 100\%-os átláthatóságot biztosított a folyamat státuszáról.
+\end{enumerate}
+
+\section{Záró Gondolatok}
+A szakdolgozat elkészítése során nemcsak technológiai ismereteket szereztem az SAP legújabb felhőalapú megoldásairól, hanem betekintést nyertem a vállalati folyamatszervezés és a rendszermérnöki tervezés kihívásaiba is. A ,,Citizen Developer'' szemléletmód és a \textit{Low-Code/No-Code} eszközök alkalmazása meggyőzött arról, hogy a jövő mérnökinformatikusának feladata már nem csupán a kódolás, hanem az üzleti értékteremtés és a technológiai lehetőségek kreatív összehangolása.
+
+Meggyőződésem, hogy a dolgozatban bemutatott prototípus nem csupán elméleti kísérlet, hanem egy valós ipari igényre adott, skálázható és továbbfejleszthető mérnöki válasz.

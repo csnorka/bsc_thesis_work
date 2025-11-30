@@ -4,65 +4,241 @@
 \section{Bevezetés: A Tesztelés Módszertana}
 \label{sec:eval_intro}
 
-A prototípus működésének validálására egy szisztematikus tesztelési tervet dolgoztam ki, amely a ,,Happy Path'' (ideális működés) mellett a kivételes eseteket (,,Exception Path'') is lefedi. A teszteléshez a saját fejlesztésű Python szkriptemmel generáltam három különböző típusú számlasablont, biztosítva a determinisztikus bemeneti adatokat. A tesztelés az SAP Business Technology Platform (BTP) konfigurált Trial környezetében zajlott.
+A prototípus működésének validálására egy szisztematikus tesztelési tervet dolgoztam ki, amely a ,,Happy Path'' (ideális működés) mellett a kivételes eseteket (,,Exception Path'') is lefedi. A validáció alapfeltétele a kontrollált bemeneti adatállomány (\textit{Ground Truth}) megléte volt. Mivel a valós vállalati számlák használata adatvédelmi okokból aggályos (GDPR), és nem garantálja minden hibatípus előfordulását, egy saját fejlesztésű, parametrikus tesztadat-generátor motort készítettem \textbf{Python} nyelven.
 
-\section{Tesztelési Esetek (Test Cases) Bemutatása}
-\label{sec:eval_test_cases}
+\subsection{A Tesztadat-generátor Felépítése (Python/FPDF)}
+\label{ssec:test_data_generator}
 
-A rendszer robusztusságának ellenőrzésére három fő forgatókönyvet vizsgáltam, amelyek lefedik az automatizáció, az emberi jóváhagyás és a hibakezelés területeit.
+A fejlesztett szoftvermodul az \texttt{FPDF} könyvtárra épül, amely lehetővé teszi a PDF dokumentumok alacsony szintű, koordináta-alapú (\texttt{set\_xy}) manipulációját. Ellentétben a generatív AI megoldásokkal, ez a szkript determinisztikus működésű: a kimenet nem véletlenszerű, hanem egy előre definiált adatstruktúra (\textit{Dictionary}) pontos vizuális leképezése.
 
-\subsection{1. Teszteset: Sikeres ,,Touchless'' Feldolgozás}
+A generátor architektúrája szétválasztja az adatot és a megjelenítést (\textit{Data-Presentation Separation}):
+
+\begin{itemize}
+    \item \textbf{Adatréteg:} Egy JSON-szerű dictionary objektum (\texttt{base\_data}) tartalmazza a számla szemantikai tartalmát (pl. \texttt{bill\_to\_text}, \texttt{inv\_number}, \texttt{items}).
+    \item \textbf{Megjelenítési réteg:} A \texttt{ComplexInvoice} osztály felelős azért, hogy ezeket az adatokat három különböző, a gyakorlatban elterjedt sablon (\textit{Modern, Simple, General}) szerint renderelje a PDF-re, beleértve a táblázatok dinamikus felépítését és a betűtípusok (Arial) kezelését.
+\end{itemize}
+
+Ez a megoldás lehetővé tette az adatinjektálásos tesztelést: a bázis adathalmaz célzott módosításával (,,mutációjával'') állítottam elő a hibás teszteseteket.
+
+\begin{figure}[H]
+    \centering
+    \begin{lstlisting}[language=Python, caption={Részlet a Python generátorkódból: a bázisadatok definíciója és a hibás eset (Missing ID) előállítása adatinjektálással}, label={code:python_generator}]
+# 1. BASE CASE (Valid Data Definition)
+base_data = {
+    "inv_number": "174221",
+    "inv_date": "2/18/2019",
+    "total_gross": "$ 220.00",
+    "items": [
+        ["2001", "Labor Service", "2.00", "HR", "$ 55.00", "$ 110.00"]
+    ]
+    # ... tovabbi adatok ...
+}
+
+# Generalas: Valid szamla
+create_complex_invoice("general_invoice_01_valid.pdf", base_data)
+
+# 2. TEST CASE: MISSING DATA (Controlled Mutation)
+# A bazisadatok masolasa es a kotelezo mezo torlese
+missing_id_data = base_data.copy()
+missing_id_data["inv_number"] = ""  # Ures sztring injektalasa
+missing_id_data["po_number"] = ""
+
+# Generalas: Hibas szamla a validacio tesztelesehez
+create_complex_invoice("general_invoice_02_missing_id.pdf", missing_id_data)
+    \end{lstlisting}
+\end{figure}
+
+\subsection{Tesztelési Forgatókönyvek (Test Scenarios)}
+\label{ssec:test_scenarios}
+
+A generátor segítségével három specifikus tesztállományt hoztam létre, amelyek lefedik az üzleti folyamat lehetséges kimeneteleit:
+
+\begin{description}
+    \item[TC\_01 (Happy Path - Low Value):] A \texttt{general\_invoice\_01\_valid.pdf} fájl egy formailag tökéletes, a limitösszeg alatti számlát tartalmaz. A generálás során a \texttt{base\_data} struktúra módosítás nélkül került felhasználásra.
+    \begin{itemize}
+        \item \textbf{Cél:} Az automatikus (,,touchless'') feldolgozás és a 4. fejezetben definiált \texttt{Default Approval} ág ellenőrzése.
+    \end{itemize}
+
+    \item[TC\_02 (Exception Path - Missing Data):] A \texttt{general\_invoice\_02\_missing\_id.pdf} fájl generálásakor a kódban programozottan töröltem a számlaszámot (\texttt{inv\_number = ""}).
+    \begin{itemize}
+        \item \textbf{Cél:} A folyamat validációs kapujának (\textit{Gatekeeper}) ellenőrzése: felismeri-e a robot a hiányzó kötelező adatot?
+    \end{itemize}
+
+    \item[TC\_03 (Business Logic - High Value):] A \texttt{general\_invoice\_03\_high\_value.pdf} esetében a generátorban injektált adatokkal megnöveltem a számla végösszegét a beállított limit (100.000 HUF) fölé.
+    \begin{itemize}
+        \item \textbf{Cél:} Annak ellenőrzése, hogy az üzleti szabályok (\textit{Decisions}) helyesen irányítják-e a tételt emberi jóváhagyásra (\texttt{Invoice Approval}).
+    \end{itemize}
+\end{description}
+
+\section{Tesztelési Eredmények}
+\label{sec:eval_results}
+
+A definiált forgatókönyvek lefuttatása során a rendszer monitorozó felületén (Monitoring Dashboard) és a végfelhasználói felületeken (Work Zone) keletkezett bizonyítékokat rögzítettem.
+
+\subsection{Eredmény: Sikeres ,,Touchless'' Feldolgozás (TC\_01)}
 \label{ssec:eval_test_touchless}
 
-A teszt során kis összegű számlák tömeges feldolgozását szimuláltam, ahol a cél a teljesen érintésmentes feldolgozás ellenőrzése volt.
+A teszt során kis összegű, rutin számlák tömeges feldolgozását szimuláltam. A cél annak igazolása volt, hogy a rendszer képes emberi beavatkozás nélkül végigfuttatni a teljes folyamatot.
 
-\textbf{Eredmény:} A monitorozó felület adatai alapján a rendszer emberi beavatkozás nélkül, a háttérben futtatta le a folyamatokat. A rendszer helyesen értékelte ki a szabályokat (kis összeg), és a folyamat végén kiküldte a megerősítő e-maileket. Ez igazolta a nagy volumenű, rutin számlák automatizálhatóságát.
+\textbf{Eredmény:} A monitorozó felület adatai alapján a rendszer sikeresen példányosította és lefuttatta a folyamatokat. Ahogyan a \ref{fig:monitoring_dashboard}. ábrán látható, a státusz minden esetben \texttt{COMPLETED}, hibaüzenet nélkül. A rendszer helyesen értékelte ki a szabályokat (kis összeg $\rightarrow$ automatikus ág), és a folyamat végén a robot kiküldte a megerősítő e-maileket.
 
-\subsection{2. Teszteset: Emberi Beavatkozás (Jóváhagyási Kényszer)}
-\label{ssec:eval_test_low_confidence}
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{figures/Build_Monitoring_Automation_Jobs.png}
+    \caption{A folyamatmonitorozó felület (Monitoring Dashboard), amely igazolja az automatikus folyamatok sikeres (Completed) lefutását.}
+    \label{fig:monitoring_dashboard}
+\end{figure}
 
-A teszt során egy formailag helyes, de a limitösszeget meghaladó számlát küldtem a rendszernek. A cél annak ellenőrzése volt, hogy az üzleti szabályok helyesen irányítják-e a feladatot emberi döntéshozatalra.
+Ez az eredmény validálja, hogy a ,,Happy Path'' szcenárióban a megoldás képes kiváltani a manuális munkát, radikálisan csökkentve az adminisztrációs terheket.
 
-\textbf{Eredmény:} A robot sikeresen felismerte a Tech Solutions Zrt. számláját. A DOX 100\%-os pontossággal kinyerte a bruttó 190.500 HUF összeget. A folyamat helyesen azonosította, hogy az összeg miatt jóváhagyás szükséges, és létrehozta a feladatot a Work Zone-ban. A jóváhagyó sikeresen megnyitotta a feladatot, ellenőrizte az adatokat és jóváhagyta a tételt.
-
-\subsection{3. Teszteset: Elutasítási Folyamat (Hiányos Adatok)}
+\subsection{Eredmény: Elutasítási Folyamat Hiányos Adatoknál (TC\_02)}
 \label{ssec:eval_test_rejection}
 
-Ebben az esetben egy olyan számlát generáltam, amelyről szándékosan hiányzott a kötelező számlaszám. A cél a validációs kapuk (\textit{Validation Gates}) működésének tesztelése volt.
+Ebben az esetben egy olyan számlát generáltam, amelyről szándékosan hiányzott a kötelező számlaszám. A cél a validációs kapuk (\textit{Validation Gates}) robusztusságának tesztelése volt.
 
-\textbf{Eredmény:} A \texttt{Data Validation} logikai kapu sikeresen megfogta a hibát. A rendszer nem engedte tovább a hibás adatot az SAP rendszer felé, hanem automatikusan egy elutasító űrlapot generált ,,Rejection Notification: Missing Data'' címmel, megvédve ezzel a könyvelést a hibás adatoktól.
+\textbf{Eredmény:} A \texttt{Data Validation} logikai kapu sikeresen detektálta a hiányosságot. A rendszer megakadályozta a hibás adatok továbbítását az SAP ERP rendszer felé, és helyette a kivételkezelő ágra (Exception Path) navigált. A folyamat automatikusan generált egy \textit{,,Rejection Notification''} űrlapot a Work Zone felületén, amelyen egyértelműen jelezte a hiba okát a felhasználónak.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{figures/Default_Rejection_Form.png}
+    \caption{A rendszer által generált elutasító űrlap, amely jelzi a hiányzó adatokat, megvédve a könyvelést a hibáktól.}
+    \label{fig:rejection_form}
+\end{figure}
+
+\subsection{Eredmény: Emberi Beavatkozás és Jóváhagyás (TC\_03)}
+\label{ssec:eval_test_approval}
+
+A teszt során a formailag helyes, de a konfigurált limitösszeget (100.000 HUF) meghaladó számla került feldolgozásra. A cél annak ellenőrzése volt, hogy az üzleti szabályok (\textit{Decisions}) képesek-e kikényszeríteni az emberi döntéshozatalt.
+
+\textbf{Eredmény:} A robot sikeresen felismerte a \textit{Tech Solutions Zrt.} számláját és kinyerte a bruttó 190.500 HUF összeget. Az üzleti szabálymotor helyesen értékelte ki, hogy $190.500 > 100.000$, ezért a folyamat megállt, és létrehozott egy jóváhagyási feladatot (\textit{User Task}) a Work Zone-ban.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{figures/Invoice_Approval_Request_TechSolutionsZrt.png}
+    \caption{A Work Zone felületén megjelenő jóváhagyási kérelem a helyesen kinyert adatokkal és az eredeti PDF linkjével.}
+    \label{fig:approval_form}
+\end{figure}
+
+A jóváhagyó a felületen keresztül sikeresen ellenőrizte az adatokat az eredeti PDF megtekintésével, majd a ,,Jóváhagyás'' gombbal továbbengedte a folyamatot a könyvelési fázisba.
+
+\subsection{Összefoglaló Eredménytáblázat}
+\label{ssec:eval_summary_table}
+
+A tesztelési eredményeket az alábbi táblázat foglalja össze, összevetve az elvárt működést a tényleges kimenettel:
+
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|l|l|l|c|}
+\hline
+\textbf{ID} & \textbf{Forgatókönyv} & \textbf{Bemenet} & \textbf{Tényleges Kimenet} & \textbf{Státusz} \\ \hline
+TC\_01 & Touchless & Valid, < Limit & Auto-email küldve, Job: Completed & \textcolor{green}{SIKERES} \\ \hline
+TC\_02 & Exception & Hiányos adat & Elutasító űrlap generálva & \textcolor{green}{SIKERES} \\ \hline
+TC\_03 & Approval & Valid, > Limit & Jóváhagyási feladat a Work Zone-ban & \textcolor{green}{SIKERES} \\ \hline
+\end{tabular}
+\caption{A tesztelési forgatókönyvek és eredményeik összefoglalása}
+\label{tab:test_results_summary}
+\end{table}
 
 \section{Eredmények Összehasonlítása az ,,As-Is'' Folyamattal}
 \label{sec:eval_comparison}
 
-A tesztelési eredmények alapján a prototípus több kritikus ponton is felülmúlja a \textbf{\ref{ch:process-analysis}. fejezetben} bemutatott manuális gyakorlatot.
+A tesztelési eredmények alapján a prototípus kvantitatív (mérhető) és kvalitatív (minőségi) szempontból is felülmúlja a \ref{ch:process-analysis}. fejezetben bemutatott manuális gyakorlatot.
 
 \subsection{Feldolgozási Idő (Átfutási Idő) Csökkenése}
 \label{ssec:eval_time_reduction}
 
-Míg a manuális adatbevitel átlagosan 3-5 percet vesz igénybe számlánként, az automatizált robot – a logfájlok tanúsága szerint – átlagosan 45-60 másodperc alatt végzett a teljes ciklussal (beleértve az Outlook olvasást, a DOX API hívásokat és az SAP tranzakció futtatását). Ez nagyságrendi gyorsulást jelent.
+A legszembetűnőbb javulás a feldolgozási sebességben jelentkezik. Míg a manuális adatbevitel és adminisztráció átlagosan 3-5 percet (180-300 másodperc) vesz igénybe számlánként, az automatizált robot – a rendszer logfájljainak mérése alapján – átlagosan 45-60 másodperc alatt végzett a teljes ciklussal.
+
+Ez az érték magában foglalja az Outlook olvasást, a DOX API hívásokat, az adattranszformációt és a backend rendszerrel való kommunikációt is. Ahogyan az \ref{fig:time_comparison}. ábra mutatja, ez a ,,Touchless'' esetekben közel **80\%-os időmegtakarítást** jelent.
+
+\begin{figure}[H]
+    \centering
+    \begin{tikzpicture}
+        \begin{axis}[
+            ybar,
+            symbolic x coords={Manuális, Automatizált},
+            xtick=data,
+            ylabel={Feldolgozási idő (másodperc)},
+            ymin=0, ymax=350,
+            nodes near coords,
+            bar width=1.5cm,
+            width=0.7\textwidth,
+            height=6cm,
+            grid=major
+        ]
+            \addplot coordinates {(Manuális, 240) (Automatizált, 50)};
+        \end{axis}
+    \end{tikzpicture}
+    \caption{Az átlagos feldolgozási idő összehasonlítása (Manuális átlag: 240s vs. Automatizált átlag: 50s)}
+    \label{fig:time_comparison}
+\end{figure}
+
+Fontos megjegyezni, hogy még az emberi jóváhagyást igénylő esetekben (TC\_03) is jelentős a gyorsulás, mivel a manuális adatrögzítés (a legidőigényesebb rész) ekkor is automatizált, a felhasználónak csak az ellenőrzést kell elvégeznie.
 
 \subsection{Hibakockázatok Csökkenése}
 \label{ssec:eval_error_reduction}
 
-A JavaScript alapú adattisztítás és a beépített validációs kapuk teljesen kiküszöbölték az elgépelésből származó hibákat. A manuális folyamatban gyakori ,,elütések'' (pl. 0 lemaradása az összeg végéről) a DOX magas pontossága miatt megszűntek.
+A minőségi javulást a rendszer determinisztikus működése garantálja. A JavaScript alapú adatnormalizálás és a \texttt{Data Validation} kapuk teljesen kiküszöbölték az emberi fáradtságból vagy figyelmetlenségből eredő hibákat. Az alábbi táblázat foglalja össze a kockázatok kezelését:
 
-\subsection{Átláthatóság Növekedése}
+\begin{table}[H]
+\centering
+\begin{tabular}{|l|p{5cm}|p{5cm}|}
+\hline
+\textbf{Hibatípus} & \textbf{Manuális (As-Is)} & \textbf{Automatizált (To-Be)} \\ \hline
+Adatrögzítési hiba & Gyakori (elütések, számcsere) & \textbf{Kiküszöbölve} (OCR + Copy) \\ \hline
+Hiányos adatok & Gyakran átcsúszik az ellenőrzésen & \textbf{Blokkolva} (Validációs kapu) \\ \hline
+Formátum hiba & Inkonzisztens dátumok & \textbf{Normalizálva} (ISO 8601) \\ \hline
+\end{tabular}
+\caption{Hibakezelés összehasonlítása a manuális és automatizált folyamatban}
+\label{tab:error_comparison}
+\end{table}
+
+\subsection{Átláthatóság és Nyomonkövethetőség}
 \label{ssec:eval_transparency}
 
-A Work Zone ,,My Inbox'' felülete valós idejű státuszt biztosít minden számláról. A menedzsment pontosan látja, hány számla vár jóváhagyásra és kinél, ezzel megszüntetve a korábbi e-mail alapú ,,fekete lyuk'' effektust, ahol a számlák nyomon követhetetlenné váltak.
+A manuális folyamat ,,fekete lyuk'' effektusával szemben az SAP Build Work Zone és a monitorozó felület teljes körű átláthatóságot biztosít.
+\begin{itemize}
+    \item \textbf{Valós idejű státusz:} A menedzsment pontosan látja, hány számla vár jóváhagyásra, és kinél (My Inbox).
+    \item \textbf{Audit nyomvonal (Audit Trail):} A rendszer minden lépést naplóz (Timestamp), így utólag pontosan rekonstruálható, hogy mikor érkezett a számla, mennyi ideig tartott a feldolgozás, és ki hagyta jóvá.
+\end{itemize}
 
-\section{Továbbfejlesztési Lehetőségek}
+\section{Továbbfejlesztési Lehetőségek és Jövőkép}
 \label{sec:eval_future_work}
 
-Bár a prototípus sikeresen bizonyította a koncepciót, a jövőben több irányban is továbbfejleszthető:
-\begin{itemize}
-    \item \textbf{Gépi tanulás tanítása:} A DOX modell újratanítása valós vállalati számlákkal a pontosság további növelése érdekében.
-    \item \textbf{Process Mining integráció:} Az SAP Signavio bekötése a folyamat valós idejű monitorozására és a szűk keresztmetszetek automatikus detektálására.
-    \item \textbf{Teljes könyvelés automatizálása:} A parkolás helyett a végleges könyvelés és a fizetési futtatás (\textit{Payment Run}) integrálása.
-\end{itemize}
+Bár a prototípus sikeresen bizonyította a koncepció megvalósíthatóságát és üzleti hasznát, a rendszer további fejlesztésével egy még robusztusabb, vállalati szintű (\textit{Enterprise Grade}) megoldás hozható létre. Az alábbiakban a legfontosabb technológiai irányokat vázolom fel.
+
+\subsection{Mesterséges Intelligencia Finomhangolása (AI Retraining)}
+\label{ssec:future_ai_retraining}
+
+A jelenlegi prototípus az SAP előre tanított (\textit{pre-trained}) globális modelljét használja. Éles környezetben javasolt a modell finomhangolása (\textit{Fine-tuning}) a vállalat specifikus számlatörténetével. Ehhez a DOX szolgáltatás ,,Human-in-the-Loop'' visszacsatolását lehetne automatizálni: amikor egy felhasználó manuálisan javít egy adatot a validációs űrlapon, a rendszer ezt a korrekciót visszatáplálhatná a modellbe, növelve a jövőbeli felismerés pontosságát (\textit{Continuous Learning}).
+
+\subsection{Process Mining és Valós Idejű Analitika Integrációja}
+\label{ssec:future_process_mining}
+
+Jelenleg a folyamat monitorozása az SAP Build technikai naplóira korlátozódik. A rendszer továbbfejleszthető az \textbf{SAP Signavio Process Intelligence} eszköz integrációjával.
+
+\begin{description}
+    \item[Cél:] A folyamat során keletkező eseménynaplók (\textit{Event Logs}) valós idejű elemzése.
+    \item[Haszon:] Ez lehetővé tenné a rejtett szűk keresztmetszetek (pl. melyik jóváhagyónál akadnak el a számlák?) automatikus detektálását és az úgynevezett ,,maverick buying'' (szabálytalan beszerzések) kiszűrését még a könyvelés előtt.
+\end{description}
+
+\subsection{Teljes Pénzügyi Ciklus Automatizálása (End-to-End)}
+\label{ssec:future_e2e}
+
+A jelenlegi megoldás a számla ,,parkolásával'' (előkönyvelésével) ér véget. A következő logikai lépés a folyamat kiterjesztése a végleges könyvelésre (\textit{Posting}) és a kifizetésre.
+
+\textbf{Megvalósítás:} A jóváhagyott, parkolt bizonylatok automatikus élesítése egy ütemezett bot segítségével, majd a fizetési futtatás (\textit{Payment Run} - \texttt{F110} tranzakció) automatikus elindítása a lejárati határidők figyelembevételével.
+
+\subsection{Generatív AI Asszisztens (SAP Joule) Bevezetése}
+\label{ssec:future_genai}
+
+A felhasználói élmény javítása érdekében a jövőben integrálható az SAP új generatív AI asszisztense, a \textbf{Joule}. Ez lehetővé tenné, hogy a pénzügyi vezetők természetes nyelven (\textit{Natural Language}) tegyenek fel kérdéseket a rendszernek, például: ,,Mutasd meg az összes 1 millió forint feletti számlát, ami jóváhagyásra vár a héten!'', kiváltva ezzel a statikus riportok szükségességét.
 
 \section{Fejezet Összegzése}
 \label{sec:eval_summary}
 
-A fejezetben bemutatott tesztesetek igazolták, hogy az SAP Build Process Automation alapú megoldás képes kezelni mind a standard, mind a kivételes üzleti szituációkat. Az eredmények összehasonlítása rámutatott, hogy az automatizáció nemcsak a feldolgozási időt csökkenti radikálisan, hanem az adatminőséget és a folyamat átláthatóságát is javítja, ezzel közvetlen választ adva a szakdolgozat elején felvetett üzleti problémákra.
+A fejezetben ismertetett validációs folyamat során, egy kontrollált és determinisztikus tesztkörnyezetben vizsgáltam a megvalósított prototípus működését. A három eltérő forgatókönyv (TC\_01, TC\_02, TC\_03) lefuttatása igazolta, hogy az SAP Build Process Automation platform integrált komponensei – a DOX, a szabálymotor és a Work Zone – képesek robusztus módon kezelni mind a standard, mind a kivételes üzleti szituációkat.
+
+A tesztelési eredmények kvantitatív elemzése rámutatott, hogy az automatizáció drasztikus, közel 80\%-os csökkenést eredményezett az átfutási időben a manuális folyamathoz képest. Minőségi szempontból a rendszer sikeresen kiküszöbölte az adatrögzítési hibákat, a Work Zone bevezetése pedig megszüntette az információhiányt, valós idejű átláthatóságot biztosítva a menedzsment számára.
+
+Összességében a mérések alátámasztják, hogy a hiperautomatizálás eszköztára nem csupán elméleti lehetőség, hanem gyakorlati, mérnöki eszközökkel megvalósítható válasz a \textbf{\ref{ch:process-analysis}. fejezetben} feltárt üzleti problémákra. Ezen eredmények birtokában a következő, záró fejezetben összegezem a kutatás végkövetkeztetéseit és válaszolom meg a dolgozat elején feltett kutatási kérdéseket.
