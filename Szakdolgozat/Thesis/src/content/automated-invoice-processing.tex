@@ -3,37 +3,97 @@
 
 \section{Bevezetés: A Prototípus Céljai és Keretrendszere}
 \label{sec:prototype_intro}
-% Ebben a fejezetben kerül bemutatásra a ...
-% Hivatkozás a korábbi fejezetekben (pl. \ref{sec:problemfeltaras_hibai_koltsegei}) azonosított problémákra.
+
+A szakdolgozat gyakorlati részének célja egy olyan ,,end-to-end'' automatizált megoldás létrehozása volt, amely képes a számlák beérkezésétől azok előkönyveléséig (parkolásáig) terjedő folyamatot emberi beavatkozás nélkül, vagy minimális felügyelettel elvégezni. A megvalósítás alapfeltétele a megfelelő felhőalapú infrastruktúra (\textit{Infrastructure-as-a-Service} / \textit{Platform-as-a-Service}) kiépítése volt, amely biztosítja a szükséges számítási kapacitást és a mikroszolgáltatások elérhetőségét.
+
+A fejlesztéshez az \textbf{SAP Business Technology Platform (BTP)} környezetét konfiguráltam. Ez nem csupán a szolgáltatások egyszerű aktiválását jelentette, hanem egy teljeskörű rendszeradminisztrációs feladatot, melynek során egy dedikált, multi-environment típusú alkörnyezetet (\textit{Subaccount}) hoztam létre ,,AI Sandbox'' elnevezéssel. Az infrastruktúra mögöttes szolgáltatójaként (\textit{Provider}) az \textbf{Amazon Web Services (AWS)} került kiválasztásra, a \textit{Frankfurt (Europe)} régióban. Ezen régió választását szakmai szempontok indokolták: egyrészt biztosítja az optimális hálózati válaszidőt (alacsony látencia), másrészt megfelel a szigorú európai adatvédelmi irányelveknek (GDPR), ami pénzügyi adatok kezelésekor kritikus szempont.
+
+A környezet inicializálása során a következő jogosultságokat (\textit{Entitlements}) és szolgáltatáspéldányokat (\textit{Service Instances}) konfiguráltam a fejlesztői (\textit{dev}) hatókörben, standard csomagok alkalmazásával:
+
+\begin{description}
+    \item[Subaccount és Jogosultságok:] A fejlesztés számára dedikált alkörnyezet létrehozása után a szükséges szolgáltatási kvóták (\textit{Service Quotas}) hozzárendelése történt meg, biztosítva az erőforrásokat a futtatókörnyezet számára.
+    
+    \item[Szolgáltatások példányosítása (Instantiation):] A rendszer gerincét alkotó szolgáltatások konkrét példányainak létrehozása az alábbi technikai specifikációk szerint:
+    \begin{itemize}
+        \item \texttt{doc-ai-srv}: Az SAP Document AI szolgáltatás példánya (\textit{standard plan}), amely a számlák intelligens, gépi tanulás alapú feldolgozásáért felel.
+        \item \texttt{sap\_process\_automation}: Az SAP Build Process Automation szolgáltatás (\textit{standard plan}), amely a folyamatvezérlés és a robotok futtatását végzi.
+        \item \texttt{sbwz\_instance}: Az SAP Build Work Zone (\textit{standard edition}), amely a felhasználói interakciókat biztosító központi felületet (\textit{Central Entry Point}) adja.
+    \end{itemize}
+
+    \item[Biztonság és Hozzáférés (Service Keys):] A szolgáltatások külső eléréséhez és az egyedi fejlesztésű szkriptek API kommunikációjához minden példány esetében \textit{Service Key}-eket generáltam. Ezek a kulcsok tartalmazzák a hitelesítéshez elengedhetetlen OAuth 2.0 kredenciákat (\textit{Client ID}, \textit{Client Secret}, \textit{Token URL}), amelyek lehetővé teszik a biztonságos, tokenszintű azonosítást.
+
+    \item[Kapcsolatok (Connectivity):] A rendszerkomponensek közötti kommunikációt a \textit{Destinations} szolgáltatás konfigurálásával valósítottam meg. Létrehoztam egy biztonságos csatornát az S/4HANA backend rendszer felé (ún. ,,to hana'' destination), valamint dedikált kapcsolatokat építettem ki a Process Automation és a Work Zone szolgáltatások közötti belső adatcsere biztosítására.
+\end{description}
+
+A prototípus teszteléséhez és a robusztusság bizonyításához elengedhetetlen volt a megfelelő minőségű és mennyiségű tesztadat. Mivel a valós vállalati számlák gyakran szenzitív adatokat tartalmaznak, egy egyedi \textbf{Python alapú tesztadat-generátor szkriptet} fejlesztettem. Ellentétben a véletlenszerű generátorokkal, ez a megoldás determinisztikus adatbevitelt tesz lehetővé: a fejlesztő által előre definiált paraméterek (JSON/CSV bemenet) alapján állít elő PDF dokumentumokat. Ez a megközelítés lehetővé tette a ,,szabályozott tesztelést'' (\textit{Controlled Testing}): célzottan hoztam létre ,,tökéletes'' (\textit{Happy Path}), valamint hiányos vagy formailag hibás (\textit{Exception Path}) számlákat három eltérő sablon (\textit{layout}) alapján, így a rendszer hibatűrése minden lehetséges kimenetelre tesztelhetővé vált.
 
 \section{A Prototípus Architektúrája és Komponensei}
 \label{sec:prototype_architecture}
-% Az architektúra felépítése, hogyan kapcsolódik a BPA, a DOX, a Work Zone és az SAP.
+
+A rendszer architektúráját úgy terveztem meg, hogy elválasszam egymástól az adatgyűjtésért felelős technikai robotot (\textit{Unattended Bot}) és az üzleti döntéseket kezelő folyamatot (\textit{Process}). Ahogyan az infrastruktúra áttekintő ábrán is látható, a megoldás három fő pillérre épül:
+
+\begin{itemize}
+    \item \textbf{SAP Build Process Automation (SBPA):} A folyamatvezérlés és az RPA botok futtatásáért felelős szolgáltatás.
+    \item \textbf{SAP Document Information Extraction (DOX):} A mesterséges intelligencia alapú OCR és adatkinyerő modul.
+    \item \textbf{SAP Build Work Zone:} Az üzleti felhasználók számára biztosított egységes felület (\textit{Central Entry Point}).
+\end{itemize}
+
+A technikai réteg (\textit{Bot}) felelős a levelezőrendszer (Outlook) figyeléséért, a csatolmányok kezeléséért és a DOX API-val való szinkron kommunikációért. Ezt a logikát az SAP Build ,,Desktop Agent'' komponense valósítja meg. Az üzleti réteg (\textit{Process}) kizárólag a már strukturált adatokkal dolgozik, elvégzi a validációt, kezeli a jóváhagyási lépcsőket, és kommunikál a felhasználókkal a Work Zone felületén keresztül.
+
+A rendszerkomponensek közötti integrációt \textit{RESTful} architektúra alapokon valósítottam meg. A technikai robot és a felhőalapú szolgáltatások (DOX, BTP Services) közötti kommunikáció HTTPS csatornán zajlik, JSON formátumú adatcsere alkalmazásával. A biztonságos hitelesítést (\textit{Authentication}) és a jogosultságkezelést (\textit{Authorization}) az OAuth 2.0 iparági szabvány biztosítja: a robot a munkamenet elején az XSUAA szolgáltatástól dinamikusan igényel hozzáférési tokent (\textit{Bearer Token}), amelyet minden későbbi API hívás fejlécében továbbít.
+
+Az architektúra kulcsfontosságú eleme a transzformációs réteg: a bemeneti oldalon keletkező strukturálatlan adatokat (nyers PDF bájtfolyam) és a DOX szolgáltatás által visszaadott technikai JSON válaszokat a rendszer egy köztes, normalizált adatmodellre (\textit{Canonical Data Model}) képezi le. Ez biztosítja, hogy az üzleti folyamat (\textit{Process}) már független legyen a bemeneti forrás technikai sajátosságaitól, megvalósítva ezzel a laza csatolás (\textit{Loose Coupling}) elvét.
 
 \subsection{Adatkinyerés Konfigurálása (Document Information Extraction)}
 \label{ssec:prototype_dox}
-% A DOX szolgáltatás beállítása, a séma (schema) és a sablon (template) létrehozása.
+
+A folyamat belépési pontja egy időzített trigger, amely elindítja a számlafeldolgozó robotot. A robot első feladata az Outlook példány megnyitása és a releváns e-mailek szűrése.
+
+A standard RPA aktivitások helyett a dokumentumfeldolgozásnál egyedi JavaScript kódokat alkalmaztam a nagyobb kontroll és a hibatűrés érdekében. A feltöltés során a \texttt{Prepare\_Upload\_code} szkript állítja össze a \texttt{multipart/form-data} kérést. Itt látható, hogy nem fix sablont, hanem a dinamikus \texttt{SAP\_invoice\_schema} sémát definiáltam, amely lehetővé teszi a különböző formátumú számlák rugalmas kezelését.
+
+A hitelesítés OAuth 2.0 protokollon keresztül történik. A \texttt{Prepare\_Token\_Request} szkript dinamikusan kéri le a \textit{Bearer tokent} az XSUAA szolgáltatástól, biztosítva a biztonságos kommunikációt. Mivel az adatkinyerés aszinkron folyamat, a robot egy ciklusban kérdezi le a feldolgozás státuszát a \texttt{Prepare\_Status\_Check} kóddal, amíg a DOX szolgáltatás \texttt{DONE} státuszt nem jelez.
+
+A nyers JSON válasz feldolgozását az \texttt{Extract\_Data} szkript végzi. Ez a kód felelős az adatleképezésért (\textit{Mapping}) és a normalizálásért: a különböző mezőelnevezéseket (pl. \texttt{senderName} vagy \texttt{vendorName}) egy egységes belső objektumstruktúrára (\texttt{extracted.VendorName}) fordítja le, minimalizálva a későbbi hibalehetőségeket.
 
 \subsection{A Jóváhagyási Folyamat Tervezése (Process Builder)}
 \label{ssec:prototype_process_builder}
-% A BPMN 2.0 folyamatábra felépítése a Process Builderben.
-% Lépések: Trigger, DOX hívás, Döntési tábla hívás, Emberi feladat (Forms), Bot hívás.
+
+A robot a kinyert adatokat átadja a fő folyamatnak. A folyamat első lépése a \texttt{Form Notifications Handling}, amely a folyamatvezérlés gerincét alkotja. A rendszer itt hajtja végre az elsődleges adatvalidációt: a \texttt{Data Validation} ág megvizsgálja, hogy minden kötelező mező (pl. Számlaszám, Dátum) rendelkezésre áll-e. Ha hiányosságot észlel, a folyamat automatikusan a \texttt{Rejection Notification} ágra fut, és értesíti a felhasználót a hibáról.
 
 \subsection{Üzleti Szabályok Definiálása (Decisions)}
 \label{ssec:prototype_decisions}
-% A jóváhagyási mátrix (döntési tábla) létrehozása.
-% Pl. Összeghatár alapján ki a jóváhagyó.
+
+Sikeres validáció esetén a folyamat az üzleti szabályok kiértékelésével folytatódik. Az \texttt{Amount Check} lépés vizsgálja a számla végösszegét egy előre definiált Döntési Tábla (\textit{Decision Table}) alapján. A prototípusban implementált szabályrendszer szerint:
+
+\begin{itemize}
+    \item \textbf{Nagy összegű számlák:} Emberi jóváhagyást igényelnek (\texttt{Invoice Approval}).
+    \item \textbf{Kis összegű tételek:} Automatikusan, emberi beavatkozás nélkül jóváhagyásra kerülhetnek (\texttt{Default Approval}).
+\end{itemize}
+
+Ez a lépés biztosítja a ,,kivételalapú kezelés'' (\textit{Management by Exception}) elvét, ahol a humán erőforrás csak a kritikus esetekkel foglalkozik.
 
 \subsection{Felhasználói Felületek Létrehozása (Forms és Work Zone)}
 \label{ssec:prototype_ui}
-% A jóváhagyási űrlap (Form) megtervezése.
-% Az űrlap integrálása az SAP Build Work Zone "My Inbox" (Task Center) felületébe.
+
+A felhasználói interakciók központja az SAP Build Work Zone ,,My Inbox'' alkalmazása. A jóváhagyási űrlapokat úgy terveztem meg, hogy azok minden döntéstámogató információt tartalmazzanak.
+
+Ahogy az \texttt{Invoice Approval Request} képernyőn látható, a jóváhagyó nemcsak a robot által kinyert strukturált adatokat (Szállító, Összeg, Dátum) látja, hanem egy közvetlen linket is kap az eredeti PDF dokumentum megnyitásához (\texttt{Open Original Invoice PDF}). Ez a funkció kiküszöböli a ,,swivel-chair'' problémát, mivel az ellenőrzés egyetlen felületen elvégezhető.
 
 \subsection{Integráció az SAP Rendszerrel (RPA Bot)}
 \label{ssec:prototype_rpa}
-% Az "unattended" (felügyelet nélküli) bot felépítése.
-% A bot lépései: Bejelentkezés SAP-ba, FB60/FV60 tranzakció futtatása, adatok átadása, számla parkolása.
+
+A folyamat utolsó lépése a jóváhagyott számlák továbbítása az ERP rendszer felé. A \texttt{Send Task Automation} ág felel a folyamat lezárásáért. A jóváhagyást követően a rendszer egy \textit{Unattended Bot}-ot indít el, amely:
+
+\begin{enumerate}
+    \item Bejelentkezik az S/4HANA rendszerbe a GUI felületen keresztül.
+    \item Meghívja a megfelelő tranzakciót (FB60/FV60).
+    \item Beilleszti a jóváhagyott, strukturált adatokat.
+    \item Végrehajtja a számla parkolását (\textit{Invoice Parking}).
+\end{enumerate}
+
+Végül a rendszer e-mail értesítést küld az érintetteknek a sikeres feldolgozásról, lezárva az automatizált folyamatot.
 
 \section{Fejezet Összegzése}
 \label{sec:prototype_summary}
-% A fejezet összefoglalása, átvezetés az eredmények értékelésére.s
+
+Ebben a fejezetben bemutattuk az automatizált számlafeldolgozási prototípus technikai megvalósítását az SAP Build Process Automation környezetben. Részleteztük a felhőalapú infrastruktúra beállítását, az architektúra rétegeit, valamint a kulcskomponensek – a DOX adatkinyerés, a folyamatvezérlés, az üzleti szabályok, a felhasználói felület és az SAP integráció – implementációs lépéseit. A következő fejezetben a megépített prototípus működését teszteljük, és értékeljük az elért eredményeket a manuális folyamattal összevetve.
