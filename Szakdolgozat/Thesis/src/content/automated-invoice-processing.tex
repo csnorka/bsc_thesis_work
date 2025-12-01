@@ -20,7 +20,6 @@ A környezet inicializálása során a következő jogosultságokat (\textit{Ent
         \item \texttt{sbwz\_instance}: Az SAP Build Work Zone (\textit{standard edition}), amely a felhasználói interakciókat biztosító központi felületet (\textit{Central Entry Point}) adja.
     \end{itemize}
 
-    % [H] paraméter a fix pozícióhoz!
     \begin{figure}[H]
         \centering
         \includegraphics[width=1.0\textwidth]{figures/BTP_Instances_and_Subscriptions.png}
@@ -110,23 +109,41 @@ return {
 };
 \end{lstlisting}
 
-\subsubsection{Hitelesítés és Biztonság}
+\subsubsection{Hitelesítés és Biztonságos Kulcskezelés}
+\label{sssec:auth_security}
 
-A kommunikáció biztonságát az \textbf{OAuth 2.0} iparági szabvány garantálja. A \texttt{Prepare\_Token\_Request} szkript a \textit{client\_credentials} engedélyezési folyamatot (\textit{Grant Type}) valósítja meg: a robot a \textit{Client ID} és \textit{Client Secret} birtokában dinamikusan kérvényez hozzáférési tokent (\textit{Bearer Token}) az SAP XSUAA (\textit{Extended Services for User Account and Authentication}) szolgáltatástól. Ez a token kerül beszúrásra minden későbbi HTTP kérés fejlécébe (\texttt{Authorization header}).
+A kommunikáció biztonságát az \textbf{OAuth 2.0} iparági szabvány garantálja. A rendszer a \texttt{client\_credentials} engedélyezési folyamatot (Grant Type) valósítja meg, amely során a robot a \textit{Client ID} és \textit{Client Secret} birtokában dinamikusan kérvényez hozzáférési tokent (\textit{Bearer Token}) az SAP XSUAA (\textit{Extended Services for User Account and Authentication}) szolgáltatástól.
 
-\subsubsection{Aszinkron Feldolgozás (Polling Pattern)}
+Kiemelt biztonsági szempont volt, hogy a hitelesítéshez szükséges érzékeny adatokat (különösen a \textit{Client Secret}-et) \textbf{soha ne tároljam ,,hard-code-olva''} a forráskódban. Ehelyett az SAP Build Process Automation beépített biztonsági funkcióját, az \textbf{Environment Variables} (Környezeti Változók) szolgáltatást alkalmaztam.
 
-Mivel a gépi látás és az adatkinyerés számításigényes, aszinkron folyamat, a DOX szolgáltatás a feltöltéskor azonnal visszatér egy \textit{Job ID}-val, miközben a feldolgozás a háttérben zajlik. Ennek kezelésére a robotban egy Polling (lekérdezési) ciklust implementáltam.
+\begin{itemize}
+    \item \textbf{Titkosított Tárolás:} A fejlesztési környezetben (\textit{Control Tower}) létrehoztam egy titkosított változót a hitelesítési adatok számára. Ezt az értéket a rendszer az adatbázisban kódolva tárolja, és a fejlesztői felületen sem olvasható vissza.
+    \item \textbf{Futásidejű Injektálás:} A \texttt{Prepare\_Token\_Request} szkript bemeneti paraméterként (\texttt{clientInfo}) kapja meg a hitelesítési adatokat. A robot futásidőben (\textit{Runtime}) olvassa ki a biztonságos tárolóból az értéket, és csak a memóriában, az API hívás erejéig használja fel azt.
+\end{itemize}
 
-A ciklus belsejében a \texttt{Prepare\_Status\_Check} szkript periodikusan \texttt{GET} kérést küld a szervernek. A ciklus feltétele a státuszváltozó vizsgálata: a robot mindaddig várakozó állapotban marad (\textit{Wait activity}), amíg a szolgáltatás \texttt{DONE} (kész) vagy \texttt{FAILED} (sikertelen) státusszal nem tér vissza.
+Ez a megoldás biztosítja a \textit{Security by Design} elv érvényesülését: a forráskód bárki számára olvasható lehet anélkül, hogy a rendszer biztonsága sérülne. A megszerzett tokent a szkript a HTTP kérés fejlécébe (\texttt{Authorization: Bearer <Token>}) illeszti be a DOX szolgáltatás hívásához.
 
-% [H] paraméter a fix pozícióhoz!
+\subsubsection{Aszinkron Feldolgozás és Timeout Kezelés (Polling Pattern)}
+\label{sssec:polling_timeout}
+
+Mivel a gépi látás és az adatkinyerés számításigényes, aszinkron folyamat, a DOX szolgáltatás a feltöltéskor azonnal visszatér egy \texttt{Job ID}-val, miközben a feldolgozás a háttérben zajlik. Ennek kezelésére a robotban egy \textbf{Polling (lekérdezési) ciklust} implementáltam (lásd \ref{fig:polling_loop}. ábra).
+
+A végtelen ciklusok (Infinite Loop) elkerülése érdekében egy mérnöki biztonsági mechanizmust, úgynevezett \textbf{Timeout-számlálót} építettem a logikába:
+
+\begin{enumerate}
+    \item \textbf{Ciklusváltozók:} A folyamat elején definiáltam egy \texttt{retryCount} változót (0) és egy \texttt{maxRetries} határértéket (pl. 20 alkalom).
+    \item \textbf{Lekérdezés:} A ciklus belsejében a \texttt{Prepare\_Status\_Check} szkript periodikusan (pl. 5 másodpercenként) \texttt{GET} kérést küld a szervernek.
+    \item \textbf{Megszakítási feltétel:} Minden iteráció növeli a számlálót. Ha a számláló eléri a határértéket (pl. $20 \times 5s = 100s$) anélkül, hogy a státusz \texttt{DONE}-ra váltana, a robot \textbf{kivételt dob} (\texttt{TimeoutException}) és kilép a ciklusból.
+\end{enumerate}
+
 \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\textwidth]{figures/Bot_Automation_part3.png}
-    \caption{Az aszinkron feldolgozás státuszát figyelő ciklus (Polling Loop) implementációja}
+    \caption{Az aszinkron feldolgozás státuszát figyelő ciklus (Polling Loop) implementációja a Timeout védelemmel.}
     \label{fig:polling_loop}
 \end{figure}
+
+Ez a megoldás garantálja, hogy szolgáltatáskiesés esetén a robot nem ragad "zombi" állapotban, hanem kontrollált hibaüzenettel leállítja a folyamatot és értesíti az adminisztrátort.
 
 \subsubsection{Adatnormalizálás és Leképezés}
 
@@ -249,29 +266,32 @@ Ahogy a jóváhagyási képernyőn látható, a jóváhagyó nemcsak a robot ál
     \label{fig:work_zone_inbox}
 \end{figure}
 
-\subsection{Backend Integráció és Folyamatlezárás}
-\label{ssec:backend_integration}
+\subsubsection{Backend Integráció és Folyamatlezárás (API Alapú Parkolás)}
+\label{sssec:backend_integration}
 
-A folyamat utolsó szakasza a jóváhagyott tételek tényleges könyvelése és a folyamat adminisztratív lezárása. Ezt a \texttt{Send Task Automation} alfolyamat vezérli, amely egy \texttt{For Each} ciklus segítségével iterál végig a jóváhagyott elemeken.
+A folyamat utolsó, és egyben legkritikusabb szakasza a jóváhagyott számlaadatok biztonságos továbbítása az SAP S/4HANA vállalatirányítási rendszerbe. A rendszertervezés során a törékeny, felület-vezérelt (UI Automation) megoldás helyett a robusztusabb, **OData API alapú integrációt** választottam.
+
+A folyamatlezárást a \texttt{Send Task Automation} alfolyamat vezérli (lásd \ref{fig:send_task}. ábra), amely egy \texttt{For Each} ciklus segítségével iterál végig a jóváhagyott elemeken.
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\textwidth]{figures/Send_Task_Automation.png}
-    \caption{A folyamatlezáró és könyvelő automatizáció logikai felépítése}
-    \label{fig:send_task_automation}
+    \caption{A folyamatlezáró automatizáció, amely az API hívást és az értesítést vezérli.}
+    \label{fig:send_task}
 \end{figure}
 
-A rendszer az alábbi lépéseket hajtja végre:
+A rendszer az alábbi technikai lépéseket hajtja végre:
 
-\begin{itemize}
-    \item \textbf{S/4HANA Integráció:} A rendszer meghívja az S/4HANA Invoice Parking komponenst. A robot bejelentkezik a rendszerbe, és az \texttt{FB60/FV60} tranzakciók segítségével parkolópályára helyezi a számlát a strukturált adatok alapján.
-    \item \textbf{Értesítés:} A könyvelés sikerességéről a robot automatikus e-mail értesítést küld az érintett felelősnek az Outlook integráción keresztül.
-    \item \textbf{Erőforrás felszabadítás:} A folyamat végén a robot bezárja az Outlook példányt (\texttt{Close Outlook Instance}), biztosítva a rendszer erőforrásainak hatékony kezelését.
-\end{itemize}
+\begin{enumerate}
+    \item \textbf{Adattranszformáció (Payload Generation):} A folyamat a jóváhagyott, normalizált adatokat (Szállító, Dátum, Összeg, Pénznem) átalakítja az SAP S/4HANA \texttt{API\_SUPPLIERINVOICE\_PROCESS\_SRV} szolgáltatása által elvárt JSON formátumra.
+    \item \textbf{API Hívás (Invoice Parking):} Az \texttt{S/4HANA Invoice Parking} komponens egy biztonságos, hitelesített \texttt{POST} kérést küld a backend rendszer felé. A kérés fejlécében a \texttt{Held} vagy \texttt{Parked} státuszkódot állítja be, így a számla előkönyvelt (parkolt) állapotban jön létre, végleges könyvelés nélkül. Ez a megoldás kiküszöböli a GUI alapú robotok instabilitását és a képernyőváltozásokból eredő hibákat.
+    \item \textbf{Visszacsatolás és Értesítés:} Az API válaszként visszaadja a létrehozott bizonylatszámot (pl. \texttt{5105600123}). Ezt a számot a robot beilleszti a megerősítő e-mailbe, amelyet az Outlook integráción keresztül küld el az érintett felelősnek (lásd \ref{fig:email_notification}. ábra).
+    \item \textbf{Erőforrás felszabadítás:} A tranzakció lezárása után a folyamat felszabadítja a lefoglalt rendszererőforrásokat.
+\end{enumerate}
 
 \begin{figure}[H]
     \centering
     \includegraphics[width=1.0\textwidth]{figures/Email_Notification.png}
-    \caption{A rendszer által generált automatikus értesítés a sikeres feldolgozásról}
+    \caption{A rendszer által generált automatikus értesítés a sikeres API hívásról és a parkolásról.}
     \label{fig:email_notification}
 \end{figure}

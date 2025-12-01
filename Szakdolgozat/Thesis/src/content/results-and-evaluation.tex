@@ -6,19 +6,24 @@
 
 A prototípus működésének validálására egy szisztematikus tesztelési tervet dolgoztam ki, amely a ,,Happy Path'' (ideális működés) mellett a kivételes eseteket (,,Exception Path'') is lefedi. A validáció alapfeltétele a kontrollált bemeneti adatállomány (\textit{Ground Truth}) megléte volt. Mivel a valós vállalati számlák használata adatvédelmi okokból aggályos (GDPR), és nem garantálja minden hibatípus előfordulását, egy saját fejlesztésű, parametrikus tesztadat-generátor motort készítettem \textbf{Python} nyelven.
 
-\subsection{A Tesztadat-generátor Felépítése (Python/FPDF)}
+\subsection{A Tesztadat-generátor Felépítése és a Determinisztikus Megközelítés Indoklása}
 \label{ssec:test_data_generator}
 
-A fejlesztett szoftvermodul az \texttt{FPDF} könyvtárra épül, amely lehetővé teszi a PDF dokumentumok alacsony szintű, koordináta-alapú (\texttt{set\_xy}) manipulációját. Ellentétben a generatív AI megoldásokkal, ez a szkript determinisztikus működésű: a kimenet nem véletlenszerű, hanem egy előre definiált adatstruktúra (\textit{Dictionary}) pontos vizuális leképezése.
+A validáció alapfeltétele a kontrollált bemeneti adatállomány (\textit{Ground Truth}) megléte volt. A fejlesztés során tudatos mérnöki döntés volt a \textbf{determinisztikus adatgenerálás} választása a modern Generatív AI (LLM) megoldásokkal szemben.
 
-A generátor architektúrája szétválasztja az adatot és a megjelenítést (\textit{Data-Presentation Separation}):
+\begin{itemize}
+    \item \textbf{Miért nem LLM?} A Nagy Nyelvi Modellek (pl. ChatGPT) sztochasztikus, valószínűségi alapon működnek. Tesztadat-generáláskor fennáll a ,,hallucináció'' veszélye: ha arra utasítjuk a modellt, hogy generáljon egy hibás számlát, a modell a tanult mintázatok alapján véletlenszerűen mégis kiegészítheti a hiányzó adatot (autocorrection), ami meghiúsítaná a negatív teszteket.
+    \item \textbf{A Szkript Előnye:} Ezzel szemben a saját fejlesztésű Python modul imperatív logikája garantálja a \textbf{reprodukálhatóságot}. Ha a kódban üres sztringet rendelek a számlaszám változóhoz, a generált PDF-en garantáltan, bit-szinten nem fog szerepelni az adat. Ez biztosítja a ,,Reference Truth'' 100\%-os pontosságát az összehasonlító mérésekhez.
+\end{itemize}
+
+A szoftvermodul az \texttt{FPDF} könyvtárra épül, amely lehetővé teszi a PDF dokumentumok alacsonyszintű, koordináta-alapú (\texttt{set\_xy}) manipulációját. A generátor architektúrája szétválasztja az adatot és a megjelenítést (\textit{Data-Presentation Separation}):
 
 \begin{itemize}
     \item \textbf{Adatréteg:} Egy JSON-szerű dictionary objektum (\texttt{base\_data}) tartalmazza a számla szemantikai tartalmát (pl. \texttt{bill\_to\_text}, \texttt{inv\_number}, \texttt{items}).
     \item \textbf{Megjelenítési réteg:} A \texttt{ComplexInvoice} osztály felelős azért, hogy ezeket az adatokat három különböző, a gyakorlatban elterjedt sablon (\textit{Modern, Simple, General}) szerint renderelje a PDF-re, beleértve a táblázatok dinamikus felépítését és a betűtípusok (Arial) kezelését.
 \end{itemize}
 
-Ez a megoldás lehetővé tette az adatinjektálásos tesztelést: a bázis adathalmaz célzott módosításával (,,mutációjával'') állítottam elő a hibás teszteseteket.
+Ez a megoldás lehetővé tette az \textbf{adatinjektálásos tesztelést}: a bázis adathalmaz célzott módosításával (,,mutációjával'') állítottam elő a hibás teszteseteket.
 
 \begin{figure}[H]
     \centering
@@ -144,19 +149,21 @@ TC\_03 & Approval & Valid, > Limit & Jóváhagyási feladat a Work Zone-ban & \t
 
 A tesztelési eredmények alapján a prototípus kvantitatív (mérhető) és kvalitatív (minőségi) szempontból is felülmúlja a \ref{ch:process-analysis}. fejezetben bemutatott manuális gyakorlatot.
 
-\subsection{Feldolgozási Idő (Átfutási Idő) Csökkenése}
+\subsection{Feldolgozási Idő (Átfutási Idő) Becslése}
 \label{ssec:eval_time_reduction}
 
-A legszembetűnőbb javulás a feldolgozási sebességben jelentkezik. Míg a manuális adatbevitel és adminisztráció átlagosan 3-5 percet (180-300 másodperc) vesz igénybe számlánként, az automatizált robot – a rendszer logfájljainak mérése alapján – átlagosan 45-60 másodperc alatt végzett a teljes ciklussal.
+A legszembetűnőbb potenciális javulás a feldolgozási sebességben jelentkezik. Míg a manuális adatbevitel és adminisztráció a tapasztalati adatok alapján átlagosan 3-5 percet (180-300 másodperc) vesz igénybe számlánként, az automatizált robot a kísérleti futtatások során átlagosan 45-60 másodperc alatt végzett a teljes ciklussal.
 
-Ez az érték magában foglalja az Outlook olvasást, a DOX API hívásokat, az adattranszformációt és a backend rendszerrel való kommunikációt is. Ahogyan az \ref{fig:time_comparison}. ábra mutatja, ez a ,,Touchless'' esetekben közel **80\%-os időmegtakarítást** jelent.
+Fontos megjegyezni, hogy a mérések az SAP BTP Trial környezet szigorú erőforrás-korlátai (API hívási kvóták) miatt limitált mintaszámon ($n=3$ típusos teszteset, többszöri futtatással) zajlottak, így az eredmények nem tekinthetők nagy mintájú statisztikai bizonyítéknak, csupán \textbf{indikátornak}.
+
+Ahogyan az \ref{fig:time_comparison}. ábra a pilot mérések alapján mutatja, a ,,Touchless'' esetekben a technológia képes akár **80\%-os időmegtakarítást** is eredményezni.
 
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
         \begin{axis}[
             ybar,
-            symbolic x coords={Manuális, Automatizált},
+            symbolic x coords={Manuális (Becslés), Automatizált (Pilot)},
             xtick=data,
             ylabel={Feldolgozási idő (másodperc)},
             ymin=0, ymax=350,
@@ -166,14 +173,14 @@ Ez az érték magában foglalja az Outlook olvasást, a DOX API hívásokat, az 
             height=6cm,
             grid=major
         ]
-            \addplot coordinates {(Manuális, 240) (Automatizált, 50)};
+            \addplot coordinates {(Manuális (Becslés), 240) (Automatizált (Pilot), 50)};
         \end{axis}
     \end{tikzpicture}
-    \caption{Az átlagos feldolgozási idő összehasonlítása (Manuális átlag: 240s vs. Automatizált átlag: 50s)}
+    \caption{Az átlagos feldolgozási idő összevetése a pilot mérések alapján}
     \label{fig:time_comparison}
 \end{figure}
 
-Fontos megjegyezni, hogy még az emberi jóváhagyást igénylő esetekben (TC\_03) is jelentős a gyorsulás, mivel a manuális adatrögzítés (a legidőigényesebb rész) ekkor is automatizált, a felhasználónak csak az ellenőrzést kell elvégeznie.
+Nagy volumenű, éles környezetben a megtakarítás mértéke a rendszerterheléstől függően változhat, de a nagyságrendi gyorsulás a gép sebessége miatt borítékolható.
 
 \subsection{Hibakockázatok Csökkenése}
 \label{ssec:eval_error_reduction}
@@ -233,6 +240,17 @@ A jelenlegi megoldás a számla ,,parkolásával'' (előkönyvelésével) ér v�
 \label{ssec:future_genai}
 
 A felhasználói élmény javítása érdekében a jövőben integrálható az SAP új generatív AI asszisztense, a \textbf{Joule}. Ez lehetővé tenné, hogy a pénzügyi vezetők természetes nyelven (\textit{Natural Language}) tegyenek fel kérdéseket a rendszernek, például: ,,Mutasd meg az összes 1 millió forint feletti számlát, ami jóváhagyásra vár a héten!'', kiváltva ezzel a statikus riportok szükségességét.
+
+\subsection{Backend Üzleti Kivételkezelés Kiterjesztése}
+\label{ssec:backend_exception_handling}
+
+A jelenlegi prototípus a backend integráció során elsősorban a technikai sikereséget (HTTP 200/201 státuszkódok) monitorozza. Éles vállalati környezetben azonban elengedhetetlen a rendszer felkészítése az úgynevezett \textbf{funkcionális üzleti hibák} kezelésére is.
+
+Az SAP S/4HANA OData szolgáltatása technikai értelemben sikeres választ adhat akkor is, ha az üzleti tranzakció meghiúsul (pl. ,,A könyvelési időszak lezárva'' vagy ,,Szállító zárolva''). A továbbfejlesztés kritikus lépése az API válaszban érkező \texttt{Error Payload} JSON struktúra mélyebb elemzése (parsing).
+\begin{itemize}
+    \item \textbf{Hibaüzenet kinyerése:} A robotnak ki kell olvasnia a specifikus hibaüzenetet (pl. \texttt{error.innererror.message\_v1}).
+    \item \textbf{Eszkaláció:} Technikai hiba helyett a folyamatot egy új, \textit{,,Business Exception Resolution''} ágra kell irányítani, amely a hiba pontos leírásával visszaküldi a feladatot a pénzügyi szakértőnek a Work Zone felületére, emberi beavatkozást kérve.
+\end{itemize}
 
 \section{Fejezet Összegzése}
 \label{sec:eval_summary}

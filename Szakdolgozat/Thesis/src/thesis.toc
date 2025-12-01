@@ -22,84 +22,90 @@
 \select@language {magyar} \contentsline {section}{\numberline {1.4}A Szakdolgozat Célkitűzései és Kutatási Kérdései}{5}{section.1.4}%
 \select@language {magyar} \contentsline {section}{\numberline {1.5}A Vizsgálat Fókusza és Korlátai}{6}{section.1.5}%
 \select@language {magyar} \contentsline {section}{\numberline {1.6}A Dolgozat Felépítése}{6}{section.1.6}%
-\select@language {magyar} \contentsline {chapter}{\numberline {2}Elméleti háttér és technológia alapok}{7}{chapter.2}%
-\select@language {magyar} \contentsline {section}{\numberline {2.1}Üzleti Folyamatmenedzsment (BPM) és Automatizálási Trendek}{7}{section.2.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {2.1.1}Üzleti Folyamatmenedzsment (BPM) – A Stratégiai Alap}{7}{subsection.2.1.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {2.1.2}Robotikus Folyamatautomatizálás (RPA) – A Taktikai Eszköz}{8}{subsection.2.1.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {2.1.3}A Hiperautomatizálás (Hyperautomation) – A Trendek Szintézise}{9}{subsection.2.1.3}%
-\select@language {magyar} \contentsline {section}{\numberline {2.2}Az SAP Stratégiai Válasza: A Business Technology Platform (BTP)}{10}{section.2.2}%
-\select@language {magyar} \contentsline {section}{\numberline {2.3}Az SAP Build Platform: A BTP Hiperautomatizálási Eszköztára}{11}{section.2.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {2.3.1}A ,,Motor'': SAP Build Process Automation (BPA) Eszköztára}{11}{subsection.2.3.1}%
-\select@language {magyar} \contentsline {paragraph}{Process Builder (Folyamattervező): A ,,Karmester''}{12}{section*.14}%
-\select@language {magyar} \contentsline {paragraph}{Automations (Automatizálások – RPA Botok): A ,,Digitális Munkás''}{12}{section*.15}%
-\select@language {magyar} \contentsline {paragraph}{Forms (Űrlapok): Az Emberi Beavatkozás Felülete}{12}{section*.16}%
-\select@language {magyar} \contentsline {paragraph}{Decisions (Döntések / Üzleti Szabályok): A ,,Logikai Központ''}{12}{section*.17}%
-\select@language {magyar} \contentsline {paragraph}{AI Képességek (Document Information Extraction - DOX): A ,,Prototípus Agya''}{12}{section*.18}%
-\select@language {magyar} \contentsline {subsection}{\numberline {2.3.2}A ,,Műszerfal'': SAP Build Work Zone}{13}{subsection.2.3.2}%
-\select@language {magyar} \contentsline {paragraph}{Task Center / ,,My Inbox'':}{13}{section*.19}%
-\select@language {magyar} \contentsline {paragraph}{UI Integráció és Átláthatóság (Űrlapok és KPI Csempék):}{13}{section*.20}%
-\select@language {magyar} \contentsline {section}{\numberline {2.4}Fejezet Összegzése: A Platform Komponenseinek Szintézise}{14}{section.2.4}%
-\select@language {magyar} \contentsline {chapter}{\numberline {3}Standard és Vállalati Számlafeldolgozási Folyamat Elemzése}{15}{chapter.3}%
-\select@language {magyar} \contentsline {section}{\numberline {3.1}Bevezetés: Az ,,As-Is'' Folyamat Megértése}{15}{section.3.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.1.1}A Standard SAP Számlafeldolgozási Folyamat (,,A Tankönyvi Modell'')}{15}{subsection.3.1.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {3.1.1.1}Az Alapelv: A Háromoldalú Egyeztetés (Three-Way Match)}{16}{subsubsection.3.1.1.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {3.1.1.2}A Folyamat Két Fő Típusa az SAP-ban}{16}{subsubsection.3.1.1.2}%
-\select@language {magyar} \contentsline {paragraph}{1. PO-alapú (Logisztikai) Számlarögzítés (MIRO tranzakció) \cite {SAP-Managing-Invoices}}{17}{section*.21}%
-\select@language {magyar} \contentsline {paragraph}{2. Nem PO-alapú (Pénzügyi) Számlarögzítés (FB60 tranzakció) \cite {SAP-Non-PO-Invoices}}{17}{section*.22}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.1.2}Standard Automatizálási és Manuális Vezérlési Pontok}{18}{subsection.3.1.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {3.1.2.1}Beépített Automatizációs Lehetőségek}{18}{subsubsection.3.1.2.1}%
-\select@language {magyar} \contentsline {paragraph}{Toleranciahatárok (Tolerances) \cite {SAP-Tolerance-Keys-Part1, SAP-Tolerance-Keys-Part2}}{18}{section*.24}%
-\select@language {magyar} \contentsline {paragraph}{ERS (Evaluated Receipt Settlement) \cite {SAP-ERS}}{19}{section*.25}%
-\select@language {magyar} \contentsline {paragraph}{EDI/IDoc (Electronic Data Interchange / Intermediate Document) \cite {SAP-EDI}}{19}{section*.26}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {3.1.2.2}Tudatos Manuális Beavatkozási Pontok}{20}{subsubsection.3.1.2.2}%
-\select@language {magyar} \contentsline {paragraph}{Manuális Számlarögzítés: Az Adatátvitel Kritikus Szűkkeresztmetszete}{20}{section*.27}%
-\select@language {magyar} \contentsline {paragraph}{Számlaparkolás: A Kontrollált ,,Félkész'' Állapot Művészete \cite {SAP-Parking, SAP-Holding-and-Parking, XSUITE-Parking-in-SAP}}{20}{section*.28}%
-\select@language {magyar} \contentsline {paragraph}{Blokkolt Számlák Feloldása: Az Eltérések Menedzsmentje \cite {JKE-Supply-Chain-Business-Process}}{20}{section*.29}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.1.3}Egy Tipikus Vállalati Gyakorlat Elemzése (,,A Valós Világ'')}{21}{subsection.3.1.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.1.4}Problémafeltárás: A Manuális Gyakorlat Hibái és Költségei}{23}{subsection.3.1.4}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {3.1.4.1}Tipikus Manuális Hibák (Minőségi Kockázatok)}{23}{subsubsection.3.1.4.1}%
-\select@language {magyar} \contentsline {paragraph}{Adatrögzítési hibák (Elgépelések)}{23}{section*.30}%
-\select@language {magyar} \contentsline {paragraph}{Duplikált Számlafeldolgozás}{23}{section*.31}%
-\select@language {magyar} \contentsline {paragraph}{Elveszett Számlák}{23}{section*.32}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {3.1.4.2}Időigényes Lépések és Szűk Keresztmetszetek (Költség- és Időproblémák)}{24}{subsubsection.3.1.4.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {3.1.5}Fejezet Összegzése és Átvezetés a Megoldásra}{25}{subsection.3.1.5}%
-\select@language {magyar} \contentsline {chapter}{\numberline {4}Automatizált Számlafeldolgozási Prototípus Tervezése és Megvalósítása}{27}{chapter.4}%
-\select@language {magyar} \contentsline {section}{\numberline {4.1}Bevezetés: A Prototípus Céljai és Keretrendszere}{27}{section.4.1}%
-\select@language {magyar} \contentsline {section}{\numberline {4.2}A Prototípus Architektúrája és Komponensei}{29}{section.4.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {4.2.1}Adatkinyerés Konfigurálása és API Kommunikáció}{30}{subsection.4.2.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {4.2.1.1}Dokumentum Feltöltés (API Request)}{30}{subsubsection.4.2.1.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {4.2.1.2}Hitelesítés és Biztonság}{31}{subsubsection.4.2.1.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {4.2.1.3}Aszinkron Feldolgozás (Polling Pattern)}{31}{subsubsection.4.2.1.3}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {4.2.1.4}Adatnormalizálás és Leképezés}{32}{subsubsection.4.2.1.4}%
-\select@language {magyar} \contentsline {subsection}{\numberline {4.2.2}A Jóváhagyási Folyamat és Döntési Logika Tervezése}{33}{subsection.4.2.2}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {4.2.2.1}Elsődleges Adatvalidáció (Gatekeeper Pattern)}{33}{subsubsection.4.2.2.1}%
-\select@language {magyar} \contentsline {subsubsection}{\numberline {4.2.2.2}Üzleti Szabályok és Jóváhagyási Stratégia}{34}{subsubsection.4.2.2.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {4.2.3}Üzleti Szabályok Implementációja (Technical Decisions)}{35}{subsection.4.2.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {4.2.4}Felhasználói Felületek és Adatkötés (Forms \& UI)}{35}{subsection.4.2.4}%
-\select@language {magyar} \contentsline {subsection}{\numberline {4.2.5}Backend Integráció és Folyamatlezárás}{36}{subsection.4.2.5}%
-\select@language {magyar} \contentsline {chapter}{\numberline {5}A Prototípus Tesztelése és Eredmények Értékelése}{39}{chapter.5}%
-\select@language {magyar} \contentsline {section}{\numberline {5.1}Bevezetés: A Tesztelés Módszertana}{39}{section.5.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {5.1.1}A Tesztadat-generátor Felépítése (Python/FPDF)}{39}{subsection.5.1.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {5.1.2}Tesztelési Forgatókönyvek (Test Scenarios)}{40}{subsection.5.1.2}%
-\select@language {magyar} \contentsline {section}{\numberline {5.2}Tesztelési Eredmények}{41}{section.5.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {5.2.1}Eredmény: Sikeres ,,Touchless'' Feldolgozás (TC\_01)}{41}{subsection.5.2.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {5.2.2}Eredmény: Elutasítási Folyamat Hiányos Adatoknál (TC\_02)}{41}{subsection.5.2.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {5.2.3}Eredmény: Emberi Beavatkozás és Jóváhagyás (TC\_03)}{42}{subsection.5.2.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {5.2.4}Összefoglaló Eredménytáblázat}{43}{subsection.5.2.4}%
-\select@language {magyar} \contentsline {section}{\numberline {5.3}Eredmények Összehasonlítása az ,,As-Is'' Folyamattal}{43}{section.5.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {5.3.1}Feldolgozási Idő (Átfutási Idő) Csökkenése}{44}{subsection.5.3.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {5.3.2}Hibakockázatok Csökkenése}{44}{subsection.5.3.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {5.3.3}Átláthatóság és Nyomonkövethetőség}{45}{subsection.5.3.3}%
-\select@language {magyar} \contentsline {section}{\numberline {5.4}Továbbfejlesztési Lehetőségek és Jövőkép}{45}{section.5.4}%
-\select@language {magyar} \contentsline {subsection}{\numberline {5.4.1}Mesterséges Intelligencia Finomhangolása (AI Retraining)}{45}{subsection.5.4.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {5.4.2}Process Mining és Valós Idejű Analitika Integrációja}{45}{subsection.5.4.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {5.4.3}Teljes Pénzügyi Ciklus Automatizálása (End-to-End)}{45}{subsection.5.4.3}%
-\select@language {magyar} \contentsline {subsection}{\numberline {5.4.4}Generatív AI Asszisztens (SAP Joule) Bevezetése}{46}{subsection.5.4.4}%
-\select@language {magyar} \contentsline {section}{\numberline {5.5}Fejezet Összegzése}{46}{section.5.5}%
-\select@language {magyar} \contentsline {chapter}{\numberline {6}Összefoglalás és Következtetések}{47}{chapter.6}%
-\select@language {magyar} \contentsline {section}{\numberline {6.1}A Kutatási Eredmények Összegzése}{47}{section.6.1}%
-\select@language {magyar} \contentsline {section}{\numberline {6.2}A Kutatási Kérdések Megválaszolása}{47}{section.6.2}%
-\select@language {magyar} \contentsline {section}{\numberline {6.3}Záró Gondolatok}{48}{section.6.3}%
-\select@language {magyar} \contentsline {chapter}{Köszönetnyilvánítás}{49}{chapter*.48}%
-\select@language {magyar} \contentsline {chapter}{Irodalomjegyz\'ek}{50}{chapter*.48}%
-\select@language {magyar} \contentsline {chapter}{Függelék}{54}{appendix*.50}%
+\select@language {magyar} \contentsline {chapter}{\numberline {2}Elméleti háttér és technológia alapok}{8}{chapter.2}%
+\select@language {magyar} \contentsline {section}{\numberline {2.1}Üzleti Folyamatmenedzsment (BPM) és Automatizálási Trendek}{8}{section.2.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.1.1}Üzleti Folyamatmenedzsment (BPM) – A Stratégiai Alap}{8}{subsection.2.1.1}%
+\select@language {magyar} \contentsline {section}{\numberline {2.2}A ,,To-Be'' Folyamat Logikai Tervezése (BPMN 2.0)}{9}{section.2.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.2.1}Robotikus Folyamatautomatizálás (RPA) -- A Taktikai Eszköz és Korlátai}{10}{subsection.2.2.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.2.2}A Hiperautomatizálás (Hyperautomation) – A Trendek Szintézise}{11}{subsection.2.2.2}%
+\select@language {magyar} \contentsline {section}{\numberline {2.3}Az SAP Stratégiai Válasza: A Business Technology Platform (BTP)}{13}{section.2.3}%
+\select@language {magyar} \contentsline {section}{\numberline {2.4}Az SAP Build Platform: A BTP Hiperautomatizálási Eszköztára}{14}{section.2.4}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.4.1}A ,,Motor'': SAP Build Process Automation (BPA) Eszköztára}{14}{subsection.2.4.1}%
+\select@language {magyar} \contentsline {paragraph}{Process Builder (Folyamattervező): A ,,Karmester''}{14}{section*.16}%
+\select@language {magyar} \contentsline {paragraph}{Automations (Automatizálások – RPA Botok): A ,,Digitális Munkás''}{15}{section*.17}%
+\select@language {magyar} \contentsline {paragraph}{Forms (Űrlapok): Az Emberi Beavatkozás Felülete}{15}{section*.18}%
+\select@language {magyar} \contentsline {paragraph}{Decisions (Döntések / Üzleti Szabályok): A ,,Logikai Központ''}{15}{section*.19}%
+\select@language {magyar} \contentsline {paragraph}{AI Képességek (Document Information Extraction - DOX): A ,,Prototípus Agya''}{15}{section*.20}%
+\select@language {magyar} \contentsline {subsection}{\numberline {2.4.2}A ,,Műszerfal'': SAP Build Work Zone}{16}{subsection.2.4.2}%
+\select@language {magyar} \contentsline {paragraph}{Task Center / ,,My Inbox'':}{16}{section*.21}%
+\select@language {magyar} \contentsline {paragraph}{UI Integráció és Átláthatóság (Űrlapok és KPI Csempék):}{16}{section*.22}%
+\select@language {magyar} \contentsline {section}{\numberline {2.5}Fejezet Összegzése: A Platform Komponenseinek Szintézise}{16}{section.2.5}%
+\select@language {magyar} \contentsline {chapter}{\numberline {3}Standard és Vállalati Számlafeldolgozási Folyamat Elemzése}{18}{chapter.3}%
+\select@language {magyar} \contentsline {section}{\numberline {3.1}Bevezetés: Az ,,As-Is'' Folyamat Megértése}{18}{section.3.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.1.1}A Standard SAP Számlafeldolgozási Folyamat (,,A Tankönyvi Modell'')}{18}{subsection.3.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.1.1.1}Az Alapelv: A Háromoldalú Egyeztetés (Three-Way Match)}{19}{subsubsection.3.1.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.1.1.2}A Folyamat Két Fő Típusa az SAP-ban}{19}{subsubsection.3.1.1.2}%
+\select@language {magyar} \contentsline {paragraph}{1. PO-alapú (Logisztikai) Számlarögzítés (MIRO tranzakció) \cite {SAP-Managing-Invoices}}{20}{section*.23}%
+\select@language {magyar} \contentsline {paragraph}{2. Nem PO-alapú (Pénzügyi) Számlarögzítés (FB60 tranzakció) \cite {SAP-Non-PO-Invoices}}{20}{section*.24}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.1.2}Standard Automatizálási és Manuális Vezérlési Pontok}{21}{subsection.3.1.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.1.2.1}Beépített Automatizációs Lehetőségek}{21}{subsubsection.3.1.2.1}%
+\select@language {magyar} \contentsline {paragraph}{Toleranciahatárok (Tolerances) \cite {SAP-Tolerance-Keys-Part1, SAP-Tolerance-Keys-Part2}}{21}{section*.26}%
+\select@language {magyar} \contentsline {paragraph}{ERS (Evaluated Receipt Settlement) \cite {SAP-ERS}}{22}{section*.27}%
+\select@language {magyar} \contentsline {paragraph}{EDI/IDoc (Electronic Data Interchange / Intermediate Document) \cite {SAP-EDI}}{22}{section*.28}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.1.2.2}Tudatos Manuális Beavatkozási Pontok}{23}{subsubsection.3.1.2.2}%
+\select@language {magyar} \contentsline {paragraph}{Manuális Számlarögzítés: Az Adatátvitel Kritikus Szűkkeresztmetszete}{23}{section*.29}%
+\select@language {magyar} \contentsline {paragraph}{Számlaparkolás: A Kontrollált ,,Félkész'' Állapot Művészete \cite {SAP-Parking, SAP-Holding-and-Parking, XSUITE-Parking-in-SAP}}{23}{section*.30}%
+\select@language {magyar} \contentsline {paragraph}{Blokkolt Számlák Feloldása: Az Eltérések Menedzsmentje \cite {JKE-Supply-Chain-Business-Process}}{23}{section*.31}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.1.3}Egy Tipikus Vállalati Gyakorlat Elemzése (,,A Valós Világ'')}{24}{subsection.3.1.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.1.4}Problémafeltárás: A Manuális Gyakorlat Hibái és Költségei}{26}{subsection.3.1.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.1.4.1}Tipikus Manuális Hibák (Minőségi Kockázatok)}{26}{subsubsection.3.1.4.1}%
+\select@language {magyar} \contentsline {paragraph}{Adatrögzítési hibák (Elgépelések)}{26}{section*.32}%
+\select@language {magyar} \contentsline {paragraph}{Duplikált Számlafeldolgozás}{26}{section*.33}%
+\select@language {magyar} \contentsline {paragraph}{Elveszett Számlák}{26}{section*.34}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {3.1.4.2}Időigényes Lépések és Szűk Keresztmetszetek (Költség- és Időproblémák)}{27}{subsubsection.3.1.4.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {3.1.5}Fejezet Összegzése és Átvezetés a Megoldásra}{28}{subsection.3.1.5}%
+\select@language {magyar} \contentsline {chapter}{\numberline {4}Automatizált Számlafeldolgozási Prototípus Tervezése és Megvalósítása}{30}{chapter.4}%
+\select@language {magyar} \contentsline {section}{\numberline {4.1}Bevezetés: A Prototípus Céljai és Keretrendszere}{30}{section.4.1}%
+\select@language {magyar} \contentsline {section}{\numberline {4.2}A Prototípus Architektúrája és Komponensei}{32}{section.4.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.2.1}Adatkinyerés Konfigurálása és API Kommunikáció}{33}{subsection.4.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.2.1.1}Dokumentum Feltöltés (API Request)}{33}{subsubsection.4.2.1.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.2.1.2}Hitelesítés és Biztonságos Kulcskezelés}{34}{subsubsection.4.2.1.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.2.1.3}Aszinkron Feldolgozás és Timeout Kezelés (Polling Pattern)}{34}{subsubsection.4.2.1.3}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.2.1.4}Adatnormalizálás és Leképezés}{35}{subsubsection.4.2.1.4}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.2.2}A Jóváhagyási Folyamat és Döntési Logika Tervezése}{36}{subsection.4.2.2}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.2.2.1}Elsődleges Adatvalidáció (Gatekeeper Pattern)}{37}{subsubsection.4.2.2.1}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.2.2.2}Üzleti Szabályok és Jóváhagyási Stratégia}{37}{subsubsection.4.2.2.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.2.3}Üzleti Szabályok Implementációja (Technical Decisions)}{38}{subsection.4.2.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {4.2.4}Felhasználói Felületek és Adatkötés (Forms \& UI)}{39}{subsection.4.2.4}%
+\select@language {magyar} \contentsline {subsubsection}{\numberline {4.2.4.1}Backend Integráció és Folyamatlezárás (API Alapú Parkolás)}{39}{subsubsection.4.2.4.1}%
+\select@language {magyar} \contentsline {chapter}{\numberline {5}A Prototípus Tesztelése és Eredmények Értékelése}{42}{chapter.5}%
+\select@language {magyar} \contentsline {section}{\numberline {5.1}Bevezetés: A Tesztelés Módszertana}{42}{section.5.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {5.1.1}A Tesztadat-generátor Felépítése és a Determinisztikus Megközelítés Indoklása}{42}{subsection.5.1.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {5.1.2}Tesztelési Forgatókönyvek (Test Scenarios)}{43}{subsection.5.1.2}%
+\select@language {magyar} \contentsline {section}{\numberline {5.2}Tesztelési Eredmények}{44}{section.5.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {5.2.1}Eredmény: Sikeres ,,Touchless'' Feldolgozás (TC\_01)}{44}{subsection.5.2.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {5.2.2}Eredmény: Elutasítási Folyamat Hiányos Adatoknál (TC\_02)}{45}{subsection.5.2.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {5.2.3}Eredmény: Emberi Beavatkozás és Jóváhagyás (TC\_03)}{45}{subsection.5.2.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {5.2.4}Összefoglaló Eredménytáblázat}{46}{subsection.5.2.4}%
+\select@language {magyar} \contentsline {section}{\numberline {5.3}Eredmények Összehasonlítása az ,,As-Is'' Folyamattal}{46}{section.5.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {5.3.1}Feldolgozási Idő (Átfutási Idő) Becslése}{47}{subsection.5.3.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {5.3.2}Hibakockázatok Csökkenése}{47}{subsection.5.3.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {5.3.3}Átláthatóság és Nyomonkövethetőség}{48}{subsection.5.3.3}%
+\select@language {magyar} \contentsline {section}{\numberline {5.4}Továbbfejlesztési Lehetőségek és Jövőkép}{48}{section.5.4}%
+\select@language {magyar} \contentsline {subsection}{\numberline {5.4.1}Mesterséges Intelligencia Finomhangolása (AI Retraining)}{48}{subsection.5.4.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {5.4.2}Process Mining és Valós Idejű Analitika Integrációja}{48}{subsection.5.4.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {5.4.3}Teljes Pénzügyi Ciklus Automatizálása (End-to-End)}{48}{subsection.5.4.3}%
+\select@language {magyar} \contentsline {subsection}{\numberline {5.4.4}Generatív AI Asszisztens (SAP Joule) Bevezetése}{49}{subsection.5.4.4}%
+\select@language {magyar} \contentsline {subsection}{\numberline {5.4.5}Backend Üzleti Kivételkezelés Kiterjesztése}{49}{subsection.5.4.5}%
+\select@language {magyar} \contentsline {section}{\numberline {5.5}Fejezet Összegzése}{49}{section.5.5}%
+\select@language {magyar} \contentsline {chapter}{\numberline {6}Összefoglalás és Következtetések}{50}{chapter.6}%
+\select@language {magyar} \contentsline {section}{\numberline {6.1}A Kutatási Eredmények Összegzése}{50}{section.6.1}%
+\select@language {magyar} \contentsline {section}{\numberline {6.2}A Kutatási Kérdések Megválaszolása}{50}{section.6.2}%
+\select@language {magyar} \contentsline {section}{\numberline {6.3}Záró Gondolatok és További Következtetések (ROI)}{52}{section.6.3}%
+\select@language {magyar} \contentsline {chapter}{Irodalomjegyz\'ek}{53}{section.6.3}%
+\select@language {magyar} \contentsline {chapter}{Függelék}{57}{appendix*.51}%
+\select@language {magyar} \contentsline {section}{\numberline {F.1}A Tesztadat-generátor Forráskódja (Python)}{57}{section.F.1}%
+\select@language {magyar} \contentsline {section}{\numberline {F.2}SAP Build Process Automation Szkriptek}{58}{section.F.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {F.2.1}Adatfeltöltés és API Hívás (Prepare Upload)}{58}{subsection.F.2.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {F.2.2}Adatkinyerés és Normalizálás (Extract Data)}{58}{subsection.F.2.2}%
+\select@language {magyar} \contentsline {section}{\numberline {F.3}Tesztelési Jegyzőkönyv}{59}{section.F.3}%

@@ -32,26 +32,53 @@ A modellezés szabványosított jelölésrendszereket, mint például a BPMN (\t
 \end{description}
 Látható tehát, hogy a BPM egy stratégiai, ,,felülről lefelé'' (\textit{top-down}) irányuló megközelítés, amely a teljes szervezet működését és folyamatainak egészségét tartja szem előtt.
 A BPM biztosítja azt a ,,karmesteri'' szerepet, amely keretbe foglalja és irányítja az egyes automatizálási lépéseket.
-\subsection{Robotikus Folyamatautomatizálás (RPA) – A Taktikai Eszköz}
-\label{ssec:rpa}
 
-Míg a BPM a folyamatok stratégiai ,,karmestere'', addig a Robotikus Folyamatautomatizálás (\textit{Robotic Process Automation}, RPA) a ,,digitális munkás'', amely a konkrét, repetitív feladatokat végzi el.
-Az RPA olyan szoftvertechnológia, amely lehetővé teszi ,,botok'' építését, telepítését és kezelését, amelyek az emberi felhasználói felületi (UI) interakciókat (kattintás, gépelés, adatbevitel) utánozzák, hogy az emberi munkavégzést kiváltsák \cite{IBM-RPA, SAP-RPA}.
-Az RPA ideális megoldást kínál az I. fejezetben azonosított ,,manuális munka fogságában'' lévő pénzügyi osztályok számára.
-Az olyan területek, mint a Kötelezettségkezelés (AP), tele vannak nagy volumenű, szabályalapú, manuális feladatokkal.
-A ,,forgószék'' (\textit{swivel-chair}) probléma – ahol az ügyintéző adatokat másol egy PDF-ből vagy Excelből egy SAP tranzakcióba – tökéletes célpontja az RPA-nak, felszabadítva a szakembereket az elemzői és stratégiai munka számára \cite{IBM-RPA-in-Finance}.
-A Gartner \cite{Gartner-RPA-in-Finance} rámutat, hogy az RPA értéke nem csupán a megtakarított munkaórákban (\textit{hours saved}) rejlik, hanem a tágabb üzleti célokhoz (pl. pontosság, megfelelőség, gyorsabb döntéshozatal) való hozzájárulásban.
-Az RPA botoknak két fő típusa van \cite{Automation-Attended-vs-Unattended, Microsoft-Attended-vs-Unattended}:
-\begin{description}
-    \item[Attended (Felügyelt) bot:] A felhasználó asztali gépén fut, mint egy ,,digitális asszisztens''.
-A felhasználó indítja el, és vele együttműködve végez el egy feladatot (pl. adatgyűjtés egy gombnyomásra).
-\item[Unattended (Felügyelet nélküli) bot:] Szerveren fut, emberi beavatkozás nélkül, automatikusan.
-Jellemzően egy trigger (pl. API hívás, időzítés vagy egy új e-mail beérkezése) indítja el, és a háttérben végzi el a feladatokat, mint például a számlák éjszakai feldolgozása.
-\end{description}
+\section{A ,,To-Be'' Folyamat Logikai Tervezése (BPMN 2.0)}
+\label{sec:bpmn_design}
 
-Kritikus fontosságú megkülönböztetni a BPM-et és az RPA-t. Ahogy azt Jeffrey Brown (SSA \& Company) megfogalmazta, ,,valamilyen szintű BPM előfeltétele minden RPA bevezetésnek, mivel nem lehet sikeresen automatizálni azt, amit nem értünk'' (idézi \cite{TechTarget-RPAvsBPM}).
-Az RPA a meglévő folyamatok (,,As-Is'') egyes feladatainak gyors automatizálására fókuszál (a ,,hogyan''), míg a BPM a teljes, végponttól végpontig tartó folyamat újratervezésére és menedzselésére összpontosít (a ,,miért'').
-A két technológia tehát nem versenytársa, hanem kiegészítője egymásnak: egy modern BPM platform (mint a BPA) képes RPA botokat hívni a folyamat egyes lépéseinek végrehajtására \cite{Kissflow-RPAvsBPM}.
+Mielőtt a specifikus szoftverkomponensek (SAP Build) implementációs részleteit tárgyalnám, elengedhetetlen a tervezett automatizált folyamat szoftverfüggetlen, logikai modelljének definiálása. A folyamattervezéshez az ipari szabványnak tekinthető \textbf{BPMN 2.0 (Business Process Model and Notation)} jelölésrendszert alkalmaztam.
+
+A \ref{fig:bpmn_logic}. ábra mutatja be a megtervezett ,,To-Be'' folyamat logikai ívét. Ez a modell absztrahálja a technikai megvalósítást, és tisztán az üzleti logikára, a döntési pontokra és az adatfolyamra koncentrál.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=1.0\textwidth]{figures/Swimline.png} 
+    \caption{A tervezett automatizált (To-Be) folyamat szoftverfüggetlen BPMN 2.0 modellje.}
+    \label{fig:bpmn_logic}
+\end{figure}
+
+A modell az alábbi logikai szakaszokra bontja a folyamatot:
+\begin{enumerate}
+    \item \textbf{Eseményvezérelt indítás (Triggering):} A folyamatot nem manuális indítás, hanem egy külső esemény (számla beérkezése) aktiválja.
+    \item \textbf{Automatikus Adatfeldolgozás:} Az első szakaszban (Data Processing) nincs emberi interakció; a rendszer autonóm módon strukturálja az adatokat.
+    \item \textbf{Döntési Kapuk (Gateways):} A rombusz alakzatok jelölik a kritikus elágazásokat. A modellben jól látható a kétlépcsős szűrés: először a technikai validáció (\textit{Is Data Valid?}), majd az üzleti szabály (\textit{Amount > Limit?}).
+    \item \textbf{Hibrid Végrehajtás:} A folyamat dinamikusan vált a teljesen automatikus és az emberi beavatkozást igénylő (\textit{Manager Approval}) lépések között.
+\end{enumerate}
+
+Ez a szabványos modell szolgált alapul a későbbi, 4.3. fejezetben részletezett technikai implementációhoz az SAP Build környezetben.
+
+\subsection{Robotikus Folyamatautomatizálás (RPA) -- A Taktikai Eszköz és Korlátai}
+\label{ssec:rpa_theory}
+
+Míg a BPM a folyamatok stratégiai ,,karmestere'', addig a Robotikus Folyamatautomatizálás (Robotic Process Automation, RPA) a ,,digitális munkás'', amely a konkrét, repetitív feladatokat végzi el. Az RPA olyan szoftvertechnológia, amely lehetővé teszi szoftverrobotok (botok) építését, amelyek az emberi felhasználói felületi (UI) interakciókat (kattintás, gépelés, adatbevitel) utánozzák \cite{43, 44}.
+
+Az RPA ideális taktikai megoldást kínál az 1. fejezetben azonosított ,,manuális munka fogságában'' lévő pénzügyi osztályok számára. A ,,forgószék'' (swivel-chair) probléma -- ahol az ügyintéző adatokat másol egy PDF-ből vagy Excelből egy SAP tranzakcióba -- tökéletes célpontja az RPA-nak. A Gartner \cite{2} rámutat, hogy az RPA értéke nem csupán a megtakarított munkaórákban rejlik, hanem a pontosság és a megfelelőség javításában is.
+
+Az RPA botoknak két fő típusa van \cite{41, 5}:
+\begin{itemize}
+    \item \textbf{Attended (Felügyelt) bot:} A felhasználó asztali gépén fut, mint egy ,,digitális asszisztens''. A felhasználó indítja el, és vele együttműködve végez el egy feladatot.
+    \item \textbf{Unattended (Felügyelet nélküli) bot:} Szerveren fut, emberi beavatkozás nélkül. Jellemzően egy trigger (pl. API hívás vagy időzítés) indítja el a háttérben.
+\end{itemize}
+
+\subsubsection*{Mérnöki Kritika: Az RPA Technológiai Korlátai}
+Fontos azonban objektíven látni a technológia hátrányait is. Bár az RPA gyors implementációt tesz lehetővé (mivel nem igényli a backend rendszerek átalakítását), ez az előny egyben a legnagyobb gyengesége is:
+\begin{enumerate}
+    \item \textbf{UI-érzékenység és Törékenység:} Mivel a hagyományos RPA a grafikus felület (GUI) elemeire (gombok, mezők ID-ja, Xpath) támaszkodik, a rendszer \textbf{rendkívül sérülékeny a változásokra}. Egy apró SAP verziófrissítés, amely átrendezi a képernyőt vagy átnevez egy mezőt, a robot azonnali leállását okozhatja.
+    \item \textbf{Magas Karbantartási Igény:} Az említett törékenység miatt az RPA botok folyamatos felügyeletet és karbantartást igényelnek, ami hosszú távon jelentős rejtett költséget (Technical Debt) generálhat.
+    \item \textbf{,,Ragtapasz'' Megoldás:} Mérnöki szempontból az RPA gyakran csak tüneti kezelés: automatizál egy rosszul működő folyamatot anélkül, hogy kijavítaná a mögöttes strukturális problémát vagy integrációs hiányosságot.
+\end{enumerate}
+
+Éppen ezen korlátok miatt hangsúlyozzák a szakértők \cite{24}, hogy az RPA nem helyettesíti, hanem kiegészíti a BPM-et: az RPA a ,,hogyan''-t oldja meg gyorsan, de törékenyen, míg a BPM és a modern API-alapú integrációk a ,,miért''-et és a stabilitást biztosítják.
 \subsection{A Hiperautomatizálás (Hyperautomation) – A Trendek Szintézise}
 \label{ssec:hyperautomation}
 

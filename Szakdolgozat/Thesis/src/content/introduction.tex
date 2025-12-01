@@ -8,6 +8,7 @@
 
 A pénzügyi funkció (\textit{Finance}) drámai átalakuláson megy keresztül, amelyet a folyamatos költségcsökkentési nyomás és a mélyebb üzleti betekintést igénylő stratégiai tanácsadói szerep iránti növekvő igény egyaránt vezérel.
 A hagyományos, reaktív és tranzakció-fókuszú ,,eredménykimutató'' (\textit{scorekeeper}) szerepkörből a pénzügy egyre inkább proaktív, ,,stratégiai értékteremtővé'' (\textit{strategic value creator}) válik.
+
 \subsection{A Szerepkör Forradalma: A Tranzakcióktól a Stratégiáig}
 \label{ssec:szerepkor_forradalma}
 
@@ -15,6 +16,7 @@ A pénzügy jövőbeli alapvető szerepváltása a tranzakciók feldolgozását�
 Ezt a trendet a piacvezető tanácsadó cégek egyértelműen alátámasztják. A Deloitte kiemeli, hogy a pénzügy szerepe ,,a kontrollálástól a stratégiai tervezésig'' (angolul: \textit{from controlling to strategic planning}) mozdul el, és egy ,,előretekintő üzleti funkcióvá válik, amely alakítja az üzleti irányt, ahelyett, hogy egyszerűen a múltbeli eredményekről számolna be''\cite{Deloitte-Controlling-Change}.
 
 Ahogy a PwC elemzése fogalmaz, a ,,pénzügy a pénzügyért'' (\textit{finance for finance}) -- vagyis a hagyományos funkciók hatékonyságának növelése -- továbbra is fontos, de a jövő kulcsa a ,,pénzügy az üzletért'' (\textit{finance for business}), amely mélyebb betekintést nyújt az egész szervezetben\cite{PwC-Future-of-Finance}.
+
 \subsection{A Változás Gátja: A Manuális Munka Fogságában}
 \label{ssec:valtozas_gatja}
 
@@ -22,6 +24,7 @@ Ez az evolúció azonban nem könnyű.
 A stratégiai partnerség legnagyobb akadálya, hogy a magasan képzett pénzügyi csapatok idejét felemésztik a manuális, ismétlődő feladatok.
 A Deloitte nyíltan kimondja, hogy ,,Sok pénzügyi csapat még mindig manuális folyamatokra támaszkodik... ami lassítja a döntéshozatalt, és korlátozza a pénzügyi vezető (CFO) képességét, hogy teljes mértékben stratégiai üzleti partnerként lépjen fel''\cite{Deloitte-Finance-2025}. Egy sokat idézett McKinsey tanulmány számszerűsíti a problémát: becslésük szerint a pénzügyi tevékenységek 42\%-a már ma is teljesen automatizálható a meglévő technológiákkal, további 19\% pedig nagyrészt az lenne\cite{McKinsey-Future-of-Finance}.
 Ezen akadály leküzdése miatt válik a technológia az átalakulás abszolút motorjává.
+
 \subsection{A Technológia Mint Motor: Automatizáció, AI és Adatok}
 \label{ssec:technologia_motor}
 
@@ -105,12 +108,12 @@ Ezen átfogó cél elérése érdekében a dolgozat a következő konkrét rész
 
 \begin{description}
     \item[Elméleti célkitűzés:] A dolgozat célja részletesen bemutatni az SAP Build Process Automation (BPA) technológiai eszköztárát és az azt körülölelő hiperautomatizálási, valamint low-code/no-code (LCNC) koncepciókat.
-    \item[Kutatási kérdés:] Milyen komponensekből áll az SAP BPA, és hogyan kapcsolódnak ezek a hiperautomatizálás modern trendjeihez?
+    \item[Kutatási kérdés:] Hogyan integrálható az SAP BPA architektúrája a meglévő heterogén vállalati környezetbe a technológiai szigetek („silók”) felszámolása érdekében, és milyen architekturális előnyöket biztosít a hiperautomatizálás megközelítése a hagyományos, izolált RPA megoldásokkal szemben?
     \item[Elemzési célkitűzés:] A dolgozat célja elemezni egy tipikus vállalati számlafeldolgozási gyakorlatot, azonosítani annak manuális lépéseit, főbb hibalehetőségeit és szűk keresztmetszeteit (\textit{bottlenecks}).
     \item[Kutatási kérdés:] Hol keletkeznek a legnagyobb költségek és a legtöbb hiba a manuális AP folyamat során, és melyek azok a pontok, amelyek automatizálással javíthatók?
     \item[Gyakorlati célkitűzés (Prototípus):] A dolgozat fő gyakorlati célja egy működőképes prototípus (\textit{Proof of Concept}) létrehozása.
     Ennek a megoldásnak képesnek kell lennie egy beérkező számladokumentum (pl. PDF) adatainak automatikus kinyerésére (AI), az adatok üzleti szabályok szerinti érvényesség-vizsgálatára, és egy előre definiált, többszintű jóváhagyási folyamat (\textit{workflow}) elindítására.
-    \item[Kutatási kérdés:] Megvalósítható-e az SAP BPA eszközeivel egy olyan integrált prototípus, amely a számla beérkezésétől a jóváhagyásáig kezeli a folyamatot?
+    \item[Kutatási kérdés:] Milyen integrációs korlátok és architekturális kompromisszumok mellett valósítható meg a heterogén rendszereket (Microsoft Outlook, SAP S/4HANA) összekapcsoló automatizáció egy felhőalapú, low-code környezetben?
     \item[Értékelési célkitűzés:] Végül a dolgozat célja a megvalósított prototípus működésének tesztelése és hatékonyságának értékelése a korábban elemzett manuális folyamathoz képest.
     \item[Kutatási kérdés:] Mennyivel csökkenti a prototípus a feldolgozási időt és a manuális hibák lehetőségét a hagyományos, e-mail és kézi adatrögzítés alapú módszerhez viszonyítva?
 \end{description}

@@ -21,8 +21,6 @@ Reallocating 'name_of_file' (item size: 1) to 35 items.
 A level-1 auxiliary file: content/results-and-evaluation.aux
 Reallocating 'name_of_file' (item size: 1) to 23 items.
 A level-1 auxiliary file: content/conclusion.aux
-Reallocating 'name_of_file' (item size: 1) to 28 items.
-A level-1 auxiliary file: content/acknowledgement.aux
 Reallocating 'name_of_file' (item size: 1) to 10 items.
 Reallocating 'name_of_file' (item size: 1) to 23 items.
 A level-1 auxiliary file: content/appendices.aux
@@ -50,22 +48,6 @@ Warning--entry type for "IBM-BPM" isn't style-file defined
 --line 141 of file bib/mybib.bib
 Warning--entry type for "Garner-BPM" isn't style-file defined
 --line 161 of file bib/mybib.bib
-Warning--entry type for "TechTarget-RPAvsBPM" isn't style-file defined
---line 215 of file bib/mybib.bib
-Warning--entry type for "Kissflow-RPAvsBPM" isn't style-file defined
---line 235 of file bib/mybib.bib
-Warning--entry type for "IBM-RPA" isn't style-file defined
---line 255 of file bib/mybib.bib
-Warning--entry type for "SAP-RPA" isn't style-file defined
---line 275 of file bib/mybib.bib
-Warning--entry type for "IBM-RPA-in-Finance" isn't style-file defined
---line 293 of file bib/mybib.bib
-Warning--entry type for "Gartner-RPA-in-Finance" isn't style-file defined
---line 313 of file bib/mybib.bib
-Warning--entry type for "Automation-Attended-vs-Unattended" isn't style-file defined
---line 333 of file bib/mybib.bib
-Warning--entry type for "Microsoft-Attended-vs-Unattended" isn't style-file defined
---line 351 of file bib/mybib.bib
 Warning--entry type for "Gartner-Hyperautomation" isn't style-file defined
 --line 369 of file bib/mybib.bib
 Warning--entry type for "IBM-IRPA-vs-Hyperautomation" isn't style-file defined
@@ -130,18 +112,18 @@ Warning--entry type for "Edenredpay-5-Problems" isn't style-file defined
 --line 1009 of file bib/mybib.bib
 Warning--entry type for "Caso-Hidden-Costs-of-Manual" isn't style-file defined
 --line 1029 of file bib/mybib.bib
+Warning--I didn't find a database entry for "43"
+Warning--I didn't find a database entry for "44"
+Warning--I didn't find a database entry for "2"
+Warning--I didn't find a database entry for "41"
+Warning--I didn't find a database entry for "5"
+Warning--I didn't find a database entry for "24"
 Warning--to sort, need author/key/name in PwC-Future-of-Finance
 Warning--to sort, need author/key/name in Deloitte-Finance-2025
 Warning--to sort, need author/key/name in Gartner-Finance-2030
 Warning--to sort, need author/key/name in Ardent-ePayables-Report
 Warning--to sort, need author/key/name in Garner-BPM
 Warning--to sort, need author/key/name in IBM-BPM
-Warning--to sort, need author/key/name in IBM-RPA
-Warning--to sort, need author/key/name in SAP-RPA
-Warning--to sort, need author/key/name in Gartner-RPA-in-Finance
-Warning--to sort, need author/key/name in Automation-Attended-vs-Unattended
-Warning--to sort, need author/key/name in Microsoft-Attended-vs-Unattended
-Warning--to sort, need author/key/name in Kissflow-RPAvsBPM
 Warning--to sort, need author/key/name in Gartner-Hyperautomation
 Warning--to sort, need author/key/name in Kissflow-Hyperautomation
 Warning--to sort, need author/key/name in SAP-BTP-Portfolio
@@ -164,45 +146,45 @@ Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
 Reallocating 'singl_function' (item size: 4) to 100 items.
-You've used 48 entries,
+You've used 40 entries,
             4991 wiz_defined-function locations,
-            1378 strings with 21169 characters,
-and the built_in function-call counts, 260122 in all, are:
-= -- 47857
-> -- 4603
+            1343 strings with 20041 characters,
+and the built_in function-call counts, 236025 in all, are:
+= -- 43308
+> -- 4206
 < -- 0
-+ -- 15109
-- -- 8561
-* -- 1185
-:= -- 4632
-add.period$ -- 96
-call.type$ -- 48
-change.case$ -- 198
++ -- 13987
+- -- 8369
+* -- 1022
+:= -- 3937
+add.period$ -- 80
+call.type$ -- 40
+change.case$ -- 166
 chr.to.int$ -- 0
-cite$ -- 78
-duplicate$ -- 52701
-empty$ -- 2155
-format.name$ -- 48
-if$ -- 50627
+cite$ -- 64
+duplicate$ -- 48025
+empty$ -- 1797
+format.name$ -- 44
+if$ -- 45124
 int.to.chr$ -- 0
-int.to.str$ -- 48
+int.to.str$ -- 40
 missing$ -- 0
-newline$ -- 354
-num.names$ -- 36
-pop$ -- 8823
+newline$ -- 312
+num.names$ -- 32
+pop$ -- 7773
 preamble$ -- 1
-purify$ -- 150
+purify$ -- 126
 quote$ -- 22
-skip$ -- 4728
+skip$ -- 4279
 stack$ -- 0
-substring$ -- 24590
-swap$ -- 32190
+substring$ -- 22309
+swap$ -- 29863
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 240
-warning$ -- 30
-while$ -- 414
-width$ -- 50
-write$ -- 548
-(There were 78 warnings)
+type$ -- 200
+warning$ -- 24
+while$ -- 358
+width$ -- 42
+write$ -- 475
+(There were 70 warnings)

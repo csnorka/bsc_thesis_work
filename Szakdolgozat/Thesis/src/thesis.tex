@@ -59,6 +59,7 @@
   morestring=[b]"
 }
 
+% Python nyelv definíciója
 \lstdefinelanguage{Python}{
   keywords={and, as, assert, break, class, continue, def, del, elif, else, except, exec, finally, for, from, global, if, import, in, is, lambda, not, or, pass, print, raise, return, try, while, with, yield, True, False, None},
   keywordstyle=\color{blue}\bfseries,
@@ -102,62 +103,39 @@
 %--------------------------------------------------------------------------------------
 \begin{document}
 
-\pagenumbering{gobble}
-
+% 1. CÍMLAP és TARTALOMJEGYZÉK (Nincs oldalszám)
+\pagenumbering{gobble} % Kikapcsolja a számozást
 \selectthesislanguage
+\include{include/titlepage}
 
-%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-\include{include/titlepage}        % Szakdolgozat/Diplomaterv címlap
+\tableofcontents       % Még mindig nincs oldalszám
+\cleardoublepage       % Lezárjuk a számozatlan szakaszt
 
+% 2. NYILATKOZAT és KIVONAT (Itt indul a római számozás: i, ii...)
+\pagenumbering{roman}  % Bekapcsoljuk a római számokat (automatikusan i-től indul)
+\include{include/declaration} % Ez lesz az 'i' oldal
+\include{content/abstract}    % Ez lesz az 'ii' oldal
 
-% Table of Contents
-%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-\tableofcontents\cleardoublepage
-
-
-% Declaration and Abstract
-%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-\include{include/declaration} % Hallgatói nyilatkozat
-\include{content/abstract}    % Összefoglaló
-
-
-% The main part of the thesis
-%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-\pagenumbering{arabic}
+% 3. FŐ TARTALOM (Bevezetéstől kezdve) -> Arab számozás (1, 2...)
+\cleardoublepage       % Lezárjuk a római szakaszt
+\pagenumbering{arabic} % Átváltunk arab számokra (automatikusan 1-től indul)
 
 % FEJEZETEK BETÖLTÉSE
 \include{content/introduction}
 \include{content/theoretical-background}
 \include{content/invoice-processing-process-analysis}
-\include{content/automated-invoice-processing} % 4. Fejezet (Itt vannak a kódok és ábrák)
+\include{content/automated-invoice-processing} % 4. Fejezet
 \include{content/results-and-evaluation}     % 5. Fejezet
-\include{content/conclusion}
+\include{content/conclusion}                 % 6. Fejezet
 
-% Opcionális fejezetek (ha nem kellenek, maradhatnak kommentezve)
-%\include{content/latex-tools}
-%\include{content/thesis-format}
-%\include{content/template-usage}
+% Egyéb részek
+% \include{content/acknowledgement}
 
+% Irodalomjegyzék
+\addcontentsline{toc}{chapter}{\bibname}
+\bibliography{bib/mybib}
 
-% Acknowledgements
-%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-\include{content/acknowledgement}
-
-
-% List of Figures, Tables (Opcionális listák)
-%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-%\listoffigures\addcontentsline{toc}{chapter}{\listfigurename}
-%\listoftables\addcontentsline{toc}{chapter}{\listtablename}
-
-% Bibliography
-%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-\addcontentsline{toc}{chapter}{\bibname} % Beteszi a tartalomjegyzékbe
-
-\bibliography{bib/mybib} % 3. ADATBÁZIS (ez generálja le a listát)
-
-% Appendix
-%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Függelék
 \include{content/appendices}
 
-%\label{page:last}
 \end{document}

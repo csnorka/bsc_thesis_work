@@ -100,11 +100,6 @@
   >https://resolvepay.com/blog/17-statistics-showing-the-hidden-cost-of-
   invoice-errors-and-rework>.
 
-\bibitem{Gartner-RPA-in-Finance}
-3 tactics to demonstrate rpa’s impact in finance, 2024.
-\bibNewBlock
-\bibUrll{URL} >https://www.gartner.com/en/finance/trends/finance-rpa>.
-
 \bibitem{Parseur-AI-Invoice-Processing}
 Ai invoice processing benchmarks 2025 - accuracy, speed, and cost comparison,
   2025.
@@ -117,13 +112,6 @@ Irina Anichshuk:
 \bibNewBlock
 \bibUrll{URL}
   >https://www.kolleno.com/how-to-move-from-pdfs-to-true-e-invoices>.
-
-\bibitem{Microsoft-Attended-vs-Unattended}
-Attended and unattended scenarios.
-\bibNewBlock
-\bibUrll{URL}
-  >https://learn.microsoft.com/en-us/power-automate/guidance/planning/
-  attended-unattended>.
 
 \bibitem{Ascendsoftware-Cost-of-Manual}
 Alison Baran:
@@ -193,22 +181,6 @@ Finance 2030: 8 forces shaping the future of finance, 2025.
 \bibUrll{URL}
   >https://www.gartner.com/en/finance/insights/future-of-finance-2030>.
 
-\bibitem{SAP-Tolerance-Keys-Part1}
-{Former Member}:
-\bibNewBlock Invoice tolerance keys - an insight - part 1, 2014.
-\bibNewBlock
-\bibUrll{URL}
-  >https://community.sap.com/t5/enterprise-resource-planning-blog-posts-
-  by-members/invoice-tolerance-keys-an-insight-part-1/bc-p/13085899>.
-
-\bibitem{SAP-Tolerance-Keys-Part2}
-{Former Member}:
-\bibNewBlock Invoice tolerance keys - an insight - part 2, 2015.
-\bibNewBlock
-\bibUrll{URL}
-  >https://community.sap.com/t5/enterprise-resource-planning-blog-posts-
-  by-members/invoice-tolerance-keys-an-insight-part-2/ba-p/13195017>.
-
 \bibitem{PwC-Future-of-Finance}
 Future of finance: How you can lead with insight, not just oversight, 2025.
 \bibNewBlock
@@ -268,14 +240,6 @@ Lingeswar Karrennagari:
   >https://community.sap.com/t5/supply-chain-management-blog-posts-by-
   members/logistics-invoice-verification/ba-p/13740502>.
 
-\bibitem{TechTarget-RPAvsBPM}
-George Lawton:
-\bibNewBlock Rpa vs. bpm: How are they different?, 2023.
-\bibNewBlock
-\bibUrll{URL}
-  >https://www.techtarget.com/searchcio/tip/RPA-vs-BPM-How-are-they-
-  different>.
-
 \bibitem{SAP-Holding-and-Parking}
 Managing invoice holding and parking.
 \bibNewBlock
@@ -297,7 +261,10 @@ Sanjib~Kumar Mishra\bibAnd 0Sasmita Mishra\bibAnd 2Rojalina Priyadarshini:
   invoice verification” payment block process—a case study on sap r-payment
   block, 2024.
 \bibNewBlock
-\bibUrll{URL} >file:///C:/Users/csabudan/Downloads/s13132-024-02583-8.pdf>.
+\bibUrll{URL} >https://www.researchgate.net/publication/
+  389749726_Supply_Chain_Business_Process_Re-
+  Engineering_Automate_Logistic_Invoice_Verification_Payment_Block_Proces
+  s-A_Case_Study_on_SAP_R-Payment_Block>.
 
 \bibitem{Deloitte-Controlling-Change}
 Justin Morel~de Westgaver\bibAnd 0Michael Cravatte\bibAnd 2Fethi Sadouki:
@@ -335,16 +302,26 @@ Processing edi invoices, 2025.
 \bibUrll{URL} >https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/
   af9ef57f504840d2b81be8667206d485/366fb6531de6b64ce10000000a174cb4.html>.
 
-\bibitem{Kissflow-RPAvsBPM}
-Rpa vs. bpm: What's the difference?, 2025.
-\bibNewBlock
-\bibUrll{URL}
-  >https://kissflow.com/workflow/bpm/rpa-vs-bpm-whats-the-difference>.
-
 \bibitem{SAP-BTP-Portfolio}
 Sap business technology platform.
 \bibNewBlock
 \bibUrll{URL} >https://www.sap.com/products/technology-platform.html>.
+
+\bibitem{SAP-Tolerance-Keys-Part1}
+{SAP Community Member}:
+\bibNewBlock Invoice tolerance keys - an insight - part 1, 2014.
+\bibNewBlock
+\bibUrll{URL}
+  >https://community.sap.com/t5/enterprise-resource-planning-blog-posts-
+  by-members/invoice-tolerance-keys-an-insight-part-1/bc-p/13085899>.
+
+\bibitem{SAP-Tolerance-Keys-Part2}
+{SAP Community Member}:
+\bibNewBlock Invoice tolerance keys - an insight - part 2, 2015.
+\bibNewBlock
+\bibUrll{URL}
+  >https://community.sap.com/t5/enterprise-resource-planning-blog-posts-
+  by-members/invoice-tolerance-keys-an-insight-part-2/ba-p/13195017>.
 
 \bibitem{XSUITE-Parking-in-SAP}
 Jan Schulze:
@@ -373,28 +350,10 @@ Transform business with sap business technology platform (sap btp), 2024.
   >https://nav-it.com/transform-business-with-sap-business-technology-
   platform-sap-btp>.
 
-\bibitem{Automation-Attended-vs-Unattended}
-What is attended vs unattended robotic process automation (rpa)?
-\bibNewBlock
-\bibUrll{URL}
-  >https://www.automationanywhere.com/rpa/attended-vs-unattended-rpa>.
-
 \bibitem{IBM-BPM}
 What is business process management (bpm)?, 2024.
 \bibNewBlock
 \bibUrll{URL} >https://www.ibm.com/think/topics/business-process-management>.
-
-\bibitem{IBM-RPA}
-What is robotic process automation (rpa)?, 2021.
-\bibNewBlock
-\bibUrll{URL} >https://www.ibm.com/think/topics/rpa>.
-
-\bibitem{SAP-RPA}
-What is robotic process automation (rpa)?
-\bibNewBlock
-\bibUrll{URL}
-  >https://www.sap.com/products/technology-platform/process-automation/
-  what-is-rpa.html>.
 
 \bibitem{SAP-Build}
 What is sap build?
@@ -415,11 +374,5 @@ What is sap business technology platform?
 \bibUrll{URL}
   >https://www.sap.com/sea/products/technology-platform/what-is-sap-
   business-technology-platform.html>.
-
-\bibitem{IBM-RPA-in-Finance}
-Paula Williams:
-\bibNewBlock Five ways to use rpa in finance, 2021.
-\bibNewBlock
-\bibUrll{URL} >https://www.ibm.com/think/topics/rpa-for-finance>.
 
 \end{thebibliography}
