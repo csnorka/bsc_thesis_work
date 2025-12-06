@@ -150,67 +150,29 @@ def create_simple_invoice(filename, data):
 # 1. ESET: Belföldi (HUF, 27% ÁFA) - "Happy Path"
 # Ez a standard eset, aminek csont nélkül át kell mennie a rendszeren.
 thesis_simple_1 = {
-    "issued_to_name": "Kovács Informatikai Kft.",
-    "issued_to_company": "Beszerzési Osztály",
-    "issued_to_address": "1117 Budapest, Irinyi József u. 42.",
+    "issued_to_name": "Inlandslieferant DE 1",
+    "issued_to_company": "Germany Co.",
+    "issued_to_address": "45721 Haltern am See, Hullerner Strasse 23",
     
     "pay_to_bank": "OTP Bank",
     "pay_to_acc_name": "Tech Solutions Zrt.",
     "pay_to_acc_no": "11700001-22223333",
     
-    "invoice_no": "SIM-HU-2024-001",
-    "date": "2024.11.25",
-    "due_date": "2024.12.25",
+    "invoice_no": "242424",
+    "date": "2025.12.06.",
+    "due_date": "2025.12.25",
     
     "items": [
-        ["Rendszerkarbantartás - November", "100 000 Ft", "1", "100 000 Ft"],
-        ["Szerver hosting díj", "50 000 Ft", "1", "50 000 Ft"]
+        ["Computer Screen", "1000 €", "1", "1000 €"],
+        ["Computer keyboard", "500 €", "1", "500 €"]
     ],
     
-    "subtotal": "150 000 Ft",
-    "tax": "27% (40 500 Ft)",
-    "total_amount": "190 500 Ft",
+    "subtotal": "1500 €",
+    "tax": "27%",
+    "total_amount": "1900 €",
     "signer_name": "Szabó Péter ügyvezető"
 }
-create_simple_invoice("thesis_simple_01_valid_huf.pdf", thesis_simple_1)
-
-
-# 2. ESET: Duplikáció teszt (Ugyanaz az Invoice NO, mint az 1-esnél!)
-# Tartalom kicsit más, de a számlaszám ütközik. Az SAP-nak ezt el kell kapnia.
-thesis_simple_2 = thesis_simple_1.copy()
-thesis_simple_2["items"] = [["Extra kiszállás", "10 000 Ft", "1", "10 000 Ft"]]
-thesis_simple_2["total_amount"] = "12 700 Ft"
-# A SZÁMLASZÁM MARAD AZ EREDETI:
-thesis_simple_2["invoice_no"] = "SIM-HU-2024-001" 
-create_simple_invoice("thesis_simple_02_duplicate_error.pdf", thesis_simple_2)
-
-
-# 3. ESET: Külföldi / Devizás (EUR, 0% ÁFA)
-# Teszteli a deviza felismerést és a fordított adózást.
-thesis_simple_3 = {
-    "issued_to_name": "Global Tech GmbH",
-    "issued_to_company": "Headquarters",
-    "issued_to_address": "Munich, Industrial Park 4.",
-    
-    "pay_to_bank": "Deutsche Bank",
-    "pay_to_acc_name": "Tech Sol. EU Branch",
-    "pay_to_acc_no": "DE89 3704 0044 0532 0130 00",
-    
-    "invoice_no": "SIM-EU-2024-999",
-    "date": "2024.12.01",
-    "due_date": "2025.01.01",
-    
-    "items": [
-        ["Software License Fee", "€ 500.00", "2", "€ 1000.00"],
-        ["Remote Support", "€ 100.00", "5", "€ 500.00"]
-    ],
-    
-    "subtotal": "€ 1500.00",
-    "tax": "0% (Reverse Charge)",
-    "total_amount": "€ 1500.00",
-    "signer_name": "John Doe, Regional Manager"
-}
-create_simple_invoice("thesis_simple_03_foreign_eur.pdf", thesis_simple_3)
+create_simple_invoice("simple_01_valid_huf.pdf", thesis_simple_1)
 
 
 # 4. ESET: Hiányzó kötelező adat (Validation Error)
@@ -218,24 +180,24 @@ create_simple_invoice("thesis_simple_03_foreign_eur.pdf", thesis_simple_3)
 # Ezt a "Human in the Loop" folyamat tesztelésére használjuk (kézi javításra kell esnie).
 thesis_simple_4 = {
     "issued_to_name": "", # <--- ÜRES MEZŐ HIBA!
-    "issued_to_company": "Ismeretlen Kft.",
-    "issued_to_address": "Budapest, Váci út 1.",
+    "issued_to_company": "Unknow",
+    "issued_to_address": "45721 Haltern am See, Hullerner Strasse 23",
     
     "pay_to_bank": "K&H Bank",
     "pay_to_acc_name": "Tech Solutions Zrt.",
     "pay_to_acc_no": "10404040-00000000",
     
-    "invoice_no": "SIM-ERR-MISSING",
+    "invoice_no": "24242411",
     "date": "2024.10.10",
     "due_date": "2024.10.20",
     
     "items": [
-        ["Teszt tétel", "1000 Ft", "1", "1000 Ft"]
+        ["Test product", "100 €", "1", "100 €"]
     ],
     
-    "subtotal": "1000 Ft",
-    "tax": "270 Ft",
-    "total_amount": "1270 Ft",
+    "subtotal": "100 €",
+    "tax": "27 €",
+    "total_amount": "127 €",
     "signer_name": "Automata Rendszer"
 }
-create_simple_invoice("thesis_simple_04_missing_data.pdf", thesis_simple_4)
+create_simple_invoice("simple_02_missing_data.pdf", thesis_simple_4)

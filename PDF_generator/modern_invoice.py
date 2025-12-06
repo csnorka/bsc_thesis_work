@@ -52,7 +52,7 @@ def create_modern_invoice_for_thesis(filename, data):
     pdf.set_x(110)
     pdf.set_font("Arial", "", 10)
     inv_id = data.get("invoice_id", "#000000")
-    pdf.cell(90, 6, f"Invoice ID: {inv_id}", align="R", ln=True)
+    pdf.cell(90, 6, f"Invoice Number: {inv_id}", align="R", ln=True)
     
     # ÚJ SOR: Dátum kiírása (Ez kritikus az SAP teszthez!)
     inv_date = data.get("date", "2023.01.01.")
@@ -145,27 +145,27 @@ def create_modern_invoice_for_thesis(filename, data):
 # 1. ESET: "Belföldi számla" (Valid, HUF, 27% ÁFA)
 # Cél: Tesztelni a sikeres adatkinyerést és a 27%-os ÁFA felismerését.
 case_1_domestic = {
-    "invoice_id": "INV-HU-2024-001",
-    "date": "2024. 11. 25.", # Teljesítés dátuma
-    "customer_name": "Magyar Szolgáltató Kft.",
+    "invoice_id": "123456789",
+    "date": "2025. 12. 06.", # Teljesítés dátuma
+    "customer_name": "Servicios en Daganzo",
     "customer_phone": "+36-1-123-4567",
-    "customer_email": "info@magyarszolgaltato.hu",
-    "customer_address": "1055 Budapest, Kossuth Lajos tér 1.",
+    "customer_email": "info@daganzosercios.hu",
+    "customer_address": "74214 Daganzo, Lindenstrasse 55",
     
     "items": [
-        ["Szoftverfejlesztés (SAP Implementáció)", "100 000 Ft", "1", "100 000 Ft"],
-        ["Tanácsadás (Support)", "50 000 Ft", "2", "100 000 Ft"]
+        ["Bicycle", "1000 €", "1", "1000 €"],
+        ["Bicycle part", "500 €", "2", "1000 €"]
     ],
     
     "bank_name": "Magyar Bank Zrt.",
     "bank_id": "11773333-12345678",
     
-    "subtotal": "200 000 Ft",
+    "subtotal": "2000 €",
     "tax_rate": "27%",
-    "tax": "54 000 Ft",
-    "grand_total": "254 000 Ft"
+    "tax": "540 €",
+    "grand_total": "2540 €"
 }
-create_modern_invoice_for_thesis("thesis_01_domestic_valid.pdf", case_1_domestic)
+create_modern_invoice_for_thesis("modern_01_valid.pdf", case_1_domestic)
 
 
 # 2. ESET: "Duplikált számlaszám" teszthez (Valid tartalom, de ismétlődő ID)
@@ -173,58 +173,32 @@ create_modern_invoice_for_thesis("thesis_01_domestic_valid.pdf", case_1_domestic
 # hogy az "INV-HU-2024-001" már létezik a rendszerben.
 # (A tartalom kicsit más, de az ID ugyanaz, ez a lényeg)
 case_2_duplicate = case_1_domestic.copy()
-case_2_duplicate["items"] = [["Másik tétel", "10 Ft", "1", "10 Ft"]]
-case_2_duplicate["grand_total"] = "12,7 Ft"
+case_2_duplicate["items"] = [["Other one", "10 €", "1", "10 €"]]
+case_2_duplicate["grand_total"] = "12,7 €"
 # AZ ID UGYANAZ MARAD!
-create_modern_invoice_for_thesis("thesis_02_duplicate_id_check.pdf", case_2_duplicate)
-
-
-# 3. ESET: "Külföldi/Eltérő ÁFA" (EUR, 0% ÁFA / Fordított adózás)
-# Cél: Tesztelni, hogy a rendszer kezeli-e a más pénznemet (EUR) és az eltérő (0%) adókulcsot.
-case_3_foreign = {
-    "invoice_id": "INV-EU-2024-888",
-    "date": "2024. 12. 01.",
-    "customer_name": "German Engineering GmbH",
-    "customer_phone": "+49 30 123456",
-    "customer_email": "rechnung@german-eng.de",
-    "customer_address": "Berlin, Alexanderplatz 1.",
-    
-    "items": [
-        ["Cross-border consultation", "€ 500.00", "1", "€ 500.00"],
-        ["Travel expenses", "€ 150.00", "1", "€ 150.00"]
-    ],
-    
-    "bank_name": "Deutsche Bank",
-    "bank_id": "DE55 1001 0010 1234 5678 90",
-    
-    "subtotal": "€ 650.00",
-    "tax_rate": "0%", # Fordított adózás / Reverse Charge
-    "tax": "€ 0.00",
-    "grand_total": "€ 650.00"
-}
-create_modern_invoice_for_thesis("thesis_03_foreign_eur.pdf", case_3_foreign)
+create_modern_invoice_for_thesis("modern_02_duplicate_id_check.pdf", case_2_duplicate)
 
 
 # 4. ESET: "Hiányzó Kötelező Adat" (Missing Mandatory Field)
 # Cél: A "customer_name" üres. Az SAP automatizációnak ezt észre kell vennie, 
 # és a validációs lépésnél el kell utasítania vagy manuális javításra küldenie (Human in the Loop).
 case_4_invalid = {
-    "invoice_id": "INV-ERR-MISSING-01",
-    "date": "2024. 10. 10.",
+    "invoice_id": "987654321",
+    "date": "2025. 12. 06.",
     "customer_name": "", # <--- HIBA! Hiányzik a szállító neve.
     "customer_phone": "",
-    "customer_address": "Cím is hiányzik...",
+    "customer_address": "",
     
     "items": [
-        ["Ismeretlen tétel", "1000 Ft", "1", "1000 Ft"]
+        ["Unknow product", "100 €", "1", "100 €"]
     ],
     
     "bank_name": "Bank",
     "bank_id": "1234",
     
-    "subtotal": "1000 Ft",
+    "subtotal": "100 €",
     "tax_rate": "27%",
-    "tax": "270 Ft",
-    "grand_total": "1270 Ft"
+    "tax": "27 F€",
+    "grand_total": "127 €"
 }
-create_modern_invoice_for_thesis("thesis_04_missing_vendor_error.pdf", case_4_invalid)
+create_modern_invoice_for_thesis("modern_04_missing_vendor_error.pdf", case_4_invalid)

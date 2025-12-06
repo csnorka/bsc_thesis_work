@@ -180,10 +180,10 @@ def create_complex_invoice(filename, data):
         pdf.cell(25, 6, value, align="R", border="B" if bold else 0)
         pdf.ln()
 
-    print_total_row("Item Total:", data.get("total_net", "$ 0.00"))
-    print_total_row("Sales Tax:", data.get("tax", "$ 0.00"))
+    print_total_row("Item Total:", data.get("total_net", "€ 0.00"))
+    print_total_row("Sales Tax:", data.get("tax", "€ 0.00"))
     pdf.ln(1)
-    print_total_row("Total Amount Due:", data.get("total_gross", "$ 0.00"), bold=True)
+    print_total_row("Total Amount Due:", data.get("total_gross", "€ 0.00"), bold=True)
 
     filepath = os.path.join(OUTPUT_DIR, filename)
     pdf.output(filepath)
@@ -195,9 +195,9 @@ def create_complex_invoice(filename, data):
 # 1. BASE CASE (Valid, USD)
 base_data = {
     "bill_to_text": "ABC Communication\n3451 NE Willoughby Blvd.\nSturt, FL 5494 U.S.A",
-    "remit_to_text": "Standard Products\n3150 SW 9th Street\nMiami, FL 3218 U.S.A.",
+    "remit_to_text": "Sixt GmbH & Co.\nZugspitzstrasse 1\n82049",
     "inv_number": "174221",
-    "inv_date": "2/18/2019",
+    "inv_date": "6/12/2025",
     "po_number": "1258-0854",
     "source_ref": "S.O. #687250",
     "acct_num": "860",
@@ -213,14 +213,14 @@ base_data = {
     
     # Items (PartNo, Desc, Qty, UOM, Price, Total)
     "items": [
-        ["2001", "Labor Service", "2.00", "HR", "$ 55.00", "$ 110.00"],
-        ["3001", "Extra Fee", "1.00", "MD", "$ 70.00", "$ 70.00"],
-        ["9001", "Travel costs", "1.00", "TR", "$ 40.00", "$ 40.00"]
+        ["2001", "Labor Service", "2.00", "HR", "€ 55.00", "€ 110.00"],
+        ["3001", "Extra Fee", "1.00", "MD", "€ 70.00", "€ 70.00"],
+        ["9001", "Travel costs", "1.00", "TR", "€ 40.00", "€ 40.00"]
     ],
     "notes": "Thank you for your business!",
-    "total_net": "$ 220.00",
+    "total_net": "€ 220.00",
     "tax": "$ 0.00",
-    "total_gross": "$ 220.00"
+    "total_gross": "€ 220.00"
 }
 
 # File 1: Perfect condition
@@ -235,17 +235,17 @@ missing_id_data["po_number"] = "" # Remove the PO number for testing purposes:
 create_complex_invoice("general_invoice_02_missing_id.pdf", missing_id_data)
 
 
-# 3. DIFFERENT CURRENCY (EURO Currency)
+# 3. DIFFERENT CURRENCY (USD Currency)
 # Copy the base
-euro_data = base_data.copy()
-# Rewrite the text values where there was a $ sign
-euro_data["items"] = [
-    ["2001", "Labor Service (EU)", "2.00", "HR", "€ 50.00", "€ 100.00"],
-    ["3001", "Extra Fee", "1.00", "MD", "€ 60.00", "€ 60.00"],
-    ["9001", "Travel costs", "1.00", "TR", "€ 35.00", "€ 35.00"]
+usd_data = base_data.copy()
+# Rewrite the text values where there was a € sign
+usd_data["items"] = [
+    ["2001", "Labor Service (EU)", "2.00", "HR", "$ 50.00", "$ 100.00"],
+    ["3001", "Extra Fee", "1.00", "MD", "$ 60.00", "$ 60.00"],
+    ["9001", "Travel costs", "1.00", "TR", "$ 35.00", "$ 35.00"]
 ]
-euro_data["total_net"] = "€ 195.00"
-euro_data["tax"] = "€ 39.00"      # Let's put 20% VAT since it's Europe
-euro_data["total_gross"] = "€ 234.00"
+usd_data["total_net"] = "$ 195.00"
+usd_data["tax"] = "$ 39.00"      # Let's put 20% VAT since it's Europe
+usd_data["total_gross"] = "$ 234.00"
 
-create_complex_invoice("general_invoice_03_currency_eur.pdf", euro_data)
+create_complex_invoice("general_invoice_03_currency_usd.pdf", usd_data)
