@@ -17,3 +17,10 @@ https://aiservices-dox.cfapps.eu10.hana.ondemand.com
 ID + Secret
 sb-5797c0bd-3abf-4fc2-87ee-0532fb335a17!b548631|na-f20548c0-157d-417b-8bbb-1c9f35ecfb2d!b20821:7d73b43c-73eb-426e-b70a-97162be3ef5c$oKPcEkSC9Rlai2wHg33H03L0HVuzLTJ6FxeQ0NAncSc=
 https://www.base64encode.org/ 
+
+
+SBPA_BOT_USER
+CC0000000141
+NinaTheAwsomeStar24:)
+	
+https://my300448-api.s4hana.ondemand.com/sap/opu/odata/sap/API_SUPPLIERINVOICE_PROCESS_SRV

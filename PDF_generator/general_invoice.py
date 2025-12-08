@@ -192,10 +192,16 @@ def create_complex_invoice(filename, data):
 
 # --- GENERATING TEST CASES ---
 
-# 1. BASE CASE (Valid, USD)
+# --- GENERATING TEST CASES (UPDATED VENDORS) ---
+
+# 1. BASE CASE (Valid, EUR) - Vendor 1: Inlandslieferant DE 1
 base_data = {
-    "bill_to_text": "ABC Communication\n3451 NE Willoughby Blvd.\nSturt, FL 5494 U.S.A",
-    "remit_to_text": "Sixt GmbH & Co.\nZugspitzstrasse 1\n82049",
+    # Vevő (A te céged / SAP Company Code)
+    "bill_to_text": "Szakdolgozat Teszt Kft.\nBudapest, Fő utca 1.\n1054 Hungary",
+    
+    # Szállító (Vendor 1) - Ezt kérted módosítani
+    "remit_to_text": "Inlandslieferant DE 1\nHullerner Straße 23\n45721 Haltern am See",
+    
     "inv_number": "174221",
     "inv_date": "6/12/2025",
     "po_number": "1258-0854",
@@ -219,33 +225,42 @@ base_data = {
     ],
     "notes": "Thank you for your business!",
     "total_net": "€ 220.00",
-    "tax": "$ 0.00",
+    "tax": "€ 0.00", # Európai közösségen belüli (fordított adózás) teszthez jó a 0
     "total_gross": "€ 220.00"
 }
 
-# File 1: Perfect condition
+# File 1: Perfect condition (Inlandslieferant DE 1)
 create_complex_invoice("general_invoice_01_valid.pdf", base_data)
 
 
-# 2. MISSING INVOICE NUMBER (Missing Number)
+# 2. MISSING INVOICE NUMBER - Vendor 2: Inland-Lohnbearbeiter A
 missing_id_data = base_data.copy()
-missing_id_data["inv_number"] = "" # Leave empty
-missing_id_data["po_number"] = "" # Remove the PO number for testing purposes:
+
+# Szállító csere (Vendor 2)
+missing_id_data["remit_to_text"] = "Inland-Lohnbearbeiter A, DE\nHauptstraße 12\n39343 Alleringersleben"
+
+missing_id_data["inv_number"] = "" # Leave empty (HIBA TESZT)
+missing_id_data["po_number"] = "" # Remove the PO number
 
 create_complex_invoice("general_invoice_02_missing_id.pdf", missing_id_data)
 
 
-# 3. DIFFERENT CURRENCY (USD Currency)
+# 3. DIFFERENT CURRENCY (USD) - Vendor 3: Inlandslieferant DE 2
 # Copy the base
 usd_data = base_data.copy()
-# Rewrite the text values where there was a € sign
+
+# Szállító csere (Vendor 3)
+usd_data["remit_to_text"] = "Inlandslieferant DE 2\nKirchhög 78\n99867 Gotha"
+
+# Rewrite the text values where there was a € sign to $
 usd_data["items"] = [
     ["2001", "Labor Service (EU)", "2.00", "HR", "$ 50.00", "$ 100.00"],
     ["3001", "Extra Fee", "1.00", "MD", "$ 60.00", "$ 60.00"],
     ["9001", "Travel costs", "1.00", "TR", "$ 35.00", "$ 35.00"]
 ]
 usd_data["total_net"] = "$ 195.00"
-usd_data["tax"] = "$ 39.00"      # Let's put 20% VAT since it's Europe
+usd_data["tax"] = "$ 39.00"      # Let's put 20% VAT
 usd_data["total_gross"] = "$ 234.00"
+usd_data["inv_number"] = "174222"  # New invoice number
 
 create_complex_invoice("general_invoice_03_currency_usd.pdf", usd_data)

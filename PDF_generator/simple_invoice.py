@@ -145,14 +145,15 @@ def create_simple_invoice(filename, data):
     print(f"[OK] Simple Invoice Generálva: {filepath}")
 
 
-# --- SZAKDOLGOZAT TESZT ESETEK (SAP Automation) ---
+# --- SZAKDOLGOZAT TESZT ESETEK (SAP Automation - Simple Invoice) ---
 
-# 1. ESET: Belföldi (HUF, 27% ÁFA) - "Happy Path"
-# Ez a standard eset, aminek csont nélkül át kell mennie a rendszeren.
+# 1. ESET: Valid Belföldi/EU (Inlandslieferant DE 1) - "Happy Path"
+# Itt minden adat megvan, a rendszernek fel kell ismernie a szállítót a neve/címe alapján.
 thesis_simple_1 = {
+    # Itt adjuk meg a kért Inlandslieferant DE 1 adatait
     "issued_to_name": "Inlandslieferant DE 1",
-    "issued_to_company": "Germany Co.",
-    "issued_to_address": "45721 Haltern am See, Hullerner Strasse 23",
+    "issued_to_company": "Germany HQ",
+    "issued_to_address": "Hullerner Straße 23\n45721 Haltern am See",
     
     "pay_to_bank": "OTP Bank",
     "pay_to_acc_name": "Tech Solutions Zrt.",
@@ -168,20 +169,23 @@ thesis_simple_1 = {
     ],
     
     "subtotal": "1500 €",
-    "tax": "27%",
-    "total_amount": "1900 €",
+    "tax": "27% (405 €)", 
+    "total_amount": "1905 €",
     "signer_name": "Szabó Péter ügyvezető"
 }
 create_simple_invoice("simple_01_valid_huf.pdf", thesis_simple_1)
 
 
-# 4. ESET: Hiányzó kötelező adat (Validation Error)
-# Hiányzik a Vevő neve ("issued_to_name").
-# Ezt a "Human in the Loop" folyamat tesztelésére használjuk (kézi javításra kell esnie).
+# 2. ESET: Hiányzó kötelező adat (Validation Error) - Inland-Lohnbearbeiter A
+# A feladat szerint HIÁNYZIK a név.
+# A címet beállítjuk az "Inland-Lohnbearbeiter A" címére, de a nevet üresen hagyjuk.
+# Így az SAP látni fogja a címet, de mivel nincs név, "Missing Mandatory Field" hibát kell dobnia.
 thesis_simple_4 = {
-    "issued_to_name": "", # <--- ÜRES MEZŐ HIBA!
-    "issued_to_company": "Unknow",
-    "issued_to_address": "45721 Haltern am See, Hullerner Strasse 23",
+    "issued_to_name": "", # <--- ÜRES MEZŐ (Ez a teszt lényege!)
+    "issued_to_company": "", # Ezt is üresen hagyjuk, hogy nehezebb legyen a dolga
+    
+    # A cím alapján az SAP megpróbálhatja kitalálni, ki ez (Inland-Lohnbearbeiter A)
+    "issued_to_address": "Hauptstraße 12\n39343 Alleringersleben",
     
     "pay_to_bank": "K&H Bank",
     "pay_to_acc_name": "Tech Solutions Zrt.",
