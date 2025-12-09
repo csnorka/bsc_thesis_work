@@ -24,3 +24,38 @@ CC0000000141
 NinaTheAwsomeStar24:)
 	
 https://my300448-api.s4hana.ondemand.com/sap/opu/odata/sap/API_SUPPLIERINVOICE_PROCESS_SRV
+
+{
+  "invoiceData": {
+    "InvoiceDate": "2025-12-07",
+    "InvoiceNumber": "INV-TEST-001",
+    "VendorName": "10300010",
+    "GrossAmount": 119.00,
+    "Currency": "EUR",
+    "PDFLink": "C:/Temp/Invoice_Test_10300010.pdf"
+  }
+}
+
+10300010
+Address
+Inlandslieferant DE 1
+Hullerner Straße 23
+45721 Haltern am See
+
+10300007
+Address
+Inland-Lohnbearbeiter A, DE
+Hauptstraße 12
+39343 Alleringersleben
+
+10300002
+Address
+Inlandslieferant DE 2
+Kirchhög 78
+99867 Gotha
+
+10300015
+Address
+Inlandslieferant DE15
+Hullerner Straße 85
+45721 Haltern am See
