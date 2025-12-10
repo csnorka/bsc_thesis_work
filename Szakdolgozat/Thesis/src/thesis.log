@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.11.14)  10 DEC 2025 01:02
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.11.14)  10 DEC 2025 01:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1466,12 +1466,12 @@ Underfull \hbox (badness 10000) in paragraph at lines 404--409
  (content/appendices.tex [68
 
 
-] [69]
-Overfull \hbox (88.15514pt too wide) in paragraph at lines 136--144
- [][] 
+] [69] [70]
+Underfull \hbox (badness 4168) in paragraph at lines 208--208
+\T1/lmr/m/n/10.95 meg-je-lent a fel-adat. Jó-vá-ha-gyás
  []
 
-) [70]
+) [71] [72]
 \tf@thm=\write6
 \openout6 = `thesis.thm'.
 
@@ -1485,20 +1485,20 @@ L3 programming layer <2024-01-04>
 LaTeX Warning: There were undefined references.
 
 Package rerunfilecheck Info: File `thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 333E52F8B4749E0B10466F0CF8B6C8B0;28168.
+(rerunfilecheck)             Checksum: 3E670AAC7931FB61ED42359D055AD7E2;28223.
  ) 
 Here is how much of TeX's memory you used:
- 38902 strings out of 474486
- 887362 string characters out of 5742338
- 2400542 words of memory out of 5000000
- 60028 multiletter control sequences out of 15000+600000
- 627159 words of font info for 80 fonts, out of 8000000 for 9000
+ 38973 strings out of 474486
+ 888604 string characters out of 5742338
+ 2405542 words of memory out of 5000000
+ 60038 multiletter control sequences out of 15000+600000
+ 630151 words of font info for 81 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  84i,11n,87p,1126b,2385s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtl10.pfb>
-Output written on thesis.pdf (77 pages, 1894600 bytes).
+Output written on thesis.pdf (79 pages, 1916164 bytes).
 PDF statistics:
- 1563 PDF objects out of 1728 (max. 8388607)
- 469 named destinations out of 1000 (max. 500000)
+ 1644 PDF objects out of 1728 (max. 8388607)
+ 529 named destinations out of 1000 (max. 500000)
  864 words of extra memory for PDF output out of 10000 (max. 10000000)
 

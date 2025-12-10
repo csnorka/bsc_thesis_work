@@ -703,6 +703,7 @@ OUTPUT content\appendices.aux
 INPUT .\content\appendices.tex
 INPUT .\content\appendices.tex
 INPUT content\appendices.tex
+INPUT C:\Users\csabudan\AppData\Local\Programs\MiKTeX\fonts\tfm\public\lm\ec-lmr8.tfm
 OUTPUT thesis.thm
 INPUT thesis.aux
 INPUT .\include\titlepage.aux

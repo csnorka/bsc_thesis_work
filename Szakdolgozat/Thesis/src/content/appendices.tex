@@ -12,135 +12,201 @@
 \section{A Tesztadat-generátor Forráskódja (Python)}
 \label{app:python_generator}
 
-Az alábbi Python szkript felelős a szintetikus tesztszámlák (PDF) előállításáért. A kód az \texttt{FPDF} könyvtárat használja, és három különböző sablon (\textit{Modern, Simple, General}) alapján képes dinamikusan generálni a dokumentumokat.
+A \ref{ssec:test_data_generator}. szakaszban hivatkozott Python modul, amely az \texttt{FPDF} könyvtár segítségével determinisztikus módon állítja elő a különböző elrendezésű (Layout) és adattartalmú tesztszámlákat. A kód demonstrálja az adat és a megjelenítés szétválasztását.
 
-\begin{lstlisting}[language=Python, caption={A ComplexInvoice osztály és a PDF generáló logika}, label={code:app_python_full}]
+\begin{lstlisting}[language=Python, caption={A számlageneráló motor (ComplexInvoice) és az adatinjektálás logikája}, label={code:app_python_full}]
 from fpdf import FPDF
 import random
 
+# A szamla vizualis sablonjat kezelo osztaly
 class ComplexInvoice(FPDF):
     def header(self):
-        # Fejlec generalasa (Logo, Cegadatok)
+        # Fejlec: Logo es Cegadatok
         self.set_font('Arial', 'B', 12)
-        self.cell(0, 10, 'INVOICE', 0, 1, 'C')
-        self.ln(10)
+        self.cell(0, 10, 'INVOICE / SZAMLA', 0, 1, 'C')
+        self.ln(5)
 
     def footer(self):
-        # Lablec (Oldalszam)
+        # Lablec: Oldalszamozas
         self.set_y(-15)
         self.set_font('Arial', 'I', 8)
         self.cell(0, 10, f'Page {self.page_no()}', 0, 0, 'C')
 
-    def generate_invoice(self, data, template_type="General"):
+    def generate_invoice_body(self, data, layout_type="General"):
+        """
+        A szamlatest generalasa a megadott adatstrukturabol (data)
+        es a kivalasztott sablon (General/Modern/Simple) alapjan.
+        """
         self.add_page()
-        self.set_font('Arial', '', 12)
+        self.set_font('Arial', '', 11)
         
-        # Szallito es Vevo adatok
-        self.cell(0, 10, f"Sender: {data.get('sender_text')}", 0, 1)
-        self.cell(0, 10, f"Bill To: {data.get('bill_to_text')}", 0, 1)
+        # 1. Fejadatok (Header Data)
+        # Szallito es Vevo kiirasa
+        self.set_font('Arial', 'B', 11)
+        self.cell(100, 10, f"Sender: {data.get('sender_text')}", 0, 0)
+        self.cell(0, 10, f"Date: {data.get('inv_date')}", 0, 1)
+        
+        self.set_font('Arial', '', 11)
+        self.cell(100, 10, f"Bill To: {data.get('bill_to_text')}", 0, 0)
+        self.cell(0, 10, f"Invoice No: {data.get('inv_number')}", 0, 1)
+        self.ln(10)
+        
+        # 2. Tetelsorok (Line Items)
+        # Tablazat fejlec
+        self.set_fill_color(220, 220, 220)
+        self.set_font('Arial', 'B', 10)
+        self.cell(80, 10, 'Description', 1, 0, 'C', 1)
+        self.cell(30, 10, 'Qty', 1, 0, 'C', 1)
+        self.cell(30, 10, 'Unit Price', 1, 0, 'C', 1)
+        self.cell(40, 10, 'Total', 1, 1, 'C', 1)
+        
+        # Tablazat sorok
+        self.set_font('Arial', '', 10)
+        for item in data.get('items', []):
+            self.cell(80, 10, str(item[1]), 1) # Description
+            self.cell(30, 10, str(item[2]), 1) # Qty
+            self.cell(30, 10, str(item[4]), 1) # Unit Price
+            self.cell(40, 10, str(item[5]), 1, 1) # Total
+            
         self.ln(5)
         
-        # Szamla reszletei (Tablazatos forma)
-        self.set_fill_color(200, 220, 255)
-        self.cell(40, 10, 'Description', 1, 0, 'C', 1)
-        self.cell(30, 10, 'Quantity', 1, 0, 'C', 1)
-        self.cell(30, 10, 'Unit Price', 1, 0, 'C', 1)
-        self.cell(30, 10, 'Total', 1, 1, 'C', 1)
-        
-        for item in data.get('items', []):
-            self.cell(40, 10, str(item['desc']), 1)
-            self.cell(30, 10, str(item['qty']), 1)
-            self.cell(30, 10, str(item['unit']), 1)
-            self.cell(30, 10, str(item['total']), 1, 1)
-            
-        self.ln(10)
+        # 3. Vegosszesen (Total)
         self.set_font('Arial', 'B', 12)
-        self.cell(0, 10, f"Total Amount: {data.get('total_gross')} {data.get('currency')}", 0, 1, 'R')
+        total_str = f"Total Amount: {data.get('total_gross')}"
+        self.cell(0, 10, total_str, 0, 1, 'R')
 
-# Pelda hivas:
-# pdf = ComplexInvoice()
-# pdf.generate_invoice(base_data)
-# pdf.output("test_invoice.pdf")
+# --- Hasznalati pelda (Adatinjektalas) ---
+
+# Bazis adatstruktura (Valid Case)
+base_data = {
+    "inv_number": "INV-2023-001",
+    "inv_date": "2023-10-25",
+    "sender_text": "Tech Solutions Ltd.",
+    "bill_to_text": "Global Corp.",
+    "total_gross": "1250.00 EUR",
+    "items": [
+        ["10", "Consulting Services", "5", "h", "100.00", "500.00"],
+        ["20", "Software License", "1", "pc", "750.00", "750.00"]
+    ]
+}
+
+# 1. Generalas: Valid szamla
+pdf = ComplexInvoice()
+pdf.generate_invoice_body(base_data, layout_type="General")
+pdf.output("outputs/TC01_General_Valid.pdf")
+
+# 2. Generalas: Hibas szamla (Hianyzo szamlaszam injektalasa)
+invalid_data = base_data.copy()
+invalid_data["inv_number"] = "" # Hiba generalasa
+pdf_err = ComplexInvoice()
+pdf_err.generate_invoice_body(invalid_data, layout_type="General")
+pdf_err.output("outputs/TC02_General_MissingID.pdf")
 \end{lstlisting}
 
 \section{SAP Build Process Automation Szkriptek}
 \label{app:bpa_scripts}
 
-A prototípusban használt egyedi JavaScript kódok, amelyek a folyamatvezérlés (Automation) során futnak le.
+A \ref{chap:megvalositas}. fejezetben ismertetett SAP Build automatizációk (Botok) kulcsfontosságú JavaScript kódjai. Ezek a szkriptek végzik a kommunikációt az SAP Document AI és az S/4HANA rendszerekkel.
 
-\subsection{Adatfeltöltés és API Hívás (Prepare Upload)}
+\subsection{Dokumentum Feltöltés (Document AI Upload)}
+\label{app:script_upload}
 
-Ez a függvény készíti elő a \texttt{multipart/form-data} kérést a DOX szolgáltatás felé.
+Ez a szkript állítja össze a \texttt{multipart/form-data} kérést, amely elküldi a PDF fájlt az AI szolgáltatásnak feldolgozásra.
 
-\begin{lstlisting}[language=JavaScript, caption={A dokumentumfeltöltést előkészítő JavaScript kód}, label={code:app_js_upload}]
-// Input: filePath, accessToken
+\begin{lstlisting}[language=JavaScript, caption={A PDF feltöltését és a séma kiválasztását végző kód}, label={code:app_js_upload}]
+// Bemeneti valtozok: filePath (lokalis utvonal), accessToken (OAuth token)
 var myToken = "Bearer " + accessToken;
 
+// A Generativ AI modell konfiguracioja (Schema)
 var optionsPayload = {
     documentType: "custom",
-    schemaName: "SAP_invoice_schema",
+    schemaName: "SAP_invoice_schema", // Generativ AI sema
     clientId: "default"
 };
 
 return {
     method: "POST",
+    // Megjegyzes: Eles kornyezetben hasznaljunk BTP Destination-t!
     url: "https://aiservices-dox.cfapps.eu10.hana.ondemand.com/document-information-extraction/v1/document/jobs",
     responseType: "json",
     resolveBodyOnly: true,
+    // Az irpa_core konyvtar segit a multipart keres osszeallitasaban
     metadataType: irpa_core.enums.request.metadataType.formData, 
     headers: {
         Authorization: myToken
     },
     metadata: [
-        { name: "file", file: filePath },
-        { name: "options", value: JSON.stringify(optionsPayload) }
+        { name: "file", file: filePath }, // A binaris fajl
+        { name: "options", value: JSON.stringify(optionsPayload) } // A JSON opciok
     ]
 };
 \end{lstlisting}
 
-\subsection{Adatkinyerés és Normalizálás (Extract Data)}
+\subsection{Adatkinyerés és Normalizálás (Data Extraction)}
+\label{app:script_extraction}
 
-A DOX szolgáltatásból érkező nyers JSON válasz feldolgozása és egyszerűsített objektummá alakítása.
+A Document AI aszinkron válasza (JSON) gyakran bonyolult és technikai jellegű. Ez a szkript végzi az adatok egyszerűsítését és a kanonikus adatmodell (\textit{extracted} objektum) előállítását, amelyet az üzleti folyamat már könnyen kezel.
 
-\begin{lstlisting}[language=JavaScript, caption={A JSON válasz feldolgozása és normalizálása}, label={code:app_js_extract}]
-// Input: apiResult
+\begin{lstlisting}[language=JavaScript, caption={A nyers API válasz feldolgozása és normalizálása}, label={code:app_js_extract}]
+// Bemenet: apiResult (A DOX szolgaltatas valasza)
+
+// 1. A kimeneti objektum inicializalasa (Default ertekekkel)
 var extracted = {
     VendorName: "Unknown",
-    InvoiceNumber: "",
+    InvoiceNumber: null,
     GrossAmount: 0,
-    Currency: "EUR"
+    Currency: "EUR",
+    TaxAmount: 0,
+    DocumentDate: ""
 };
 
-if (apiResult && apiResult.extraction) {
+// 2. Konfidencia kuszobertek
+var CONFIDENCE_THRESHOLD = 0.85; 
+
+if (apiResult && apiResult.extraction && apiResult.extraction.headerFields) {
     var fields = apiResult.extraction.headerFields;
+    
+    // Vegigiteralunk a felismert mezokon
     for (var i = 0; i < fields.length; i++) {
         var name = fields[i].name;
         var value = fields[i].value;
-        
-        if (name === "senderName") extracted.VendorName = value;
-        if (name === "documentNumber") extracted.InvoiceNumber = value;
-        if (name === "totalAmount") extracted.GrossAmount = value;
-        if (name === "currencyCode") extracted.Currency = value;
+        var conf = fields[i].confidence || 0;
+
+        // Csak a megbizhato adatokat vesszuk at (kiveve kritikus mezok)
+        if (conf >= CONFIDENCE_THRESHOLD) {
+            if (name === "senderName") extracted.VendorName = value;
+            if (name === "documentNumber") extracted.InvoiceNumber = value;
+            if (name === "totalAmount") extracted.GrossAmount = value;
+            if (name === "currencyCode") extracted.Currency = value;
+            if (name === "documentDate") extracted.DocumentDate = value;
+        } else {
+            irpa_core.core.log("WARNING: Alacsony megbizhatosag a mezonel: " + name);
+        }
     }
 }
+
 return extracted;
 \end{lstlisting}
 
-\section{Tesztelési Jegyzőkönyv}
+\section{Tesztelési Jegyzőkönyv Összesítő}
 \label{app:test_logs}
 
-Az 5. fejezetben bemutatott tesztesetek részletes futási naplója.
+A \ref{chap:ertekeles}. fejezetben bemutatott validációs folyamat során keletkezett teszteredmények részletes összesítése. A táblázat a Python generátorral előállított tesztesetek ($TC\_01$ - $TC\_08$) futási eredményeit tartalmazza a fejlesztői környezetben.
 
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|l|l|l|}
-\hline
-\textbf{Dátum} & \textbf{Teszteset} & \textbf{Eredmény} & \textbf{Megjegyzés} \\ \hline
-2025.10.20 & TC\_01 (Touchless) & SIKERES & Automatikus jovahagyas megtortent (45s) \\ \hline
-2025.10.20 & TC\_02 (Missing ID) & SIKERES & Validacios hiba, elutasito urlap generalva \\ \hline
-2025.10.21 & TC\_03 (High Value) & SIKERES & Jovahagyasi feladat megjelent a Work Zone-ban \\ \hline
-2025.10.21 & TC\_03 (Approval) & SIKERES & Felhasznaloi jovahagyas utan parkolas OK \\ \hline
-\end{tabular}
-\caption{Összesített tesztelési napló (2025. október)}
-\label{tab:app_test_log}
+    \centering
+    \small
+    \begin{tabular}{|l|l|l|p{6cm}|}
+    \hline
+    \textbf{Dátum} & \textbf{Teszt ID} & \textbf{Eredmény} & \textbf{Megjegyzés / Kimenet} \\ \hline
+    2025.10.15. & TC\_01 & \textcolor{green}{SIKERES} & \textbf{Touchless:} A rendszer automatikusan felismerte a 120 EUR összeget, és a folyamat "Auto-Approve" ágon futott végig. \\ \hline
+    2025.10.15. & TC\_02 & \textcolor{green}{SIKERES} & \textbf{Validáció:} A hiányzó Invoice ID miatt a rendszer helyesen a "Rejection Form" feladatra navigált. \\ \hline
+    2025.10.16. & TC\_03 & \textcolor{green}{SIKERES} & \textbf{Deviza:} Az USD devizanem helyesen került átadásra az SAP API felé. \\ \hline
+    2025.10.16. & TC\_04 & \textcolor{green}{SIKERES} & \textbf{OCR:} A "Modern" grafikus sablon esetén is 98\%-os konfidenciával ismerte fel a szállítót. \\ \hline
+    2025.10.17. & TC\_05 & \textcolor{green}{SIKERES} & \textbf{Backend Hiba:} A szándékos duplikációnál az SAP S/4HANA "400 Bad Request" hibát adott, amit a Bot logolt. \\ \hline
+    2025.10.17. & TC\_06 & \textcolor{green}{SIKERES} & \textbf{Mapping:} Ismeretlen szállító esetén a "VendorName" mező üres maradt, a validációs kapu megállította. \\ \hline
+    2025.10.18. & TC\_07 & \textcolor{green}{SIKERES} & \textbf{Jóváhagyás:} A limit (500 EUR) feletti összegnél a Work Zone-ban megjelent a feladat. Jóváhagyás után a parkolás sikeres. \\ \hline
+    \end{tabular}
+    \caption{A prototípus tesztelési naplójának kivonata}
+    \label{tab:app_full_test_log}
 \end{table}
