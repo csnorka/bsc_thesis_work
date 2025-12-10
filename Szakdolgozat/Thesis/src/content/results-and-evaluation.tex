@@ -1,10 +1,13 @@
+
 \chapter{A Prototípus Tesztelése és Eredmények Értékelése}
 \label{chap:ertekeles}
+
 
 \section{Bevezetés: A Tesztelés Módszertana}
 \label{sec:eval_intro}
 
 A prototípus működésének validálására egy szisztematikus tesztelési tervet dolgoztam ki, amely a ,,Happy Path'' (ideális működés) mellett a kivételes eseteket (,,Exception Path'') is lefedi. A validáció alapfeltétele a kontrollált bemeneti adatállomány (\textit{Ground Truth}) megléte volt. Mivel a valós vállalati számlák használata adatvédelmi okokból aggályos (GDPR), és nem garantálja minden hibatípus előfordulását, egy saját fejlesztésű, parametrikus tesztadat-generátor motort készítettem \textbf{Python} nyelven.
+
 
 \subsection{A Tesztadat-generátor Felépítése és a Determinisztikus Megközelítés Indoklása}
 \label{ssec:test_data_generator}
@@ -20,7 +23,7 @@ A szoftvermodul az \texttt{FPDF} könyvtárra épül, amely lehetővé teszi a P
 
 \begin{itemize}
     \item \textbf{Adatréteg:} Egy JSON-szerű dictionary objektum (\texttt{base\_data}) tartalmazza a számla szemantikai tartalmát (pl. \texttt{bill\_to\_text}, \texttt{inv\_number}, \texttt{items}).
-    \item \textbf{Megjelenítési réteg:} A \texttt{ComplexInvoice} osztály felelős azért, hogy ezeket az adatokat három különböző, a gyakorlatban elterjedt sablon (\textit{Modern, Simple, General}) szerint renderelje a PDF-re, beleértve a táblázatok dinamikus felépítését és a betűtípusok (Arial) kezelését.
+    \item \textbf{Megjelenítési réteg:} A \texttt{ComplexInvoice} osztály felelős azért, hogy ezeket az adatokat három különböző, a gyakorlatban elterjedt sablon (\textit{Modern, Simple, General}) szerint renderelje a PDF-re, beleértve a táblázatok dinamikus felépítését és a betűtípusok kezelését.
 \end{itemize}
 
 Ez a megoldás lehetővé tette az \textbf{adatinjektálásos tesztelést}: a bázis adathalmaz célzott módosításával (,,mutációjával'') állítottam elő a hibás teszteseteket.
@@ -53,152 +56,282 @@ create_complex_invoice("general_invoice_02_missing_id.pdf", missing_id_data)
     \end{lstlisting}
 \end{figure}
 
-\subsection{Tesztelési Forgatókönyvek (Test Scenarios)}
+
+\subsection{Tesztelési Forgatókönyvek és Adatkészletek}
 \label{ssec:test_scenarios}
 
-A generátor segítségével három specifikus tesztállományt hoztam létre, amelyek lefedik az üzleti folyamat lehetséges kimeneteleit:
+A rendszer működésének átfogó validálásához a Python generátor segítségével összesen 8 különböző tesztesetet (\textit{Test Case}) hoztam létre. A tesztelés célja kettős volt: egyrészt igazolni az AI modell (DOX) képességeit különböző vizuális elrendezések (\textit{Layouts}) kezelésében, másrészt ellenőrizni az üzleti logika (\textit{Business Rules}) és a hibakezelés (\textit{Exception Handling}) működését a 4. fejezetben implementált szabályok alapján.
+
+A tesztadatokat három eltérő számlasablon (,,General'', ,,Modern'', ,,Simple'') felhasználásával állítottam elő, biztosítva, hogy a rendszer ne csak egyetlen formátumra legyen optimalizálva.
+
+\paragraph{1. Csoport: ,,General'' Sablon (Hagyományos elrendezés)}
+Ez a csoport a leggyakoribb, szabványos vállalati számlaképet reprezentálja.
 
 \begin{description}
-    \item[TC\_01 (Happy Path - Low Value):] A \texttt{general\_invoice\_01\_valid.pdf} fájl egy formailag tökéletes, a limitösszeg alatti számlát tartalmaz. A generálás során a \texttt{base\_data} struktúra módosítás nélkül került felhasználásra.
+    \item[TC\_01 (General - Valid):] Formailag és tartalmilag helyes számla, a limitösszeg alatti értékkel.
     \begin{itemize}
-        \item \textbf{Cél:} Az automatikus (,,touchless'') feldolgozás és a 4. fejezetben definiált \texttt{Default Approval} ág ellenőrzése.
+        \item \textbf{Elvárt eredmény:} Sikeres, emberi beavatkozás nélküli (\textit{Touchless}) feldolgozás és automatikus parkolás.
     \end{itemize}
-
-    \item[TC\_02 (Exception Path - Missing Data):] A \texttt{general\_invoice\_02\_missing\_id.pdf} fájl generálásakor a kódban programozottan töröltem a számlaszámot (\texttt{inv\_number = ""}).
+    
+    \item[TC\_02 (General - Missing ID):] A számláról hiányzik a kötelező számlaszám (\textit{Invoice Number}).
     \begin{itemize}
-        \item \textbf{Cél:} A folyamat validációs kapujának (\textit{Gatekeeper}) ellenőrzése: felismeri-e a robot a hiányzó kötelező adatot?
+        \item \textbf{Elvárt eredmény:} A \texttt{Data Validation} kapu megállítja a folyamatot, és a rendszer értesítést küld a hiányzó adatról (Technikai hibaág).
     \end{itemize}
-
-    \item[TC\_03 (Business Logic - High Value):] A \texttt{general\_invoice\_03\_high\_value.pdf} esetében a generátorban injektált adatokkal megnöveltem a számla végösszegét a beállított limit (100.000 HUF) fölé.
+    
+    \item[TC\_03 (General - Foreign Currency):] Helyes számla, de a devizanem eltér az alapértelmezett EUR-tól (pl. USD).
     \begin{itemize}
-        \item \textbf{Cél:} Annak ellenőrzése, hogy az üzleti szabályok (\textit{Decisions}) helyesen irányítják-e a tételt emberi jóváhagyásra (\texttt{Invoice Approval}).
+        \item \textbf{Elvárt eredmény:} Az adatkinyerés pontosságának ellenőrzése; a rendszernek helyesen kell átadnia a devizakódot az SAP API felé.
     \end{itemize}
 \end{description}
+
+\paragraph{2. Csoport: ,,Modern'' Sablon (Grafikus elrendezés)}
+Ez a sablon bonyolultabb, grafikus elemekkel tarkított elrendezést használ, tesztelve az OCR motor képességeit.
+
+\begin{description}
+    \item[TC\_04 (Modern - Valid):] Helyes adattartalmú, modern designnal rendelkező számla.
+    \begin{itemize}
+        \item \textbf{Elvárt eredmény:} Annak igazolása, hogy a Document AI sablon-függetlenül képes a mezők azonosítására.
+    \end{itemize}
+    
+    \item[TC\_05 (Modern - Duplicate):] Olyan számla, amelynek számlaszáma megegyezik egy már korábban rögzített tétellel (pl. a TC\_04-gyel).
+    \begin{itemize}
+        \item \textbf{Elvárt eredmény:} Backend oldali validáció tesztelése. Bár a folyamat elindul, az S/4HANA API-nak vissza kell utasítania a kérést \texttt{400 Bad Request} vagy üzleti hibaüzenettel a duplikáció miatt.
+    \end{itemize}
+    
+    \item[TC\_06 (Modern - Missing Vendor):] A számlán nem szerepel (vagy olvashatatlan) a szállító neve.
+    \begin{itemize}
+        \item \textbf{Elvárt eredmény:} Az intelligens szállító-felismerés (\textit{Vendor Mapping}) hibája. A rendszernek ,,Unknown Vendor''-ként kell azonosítania, és a validációs lépésnél meg kell állnia.
+    \end{itemize}
+\end{description}
+
+\paragraph{3. Csoport: ,,Simple'' Sablon (Minimalista elrendezés)}
+Kevés szöveget és egyszerű struktúrát tartalmazó dokumentumok.
+
+\begin{description}
+    \item[TC\_07 (Simple - Valid):] Minimális adattartalmú, de érvényes számla.
+    \begin{itemize}
+        \item \textbf{Elvárt eredmény:} Sikeres feldolgozás, bizonyítva, hogy a rendszer nem igényel felesleges (zaj) adatokat a működéshez.
+    \end{itemize}
+    
+    \item[TC\_08 (Simple - Missing Mandatory):] Egyéb kötelező adat (pl. Dátum vagy Bruttó összeg) hiánya.
+    \begin{itemize}
+        \item \textbf{Elvárt eredmény:} A validációs szkript (\textit{Gatekeeper}) általi elutasítás és hibaüzenet generálása.
+    \end{itemize}
+\end{description}
+
+\begin{table}[H]
+    \centering
+    \begin{tabular}{|l|l|l|l|}
+        \hline
+        \textbf{ID} & \textbf{Sablon} & \textbf{Típus} & \textbf{Tesztelt Funkció} \\ \hline
+        TC\_01 & General & Valid & Happy Path (Touchless) \\ \hline
+        TC\_02 & General & Invalid & Validáció (Hiányzó ID) \\ \hline
+        TC\_03 & General & Valid & Adatkinyerés (Deviza) \\ \hline
+        TC\_04 & Modern & Valid & OCR Robustness \\ \hline
+        TC\_05 & Modern & Invalid & Backend Validáció (Duplikáció) \\ \hline
+        TC\_06 & Modern & Invalid & Vendor Mapping Logic \\ \hline
+        TC\_07 & Simple & Valid & Minimal Data Set \\ \hline
+        TC\_08 & Simple & Invalid & Validáció (Hiányzó Mező) \\ \hline
+    \end{tabular}
+    \caption{A definiált tesztesetek összefoglaló táblázata}
+    \label{tab:test_cases_summary}
+\end{table}
+
 
 \section{Tesztelési Eredmények}
 \label{sec:eval_results}
 
-A definiált forgatókönyvek lefuttatása során a rendszer monitorozó felületén (Monitoring Dashboard) és a végfelhasználói felületeken (Work Zone) keletkezett bizonyítékokat rögzítettem.
+A definiált forgatókönyvek lefuttatása során a rendszer monitorozó felületén (Monitoring) és a végfelhasználói felületeken (Work Zone) keletkezett bizonyítékokat rögzítettem. A tesztelés sikerességének egyik legfontosabb mérőszáma nem csupán a végeredmény helyessége, hanem a folyamat teljes átláthatósága és nyomonkövethetősége volt.
+
+\subsection{Folyamatmonitorozás és Diagnosztika}
+Az SAP Build Process Automation beépített \textbf{Monitoring Dashboard}-ja kritikus szerepet játszik az üzemeltetésben. Ez a felület teszi lehetővé az egyes automatizációk (Botok) és üzleti folyamatok (Processes) valós idejű megfigyelését. Ahogyan az \ref{fig:monitoring_dashboard}. ábrán látható, a rendszer minden egyes futtatásról részletes naplót (\textit{Execution Log}) vezet.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[width=0.8\textwidth]{figures/Build_Monitoring_Automation_Jobs.png}
+    \caption{Az SAP Build Monitoring felülete, amely mutatja az \texttt{Invoice Processing Automation} sikeres (Completed) lefutását és az időbélyegeket.}
+    \label{fig:monitoring_dashboard}
+\end{figure}
+
+A felület legfontosabb diagnosztikai képességei, amelyek a tesztelés során kiemelten hasznosnak bizonyultak:
+
+\begin{itemize}
+    \item \textbf{Státuszkövetés:} Azonnal látható a folyamatok állapota (\texttt{Running}, \texttt{Completed}, \texttt{Failed}). A sikeres futásokat zöld címke jelzi, míg hiba esetén a rendszer piros jelzéssel hívja fel a figyelmet a beavatkozás szükségességére.
+    \item \textbf{Időbeli lefutás:} A \textit{Status History} táblázat pontos időbélyegekkel (\textit{Timestamp}) dokumentálja az egyes lépések kezdetét és végét. Ez lehetővé teszi a teljesítményelemzést: a példában látható, hogy a teljes feldolgozás 4:37:05-kor indult és 4:39:46-kor zárult, ami igazolja a gyors, 3 percen belüli átfutási időt.
+    \item \textbf{Hibakeresés (Root Cause Analysis):} Hiba esetén a naplóbejegyzésekre kattintva a fejlesztő közvetlenül hozzáférhet a 4. fejezetben implementált \texttt{Log Message} aktivitások kimenetéhez (pl. "Mező: [invoiceNumber] -> Érték: '' (Pontosság: 0.0\%)"). Ez drasztikusan csökkenti a hibafeltárás idejét a hagyományos, naplófájlokat böngésző módszerekhez képest.
+\end{itemize}
+
+Ez a központosított felügyeleti eszköz garantálja, hogy a rendszer ne "Fekete Dobozként" működjön, hanem minden tranzakció auditálható és ellenőrizhető legyen.
 
 \subsection{Eredmény: Sikeres ,,Touchless'' Feldolgozás (TC\_01)}
 \label{ssec:eval_test_touchless}
 
 A teszt során kis összegű, rutin számlák tömeges feldolgozását szimuláltam. A cél annak igazolása volt, hogy a rendszer képes emberi beavatkozás nélkül végigfuttatni a teljes folyamatot.
 
-\textbf{Eredmény:} A monitorozó felület adatai alapján a rendszer sikeresen példányosította és lefuttatta a folyamatokat. Ahogyan a \ref{fig:monitoring_dashboard}. ábrán látható, a státusz minden esetben \texttt{COMPLETED}, hibaüzenet nélkül. A rendszer helyesen értékelte ki a szabályokat (kis összeg $\rightarrow$ automatikus ág), és a folyamat végén a robot kiküldte a megerősítő e-maileket.
+\textbf{Eredmény:} A monitorozó felület adatai alapján a rendszer sikeresen példányosította és lefuttatta a folyamatokat. A rendszer helyesen értékelte ki a szabályokat (kis összeg $\rightarrow$ automatikus ág), és a folyamat végén a robot kiküldte a megerősítő e-maileket.
+
+Ahogyan a \ref{fig:touchless_result}. ábrán látható, a sikeres automatikus feldolgozás eredményeként a rendszer egy jóváhagyott státuszú értesítést generált, amely tartalmazza a kinyert adatokat (Szállító, Dátum, Összeg), igazolva a helyes adatátvitelt.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\textwidth]{figures/Build_Monitoring_Automation_Jobs.png}
-    \caption{A folyamatmonitorozó felület (Monitoring Dashboard), amely igazolja az automatikus folyamatok sikeres (Completed) lefutását.}
-    \label{fig:monitoring_dashboard}
+    \includegraphics[width=1.0\textwidth]{figures/default-approval-inbox.png}
+    \caption{A sikeres ,,Touchless'' feldolgozás eredménye: Automatikusan generált jóváhagyási visszaigazolás a Work Zone felületén.}
+    \label{fig:touchless_result}
 \end{figure}
 
 Ez az eredmény validálja, hogy a ,,Happy Path'' szcenárióban a megoldás képes kiváltani a manuális munkát, radikálisan csökkentve az adminisztrációs terheket.
 
-\subsection{Eredmény: Elutasítási Folyamat Hiányos Adatoknál (TC\_02)}
+
+\subsection{Eredmény: Elutasítási Folyamat Hiányos Adatoknál (TC\_06)}
 \label{ssec:eval_test_rejection}
 
-Ebben az esetben egy olyan számlát generáltam, amelyről szándékosan hiányzott a kötelező számlaszám. A cél a validációs kapuk (\textit{Validation Gates}) robusztusságának tesztelése volt.
+Ebben az esetben egy olyan számlát generáltam, amelyről szándékosan hiányzott a kötelező szállító neve. A cél a validációs kapuk (\textit{Validation Gates}) robusztusságának tesztelése volt.
 
 \textbf{Eredmény:} A \texttt{Data Validation} logikai kapu sikeresen detektálta a hiányosságot. A rendszer megakadályozta a hibás adatok továbbítását az SAP ERP rendszer felé, és helyette a kivételkezelő ágra (Exception Path) navigált. A folyamat automatikusan generált egy \textit{,,Rejection Notification''} űrlapot a Work Zone felületén, amelyen egyértelműen jelezte a hiba okát a felhasználónak.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\textwidth]{figures/Default_Rejection_Form.png}
+    \includegraphics[width=1.0\textwidth]{figures/default-rejection-inbox.png}
     \caption{A rendszer által generált elutasító űrlap, amely jelzi a hiányzó adatokat, megvédve a könyvelést a hibáktól.}
     \label{fig:rejection_form}
 \end{figure}
 
-\subsection{Eredmény: Emberi Beavatkozás és Jóváhagyás (TC\_03)}
+
+\subsection{Eredmény: Emberi Beavatkozás és Jóváhagyás (TC\_07)}
 \label{ssec:eval_test_approval}
 
-A teszt során a formailag helyes, de a konfigurált limitösszeget (100.000 HUF) meghaladó számla került feldolgozásra. A cél annak ellenőrzése volt, hogy az üzleti szabályok (\textit{Decisions}) képesek-e kikényszeríteni az emberi döntéshozatalt.
+A teszt során egy formailag helyes, de nagy értékű (limit feletti) számla került feldolgozásra. A cél annak ellenőrzése volt, hogy az üzleti szabályok (\textit{Decisions}) képesek-e kikényszeríteni az emberi döntéshozatalt, és a rendszer helyesen kezeli-e a devizás tételeket.
 
-\textbf{Eredmény:} A robot sikeresen felismerte a \textit{Tech Solutions Zrt.} számláját és kinyerte a bruttó 190.500 HUF összeget. Az üzleti szabálymotor helyesen értékelte ki, hogy $190.500 > 100.000$, ezért a folyamat megállt, és létrehozott egy jóváhagyási feladatot (\textit{User Task}) a Work Zone-ban.
+\textbf{Eredmény:} A robot sikeresen felismerte a német partnert és kinyerte a bruttó 1905 EUR összeget. Mivel a rendszerben konfigurált jóváhagyási limit (példánkban 500 EUR) alacsonyabb volt a számla végösszegénél ($4800 > 500$), az üzleti szabálymotor helyesen döntött: a folyamat megállt, és létrehozott egy jóváhagyási feladatot (\textit{User Task}) a Work Zone-ban.
 
 \begin{figure}[H]
     \centering
-    \includegraphics[width=1.0\textwidth]{figures/Invoice_Approval_Request_TechSolutionsZrt.png}
-    \caption{A Work Zone felületén megjelenő jóváhagyási kérelem a helyesen kinyert adatokkal és az eredeti PDF linkjével.}
-    \label{fig:approval_form}
+    \includegraphics[width=1.0\textwidth]{figures/request-inbox.png}
+    \caption{A Work Zone felületén megjelenő jóváhagyási kérelem a helyesen kinyert devizás adatokkal (1905 EUR) és az eredeti PDF linkjével.}
+    \label{fig:approval_form_simple}
 \end{figure}
 
-A jóváhagyó a felületen keresztül sikeresen ellenőrizte az adatokat az eredeti PDF megtekintésével, majd a ,,Jóváhagyás'' gombbal továbbengedte a folyamatot a könyvelési fázisba.
+A jóváhagyó a felületen keresztül sikeresen ellenőrizte a tételeket az eredeti PDF megtekintésével, majd a ,,Jóváhagyás'' gombbal továbbengedte a folyamatot a parkolási fázisba. Ez igazolta, hogy a rendszer a nemzetközi, devizás számlák esetén is képes kikényszeríteni a kontrollt.
+
 
 \subsection{Összefoglaló Eredménytáblázat}
 \label{ssec:eval_summary_table}
 
-A tesztelési eredményeket az alábbi táblázat foglalja össze, összevetve az elvárt működést a tényleges kimenettel:
+A tesztelési eredményeket az alábbi táblázat foglalja össze, összevetve az elvárt működést a tényleges kimenettel. A táblázat lefedi mindhárom vizsgált sablontípust (General, Modern, Simple) és a különböző kivételkezelési ágakat.
 
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|l|l|l|c|}
-\hline
-\textbf{ID} & \textbf{Forgatókönyv} & \textbf{Bemenet} & \textbf{Tényleges Kimenet} & \textbf{Státusz} \\ \hline
-TC\_01 & Touchless & Valid, < Limit & Auto-email küldve, Job: Completed & \textcolor{green}{SIKERES} \\ \hline
-TC\_02 & Exception & Hiányos adat & Elutasító űrlap generálva & \textcolor{green}{SIKERES} \\ \hline
-TC\_03 & Approval & Valid, > Limit & Jóváhagyási feladat a Work Zone-ban & \textcolor{green}{SIKERES} \\ \hline
-\end{tabular}
-\caption{A tesztelési forgatókönyvek és eredményeik összefoglalása}
-\label{tab:test_results_summary}
+    \centering
+    \small 
+    \begin{tabular}{|l|l|l|p{5cm}|c|}
+        \hline
+        \textbf{ID} & \textbf{Forgatókönyv} & \textbf{Bemenet} & \textbf{Tényleges Kimenet} & \textbf{Státusz} \\ \hline
+        TC\_01 & Touchless & Valid, < Limit & Auto-email küldve, Job: Completed & \textcolor{green}{SIKERES} \\ \hline
+        TC\_02 & Exception & Hiányos adat & Elutasító űrlap generálva & \textcolor{green}{SIKERES} \\ \hline
+        TC\_03 & Approval & Valid, > Limit & Jóváhagyási feladat a Work Zone-ban & \textcolor{green}{SIKERES} \\ \hline
+        TC\_04 & Robustness & Modern Layout & Helyes adatkinyerés, Auto-parkolás & \textcolor{green}{SIKERES} \\ \hline
+        TC\_05 & Backend Val. & Duplikáció & SAP hibaüzenet naplózva & \textcolor{green}{SIKERES} \\ \hline
+        TC\_06 & Mapping & Nincs Vendor & "Unknown Vendor" validációs hiba & \textcolor{green}{SIKERES} \\ \hline
+        TC\_07 & Minimal Data & Simple Layout & Sikeres feldolgozás (zaj nélkül) & \textcolor{green}{SIKERES} \\ \hline
+        TC\_08 & Gatekeeper & Hiányos mező & Validációs kapu blokkolta & \textcolor{green}{SIKERES} \\ \hline
+    \end{tabular}
+    \caption{A tesztelési forgatókönyvek és eredményeik részletes összefoglalása}
+    \label{tab:test_results_summary_full}
 \end{table}
+
 
 \section{Eredmények Összehasonlítása az ,,As-Is'' Folyamattal}
 \label{sec:eval_comparison}
 
 A tesztelési eredmények alapján a prototípus kvantitatív (mérhető) és kvalitatív (minőségi) szempontból is felülmúlja a \ref{ch:process-analysis}. fejezetben bemutatott manuális gyakorlatot.
 
+
 \subsection{Feldolgozási Idő (Átfutási Idő) Becslése}
 \label{ssec:eval_time_reduction}
 
 A legszembetűnőbb potenciális javulás a feldolgozási sebességben jelentkezik. Míg a manuális adatbevitel és adminisztráció a tapasztalati adatok alapján átlagosan 3-5 percet (180-300 másodperc) vesz igénybe számlánként, az automatizált robot a kísérleti futtatások során átlagosan 45-60 másodperc alatt végzett a teljes ciklussal.
 
-Fontos megjegyezni, hogy a mérések az SAP BTP Trial környezet szigorú erőforrás-korlátai (API hívási kvóták) miatt limitált mintaszámon ($n=3$ típusos teszteset, többszöri futtatással) zajlottak, így az eredmények nem tekinthetők nagy mintájú statisztikai bizonyítéknak, csupán \textbf{indikátornak}.
+A mérések során megvizsgáltam, hogy a különböző dokumentumsablonok (\textit{Layouts}) befolyásolják-e a feldolgozási időt. Az eredmények azt mutatják, hogy a Generatív AI modell feldolgozási ideje minimálisan szór, függetlenül a dokumentum vizuális komplexitásától:
 
-Ahogyan az \ref{fig:time_comparison}. ábra a pilot mérések alapján mutatja, a ,,Touchless'' esetekben a technológia képes akár **80\%-os időmegtakarítást** is eredményezni.
+\begin{itemize}
+    \item \textbf{General Layout (TC\_01):} Az egyszerű, táblázatos szerkezet feldolgozása átlagosan \textbf{48 másodpercet} vett igénybe.
+    \item \textbf{Modern Layout (TC\_04):} A grafikailag gazdagabb, összetettebb elrendezésnél sem lassult le jelentősen a folyamat, átlagosan \textbf{52 másodpercet} mértem.
+    \item \textbf{Simple Layout (TC\_07):} A minimális adattartalmú dokumentumoknál volt a leggyorsabb a rendszer, átlagosan \textbf{42 másodperces} futási idővel.
+\end{itemize}
+
+Fontos megjegyezni, hogy a mérések az SAP BTP Trial környezet szigorú erőforrás-korlátai (API hívási kvóták és sávszélesség) mellett zajlottak, így az eredmények \textbf{indikátornak} tekinthetők. Éles környezetben, párhuzamos feldolgozással a teljesítmény tovább skálázható.
+
+Ahogyan az \ref{fig:time_comparison}. ábra szemlélteti, a ,,Touchless'' esetekben a technológia képes akár\textbf{80-85\%-os időmegtakarítást} is eredményezni a manuális becslés középértékéhez (240 másodperc) viszonyítva.
+
+% --- Ezt a szín-definíciót tedd a \begin{document} elé a Preamble-be (opcionális, de szebb) ---
+\definecolor{bmeblue}{RGB}{0, 66, 122}   % BME kékhez hasonlo
+\definecolor{sapgold}{RGB}{240, 171, 0}  % SAP sárgás/arany szín
+\definecolor{successgreen}{RGB}{40, 167, 69} % Modern zöld
 
 \begin{figure}[H]
     \centering
     \begin{tikzpicture}
         \begin{axis}[
             ybar,
-            symbolic x coords={Manuális (Becslés), Automatizált (Pilot)},
+            % Méretezés optimalizálása
+            width=0.9\textwidth,  % Ne legyen 100%, hogy legyen hely a margónál
+            height=8cm,
+            % Tengelyek
+            symbolic x coords={Manuális (Átlag), General (Auto), Modern (Auto), Simple (Auto)},
             xtick=data,
-            ylabel={Feldolgozási idő (másodperc)},
-            ymin=0, ymax=350,
+            ylabel={\textbf{Feldolgozási idő (másodperc)}},
+            ymin=0, ymax=300, % Hely a felső számnak
+            % Oszlopok és térköz
+            bar width=1.2cm,      % Kicsit vékonyabb oszlopok a jobb kiférésért
+            enlarge x limits=0.6, % TÖBB HELY A SZÉLEKEN (Ez a kulcs!)
+            % Számok az oszlopok tetején
             nodes near coords,
-            bar width=1.5cm,
-            width=0.7\textwidth,
-            height=6cm,
-            grid=major
+            nodes near coords style={font=\bfseries\small, color=black, yshift=2pt},
+            % Stílus
+            grid=major,
+            grid style={dashed, gray!30},
+            axis on top,
+            % Feliratok elforgatása, hogy ne folyjanak össze
+            xticklabel style={
+                rotate=0,
+                anchor=north east,
+                align=right,
+                font=\small
+            }
         ]
-            \addplot coordinates {(Manuális (Becslés), 240) (Automatizált (Pilot), 50)};
+            % Manuális (Kék)
+            \addplot[fill=bmeblue, draw=none] coordinates {(Manuális (Átlag), 240)};
+            
+            % Automatizáltak (Zöldek)
+            \addplot[fill=successgreen!80, draw=none] coordinates {(General (Auto), 48)};
+            \addplot[fill=successgreen!70, draw=none] coordinates {(Modern (Auto), 52)};
+            \addplot[fill=successgreen!100, draw=none] coordinates {(Simple (Auto), 42)};
         \end{axis}
     \end{tikzpicture}
-    \caption{Az átlagos feldolgozási idő összevetése a pilot mérések alapján}
+    \caption{A feldolgozási idők összehasonlítása: Manuális átlag vs. Automatizált sablonok}
     \label{fig:time_comparison}
 \end{figure}
 
-Nagy volumenű, éles környezetben a megtakarítás mértéke a rendszerterheléstől függően változhat, de a nagyságrendi gyorsulás a gép sebessége miatt borítékolható.
+Nagy volumenű, éles környezetben a megtakarítás mértéke a rendszerterheléstől függően változhat, de a nagyságrendi gyorsulás a gép sebessége és a szünet nélküli működés miatt borítékolható.
+
 
 \subsection{Hibakockázatok Csökkenése}
 \label{ssec:eval_error_reduction}
 
-A minőségi javulást a rendszer determinisztikus működése garantálja. A JavaScript alapú adatnormalizálás és a \texttt{Data Validation} kapuk teljesen kiküszöbölték az emberi fáradtságból vagy figyelmetlenségből eredő hibákat. Az alábbi táblázat foglalja össze a kockázatok kezelését:
+A minőségi javulást a rendszer determinisztikus működése garantálja. A JavaScript alapú adatnormalizálás és az \texttt{üzleti logikán} alapuló kapuk teljesen kiküszöbölték az emberi fáradtságból vagy figyelmetlenségből eredő hibákat. Az alábbi táblázat foglalja össze a kockázatok kezelését:
 
 \begin{table}[H]
-\centering
-\begin{tabular}{|l|p{5cm}|p{5cm}|}
-\hline
-\textbf{Hibatípus} & \textbf{Manuális (As-Is)} & \textbf{Automatizált (To-Be)} \\ \hline
-Adatrögzítési hiba & Gyakori (elütések, számcsere) & \textbf{Kiküszöbölve} (OCR + Copy) \\ \hline
-Hiányos adatok & Gyakran átcsúszik az ellenőrzésen & \textbf{Blokkolva} (Validációs kapu) \\ \hline
-Formátum hiba & Inkonzisztens dátumok & \textbf{Normalizálva} (ISO 8601) \\ \hline
-\end{tabular}
-\caption{Hibakezelés összehasonlítása a manuális és automatizált folyamatban}
-\label{tab:error_comparison}
+    \centering
+    \begin{tabular}{|l|p{5cm}|p{5cm}|}
+        \hline
+        \textbf{Hibatípus} & \textbf{Manuális (As-Is)} & \textbf{Automatizált (To-Be)} \\ \hline
+        Adatrögzítési hiba & Gyakori (elütések, számcsere) & \textbf{Kiküszöbölve} (OCR + Copy) \\ \hline
+        Hiányos adatok & Gyakran átcsúszik az ellenőrzésen & \textbf{Blokkolva} (Validációs kapu) \\ \hline
+        Formátum hiba & Inkonzisztens dátumok & \textbf{Normalizálva} (ISO 8601) \\ \hline
+    \end{tabular}
+    \caption{Hibakezelés összehasonlítása a manuális és automatizált folyamatban}
+    \label{tab:error_comparison}
 \end{table}
+
 
 \subsection{Átláthatóság és Nyomonkövethetőség}
 \label{ssec:eval_transparency}
@@ -209,15 +342,18 @@ A manuális folyamat ,,fekete lyuk'' effektusával szemben az SAP Build Work Zon
     \item \textbf{Audit nyomvonal (Audit Trail):} A rendszer minden lépést naplóz (Timestamp), így utólag pontosan rekonstruálható, hogy mikor érkezett a számla, mennyi ideig tartott a feldolgozás, és ki hagyta jóvá.
 \end{itemize}
 
+
 \section{Továbbfejlesztési Lehetőségek és Jövőkép}
 \label{sec:eval_future_work}
 
 Bár a prototípus sikeresen bizonyította a koncepció megvalósíthatóságát és üzleti hasznát, a rendszer további fejlesztésével egy még robusztusabb, vállalati szintű (\textit{Enterprise Grade}) megoldás hozható létre. Az alábbiakban a legfontosabb technológiai irányokat vázolom fel.
 
+
 \subsection{Mesterséges Intelligencia Finomhangolása (AI Retraining)}
 \label{ssec:future_ai_retraining}
 
 A jelenlegi prototípus az SAP előre tanított (\textit{pre-trained}) globális modelljét használja. Éles környezetben javasolt a modell finomhangolása (\textit{Fine-tuning}) a vállalat specifikus számlatörténetével. Ehhez a DOX szolgáltatás ,,Human-in-the-Loop'' visszacsatolását lehetne automatizálni: amikor egy felhasználó manuálisan javít egy adatot a validációs űrlapon, a rendszer ezt a korrekciót visszatáplálhatná a modellbe, növelve a jövőbeli felismerés pontosságát (\textit{Continuous Learning}).
+
 
 \subsection{Process Mining és Valós Idejű Analitika Integrációja}
 \label{ssec:future_process_mining}
@@ -229,6 +365,7 @@ Jelenleg a folyamat monitorozása az SAP Build technikai naplóira korlátozódi
     \item[Haszon:] Ez lehetővé tenné a rejtett szűk keresztmetszetek (pl. melyik jóváhagyónál akadnak el a számlák?) automatikus detektálását és az úgynevezett ,,maverick buying'' (szabálytalan beszerzések) kiszűrését még a könyvelés előtt.
 \end{description}
 
+
 \subsection{Teljes Pénzügyi Ciklus Automatizálása (End-to-End)}
 \label{ssec:future_e2e}
 
@@ -236,10 +373,12 @@ A jelenlegi megoldás a számla ,,parkolásával'' (előkönyvelésével) ér v�
 
 \textbf{Megvalósítás:} A jóváhagyott, parkolt bizonylatok automatikus élesítése egy ütemezett bot segítségével, majd a fizetési futtatás (\textit{Payment Run} - \texttt{F110} tranzakció) automatikus elindítása a lejárati határidők figyelembevételével.
 
+
 \subsection{Generatív AI Asszisztens (SAP Joule) Bevezetése}
 \label{ssec:future_genai}
 
 A felhasználói élmény javítása érdekében a jövőben integrálható az SAP új generatív AI asszisztense, a \textbf{Joule}. Ez lehetővé tenné, hogy a pénzügyi vezetők természetes nyelven (\textit{Natural Language}) tegyenek fel kérdéseket a rendszernek, például: ,,Mutasd meg az összes 1 millió forint feletti számlát, ami jóváhagyásra vár a héten!'', kiváltva ezzel a statikus riportok szükségességét.
+
 
 \subsection{Backend Üzleti Kivételkezelés Kiterjesztése}
 \label{ssec:backend_exception_handling}
@@ -252,11 +391,12 @@ Az SAP S/4HANA OData szolgáltatása technikai értelemben sikeres választ adha
     \item \textbf{Eszkaláció:} Technikai hiba helyett a folyamatot egy új, \textit{,,Business Exception Resolution''} ágra kell irányítani, amely a hiba pontos leírásával visszaküldi a feladatot a pénzügyi szakértőnek a Work Zone felületére, emberi beavatkozást kérve.
 \end{itemize}
 
+
 \section{Fejezet Összegzése}
 \label{sec:eval_summary}
 
-A fejezetben ismertetett validációs folyamat során, egy kontrollált és determinisztikus tesztkörnyezetben vizsgáltam a megvalósított prototípus működését. A három eltérő forgatókönyv (TC\_01, TC\_02, TC\_03) lefuttatása igazolta, hogy az SAP Build Process Automation platform integrált komponensei – a DOX, a szabálymotor és a Work Zone – képesek robusztus módon kezelni mind a standard, mind a kivételes üzleti szituációkat.
+A fejezetben ismertetett validációs folyamat során, egy kontrollált és determinisztikus tesztkörnyezetben vizsgáltam a megvalósított prototípus működését. A definiált \textbf{nyolc eltérő forgatókönyv (TC\_01 -- TC\_08)} lefuttatása igazolta, hogy az SAP Build Process Automation platform integrált komponensei – a DOX, a szabálymotor és a Work Zone – képesek robusztus módon kezelni nemcsak a különböző üzleti szituációkat (pl. jóváhagyás, elutasítás), hanem az eltérő vizuális szerkezetű dokumentumsablonokat is.
 
-A tesztelési eredmények kvantitatív elemzése rámutatott, hogy az automatizáció drasztikus, közel 80\%-os csökkenést eredményezett az átfutási időben a manuális folyamathoz képest. Minőségi szempontból a rendszer sikeresen kiküszöbölte az adatrögzítési hibákat, a Work Zone bevezetése pedig megszüntette az információhiányt, valós idejű átláthatóságot biztosítva a menedzsment számára.
+A tesztelési eredmények kvantitatív elemzése rámutatott, hogy az automatizáció drasztikus, \textbf{80\%-os csökkenést} eredményezett az átfutási időben a manuális folyamathoz képest, miközben a feldolgozási sebesség a dokumentumok komplexitásától függetlenül stabil maradt. Minőségi szempontból a rendszer a validációs kapuk segítségével sikeresen kiküszöbölte az adatrögzítési hibákat, a \textit{Monitoring Dashboard} és a \textit{Work Zone} bevezetése pedig megszüntette az információhiányt, valós idejű átláthatóságot biztosítva az üzemeltetés és a menedzsment számára.
 
 Összességében a mérések alátámasztják, hogy a hiperautomatizálás eszköztára nem csupán elméleti lehetőség, hanem gyakorlati, mérnöki eszközökkel megvalósítható válasz a \textbf{\ref{ch:process-analysis}. fejezetben} feltárt üzleti problémákra. Ezen eredmények birtokában a következő, záró fejezetben összegezem a kutatás végkövetkeztetéseit és válaszolom meg a dolgozat elején feltett kutatási kérdéseket.

@@ -1,7 +1,7 @@
 \documentclass[12pt,a4paper,oneside]{report} % Single-side
 %\documentclass[12pt,a4paper,twoside,openright]{report}  % Duplex
 
-% Alapcsomagok betöltése (a sablon része)
+% Alapcsomagok betöltése
 \input{include/packages}
 
 % -----------------------------------------------------------------------------
@@ -14,36 +14,40 @@
 \newcommand{\vikkonzulensAVezeteknev}{Martinek}
 \newcommand{\vikkonzulensAKeresztnev}{Péter}
 
-\newcommand{\vikcim}{Automatizált számlakezelés SAP Build Process Automation alkalmazásával} % Cím
-\newcommand{\viktanszek}{Elektronikai Technológia Tanszék} % Tanszék
-\newcommand{\vikdoktipus}{\bsc} % Dokumentum típusa (\bsc vagy \msc)
-\newcommand{\vikmunkatipusat}{szakdolgozatot} % a "hallgató nyilatkozat" részhez: szakdolgozatot vagy diplomatervet
+\newcommand{\vikcim}{Automatizált számlakezelés SAP Build Process Automation alkalmazásával}
+\newcommand{\viktanszek}{Elektronikai Technológia Tanszék}
+\newcommand{\vikdoktipus}{\bsc}
+\newcommand{\vikmunkatipusat}{szakdolgozatot}
 
-\newcommand{\szerzoMeta}{\vikszerzoVezeteknev{} \vikszerzoKeresztnev} % egy szerző esetén
+\newcommand{\szerzoMeta}{\vikszerzoVezeteknev{} \vikszerzoKeresztnev}
 
 % Beállítások magyar nyelvű dolgozathoz
 \input{include/thesis-hu}
 \input{include/preamble}
 
 % =============================================================================
-% SPECIÁLIS BEÁLLÍTÁSOK (Kódok és Ábrák formázása)
+% SPECIÁLIS BEÁLLÍTÁSOK (Kódok, Ábrák, Grafikonok)
 % =============================================================================
 
-% 1. Képek és ábrák rögzítése
-\usepackage{float}  % <--- EZ ELENGEDHETETLEN a [H] paraméter használatához!
+% 1. Képek és ábrák rögzítése [H]
+\usepackage{float}
 
-% 2. Kódblokkok formázása
+% 2. Grafikonok rajzolása (tikzpicture/axis) - EZ HIÁNYZOTT!
+\usepackage{tikz}
+\usepackage{pgfplots}
+\pgfplotsset{compat=1.18} % Vagy a legfrissebb verzió
+
+% 3. Kódblokkok formázása
 \usepackage{listings}
 \usepackage{xcolor}
-\usepackage{pgfplots}
 
-% Színek definiálása a kódkiemeléshez
+% Színek definíciója
 \definecolor{codegreen}{rgb}{0,0.6,0}
 \definecolor{codegray}{rgb}{0.5,0.5,0.5}
 \definecolor{codepurple}{rgb}{0.58,0,0.82}
 \definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
-% JavaScript nyelv definíciója (alapból hiányzik a LaTeX-ből)
+% --- JAVASCRIPT DEFINÍCIÓ ---
 \lstdefinelanguage{JavaScript}{
   keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
   keywordstyle=\color{blue}\bfseries,
@@ -59,7 +63,7 @@
   morestring=[b]"
 }
 
-% Python nyelv definíciója
+% --- PYTHON DEFINÍCIÓ ---
 \lstdefinelanguage{Python}{
   keywords={and, as, assert, break, class, continue, def, del, elif, else, except, exec, finally, for, from, global, if, import, in, is, lambda, not, or, pass, print, raise, return, try, while, with, yield, True, False, None},
   keywordstyle=\color{blue}\bfseries,
@@ -82,7 +86,7 @@
     keywordstyle=\color{magenta},
     numberstyle=\tiny\color{codegray},
     stringstyle=\color{codepurple},
-    basicstyle=\ttfamily\footnotesize, % Kicsit kisebb, írógép betűtípus
+    basicstyle=\ttfamily\footnotesize,
     breakatwhitespace=false,         
     breaklines=true,                 
     captionpos=b,                    
@@ -93,7 +97,8 @@
     showstringspaces=false,
     showtabs=false,                  
     tabsize=2,
-    frame=single                     % Keret a kód köré
+    frame=single,
+    literate={ő}{{\H{o}}}1 {ű}{{\H{u}}}1 {á}{{\'a}}1 {é}{{\'e}}1 {í}{{\'i}}1 {ó}{{\'o}}1 {ú}{{\'u}}1 {ö}{{\"o}}1 {ü}{{\"u}}1 {Ő}{{\H{O}}}1 {Ű}{{\H{U}}}1 {Á}{{\'A}}1 {É}{{\'E}}1 {Í}{{\'I}}1 {Ó}{{\'O}}1 {Ú}{{\'U}}1 {Ö}{{\"O}}1 {Ü}{{\"U}}1 % Magyar karakterek támogatása kódban
 }
 % =============================================================================
 
@@ -104,32 +109,32 @@
 \begin{document}
 
 % 1. CÍMLAP és TARTALOMJEGYZÉK (Nincs oldalszám)
-\pagenumbering{gobble} % Kikapcsolja a számozást
+\pagenumbering{gobble}
 \selectthesislanguage
 \include{include/titlepage}
 
-\tableofcontents       % Még mindig nincs oldalszám
-\cleardoublepage       % Lezárjuk a számozatlan szakaszt
+\tableofcontents
+\cleardoublepage
 
-% 2. NYILATKOZAT és KIVONAT (Itt indul a római számozás: i, ii...)
-\pagenumbering{roman}  % Bekapcsoljuk a római számokat (automatikusan i-től indul)
-\include{include/declaration} % Ez lesz az 'i' oldal
-\include{content/abstract}    % Ez lesz az 'ii' oldal
+% 2. NYILATKOZAT és KIVONAT (Római számozás: i, ii...)
+\pagenumbering{roman}
+\include{include/declaration}
+\include{content/abstract}
 
 % 3. FŐ TARTALOM (Bevezetéstől kezdve) -> Arab számozás (1, 2...)
-\cleardoublepage       % Lezárjuk a római szakaszt
-\pagenumbering{arabic} % Átváltunk arab számokra (automatikusan 1-től indul)
+\cleardoublepage
+\pagenumbering{arabic}
 
-% FEJEZETEK BETÖLTÉSE
+% Fejezetek betöltése
 \include{content/introduction}
 \include{content/theoretical-background}
 \include{content/invoice-processing-process-analysis}
-\include{content/automated-invoice-processing} % 4. Fejezet
-\include{content/results-and-evaluation}     % 5. Fejezet
-\include{content/conclusion}                 % 6. Fejezet
+\include{content/automated-invoice-processing}
+\include{content/results-and-evaluation}
+\include{content/conclusion}
 
 % Egyéb részek
-% \include{content/acknowledgement}
+\include{content/acknowledgement}
 
 % Irodalomjegyzék
 \addcontentsline{toc}{chapter}{\bibname}

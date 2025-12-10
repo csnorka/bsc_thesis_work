@@ -1,3 +1,4 @@
+
 \chapter{Elméleti háttér és technológia alapok}
 \label{chap:elmeleti_hatter}
 
@@ -6,11 +7,11 @@ Ahogy az \textbf{\ref{chap:bevezetes}. fejezetben} megállapítottuk, a pénzüg
 A technológiai válasz erre a kihívásra nem egyetlen eszköz, hanem az automatizálási stratégiák fokozatos evolúciója.
 Ahhoz, hogy a dolgozatban vizsgált SAP Build Process Automation platform képességeit megértsük, először meg kell vizsgálnunk azt a három alapkoncepciót, amelyre épül: az Üzleti Folyamatmenedzsmentet (BPM), a Robotikus Folyamatautomatizálást (RPA) és az ezeket szintetizáló Hiperautomatizálást (\textit{Hyperautomation}).
 Bár e fogalmakat gyakran összekeverik, eltérő megközelítést képviselnek: a BPM a stratégiai, felülről lefelé irányuló folyamat-szervezést biztosítja, míg az RPA egy taktikai, alulról építkező eszközt ad a konkrét feladatok végrehajtására.
-A Gartner által definiált hiperautomatizálás ezen eszközök és a mesterséges intelligencia egyesítése egyetlen, teljes körű megoldássá.
-Ez az alfejezet ezt az evolúciós utat mutatja be.
+
 
 \section{Üzleti Folyamatmenedzsment (BPM) és Automatizálási Trendek}
 \label{sec:bpm_es_trendek}
+
 
 \subsection{Üzleti Folyamatmenedzsment (BPM) – A Stratégiai Alap}
 \label{ssec:bpm}
@@ -23,54 +24,47 @@ A BPM a gyakorlatban nem egy egyszeri projekt, hanem egy folyamatos, iteratív �
 Ez az életciklus jellemzően öt fő szakaszból áll:
 \begin{description}
     \item[Tervezés (\textit{Design}):] A meglévő (,,As-Is'') folyamatok azonosítása, feltérképezése és a szűk keresztmetszetek elemzése.
-Ebben a fázisban tervezik meg az ideális, javított (,,To-Be'') folyamatot.
-\item[Modellezés (\textit{Model}):] A megtervezett folyamat vizuális leképezése, tesztelése és szimulálása különböző forgatókönyvek szerint.
-A modellezés szabványosított jelölésrendszereket, mint például a BPMN (\textit{Business Process Model and Notation}), használ a folyamatábrák elkészítésére.
-\item[Végrehajtás (\textit{Execute}):] A megtervezett és modellezett munkafolyamat bevezetése és ,,élesítése'', gyakran egy BPM szoftver segítségével, amely irányítja a feladatokat az emberek és a rendszerek között.
-\item[Monitorozás (\textit{Monitor}):] A futó folyamatok teljesítményének valós idejű követése, kulcsfontosságú teljesítménymutatók (KPI-k), például átfutási idő vagy költségek mérése.
-\item[Optimalizálás (\textit{Optimize}):] A monitorozás során gyűjtött adatok alapján a folyamat folyamatos finomítása, a hibák javítása és a hatékonyság további növelése.
+    Ebben a fázisban tervezik meg az ideális, javított (,,To-Be'') folyamatot.
+    \item[Modellezés (\textit{Model}):] A megtervezett folyamat vizuális leképezése, tesztelése és szimulálása különböző forgatókönyvek szerint.
+    A modellezés szabványosított jelölésrendszereket, mint például a BPMN (\textit{Business Process Model and Notation}), használ a folyamatábrák elkészítésére.
+    \item[Végrehajtás (\textit{Execute}):] A megtervezett és modellezett munkafolyamat bevezetése és ,,élesítése'', gyakran egy BPM szoftver segítségével, amely irányítja a feladatokat az emberek és a rendszerek között.
+    \item[Monitorozás (\textit{Monitor}):] A futó folyamatok teljesítményének valós idejű követése, kulcsfontosságú teljesítménymutatók (KPI-k), például átfutási idő vagy költségek mérése.
+    \item[Optimalizálás (\textit{Optimize}):] A monitorozás során gyűjtött adatok alapján a folyamat folyamatos finomítása, a hibák javítása és a hatékonyság további növelése.
 \end{description}
 Látható tehát, hogy a BPM egy stratégiai, ,,felülről lefelé'' (\textit{top-down}) irányuló megközelítés, amely a teljes szervezet működését és folyamatainak egészségét tartja szem előtt.
 A BPM biztosítja azt a ,,karmesteri'' szerepet, amely keretbe foglalja és irányítja az egyes automatizálási lépéseket.
 
-\section{A ,,To-Be'' Folyamat Logikai Tervezése (BPMN 2.0)}
-\label{sec:bpmn_design}
 
-Mielőtt a specifikus szoftverkomponensek (SAP Build) implementációs részleteit tárgyalnám, elengedhetetlen a tervezett automatizált folyamat szoftverfüggetlen, logikai modelljének definiálása. A folyamattervezéshez az ipari szabványnak tekinthető \textbf{BPMN 2.0 (Business Process Model and Notation)} jelölésrendszert alkalmaztam.
+\subsection{Folyamatmodellezési Szabvány: BPMN 2.0}
+\label{sec:bpmn_theory}
 
-A \ref{fig:bpmn_logic}. ábra mutatja be a megtervezett ,,To-Be'' folyamat logikai ívét. Ez a modell absztrahálja a technikai megvalósítást, és tisztán az üzleti logikára, a döntési pontokra és az adatfolyamra koncentrál.
+A folyamatok tervezéséhez és dokumentálásához elengedhetetlen egy egységes, szoftverfüggetlen jelölésrendszer használata. Az ipari szabványnak tekinthető \textbf{BPMN 2.0 (Business Process Model and Notation)} olyan grafikus nyelvet biztosít, amely mind az üzleti elemzők, mind a fejlesztők számára érthetővé teszi a komplex folyamatokat.
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[width=1.0\textwidth]{figures/Swimline.png} 
-    \caption{A tervezett automatizált (To-Be) folyamat szoftverfüggetlen BPMN 2.0 modellje.}
-    \label{fig:bpmn_logic}
-\end{figure}
+A BPMN szabvány egyik legfontosabb eleme a felelősségi körök vizuális elhatárolása, amelyet a \textit{Pool} (medence) és \textit{Lane} (sáv) fogalmak valósítanak meg. Egy medence jellemzően egy szervezetet vagy rendszert jelöl, míg a sávok az azon belüli szerepköröket (pl. "Pénzügyi Asszisztens", "ERP Rendszer"). Ez a struktúra, az úgynevezett \textit{Swimlane diagram}, lehetővé teszi annak egyértelmű ábrázolását, hogy mikor történik átadás ember és gép, vagy két szervezeti egység között.
 
-A modell az alábbi logikai szakaszokra bontja a folyamatot:
-\begin{enumerate}
-    \item \textbf{Eseményvezérelt indítás (Triggering):} A folyamatot nem manuális indítás, hanem egy külső esemény (számla beérkezése) aktiválja.
-    \item \textbf{Automatikus Adatfeldolgozás:} Az első szakaszban (Data Processing) nincs emberi interakció; a rendszer autonóm módon strukturálja az adatokat.
-    \item \textbf{Döntési Kapuk (Gateways):} A rombusz alakzatok jelölik a kritikus elágazásokat. A modellben jól látható a kétlépcsős szűrés: először a technikai validáció (\textit{Is Data Valid?}), majd az üzleti szabály (\textit{Amount > Limit?}).
-    \item \textbf{Hibrid Végrehajtás:} A folyamat dinamikusan vált a teljesen automatikus és az emberi beavatkozást igénylő (\textit{Manager Approval}) lépések között.
-\end{enumerate}
+A folyamatok logikáját az alábbi alapelemek építik fel:
+\begin{itemize}
+    \item \textbf{Események (Events):} A folyamat indítását (pl. e-mail érkezése), köztes állapotait vagy lezárását jelölik (kör alakzat).
+    \item \textbf{Tevékenységek (Activities):} A konkrét elvégzendő feladatok, amelyek lehetnek emberi (User Task) vagy gépi (Service Task) lépések (lekerekített téglalap).
+    \item \textbf{Döntési Kapuk (Gateways):} Az elágazási pontok, ahol a folyamat a definiált feltételek alapján különböző utakon haladhat tovább (rombusz alakzat).
+\end{itemize}
 
-Ez a szabványos modell szolgált alapul a későbbi, 4.3. fejezetben részletezett technikai implementációhoz az SAP Build környezetben.
+A BPMN 2.0 használata nem csupán dokumentációs célokat szolgál; a modern folyamatmotorok (mint az SAP Build Process Automation) képesek ezeket a modelleket közvetlenül végrehajtható kóddá fordítani, biztosítva a terv és a megvalósítás összhangját.
 
-\subsection{Robotikus Folyamatautomatizálás (RPA) -- A Taktikai Eszköz és Korlátai}
+
+\section{Robotikus Folyamatautomatizálás (RPA) -- A Taktikai Eszköz és Korlátai}
 \label{ssec:rpa_theory}
 
-Míg a BPM a folyamatok stratégiai ,,karmestere'', addig a Robotikus Folyamatautomatizálás (Robotic Process Automation, RPA) a ,,digitális munkás'', amely a konkrét, repetitív feladatokat végzi el. Az RPA olyan szoftvertechnológia, amely lehetővé teszi szoftverrobotok (botok) építését, amelyek az emberi felhasználói felületi (UI) interakciókat (kattintás, gépelés, adatbevitel) utánozzák \cite{43, 44}.
+Míg a BPM a folyamatok stratégiai ,,karmestere'', addig a Robotikus Folyamatautomatizálás (Robotic Process Automation, RPA) a ,,digitális munkás'', amely a konkrét, repetitív feladatokat végzi el. Az RPA olyan szoftvertechnológia, amely lehetővé teszi szoftverrobotok (botok) építését, amelyek az emberi felhasználói felületi (UI) interakciókat (kattintás, gépelés, adatbevitel) utánozzák \cite{SAP-BPA-Features}.
 
-Az RPA ideális taktikai megoldást kínál az 1. fejezetben azonosított ,,manuális munka fogságában'' lévő pénzügyi osztályok számára. A ,,forgószék'' (swivel-chair) probléma -- ahol az ügyintéző adatokat másol egy PDF-ből vagy Excelből egy SAP tranzakcióba -- tökéletes célpontja az RPA-nak. A Gartner \cite{2} rámutat, hogy az RPA értéke nem csupán a megtakarított munkaórákban rejlik, hanem a pontosság és a megfelelőség javításában is.
+Az RPA ideális taktikai megoldást kínál az \textbf{\ref{chap:bevezetes}. fejezetben} azonosított ,,manuális munka fogságában'' lévő pénzügyi osztályok számára. A ,,forgószék'' (swivel-chair) probléma -- ahol az ügyintéző adatokat másol egy PDF-ből vagy Excelből egy SAP tranzakcióba -- tökéletes célpontja az RPA-nak. A Gartner \cite{Gartner-RPA-in-Finance} rámutat, hogy az RPA értéke nem csupán a megtakarított munkaórákban rejlik, hanem a pontosság és a megfelelőség javításában is.
 
-Az RPA botoknak két fő típusa van \cite{41, 5}:
+Az RPA botoknak két fő típusa van \cite{Automation-Attended-vs-Unattended, Microsoft-Attended-vs-Unattended}:
 \begin{itemize}
     \item \textbf{Attended (Felügyelt) bot:} A felhasználó asztali gépén fut, mint egy ,,digitális asszisztens''. A felhasználó indítja el, és vele együttműködve végez el egy feladatot.
     \item \textbf{Unattended (Felügyelet nélküli) bot:} Szerveren fut, emberi beavatkozás nélkül. Jellemzően egy trigger (pl. API hívás vagy időzítés) indítja el a háttérben.
 \end{itemize}
 
-\subsubsection*{Mérnöki Kritika: Az RPA Technológiai Korlátai}
 Fontos azonban objektíven látni a technológia hátrányait is. Bár az RPA gyors implementációt tesz lehetővé (mivel nem igényli a backend rendszerek átalakítását), ez az előny egyben a legnagyobb gyengesége is:
 \begin{enumerate}
     \item \textbf{UI-érzékenység és Törékenység:} Mivel a hagyományos RPA a grafikus felület (GUI) elemeire (gombok, mezők ID-ja, Xpath) támaszkodik, a rendszer \textbf{rendkívül sérülékeny a változásokra}. Egy apró SAP verziófrissítés, amely átrendezi a képernyőt vagy átnevez egy mezőt, a robot azonnali leállását okozhatja.
@@ -78,13 +72,28 @@ Fontos azonban objektíven látni a technológia hátrányait is. Bár az RPA gy
     \item \textbf{,,Ragtapasz'' Megoldás:} Mérnöki szempontból az RPA gyakran csak tüneti kezelés: automatizál egy rosszul működő folyamatot anélkül, hogy kijavítaná a mögöttes strukturális problémát vagy integrációs hiányosságot.
 \end{enumerate}
 
-Éppen ezen korlátok miatt hangsúlyozzák a szakértők \cite{24}, hogy az RPA nem helyettesíti, hanem kiegészíti a BPM-et: az RPA a ,,hogyan''-t oldja meg gyorsan, de törékenyen, míg a BPM és a modern API-alapú integrációk a ,,miért''-et és a stabilitást biztosítják.
-\subsection{A Hiperautomatizálás (Hyperautomation) – A Trendek Szintézise}
+Éppen ezen korlátok miatt hangsúlyozzák a szakértők \cite{TechTarget-RPAvsBPM, Kissflow-RPAvsBPM}, hogy az RPA nem helyettesíti, hanem kiegészíti a BPM-et: az RPA a ,,hogyan''-t oldja meg gyorsan, de törékenyen, míg a BPM és a modern API-alapú integrációk a ,,miért''-et és a stabilitást biztosítják.
+
+
+\section{Modern Integrációs Technológiák: REST és OData API-k}
+\label{sec:api_integration}
+
+Míg az RPA a felhasználói felületen keresztül imitálja az emberi munkavégzést, a modern rendszerintegráció gerincét az Alkalmazásprogramozási Interfészek (API-k) alkotják. Mérnöki szempontból az API-alapú integráció a \textbf{\ref{ssec:rpa_theory} alfejezetben} tárgyalt RPA robusztusabb és stabilabb alternatívája.
+
+\subsection{REST (Representational State Transfer)}
+A REST egy szoftverarchitektúra-stílus, amely a HTTP protokoll szabványos metódusait (GET, POST, PUT, DELETE) használja az erőforrások kezelésére. A REST API-k előnye az RPA-val szemben, hogy közvetlenül a backend rendszer logikájával kommunikálnak, megkerülve a grafikus felületet (GUI). Ezáltal a megoldás érzéketlenné válik a vizuális változásokra (pl. gombok áthelyezése), és jelentősen gyorsabb adatfeldolgozást tesz lehetővé.
+
+\subsection{OData (Open Data Protocol) – Az SAP Szabványa}
+Az SAP ökoszisztémában kiemelt jelentőséggel bír az OData szabvány, amely a REST architektúrára épül, de azt további szemantikai réteggel egészíti ki. Az OData lehetővé teszi, hogy az adatokat (pl. számlák, partnerek) egységes, lekérdezhető és manipulálható erőforrásként kezeljük webes technológiákon keresztül.
+A gyakorlati megvalósítás során (pl. számla könyvelése S/4HANA rendszerbe) az OData V2/V4 szolgáltatások használata biztosítja a tranzakciós integritást és a szabványos hibakezelést, amit egy egyszerű képernyő-rögzítő robot nem tud garantálni. A modern SAP Build Process Automation platform ezért preferálja a \textit{Service Task}-ok (API hívások) használatát a hagyományos RPA szkriptekkel szemben ott, ahol rendelkezésre áll megfelelő végpont.
+
+
+\section{A Hiperautomatizálás (Hyperautomation) – A Trendek Szintézise}
 \label{ssec:hyperautomation}
 
 Míg a BPM a stratégiai folyamattervezést, az RPA pedig a taktikai feladat-végrehajtást kínálja, mindkét technológia önmagában korlátokba ütközik.
 A BPM-ből hiányozhat a ,,digitális munkás'' a feladatok elvégzésére, az RPA-ból pedig a ,,karmester'', amely a teljes folyamatot vezényli.
-Erre a kihívásra válaszul született meg a Hiperautomatizálás (\textit{Hyperautomation}) koncepciója, amelyet a Gartner iparági elemzőcég definiált és tett az egyik legfontosabb stratégiai technológiai trenddé.
+Erre a kihívásra válaszul született meg a Hiperautomatizálás (\textit{Hyperautomation}) koncepciója.
 A Gartner \cite{Gartner-Hyperautomation} definíciója szerint a hiperautomatizálás ,,egy üzletvezérelt, fegyelmezett megközelítés, amelyet a szervezetek arra használnak, hogy gyorsan azonosítsanak, megvizsgáltak és automatizáljanak annyi üzleti és IT folyamatot, amennyi csak lehetséges.'' A kulcsszó a ,,fegyelmezett megközelítés'': a hiperautomatizálás nem egyetlen technológia, hanem egy üzleti stratégia.
 Nem csupán az automatizálásról szól, hanem az automatizálás lehetőségének folyamatos felfedezéséről és menedzseléséről \cite{Kissflow-Hyperautomation}.
 A hiperautomatizálás és a hagyományos automatizálás közötti különbség a fókuszban rejlik \cite{Kissflow-Hyperautomation}:
@@ -98,25 +107,27 @@ Például (ami megegyezik e dolgozat céljával): A folyamat magában foglalja a
 Ennek megfelelően a hiperautomatizálás egy ,,eszköztár'', amely a Gartner \cite{Gartner-Hyperautomation} szerint több technológia ,,hangszerelt használatát'' (\textit{orchestrated use}) jelenti.
 Ez az eszköztár pontosan lefedi az automatizálás evolúciójának lépéseit, és kiegészíti azokat:
 \begin{description}
-    \item[BPM (Üzleti Folyamatmenedzsment):] A ,,karmester'', amely a teljes, végponttól végpontig tartó munkafolyamatot vezényli.
-\item[RPA (Robotikus Folyamatautomatizálás):] A ,,végrehajtó'', amely a repetitív, emberi feladatokat (kattintás, gépelés) végzi.
-\item[AI és ML (Mesterséges Intelligencia):] Az ,,agy'', amely lehetővé teszi a strukturálatlan adatok (pl. PDF-ek, e-mailek) megértését és a komplex, korábban emberi ítéletet igénylő döntések meghozatalát.
-\item[Process Mining (Folyamatbányászat):] A ,,szemek'', amelyek a rendszerek naplófájljait elemezve valós időben feltárják a meglévő folyamatokat, azonosítják a szűk keresztmetszeteket és javaslatot tesznek új automatizálási lehetőségekre.
-\item[Low-Code és Integrációs Platformok (iPaaS):] A ,,ragasztó'', amely összeköti a különböző, izolált rendszereket \cite{Kissflow-Hyperautomation}.
+    \item[BPM (Üzleti Folyamatmenedzsment):] A ,,karmester'', amely a teljes, végponttól végpontig tartó munkafolyamatot tervezi meg.
+    \item[RPA (Robotikus Folyamatautomatizálás):] A ,,végrehajtó'', amely a repetitív, emberi feladatokat (kattintás, gépelés) végzi.
+    \item[AI és ML (Mesterséges Intelligencia):] Az ,,agy'', amely lehetővé teszi a strukturálatlan adatok (pl. PDF-ek, e-mailek) megértését és a komplex, korábban emberi ítéletet igénylő döntések meghozatalát.
+    \item[Process Mining (Folyamatbányászat):] A ,,szemek'', amelyek a rendszerek naplófájljait elemezve valós időben feltárják a meglévő folyamatokat, azonosítják a szűk keresztmetszeteket és javaslatot tesznek új automatizálási lehetőségekre.
+    \item[Low-Code és Integrációs Platformok (iPaaS):] A ,,ragasztó'', amely összeköti a különböző, izolált rendszereket \cite{Kissflow-Hyperautomation}.
 \end{description}
 
 Látható, hogy az IBM \cite{IBM-IRPA-vs-Hyperautomation} megkülönböztetése szerint az ,,Intelligens Automatizálás'' (RPA + AI) csupán egy része a tágabb hiperautomatizálási stratégiának.
 A hiperautomatizálás célja egy olyan intelligens, önmagát optimalizáló szervezet létrehozása, ahol a folyamatok valós időben képesek alkalmazkodni a változásokhoz.
-A Gartner becslése szerint azok a szervezetek, amelyek a hiperautomatizálást újratervezett működési folyamatokkal kombinálják, 30\%-os működési költségcsökkenést érhetnek el (idézi \cite{Kissflow-Hyperautomation}).
+A Gartner becslése szerint azok a szervezetek, amelyek a hiperautomatizálást újratervezett működési folyamatokkal kombinálják, 30\%-os működési költségcsökkenést érhetnek el\cite{Kissflow-Hyperautomation}.
+
+
 \section{Az SAP Stratégiai Válasza: A Business Technology Platform (BTP)}
 \label{sec:btp}
 
 A \textbf{\ref{sec:bpm_es_trendek}} alfejezetben bemutatott iparági trendekre – különösen a hiperautomatizálás iránti igényre – az SAP stratégiai válasza az SAP Business Technology Platform (BTP).
 Az SAP BTP egy egységes, több-felhős (\textit{multi-cloud}) ,,Platform as a Service'' (PaaS) megoldás, amely egyfajta központi ,,operációs rendszerként'' funkcionál a felhőben \cite{SAP-BTP-Portfolio, Medium-Cloud-Terminologies}.
 A platform célja, hogy egyetlen, átfogó környezetben integrálja, automatizálja és kiterjessze a vállalat összes üzleti alkalmazását és folyamatát, legyen az SAP vagy nem-SAP alapú \cite{SAP-BTP-Definition}.
-A BTP bevezetésének elsődleges célja az SAP ,,Clean Core'' (Tiszta Mag) stratégiájának támogatása.
+A BTP bevezetésének elsődleges célja az SAP ,,Clean Core'' stratégiájának támogatása.
 Ez a megközelítés azt jelenti, hogy a központi ERP rendszert (mint az S/4HANA) a lehető leginkább standard állapotban kell tartani, és minden egyedi fejlesztést, bővítést (\textit{extension}) vagy integrációt a BTP platformon kell megvalósítani \cite{NAVIT-BTP, SAP-BTP-for-Beginner}.
-Ahelyett, hogy a vállalatok a stabil ,,mag'' rendszert módosítanák, a BTP biztosít számukra egy rugalmas, felhőalapú környezetet (mint a Cloud Foundry, ABAP vagy Kyma), hogy új alkalmazásokat építsenek vagy összekössék a meglévő felhőalapú és helyi (\textit{on-premise}) rendszereiket \cite{SAP-BTP-Features}.
+Ahelyett, hogy a vállalatok a stabil központi rendszert módosítanák, a BTP biztosít számukra egy rugalmas, felhőalapú környezetet (mint a Cloud Foundry, ABAP vagy Kyma), hogy új alkalmazásokat építsenek vagy összekössék a meglévő felhőalapú és helyi (\textit{on-premise}) rendszereiket \cite{SAP-BTP-Features}.
 Ez a megközelítés garantálja a rendszerek biztonságát, átjárhatóságát (\textit{interoperability}) és a későbbi frissítések zökkenőmentességét.
 E feladatok ellátására az SAP BTP öt kulcsfontosságú pillérre épül, amelyek lefedik a modern vállalatirányítás teljes technológiai spektrumát \cite{SAP-BTP-for-Beginner}:
 \begin{description}
@@ -131,11 +142,13 @@ Ez a szakdolgozat ezen pillérek közül kiemelten az ,,Alkalmazásfejlesztés''
 Ezek azok a pillérek, ahol az SAP a \textit{Low-Code/No-Code} (LCNC) filozófiáját a legerősebben érvényesíti.
 Ezt a LCNC eszközkészletet az SAP az SAP Build márkanév alatt fogja össze, amely a következő alfejezet tárgya.
 Az SAP Build biztosítja azokat a konkrét ,,építőkockákat'', amelyekből a dolgozat prototípusa – a folyamatmotor (BPA) és a felhasználói felület (Work Zone) – felépül.
+
+
 \section{Az SAP Build Platform: A BTP Hiperautomatizálási Eszköztára}
 \label{sec:sap_build}
 
-Ahogy a \textbf{\ref{sec:btp}} alfejezetben láthattuk, az SAP Business Technology Platform (BTP) biztosítja azt a stratégiai, felhőalapú ,,operációs rendszert'', amely a ,,Clean Core'' elvet támogatja.
-Ezen a platformon belül az SAP konkrét, gyakorlati válasza a \textbf{\ref{ssec:hyperautomation}} alfejezetben bemutatott hiperautomatizálási és \textit{Low-Code/No-Code} (LCNC) trendekre az SAP Build termékcsalád.
+Ahogy a \textbf{\ref{sec:btp} alfejezetben} láthattuk, az SAP Business Technology Platform (BTP) biztosítja azt a stratégiai, felhőalapú ,,operációs rendszert'', amely a ,,Clean Core'' elvet támogatja.
+Ezen a platformon belül az SAP konkrét, gyakorlati válasza a \textbf{\ref{ssec:hyperautomation} alfejezetben} bemutatott hiperautomatizálási és \textit{Low-Code/No-Code} (LCNC) trendekre az SAP Build termékcsalád.
 Az SAP Build egy egységesített, LCNC (low-code/no-code) ajánlat, amely lehetővé teszi, hogy a vállalatok ,,drag-and-drop'' egyszerűséggel hozzanak létre és bővítsenek vállalati alkalmazásokat, automatizáljanak folyamatokat és tervezzenek üzleti webhelyeket \cite{SAP-Demystifying-SAP-Build}.
 Ennek a megközelítésnek a célja az úgynevezett ,,Citizen Developer'' (\textit{amatőr fejlesztő}) bevonása.
 A \textit{Citizen Developer} egy olyan üzleti felhasználó, aki kiváló üzleti és folyamatismerettel rendelkezik, de limitált vagy semmilyen programozási tudása nincs, mégis képes az IT által jóváhagyott eszközökkel saját alkalmazásokat építeni \cite{SAP-Demystifying-SAP-Build}.
@@ -144,18 +157,18 @@ Az SAP Build platform több komponensből áll, mint például az SAP Build Apps
 Ez a szakdolgozat ezen eszköztár két kulcselemére fókuszál, amelyek együttesen biztosítják a prototípus működését: az SAP Build Process Automation-re, mint a folyamatot vezérlő ,,motorra'', és az SAP Build Work Zone-ra, mint a felhasználói felületet biztosító ,,műszerfalra''.
 A következő alfejezetek ezeket az eszközöket mutatják be részletesen.
 
+
 \subsection{A ,,Motor'': SAP Build Process Automation (BPA) Eszköztára}
 \label{ssec:bpa_motor}
 
 Míg az SAP Build a hiperautomatizálási stratégia ,,márkája'', addig annak központi motorja, és e szakdolgozat prototípusának technológiai magja, az SAP Build Process Automation (BPA).
 A BPA egy egységesített, felhőalapú platform, amely az SAP korábbi, különálló szolgáltatásait – név szerint az SAP Workflow Management-et (amely a BPM képességeket biztosította) és az SAP Intelligent RPA-t (amely a bot-fejlesztésért felelt) – egyetlen, no-code/low-code környezetben egyesíti \cite{SAP-BPA-Features}.
-A platform célja, hogy a \textbf{\ref{sec:bpm_es_trendek}} alfejezetben bemutatott hiperautomatizálási ,,eszköztárat'' a ,,Citizen Developer''-ek (üzleti felhasználók) számára is elérhetővé tegye.
+A platform célja, hogy a \textbf{\ref{sec:bpm_es_trendek} alfejezetben} bemutatott hiperautomatizálási ,,eszköztárat'' a ,,Citizen Developer''-ek (üzleti felhasználók) számára is elérhetővé tegye.
 A prototípus megépítéséhez a BPA eszköztárának következő öt kulcskomponensét alkalmazzuk:
 
 \paragraph{Process Builder (Folyamattervező): A ,,Karmester''}
-A BPA szíve a vizuális folyamattervező, amely a \textbf{\ref{ssec:bpm}} pontban leírt BPM funkciót valósítja meg.
-Ez a ,,karmester'', amely a teljes, végponttól végpontig tartó számlafeldolgozási folyamatot vezényli.
-Egy intuitív, ,,drag-and-drop'' (húzd és vidd) grafikus felületet biztosít \cite{SAP-Build}, amely az iparági szabvány BPMN 2.0 (\textit{Business Process Model and Notation}) jelölésrendszert használja.
+A BPA központi komponense a Process Builder, amely a folyamatorchestrációt végzi. Analógiával élve ez tekinthető a folyamat ,,karmesterének'', amely a teljes, végponttól végpontig tartó számlafeldolgozási folyamatot vezényli.
+Egy intuitív, ,,drag-and-drop'' grafikus felületet biztosít \cite{SAP-Build}, amely az iparági szabvány BPMN 2.0 (\textit{Business Process Model and Notation}) jelölésrendszert használja.
 A prototípusban itt építjük fel a számla teljes útját, amely logikai sorrendbe fűzi az összes többi komponenst: meghívja az AI-t az adatok kinyerésére, elküldi az adatokat a döntési táblának, kiosztja a feladatot a jóváhagyónak, és végül elindítja a botot a parkoláshoz.
 \paragraph{Automations (Automatizálások – RPA Botok): A ,,Digitális Munkás''}
 Ez a platform RPA motorja, a ,,digitális munkás'', amely a \textbf{\ref{ssec:rpa}} pontban definiált taktikai feladatvégrehajtást végzi.
@@ -169,15 +182,17 @@ A prototípusban ez az az űrlap, amelyet a jóváhagyó menedzser lát a Work Z
 \paragraph{Decisions (Döntések / Üzleti Szabályok): A ,,Logikai Központ''}
 A prototípus egyik legfontosabb eleme a Decisions komponens.
 Ez a funkció lehetővé teszi a komplex üzleti logika és a szabályok (\textit{Business Rules}) leválasztását a vizuális folyamatábráról.
-Ahelyett, hogy a BPMN ábrát bonyolult ,,ha-akkor'' elágazásokkal terhelnénk, a szabályokat egy központosított, ,,spreadsheet-szerű'' (Excel-táblázathoz hasonló) felületen, úgynevezett Döntési Táblázatokban (\textit{Decision Tables}) menedzselhetjük \cite{SAP-Build}.
+Ahelyett, hogy a BPMN ábrát bonyolult ,,ha-akkor'' elágazásokkal terhelnénk, a szabályokat egy központosított, táblázatkezelőhöz hasonló felületen, úgynevezett Döntési Táblázatokban (\textit{Decision Tables}) menedzselhetjük \cite{SAP-Build}.
 Ez lehetővé teszi, hogy akár az üzleti felhasználók (\textit{Citizen Developerek}) is frissítsék a szabályokat (pl. egy új jóváhagyó felvétele) anélkül, hogy a folyamat logikájába bele kellene nyúlniuk.
 A prototípusban ez a komponens tárolja a jóváhagyási mátrixot (pl. ,,Ha az összeg > 500.000 HUF, a jóváhagyó Y'').
-\paragraph{AI Képességek (Document Information Extraction - DOX): A ,,Prototípus Agya''}
+\paragraph{AI Képességek (Document AI - DOX): A ,,Prototípus Agya''}
 Ez a komponens a prototípus ,,agya'', amely az AI-t (Mesterséges Intelligenciát) hozza a folyamatba, és közvetlenül megoldja a ,,swivel-chair'' adatrögzítés problémáját.
 Bár technikailag egy különálló SAP BTP szolgáltatás (SAP AI Business Services), natívan integrálódik a BPA-ba \cite{SAP-Build}.
 A DOX technológia OCR (Optikai Karakterfelismerés) és Gépi Tanulás (ML) kombinációját használja arra, hogy strukturálatlan dokumentumokból, mint amilyen egy PDF számla, kinyerje a strukturált üzleti adatokat (pl. szállító, számlaszám, nettó összeg, dátum).
 Kulcsfontosságú funkciója, hogy minden kinyert adathoz egy \textit{Confidence Score} (megbízhatósági pontszám) értéket rendel.
 Ez teszi lehetővé az intelligens folyamatvezérlést: a prototípusunkban a magas (pl. 99\% feletti) pontszámú számlák ,,érintésmentesen'' (\textit{touchless}) mehetnek tovább, míg az alacsony pontszámúak (pl. elmosódott szkennelés) automatikusan egy emberi javító feladatot generálnak (a Forms komponens segítségével).
+
+
 \subsection{A ,,Műszerfal'': SAP Build Work Zone}
 \label{ssec:work_zone}
 
@@ -188,9 +203,9 @@ fejezetben azonosított két legfőbb üzleti problémát: a kaotikus, e-mail al
 Ezt két fő funkcióval éri el:
 
 \paragraph{Task Center / ,,My Inbox'':}
-A Work Zone legfontosabb képessége a prototípus szempontjából a beépített ,,Task Center'' (más néven ,,My Inbox'' vagy ,,Feladataim'').
+A Work Zone legfontosabb képessége a prototípus szempontjából a beépített ,,Task Center'' (más néven ,,My Inbox'').
 Ez egy központosított, egységes feladatkezelő postafiók, amely egyetlen listában gyűjti össze a felhasználóra váró összes feladatot – függetlenül attól, hogy az melyik rendszerből érkezik \cite{SAP-WZ-Standard}.
-Amikor az SAP BPA folyamatunk egy jóváhagyási (pl. TESZT\_01) vagy egy hibajavítási (pl. TESZT\_04) lépéshez ér, a feladatot nem egy e-mailbe, hanem közvetlenül a felelős felhasználó ,,My Inbox''-ába küldi.
+Amikor az SAP BPA folyamatunk egy jóváhagyási (pl. TESZT\_01) vagy egy hibajavítási (pl. TESZT\_02) lépéshez ér, a feladatot nem egy e-mailbe, hanem közvetlenül a felelős felhasználó ,,My Inbox''-ába küldi.
 Ezzel megszünteti az e-mailek közötti keresgélést, és a feladatkezelést nyomon követhetővé teszi.
 \paragraph{UI Integráció és Átláthatóság (Űrlapok és KPI Csempék):}
 A ,,My Inbox'' szorosan integrálódik a BPA Forms komponensével.
@@ -205,7 +220,5 @@ Végül, a Work Zone stratégiai jelentőségét az adja, hogy (a BTP integráci
 Látható tehát, hogyan áll össze a teljes kép: az SAP Business Technology Platform (BTP) biztosítja a stabil, ,,Clean Core'' elvű, felhőalapú alapot és az ,,operációs rendszert''.
 Erre épül az SAP Build platform LCNC eszköztára, amely a dolgozat prototípusának két fő elemét adja.
 Az SAP Build Process Automation (BPA) funkcionál a megoldás ,,motorjaként'', amely egyetlen, integrált szolgáltatásban biztosítja a hiperautomatizáláshoz szükséges összes képességet: a folyamatvezérlést (BPM/Process), az intelligens adatkinyerést (AI/DOX), a feladatvégrehajtást (RPA/Automation) és az üzleti logikát (Decisions).
-Ezt egészíti ki az SAP Build Work Zone, amely a ,,műszerfalként'' szolgál, és a központi ,,My Inbox'' (\textit{Task Center}) révén egységes felhasználói felületet (UI) és hatékony feladatkezelést biztosít, megoldva az \textbf{\ref{chap:bevezetes}.
-fejezetben} felvázolt átláthatósági hiányosságokat és az e-mailes ,,fekete lyuk'' problémát.
-Most, hogy a \textbf{\ref{chap:elmeleti_hatter}.
-fejezetben} részletesen megismertük az SAP modern hiperautomatizálási eszköztárát – azaz a potenciális megoldást –, a következő fejezetben azt elemezzük, hogy pontosan milyen üzleti problémákra és manuális folyamatokra nyújt ez a platform választ.
+Ezt egészíti ki az SAP Build Work Zone, amely a ,,műszerfalként'' szolgál, és a központi ,,My Inbox'' (\textit{Task Center}) révén egységes felhasználói felületet (UI) és hatékony feladatkezelést biztosít, megoldva az \textbf{\ref{chap:bevezetes}. fejezetben} felvázolt átláthatósági hiányosságokat és az e-mailes ,,fekete lyuk'' problémát.
+Most, hogy a \textbf{\ref{chap:elmeleti_hatter}. fejezetben} részletesen megismertük az SAP modern hiperautomatizálási eszköztárát – azaz a potenciális megoldást –, a következő fejezetben azt elemezzük, hogy pontosan milyen üzleti problémákra és manuális folyamatokra nyújt ez a platform választ.

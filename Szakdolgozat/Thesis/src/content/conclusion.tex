@@ -6,15 +6,15 @@ Szakdolgozatomban a pénzügyi folyamatok modernizációjának egyik legkritikus
 \section{A Kutatási Eredmények Összegzése}
 A dolgozat elméleti részében feltártam a manuális (,,As-Is'') folyamatok rejtett költségeit és kockázatait, rámutatva a ,,swivel-chair'' integráció és az átláthatatlan jóváhagyási láncok tarthatatlanságára. A gyakorlati megvalósítás során egy működőképes, \textit{End-to-End} prototípust hoztam létre, amely sikeresen integrálta a mesterséges intelligencia alapú adatkinyerést (DOX), a robotikus folyamatautomatizálást (RPA) és az emberi döntéshozatalt támogató munkafolyamatokat (Work Zone).
 
-A tesztelési eredmények (5. fejezet) egyértelműen igazolták a koncepció életképességét: a rendszer képes volt a számlák teljesen automatikus (,,touchless'') feldolgozására, ugyanakkor robusztus módon kezelte a kivételes eseteket és a hibás adatokat is.
+A tesztelési eredmények (\ref{chap:ertekeles}. fejezet) egyértelműen igazolták a koncepció életképességét: a rendszer képes volt a számlák teljesen automatikus (,,touchless'') feldolgozására, ugyanakkor robusztus módon kezelte a kivételes eseteket és a hibás adatokat is.
 
 \section{A Kutatási Kérdések Megválaszolása}
-A dolgozat elején (1.4. fejezet) megfogalmazott kutatási kérdésekre az elvégzett munka alapján az alábbi válaszok adhatók:
+A dolgozat elején (\ref{sec:celkituzesek}. szakasz) megfogalmazott kutatási kérdésekre az elvégzett munka alapján az alábbi válaszok adhatók:
 
 \begin{enumerate}
     \item \textbf{Hogyan integrálható az SAP BPA architektúrája a meglévő heterogén vállalati környezetbe a technológiai szigetek felszámolása érdekében, és milyen architekturális előnyöket biztosít a hiperautomatizálás a hagyományos RPA-hoz képest?}
     
-    A dolgozat 2. és 4. fejezete bemutatta, hogy a hagyományos RPA eszközök gyakran törékeny, felület-alapú (UI) integrációt valósítanak meg. Ezzel szemben a prototípus architektúrája (4.2. fejezet) igazolta, hogy az SAP BPA a szolgáltatás-alapú (\textit{Service-Oriented}) megközelítést alkalmazza:
+    A dolgozat \ref{chap:elmeleti_hatter}. és \ref{chap:megvalositas}. fejezete bemutatta, hogy a hagyományos RPA eszközök gyakran törékeny, felület-alapú (UI) integrációt valósítanak meg. Ezzel szemben a prototípus architektúrája (\ref{sec:prototype_architecture}. szakasz) igazolta, hogy az SAP BPA a szolgáltatás-alapú (\textit{Service-Oriented}) megközelítést alkalmazza:
     
     \begin{itemize}
         \item \textbf{Integráció:} A rendszer nem szigetként működik, hanem szabványos REST és OData API-kon keresztül, lazán csatolt (\textit{Loosely Coupled}) módon kommunikál a backend rendszerekkel (S/4HANA) és az AI szolgáltatásokkal (DOX).
@@ -24,19 +24,19 @@ A dolgozat elején (1.4. fejezet) megfogalmazott kutatási kérdésekre az elvé
 
     \item \textbf{Hol keletkeznek a legnagyobb költségek és hibák a manuális folyamatban?}
     
-    A 3. fejezet elemzése és a mérések rámutattak, hogy a legnagyobb rejtett veszteségforrás nem önmagában az elsődleges adatrögzítés ideje, hanem a \textbf{hibajavítás (rework) költsége}. A minőségügyi „1-10-100 szabály” analógiájára a manuális folyamatban egy hiba (pl. rossz költséghely vagy duplikáció) detektálása és korrigálása a folyamat későbbi szakaszában nagyságrendekkel több erőforrást emészt fel. A prototípus mérései igazolták, hogy a validációs kapuk (\textit{Gatekeepers}) beépítésével ez a költség minimalizálható, mivel a hibás adatok bekerülését a rendszer már a belépési ponton blokkolja.
+    A \ref{ch:process-analysis}. fejezet elemzése és a mérések rámutattak, hogy a legnagyobb rejtett veszteségforrás nem önmagában az elsődleges adatrögzítés ideje, hanem a \textbf{hibajavítás (rework) költsége}. A minőségügyi „1-10-100 szabály” analógiájára a manuális folyamatban egy hiba (pl. rossz költséghely vagy duplikáció) detektálása és korrigálása a folyamat későbbi szakaszában nagyságrendekkel több erőforrást emészt fel. A prototípus mérései igazolták, hogy a validációs kapuk (\textit{Gatekeepers}) beépítésével ez a költség minimalizálható, mivel a hibás adatok bekerülését a rendszer már a belépési ponton blokkolja.
 
     \item \textbf{Milyen integrációs korlátok és architekturális kompromisszumok mellett valósítható meg a heterogén rendszereket összekapcsoló automatizáció low-code környezetben?}
     
     A prototípus fejlesztése rávilágított a \textit{Low-Code/No-Code} platformok legfőbb architekturális kompromisszumára: a fejlesztési sebesség és a testreszabhatóság közötti átváltásra (\textit{Trade-off}).
     \begin{itemize}
-        \item \textbf{A ,,Low-Code Fal'' és a Pro-Code szükségessége:} Bár a folyamatvezérlés (BPMN) vizuálisan megvalósítható volt, a heterogén adatstruktúrák (DOX JSON kimenet vs. SAP elvárt formátum) illesztésekor a dobozos elemek korlátokba ütköztek. A megoldáshoz \textbf{egyedi JavaScript kódok} (\textit{Pro-Code} betétek) implementálása volt szükséges (lásd 4.2.1. fejezet), ami igazolja, hogy komplex integrációhoz a ,,Citizen Developer'' tudás önmagában nem mindig elegendő; szükség van mérnöki szkriptelési ismeretekre is.
+        \item \textbf{A ,,Low-Code Fal'' és a Pro-Code szükségessége:} Bár a folyamatvezérlés (BPMN) vizuálisan megvalósítható volt, a heterogén adatstruktúrák (DOX JSON kimenet vs. SAP elvárt formátum) illesztésekor a dobozos elemek korlátokba ütköztek. A megoldáshoz \textbf{egyedi JavaScript kódok} (\textit{Pro-Code} betétek) implementálása volt szükséges (lásd \ref{ssec:data_extraction_config}. szakasz), ami igazolja, hogy komplex integrációhoz a ,,Citizen Developer'' tudás önmagában nem mindig elegendő; szükség van mérnöki szkriptelési ismeretekre is.
         \item \textbf{Heterogén rendszerek integrációja:} A Microsoft (Outlook) és az SAP ökoszisztéma összekapcsolása sikeres volt, de rámutatott az aszinkron kommunikáció (Polling) és a hitelesítés (OAuth) bonyolultságára, amelyet a platform elfed ugyan, de mérnöki szintű konfigurációt (környezeti változók, timeout kezelés) igényel.
     \end{itemize}
 
     \item \textbf{Mennyivel csökkenti a prototípus a feldolgozási időt és a hibákat?}
     
-    Az 5. fejezet mérései alapján az automatizált megoldás drasztikus, közel \textbf{80\%-os időmegtakarítást} eredményezett (az átlagos feldolgozási idő 45-60 másodpercre csökkent). Minőségi szempontból a determinisztikus működés és a beépített validációs kapuk teljesen \textbf{kiküszöbölték az adatrögzítési hibákat}, míg a Work Zone bevezetése 100\%-os átláthatóságot biztosított a folyamat státuszáról.
+    Az \ref{chap:ertekeles}. fejezet mérései alapján az automatizált megoldás drasztikus, közel \textbf{80\%-os időmegtakarítást} eredményezett (az átlagos feldolgozási idő 45-60 másodpercre csökkent). Minőségi szempontból a determinisztikus működés és a beépített validációs kapuk teljesen \textbf{kiküszöbölték az adatrögzítési hibákat}, míg a Work Zone bevezetése 100\%-os átláthatóságot biztosított a folyamat státuszáról.
 \end{enumerate}
 
 \section{Záró Gondolatok és További Következtetések (ROI)}
@@ -44,11 +44,11 @@ A dolgozat elején (1.4. fejezet) megfogalmazott kutatási kérdésekre az elvé
 
 A szakdolgozat elkészítése során nemcsak technológiai ismereteket szereztem az SAP legújabb felhőalapú megoldásairól, hanem betekintést nyertem a vállalati folyamatszervezés és a rendszermérnöki tervezés kihívásaiba is. A ,,Citizen Developer'' szemléletmód és a \textit{Low-Code/No-Code} eszközök alkalmazása meggyőzött arról, hogy a jövő mérnökinformatikusának feladata már nem csupán a kódolás, hanem az üzleti értékteremtés és a technológiai lehetőségek kreatív összehangolása.
 
-Bár a dolgozat eredeti célkitűzései (1.4. fejezet) elsősorban a technológiai megvalósíthatóságra és a folyamathatékonyságra fókuszáltak, a kapott mérési eredmények lehetővé teszik egy \textbf{további, gazdasági jellegű következtetés} levonását is a megtérüléssel (Return on Investment - ROI) kapcsolatban.
+Bár a dolgozat eredeti célkitűzései (\ref{sec:celkituzesek}. szakasz) elsősorban a technológiai megvalósíthatóságra és a folyamathatékonyságra fókuszáltak, a kapott mérési eredmények lehetővé teszik egy \textbf{további, gazdasági jellegű következtetés} levonását is a megtérüléssel (Return on Investment - ROI) kapcsolatban.
 
 \begin{itemize}
     \item \textbf{Fejlesztési teher (CapEx):} Fontos látni, hogy a prototípus architektúrájának megtervezése, az API integrációk fejlesztése és a tesztesetek összeállítása jelentős kezdeti befektetést igényelt.
-    \item \textbf{Operatív Megtérülés (OpEx):} Az 5. fejezetben kimutatott 80\%-os időmegtakarítás azonban azt vetíti előre, hogy nagy volumenű tranzakciók (havi több ezer számla) esetén ez a kezdeti befektetés a rendszer skálázhatósága miatt gyorsan megtérül.
+    \item \textbf{Operatív Megtérülés (OpEx):} Az \ref{chap:ertekeles}. fejezetben kimutatott 80\%-os időmegtakarítás azonban azt vetíti előre, hogy nagy volumenű tranzakciók (havi több ezer számla) esetén ez a kezdeti befektetés a rendszer skálázhatósága miatt gyorsan megtérül.
 \end{itemize}
 
 Meggyőződésem, hogy a dolgozatban bemutatott prototípus nem csupán elméleti kísérlet, hanem egy valós ipari igényre adott, gazdaságilag is racionális mérnöki válasz.

@@ -100,6 +100,11 @@
   >https://resolvepay.com/blog/17-statistics-showing-the-hidden-cost-of-
   invoice-errors-and-rework>.
 
+\bibitem{Gartner-RPA-in-Finance}
+3 tactics to demonstrate rpa’s impact in finance, 2024.
+\bibNewBlock
+\bibUrll{URL} >https://www.gartner.com/en/finance/trends/finance-rpa>.
+
 \bibitem{Parseur-AI-Invoice-Processing}
 Ai invoice processing benchmarks 2025 - accuracy, speed, and cost comparison,
   2025.
@@ -112,6 +117,13 @@ Irina Anichshuk:
 \bibNewBlock
 \bibUrll{URL}
   >https://www.kolleno.com/how-to-move-from-pdfs-to-true-e-invoices>.
+
+\bibitem{Microsoft-Attended-vs-Unattended}
+Attended and unattended scenarios.
+\bibNewBlock
+\bibUrll{URL}
+  >https://learn.microsoft.com/en-us/power-automate/guidance/planning/
+  attended-unattended>.
 
 \bibitem{Ascendsoftware-Cost-of-Manual}
 Alison Baran:
@@ -240,6 +252,14 @@ Lingeswar Karrennagari:
   >https://community.sap.com/t5/supply-chain-management-blog-posts-by-
   members/logistics-invoice-verification/ba-p/13740502>.
 
+\bibitem{TechTarget-RPAvsBPM}
+George Lawton:
+\bibNewBlock Rpa vs. bpm: How are they different?, 2023.
+\bibNewBlock
+\bibUrll{URL}
+  >https://www.techtarget.com/searchcio/tip/RPA-vs-BPM-How-are-they-
+  different>.
+
 \bibitem{SAP-Holding-and-Parking}
 Managing invoice holding and parking.
 \bibNewBlock
@@ -302,6 +322,12 @@ Processing edi invoices, 2025.
 \bibUrll{URL} >https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/
   af9ef57f504840d2b81be8667206d485/366fb6531de6b64ce10000000a174cb4.html>.
 
+\bibitem{Kissflow-RPAvsBPM}
+Rpa vs. bpm: What's the difference?, 2025.
+\bibNewBlock
+\bibUrll{URL}
+  >https://kissflow.com/workflow/bpm/rpa-vs-bpm-whats-the-difference>.
+
 \bibitem{SAP-BTP-Portfolio}
 Sap business technology platform.
 \bibNewBlock
@@ -349,6 +375,12 @@ Transform business with sap business technology platform (sap btp), 2024.
 \bibUrll{URL}
   >https://nav-it.com/transform-business-with-sap-business-technology-
   platform-sap-btp>.
+
+\bibitem{Automation-Attended-vs-Unattended}
+What is attended vs unattended robotic process automation (rpa)?
+\bibNewBlock
+\bibUrll{URL}
+  >https://www.automationanywhere.com/rpa/attended-vs-unattended-rpa>.
 
 \bibitem{IBM-BPM}
 What is business process management (bpm)?, 2024.
