@@ -117,9 +117,9 @@
 \select@language {magyar} \contentsline {section}{\numberline {6.3}Záró Gondolatok és További Következtetések (ROI)}{62}{section.6.3}%
 \select@language {magyar} \contentsline {chapter}{Köszönetnyilvánítás}{63}{chapter*.65}%
 \select@language {magyar} \contentsline {chapter}{Irodalomjegyz\'ek}{64}{chapter*.65}%
-\select@language {magyar} \contentsline {chapter}{Függelék}{68}{appendix*.67}%
-\select@language {magyar} \contentsline {section}{\numberline {F.1}A Tesztadat-generátor Forráskódja (Python)}{68}{section.F.1}%
-\select@language {magyar} \contentsline {section}{\numberline {F.2}SAP Build Process Automation Szkriptek}{69}{section.F.2}%
-\select@language {magyar} \contentsline {subsection}{\numberline {F.2.1}Dokumentum Feltöltés (Document AI Upload)}{70}{subsection.F.2.1}%
-\select@language {magyar} \contentsline {subsection}{\numberline {F.2.2}Adatkinyerés és Normalizálás (Data Extraction)}{70}{subsection.F.2.2}%
-\select@language {magyar} \contentsline {section}{\numberline {F.3}Tesztelési Jegyzőkönyv Összesítő}{71}{section.F.3}%
+\select@language {magyar} \contentsline {chapter}{Függelék}{69}{appendix*.67}%
+\select@language {magyar} \contentsline {section}{\numberline {F.1}A Tesztadat-generátor Forráskódja (Python)}{69}{section.F.1}%
+\select@language {magyar} \contentsline {section}{\numberline {F.2}SAP Build Process Automation Szkriptek}{70}{section.F.2}%
+\select@language {magyar} \contentsline {subsection}{\numberline {F.2.1}Dokumentum Feltöltés (Document AI Upload)}{71}{subsection.F.2.1}%
+\select@language {magyar} \contentsline {subsection}{\numberline {F.2.2}Adatkinyerés és Normalizálás (Data Extraction)}{71}{subsection.F.2.2}%
+\select@language {magyar} \contentsline {section}{\numberline {F.3}Tesztelési Jegyzőkönyv Összesítő}{72}{section.F.3}%

@@ -99,17 +99,20 @@
 \bibUrll{URL}
   >https://resolvepay.com/blog/17-statistics-showing-the-hidden-cost-of-
   invoice-errors-and-rework>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \bibitem{Gartner-RPA-in-Finance}
 3 tactics to demonstrate rpa’s impact in finance, 2024.
 \bibNewBlock
 \bibUrll{URL} >https://www.gartner.com/en/finance/trends/finance-rpa>.
+\bibNewBlock Megtekintés: 2025-10-09.
 
 \bibitem{Parseur-AI-Invoice-Processing}
 Ai invoice processing benchmarks 2025 - accuracy, speed, and cost comparison,
   2025.
 \bibNewBlock
 \bibUrll{URL} >https://parseur.com/blog/ai-invoice-processing-benchmarks>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \bibitem{Kolleno-PDFs-to-EInvoices}
 Irina Anichshuk:
@@ -117,6 +120,7 @@ Irina Anichshuk:
 \bibNewBlock
 \bibUrll{URL}
   >https://www.kolleno.com/how-to-move-from-pdfs-to-true-e-invoices>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \bibitem{Microsoft-Attended-vs-Unattended}
 Attended and unattended scenarios.
@@ -124,6 +128,7 @@ Attended and unattended scenarios.
 \bibUrll{URL}
   >https://learn.microsoft.com/en-us/power-automate/guidance/planning/
   attended-unattended>.
+\bibNewBlock Megtekintés: 2025-10-08.
 
 \bibitem{Ascendsoftware-Cost-of-Manual}
 Alison Baran:
@@ -133,6 +138,7 @@ Alison Baran:
 \bibUrll{URL}
   >https://www.ascendsoftware.com/blog/the-hidden-cost-of-manual-what-
   five-extra-minutes-per-invoice-is-really-costing-your-ap-team>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \bibitem{Garner-BPM}
 Business process management (bpm).
@@ -140,11 +146,13 @@ Business process management (bpm).
 \bibUrll{URL}
   >https://www.gartner.com/en/information-technology/glossary/business-
   process-management-bpm>.
+\bibNewBlock Megtekintés: 2025-10-08.
 
 \bibitem{SAP-Work-Zone}
 Create low-code digital workspaces.
 \bibNewBlock
 \bibUrll{URL} >https://www.sap.com/products/technology-platform/workzone.html>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \bibitem{SAP-Non-PO-Invoices}
 Creating non-po invoices.
@@ -152,18 +160,21 @@ Creating non-po invoices.
 \bibUrll{URL}
   >https://learning.sap.com/learning-journeys/introducing-sap-ariba-
   procurement-functionality/creating-non-po-invoices>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \bibitem{Deloitte-Finance-2025}
 Crunch time series for cfos: Finance 2025 revisited, 2025.
 \bibNewBlock
 \bibUrll{URL} >https://www.deloitte.com/us/en/what-we-do/capabilities/finance-
   transformation/articles/future-finance-trends-2025.html>.
+\bibNewBlock Megtekintés: 2025-10-05.
 
 \bibitem{SAP-ERS}
 Evaluated receipt settlement (ers), 2025.
 \bibNewBlock
 \bibUrll{URL} >https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/
   f340785101c548c9beeda9284efd18a0/67eec353b677b44ce10000000a174cb4.html>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \bibitem{SAP-BTP-Features}
 Feature scope description for sap btp, cloud foundry, abap, and kyma
@@ -172,6 +183,7 @@ Feature scope description for sap btp, cloud foundry, abap, and kyma
 \bibUrll{URL}
   >https://help.sap.com/doc/5e8107bf49684962b897217040398007/Cloud/en-US/
   SAP_BTP_FSD.pdf>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \bibitem{SAP-BPA-Features}
 Feature scope description for sap build process automation, 2022.
@@ -179,6 +191,7 @@ Feature scope description for sap build process automation, 2022.
 \bibUrll{URL}
   >https://help.sap.com/doc/b3c2de746b0645aeb627deda35b896a0/Cloud/en-US/
   11df00c55daf425bb7a447d63dbd5484.pdf>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \bibitem{Edenredpay-5-Problems}
 Cathy Ferro:
@@ -186,12 +199,14 @@ Cathy Ferro:
 \bibNewBlock
 \bibUrll{URL}
   >https://edenredpay.com/5-problems-approving-invoices-via-e-mail>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \bibitem{Gartner-Finance-2030}
 Finance 2030: 8 forces shaping the future of finance, 2025.
 \bibNewBlock
 \bibUrll{URL}
   >https://www.gartner.com/en/finance/insights/future-of-finance-2030>.
+\bibNewBlock Megtekintés: 2025-10-05.
 
 \bibitem{PwC-Future-of-Finance}
 Future of finance: How you can lead with insight, not just oversight, 2025.
@@ -199,6 +214,7 @@ Future of finance: How you can lead with insight, not just oversight, 2025.
 \bibUrll{URL}
   >https://www.pwc.com/us/en/services/consulting/business-transformation/
   library/future-of-finance.html>.
+\bibNewBlock Megtekintés: 2025-10-05.
 
 \bibitem{SAP-Demystifying-SAP-Build}
 Raja Gupta:
@@ -207,6 +223,7 @@ Raja Gupta:
 \bibUrll{URL}
   >https://community.sap.com/t5/technology-blog-posts-by-sap/demystifying-
   sap-build-for-beginners/ba-p/13553828>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \bibitem{SAP-BTP-for-Beginner}
 Raja Gupta:
@@ -216,6 +233,7 @@ Raja Gupta:
 \bibUrll{URL}
   >https://community.sap.com/t5/technology-blog-posts-by-sap/explaining-
   sap-business-technology-platform-sap-btp-to-a-beginner-2025/ba-p/ 13557182>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \bibitem{Medium-Cloud-Terminologies}
 Raja Gupta:
@@ -224,17 +242,20 @@ Raja Gupta:
 \bibUrll{URL}
   >https://medium.com/@raja.gupta20/important-cloud-terminologies-for-
   beginners-50e474bbaf22>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \bibitem{Gartner-Hyperautomation}
 Hyperautomation.
 \bibNewBlock
 \bibUrll{URL} >httpsNext: //www.gartner.com/en/information-technology/glossary/
   hyperautomation>.
+\bibNewBlock Megtekintés: 2025-10-08.
 
 \bibitem{Kissflow-Hyperautomation}
 Hyperautomation: 101 ultimate guide for 2025-26, 2025.
 \bibNewBlock
 \bibUrll{URL} >https://kissflow.com/workflow/hyperautomation-complete-guide>.
+\bibNewBlock Megtekintés: 2025-10-08.
 
 \bibitem{IBM-IRPA-vs-Hyperautomation}
 {IBM Cloud Education Team}:
@@ -243,6 +264,7 @@ Hyperautomation: 101 ultimate guide for 2025-26, 2025.
 \bibNewBlock
 \bibUrll{URL} >https://www.ibm.com/think/topics/intelligent-automation-vs-
   hyperautomation>.
+\bibNewBlock Megtekintés: 2025-10-08.
 
 \bibitem{SAP-LIV}
 Lingeswar Karrennagari:
@@ -251,6 +273,7 @@ Lingeswar Karrennagari:
 \bibUrll{URL}
   >https://community.sap.com/t5/supply-chain-management-blog-posts-by-
   members/logistics-invoice-verification/ba-p/13740502>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \bibitem{TechTarget-RPAvsBPM}
 George Lawton:
@@ -259,6 +282,7 @@ George Lawton:
 \bibUrll{URL}
   >https://www.techtarget.com/searchcio/tip/RPA-vs-BPM-How-are-they-
   different>.
+\bibNewBlock Megtekintés: 2025-10-08.
 
 \bibitem{SAP-Holding-and-Parking}
 Managing invoice holding and parking.
@@ -267,6 +291,7 @@ Managing invoice holding and parking.
   >https://learning.sap.com/learning-journeys/describing-the-payables-
   management-process-in-sap-s-4hana/managing-invoice-holding-and-
   parking_a6556206-6ef1-48bb-bcb8-bdb5d742f88e>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \bibitem{SAP-Managing-Invoices}
 Managing invoices.
@@ -274,6 +299,7 @@ Managing invoices.
 \bibUrll{URL} >https://learning.sap.com/courses/exploring-end-to-end-business-
   processes-in-sap-business-suite/managing-invoices_fe0e5798-20aa-4b6e-
   aa82-fe7279f48265>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \bibitem{JKE-Supply-Chain-Business-Process}
 Sanjib~Kumar Mishra\bibAnd 0Sasmita Mishra\bibAnd 2Rojalina Priyadarshini:
@@ -285,6 +311,7 @@ Sanjib~Kumar Mishra\bibAnd 0Sasmita Mishra\bibAnd 2Rojalina Priyadarshini:
   389749726_Supply_Chain_Business_Process_Re-
   Engineering_Automate_Logistic_Invoice_Verification_Payment_Block_Proces
   s-A_Case_Study_on_SAP_R-Payment_Block>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \bibitem{Deloitte-Controlling-Change}
 Justin Morel~de Westgaver\bibAnd 0Michael Cravatte\bibAnd 2Fethi Sadouki:
@@ -295,18 +322,21 @@ Justin Morel~de Westgaver\bibAnd 0Michael Cravatte\bibAnd 2Fethi Sadouki:
   >https://www.deloitte.com/lu/en/our-thinking/future-of-advice/from-
   controlling-to-strategic-planning-how-to-maximize-your-finance-
   function.html>.
+\bibNewBlock Megtekintés: 2025-10-05.
 
 \bibitem{RAMP-Invoice-Verification}
 Ashley Nguyen:
 \bibNewBlock What is invoice verification? types, process, and checklist, 2025.
 \bibNewBlock
 \bibUrll{URL} >https://ramp.com/blog/invoice-verification>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \bibitem{SAP-Parking}
 Parking: Complete invoices for posting (mm-iv-liv), 2025.
 \bibNewBlock
 \bibUrll{URL} >https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/
   b54d76b535b74e4aaa852fe31a7974ee/94c6b65334e6b54ce10000000a174cb4.html>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \bibitem{McKinsey-Future-of-Finance}
 Frank Plaschke\bibAnd 0Ishaan Seth\bibAnd 2Rob Whiteman:
@@ -315,23 +345,27 @@ Frank Plaschke\bibAnd 0Ishaan Seth\bibAnd 2Rob Whiteman:
 \bibUrll{URL}
   >https://www.mckinsey.com/capabilities/strategy-and-corporate-finance/
   our-insights/bots-algorithms-and-the-future-of-the-finance-function>.
+\bibNewBlock Megtekintés: 2025-10-05.
 
 \bibitem{SAP-EDI}
 Processing edi invoices, 2025.
 \bibNewBlock
 \bibUrll{URL} >https://help.sap.com/docs/SAP_S4HANA_ON-PREMISE/
   af9ef57f504840d2b81be8667206d485/366fb6531de6b64ce10000000a174cb4.html>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \bibitem{Kissflow-RPAvsBPM}
 Rpa vs. bpm: What's the difference?, 2025.
 \bibNewBlock
 \bibUrll{URL}
   >https://kissflow.com/workflow/bpm/rpa-vs-bpm-whats-the-difference>.
+\bibNewBlock Megtekintés: 2025-10-08.
 
 \bibitem{SAP-BTP-Portfolio}
 Sap business technology platform.
 \bibNewBlock
 \bibUrll{URL} >https://www.sap.com/products/technology-platform.html>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \bibitem{SAP-Tolerance-Keys-Part1}
 {SAP Community Member}:
@@ -340,6 +374,7 @@ Sap business technology platform.
 \bibUrll{URL}
   >https://community.sap.com/t5/enterprise-resource-planning-blog-posts-
   by-members/invoice-tolerance-keys-an-insight-part-1/bc-p/13085899>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \bibitem{SAP-Tolerance-Keys-Part2}
 {SAP Community Member}:
@@ -348,17 +383,20 @@ Sap business technology platform.
 \bibUrll{URL}
   >https://community.sap.com/t5/enterprise-resource-planning-blog-posts-
   by-members/invoice-tolerance-keys-an-insight-part-2/ba-p/13195017>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \bibitem{XSUITE-Parking-in-SAP}
 Jan Schulze:
 \bibNewBlock Invoice processing in sap: What does parking actually do?, 2019.
 \bibNewBlock
 \bibUrll{URL} >https://www.xsuite.com/en/blog/invoice-parking-in-sap>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \bibitem{Ardent-ePayables-Report}
 The state of epayables 2025 report, 2025.
 \bibNewBlock
 \bibUrll{URL} >https://tradeshift.com/state-of-epayables-2025-report/>.
+\bibNewBlock Megtekintés: 2025-10-05.
 
 \bibitem{Caso-Hidden-Costs-of-Manual}
 Richard Tamaro:
@@ -368,6 +406,7 @@ Richard Tamaro:
 \bibUrll{URL}
   >https://caso.com/2025/03/the-hidden-costs-of-manual-accounts-payable-
   and-how-automation-solves-them>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \bibitem{NAVIT-BTP}
 Transform business with sap business technology platform (sap btp), 2024.
@@ -375,23 +414,27 @@ Transform business with sap business technology platform (sap btp), 2024.
 \bibUrll{URL}
   >https://nav-it.com/transform-business-with-sap-business-technology-
   platform-sap-btp>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \bibitem{Automation-Attended-vs-Unattended}
 What is attended vs unattended robotic process automation (rpa)?
 \bibNewBlock
 \bibUrll{URL}
   >https://www.automationanywhere.com/rpa/attended-vs-unattended-rpa>.
+\bibNewBlock Megtekintés: 2025-10-08.
 
 \bibitem{IBM-BPM}
 What is business process management (bpm)?, 2024.
 \bibNewBlock
 \bibUrll{URL} >https://www.ibm.com/think/topics/business-process-management>.
+\bibNewBlock Megtekintés: 2025-10-08.
 
 \bibitem{SAP-Build}
 What is sap build?
 \bibNewBlock
 \bibUrll{URL} >https://help.sap.com/docs/build/sap-build-core/what-is-sap-
   build#loio7e50fa5e724c49d1a4352848275fd3cc__section_build_code>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \bibitem{SAP-WZ-Standard}
 What is sap build work zone, standard edition?
@@ -399,6 +442,7 @@ What is sap build work zone, standard edition?
 \bibUrll{URL}
   >https://help.sap.com/docs/build-work-zone-standard-edition/sap-build-
   work-zone-standard-edition/what-is-sap-build-work-zone-standard- edition>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \bibitem{SAP-BTP-Definition}
 What is sap business technology platform?
@@ -406,5 +450,6 @@ What is sap business technology platform?
 \bibUrll{URL}
   >https://www.sap.com/sea/products/technology-platform/what-is-sap-
   business-technology-platform.html>.
+\bibNewBlock Megtekintés: 2025-10-20.
 
 \end{thebibliography}

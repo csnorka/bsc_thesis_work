@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.11.14)  10 DEC 2025 01:10
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2025.11.14)  12 DEC 2025 02:27
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -697,8 +697,10 @@ Package pgfplots: loading complementary utilities for your pgf version...
 File: tikzlibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
  (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/generic/pgf/libraries\pgflibraryplotmarks.code.tex
 File: pgflibraryplotmarks.code.tex 2023-01-15 v3.1.10 (3.1.10)
-)))
-LaTeX Font Info:    Trying to load font information for T1+lmr on input line 109.
+))) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/xurl\xurl.sty
+Package: xurl 2022/01/09 v 0.10 modify URL breaks
+)
+LaTeX Font Info:    Trying to load font information for T1+lmr on input line 111.
  (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmr.fd
 File: t1lmr.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 ) (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-pdftex.def
@@ -708,24 +710,24 @@ File: l3backend-pdftex.def 2024-01-04 L3 backend support: PDF output (pdfTeX)
 ) (thesis.aux (include/titlepage.aux) (include/declaration.aux) (content/abstract.aux) (content/introduction.aux) (content/theoretical-background.aux) (content/invoice-processing-process-analysis.aux) (content/automated-invoice-processing.aux) (content/results-and-evaluation.aux) (content/conclusion.aux) (content/acknowledgement.aux) (content/appendices.aux))
 \openout1 = `thesis.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 109.
-LaTeX Font Info:    ... okay on input line 109.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 111.
+LaTeX Font Info:    ... okay on input line 111.
  (C:\Users\csabudan\AppData\Local\Programs\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
 \scratchcounter=\count349
@@ -779,7 +781,7 @@ File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
 * \@reversemarginfalse
 * (1in=72.27pt=25.4mm, 1cm=28.453pt)
 
-Package hyperref Info: Link coloring ON on input line 109.
+Package hyperref Info: Link coloring ON on input line 111.
 (thesis.out) (thesis.out)
 \@outlinefile=\write4
 \openout4 = `thesis.out'.
@@ -1146,332 +1148,22 @@ LaTeX Warning: Reference `ssec:data_extraction_config' on page 61 undefined on i
 
 
 
-] (thesis.bbl
-Underfull \hbox (badness 10000) in paragraph at lines 97--102
-[]\T1/lmr/m/n/12 17 sta-tis-tics sho-wing the hid-den cost of in-vo-i-ce er-rors
- []
+] (thesis.bbl [64
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 97--102
-\T1/lmr/m/n/12 and re-work, 2025. [] URL  [][]$\T1/lmtt/m/n/12 https : / / resolvepay . com / blog /
- []
 
-
-Overfull \hbox (21.42473pt too wide) in paragraph at lines 97--102
-\T1/lmtt/m/n/12 17-[]statistics-[]showing-[]the-[]hidden-[]cost-[]of-[]invoice-[]errors-[]and-[]rework$[][]\T1/lmr/m/n/12 . 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 129--136
-[]\T1/lmr/m/n/12 Alison Ba-ran: The hid-den cost of ma-nu-al: What five ext-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 129--136
-\T1/lmr/m/n/12 ra mi-nutes per in-vo-i-ce is re-ally cost-ing yo-ur ap team,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 129--136
-\T1/lmr/m/n/12 2025. [] URL  [][]$\T1/lmtt/m/n/12 https : / / www . ascendsoftware . com / blog /
- []
-
-
-Overfull \hbox (188.22441pt too wide) in paragraph at lines 129--136
-\T1/lmtt/m/n/12 the-[]hidden-[]cost-[]of-[]manual-[]what-[]five-[]extra-[]minutes-[]per-[]invoice-[]is-[]really-[]costing-[]your-[]ap-[]team$[][]\T1/lmr/m/n/12 . 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 150--155
-\T1/lmr/m/n/12 URL  [][]$\T1/lmtt/m/n/12 https : / / learning . sap . com / learning-[]journeys /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 150--155
-\T1/lmtt/m/n/12 introducing-[]sap-[]ariba-[]procurement-[]functionality /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 157--161
-\T1/lmr/m/n/12 URL  [][]$\T1/lmtt/m/n/12 https : / / www . deloitte . com / us / en / what-[]we-[]do / capabilities /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 163--167
-\T1/lmtt/m/n/12 docs / SAP _ S4HANA _ ON-[]PREMISE / f340785101c548c9beeda9284efd18a0 /
- []
-
-[64
-
-
-
-]
-Underfull \hbox (badness 4254) in paragraph at lines 197--202
-[]\T1/lmr/m/n/12 Future of fi-nance: How you can le-ad with in-sight, not just over-
- []
-
-
-Underfull \hbox (badness 2781) in paragraph at lines 197--202
-\T1/lmr/m/n/12 sight, 2025. [] URL  [][]$\T1/lmtt/m/n/12 https : / / www . pwc . com / us / en / services / consulting /
- []
-
-
-Overfull \hbox (49.66068pt too wide) in paragraph at lines 212--219
-\T1/lmtt/m/n/12 explaining-[]sap-[]business-[]technology-[]platform-[]sap-[]btp-[]to-[]a-[]beginner-[]2025 /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 221--227
-[]\T1/lmr/m/n/12 Raja Gup-ta: Im-por-tant clo-ud ter-mi-no-lo-gi-es for be-gin-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 221--227
-\T1/lmr/m/n/12 ners, 2023. [] URL  [][]$\T1/lmtt/m/n/12 https : / / medium . com / @raja . gupta20 /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 229--233
-\T1/lmr/m/n/12 URL  [][]$\T1/lmtt/m/n/12 httpsNext : / / www . gartner . com / en / information-[]technology /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 248--254
-[]\T1/lmr/m/n/12 Lingeswar Kar-ren-na-ga-ri: Lo-gis-tics in-vo-i-ce ve-ri-fi-ca-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 248--254
-\T1/lmr/m/n/12 ti-on, 2024. [] URL  [][]$\T1/lmtt/m/n/12 https : / / community . sap . com / t5 /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 248--254
-\T1/lmtt/m/n/12 supply-[]chain-[]management-[]blog-[]posts-[]by-[]members /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 256--262
-[]\T1/lmr/m/n/12 George Law-ton: Rpa vs. bpm: How are they dif-fe-rent?,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 256--262
-\T1/lmr/m/n/12 2023. [] URL  [][]$\T1/lmtt/m/n/12 https : / / www . techtarget . com / searchcio / tip /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 264--270
-\T1/lmr/m/n/12 URL  [][]$\T1/lmtt/m/n/12 https : / / learning . sap . com / learning-[]journeys /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 264--270
-\T1/lmtt/m/n/12 describing-[]the-[]payables-[]management-[]process-[]in-[]sap-[]s-[]4hana /
- []
-
-
-Overfull \hbox (64.52464pt too wide) in paragraph at lines 264--270
-\T1/lmtt/m/n/12 managing-[]invoice-[]holding-[]and-[]parking _ a6556206-[]6ef1-[]48bb-[]bcb8-[]bdb5d742f88e$[][]\T1/lmr/m/n/12 . 
- []
-
-[65]
-Underfull \hbox (badness 10000) in paragraph at lines 272--277
-[]\T1/lmr/m/n/12 Managing in-vo-i-ces. [] URL  [][]$\T1/lmtt/m/n/12 https : / / learning . sap . com / courses /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 272--277
-\T1/lmtt/m/n/12 exploring-[]end-[]to-[]end-[]business-[]processes-[]in-[]sap-[]business-[]suite /
- []
-
-
-Underfull \hbox (badness 3668) in paragraph at lines 279--288
-[]\T1/lmr/m/n/12 Sanjib Ku-mar Mish-ra[]Sasmita Mish-ra[]Rojalina Priya-dars-hi-ni: Supply
- []
-
-
-Underfull \hbox (badness 2020) in paragraph at lines 279--288
-\T1/lmr/m/n/12 cha-in busi-ness pro-cess re-engineering: Au-to-ma-te ^^Plo-gis-tic in-vo-i-ce ve-ri-fi-
- []
-
-
-Underfull \hbox (badness 1448) in paragraph at lines 279--288
-\T1/lmr/m/n/12 ca-ti-on^^Q pay-ment block pro-cess^^Va ca-se study on sap r-payment block,
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 279--288
-\T1/lmr/m/n/12 2024. [] URL  [][]$\T1/lmtt/m/n/12 https : / / www . researchgate . net / publication / 389749726 _
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 279--288
-\T1/lmtt/m/n/12 Supply _ Chain _ Business _ Process _ Re-[]Engineering _ Automate _ Logistic _
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 279--288
-\T1/lmtt/m/n/12 Invoice _ Verification _ Payment _ Block _ Process-[]A _ Case _ Study _ on _ SAP _
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 290--298
-[][]$\T1/lmtt/m/n/12 https : / / www . deloitte . com / lu / en / our-[]thinking / future-[]of-[]advice /
- []
-
-
-Overfull \hbox (87.4606pt too wide) in paragraph at lines 290--298
-\T1/lmtt/m/n/12 from-[]controlling-[]to-[]strategic-[]planning-[]how-[]to-[]maximize-[]your-[]finance-[]function .
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 306--310
-[]\T1/lmr/m/n/12 Parking: Comp-le-te in-vo-i-ces for post-ing (mm-iv-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 306--310
-\T1/lmr/m/n/12 liv), 2025. [] URL  [][]$\T1/lmtt/m/n/12 https : / / help . sap . com / docs / SAP _
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 306--310
-\T1/lmtt/m/n/12 S4HANA _ ON-[]PREMISE / b54d76b535b74e4aaa852fe31a7974ee /
- []
-
-
-Underfull \hbox (badness 4660) in paragraph at lines 312--318
-\T1/lmr/m/n/12 fu-tu-re of the fi-nance func-ti-on, 2018. [] URL  [][]$\T1/lmtt/m/n/12 https : / / www . mckinsey .
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 312--318
-\T1/lmtt/m/n/12 com / capabilities / strategy-[]and-[]corporate-[]finance / our-[]insights /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 320--324
-[]\T1/lmr/m/n/12 Processing edi in-vo-i-ces, 2025. [] URL  [][]$\T1/lmtt/m/n/12 https : / / help . sap . com / docs /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 320--324
-\T1/lmtt/m/n/12 SAP _ S4HANA _ ON-[]PREMISE / af9ef57f504840d2b81be8667206d485 /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 337--343
-[]\T1/lmr/m/n/12 SAP Com-mu-nity Mem-ber: In-vo-i-ce to-le-rance keys - an in-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 337--343
-\T1/lmr/m/n/12 sight - part 1, 2014. [] URL  [][]$\T1/lmtt/m/n/12 https : / / community . sap . com /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 337--343
-\T1/lmtt/m/n/12 t5 / enterprise-[]resource-[]planning-[]blog-[]posts-[]by-[]members /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 345--351
-[]\T1/lmr/m/n/12 SAP Com-mu-nity Mem-ber: In-vo-i-ce to-le-rance keys - an in-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 345--351
-\T1/lmr/m/n/12 sight - part 2, 2015. [] URL  [][]$\T1/lmtt/m/n/12 https : / / community . sap . com /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 345--351
-\T1/lmtt/m/n/12 t5 / enterprise-[]resource-[]planning-[]blog-[]posts-[]by-[]members /
- []
-
-[66]
-Underfull \hbox (badness 3138) in paragraph at lines 364--371
-[]\T1/lmr/m/n/12 Richard Ta-ma-ro: The hid-den costs of ma-nu-al ac-counts payab-le and
- []
-
-
-Underfull \hbox (badness 1342) in paragraph at lines 364--371
-\T1/lmr/m/n/12 how au-to-ma-ti-on sol-ves them, 2025. [] URL  [][]$\T1/lmtt/m/n/12 https : / / caso . com / 2025 / 03 /
- []
-
-
-Overfull \hbox (72.32463pt too wide) in paragraph at lines 364--371
-\T1/lmtt/m/n/12 the-[]hidden-[]costs-[]of-[]manual-[]accounts-[]payable-[]and-[]how-[]automation-[]solves-[]them$[][]\T1/lmr/m/n/12 . 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 373--378
-[]\T1/lmr/m/n/12 Transform busi-ness with sap busi-ness tech-no-logy plat-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 373--378
-\T1/lmr/m/n/12 form (sap btp), 2024. [] URL  [][]$\T1/lmtt/m/n/12 https : / / nav-[]it . com /
- []
-
-
-Overfull \hbox (7.82475pt too wide) in paragraph at lines 373--378
-\T1/lmtt/m/n/12 transform-[]business-[]with-[]sap-[]business-[]technology-[]platform-[]sap-[]btp$[][]\T1/lmr/m/n/12 . 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 380--384
-[]\T1/lmr/m/n/12 What is at-ten-ded vs unat-ten-ded ro-bo-tic pro-cess au-to-ma-ti-
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 380--384
-\T1/lmr/m/n/12 on (rpa)? [] URL  [][]$\T1/lmtt/m/n/12 https : / / www . automationanywhere . com / rpa /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 391--395
-\T1/lmr/m/n/12 URL  [][]$\T1/lmtt/m/n/12 https : / / help . sap . com / docs / build / sap-[]build-[]core /
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 391--395
-\T1/lmtt/m/n/12 what-[]is-[]sap-[]build # loio7e50fa5e724c49d1a4352848275fd3cc _
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 397--402
-[]\T1/lmr/m/n/12 What is sap build work zo-ne, stan-dard edi-ti-on? [] URL  [][]$\T1/lmtt/m/n/12 https :
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 397--402
-\T1/lmtt/m/n/12 / / help . sap . com / docs / build-[]work-[]zone-[]standard-[]edition /
- []
-
-
-Overfull \hbox (116.92455pt too wide) in paragraph at lines 397--402
-\T1/lmtt/m/n/12 sap-[]build-[]work-[]zone-[]standard-[]edition / what-[]is-[]sap-[]build-[]work-[]zone-[]standard-[]edition$[][]\T1/lmr/m/n/12 . 
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 404--409
-\T1/lmr/m/n/12 URL  [][]$\T1/lmtt/m/n/12 https : / / www . sap . com / sea / products / technology-[]platform /
- []
-
-) [67]
+] [65] [66] [67]) [68]
 \openout2 = `content/appendices.aux'.
 
- (content/appendices.tex [68
+ (content/appendices.tex [69
 
 
-] [69] [70]
+] [70] [71]
 Underfull \hbox (badness 4168) in paragraph at lines 208--208
 \T1/lmr/m/n/10.95 meg-je-lent a fel-adat. Jó-vá-ha-gyás
  []
 
-) [71] [72]
+) [72] [73]
 \tf@thm=\write6
 \openout6 = `thesis.thm'.
 
@@ -1488,17 +1180,17 @@ Package rerunfilecheck Info: File `thesis.out' has not changed.
 (rerunfilecheck)             Checksum: 3E670AAC7931FB61ED42359D055AD7E2;28223.
  ) 
 Here is how much of TeX's memory you used:
- 38973 strings out of 474486
- 888604 string characters out of 5742338
- 2405542 words of memory out of 5000000
- 60038 multiletter control sequences out of 15000+600000
+ 38998 strings out of 474486
+ 889240 string characters out of 5742338
+ 2424542 words of memory out of 5000000
+ 60059 multiletter control sequences out of 15000+600000
  630151 words of font info for 81 fonts, out of 8000000 for 9000
  1145 hyphenation exceptions out of 8191
  84i,11n,87p,1126b,2385s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx10.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbxi10.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsc10.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmmi12.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr6.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri12.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmsy10.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtk10.pfb><C:/Users/csabudan/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtl10.pfb>
-Output written on thesis.pdf (79 pages, 1916164 bytes).
+Output written on thesis.pdf (80 pages, 1920406 bytes).
 PDF statistics:
- 1644 PDF objects out of 1728 (max. 8388607)
+ 1646 PDF objects out of 1728 (max. 8388607)
  529 named destinations out of 1000 (max. 500000)
  864 words of extra memory for PDF output out of 10000 (max. 10000000)
 
